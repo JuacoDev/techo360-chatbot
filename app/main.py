@@ -9,6 +9,9 @@ def health():
     return {"status": "ok", "service": "chatbot"}
 
 
+# prueba CI/CD
+
+
 # TODO: aqui van los endpoints reales:
 #   POST /chatbot/send  (recibe pregunta, hace RAG contra pgvector,
 #                         llama a Ollama, devuelve respuesta)
