@@ -6,7 +6,7 @@ app = FastAPI(title="Techo 360 - Servicio IA Chatbot")
 @app.get("/health")
 def health():
     """Prueba de humo: confirma que el contenedor levanto correctamente."""
-    return {"status": "ok", "service": "chatbot"}
+    return {"status": "ok", "service": "chatbot", "version": "ci-cd-test-1"}
 
 
 # prueba CI/CD
