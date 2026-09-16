@@ -2,7 +2,7 @@
 
 ## Archivo canónico
 
-- `entrenamiento.jsonl`: **450 pares**, fuente única de verdad para
+- `entrenamiento.jsonl`: **600 pares**, fuente única de verdad para
   fine-tuning. Se edita/crece en este mismo archivo en rondas futuras — no
   se crean archivos nuevos por ronda.
 
@@ -41,9 +41,10 @@ Tres categorías de contenido:
 
 ## Composición actual
 
-- 450 pares totales, 0 duplicados internos (por `instruction`).
-- 280 con fuente (categorías a + c), 170 sin fuente (categoría b).
-- Desglose por categoría: (a) 209 pares, (b) 170 pares, (c) 71 pares.
+- 600 pares totales, 0 duplicados internos (por `instruction`).
+- 370 con fuente (categorías a + c) — 61.7%, 230 sin fuente (categoría b)
+  — 38.3%.
+- Desglose por categoría: (a) 254 pares, (b) 230 pares, (c) 116 pares.
 - 0 emojis, 0 montos en pesos ni datos volátiles (cupos, vigencias, topes
   de programas de subsidio).
 
@@ -120,4 +121,87 @@ confirmarse con una fuente primaria legible (por ejemplo, un ranking
 departamental exacto de cobertura de acueducto/alcantarillado 2023, o
 los nombres de los integrantes académicos del Comité de Expertos del
 IPM) se excluyeron deliberadamente del dataset en lugar de incluirse sin
-verificar.
+verificar. Cuando la fuente sí respaldaba el hecho general pero no un
+detalle específico (los organismos exactos que integran el Comité de
+Expertos), se generalizó también la pregunta para no prometer más
+especificidad de la que la respuesta entrega (ver commit `4cb0f93`).
+
+### Tercera ronda de escalamiento (150 pares nuevos, 2026-09-16)
+
+Sobre la base de 450 pares (280 con fuente / 170 sin fuente), se agregaron
+150 pares nuevos manteniendo la proporción ~30/40/30 de la ronda anterior:
+
+- **45 pares (a)**: siguen priorizando IPM/Alkire-Foster, déficit
+  habitacional y cobertura de servicios públicos. Hallazgo principal de
+  esta ronda: el DANE sí publicó, en 2020, una "Medida de pobreza
+  multidimensional de fuente censal" con representatividad **municipal**
+  (e incluso a nivel de manzana urbana) con base en el Censo 2018 —
+  distinta del IPM anual por encuesta, que solo tiene representatividad
+  nacional/regional. Se incluyen los municipios extremos de esa medida
+  (Uribia, Cumaribo, Alto Baudó como los de mayor incidencia; Sabaneta,
+  Envigado, Chía como los de menor) — ver nota de verificación abajo
+  sobre el nivel de confianza distinto entre la existencia de la medida y
+  estas seis cifras puntuales. El resto evita normativa de cola larga,
+  igual que la ronda anterior.
+- **60 pares (b)**: nueva lectura del código real de los repos —
+  `ingestion/scheduler.py` (cron semanal de indicadores vs. trimestral de
+  geometría IGAC, guardia contra doble ejecución vía Redis, ejecución en
+  hilo aparte para no bloquear FastAPI), `services/email_service.py`
+  (cupo diario de Brevo, umbral de advertencia al 85%, TTL de 26h),
+  `ingestion/validacion.py` (reglas de aceptación de datos: no nulo, no
+  negativo, identificador de municipio obligatorio, advertencia — no
+  rechazo — ante variación mayor al 60% interanual), `core/config.py`
+  (por qué unas variables de entorno tienen default de desarrollo y
+  otras no) y `setup-server.sh` (usuario de sistema limitado para
+  despliegue en vez de root). También profundiza en normalización
+  mínimo-máximo frente a valores atípicos, y en el frontend/stack
+  (FastAPI, SQLAlchemy, SPA, Ollama). Se revisó la lista completa de los
+  170 pares (b) existentes antes de escribir.
+- **45 pares (c)**: conectan el hallazgo de la medida censal municipal
+  del DANE con el Score de Privación (por qué Techo 360 no la usa como
+  fuente directa, pese a tener granularidad municipal, dado que no se
+  actualiza periódicamente), además de nuevas conexiones entre
+  normativa/entidades ya cubiertas en (a) de rondas previas y el
+  comportamiento real del score.
+
+Verificación aplicada: la **existencia** de la "Medida de pobreza
+multidimensional de fuente censal" (DANE, 2020, base CNPV 2018) como
+producto oficial del DANE está confirmada contra tres fuentes
+independientes distintas — dos páginas oficiales separadas de
+dane.gov.co (una de ellas el boletín técnico, la otra la página de
+"actualidad-dane") y un tercero externo (Multidimensional Poverty Peer
+Network, MPPN). Las **seis cifras municipales puntuales** que se citan
+como ejemplo de esa medida (Uribia 92,2%, Cumaribo 91,4%, Alto Baudó
+90,6%, Sabaneta 4,5%, Envigado 4,9%, Chía 6,7%, líneas 452-453 de
+`entrenamiento.jsonl`) tienen un nivel de verificación distinto y más
+débil: no se leyó directamente el boletín del DANE (los PDF del DANE
+resultan ilegibles para extracción automática, igual que en la ronda
+anterior), por lo que esas seis cifras descansan en **una sola fuente
+periodística independiente** (elpilon.com.co) más resúmenes de buscador
+que citan el mismo boletín sin que se haya podido confirmar la cifra
+línea por línea contra el documento original. Las respuestas de esas dos
+líneas ya se redactaron con el calificador "según fuentes que citan el
+boletín del DANE" para reflejar esta diferencia, en vez de presentarlas
+con la misma firmeza que el resto del corpus. El resto del contenido (b)
+proviene directamente de lectura del código fuente de los repos, no
+requiere verificación externa.
+
+Autorrevisión de desajuste pregunta/respuesta: se revisaron los 150
+pares nuevos aplicando el mismo criterio que corrigió el caso del
+Comité de Expertos del IPM (ronda anterior). Se encontraron y corrigieron
+4 preguntas que prometían más especificidad de la que la respuesta
+entregaba — en los cuatro casos se generalizó la pregunta en vez de
+inventar el dato faltante:
+- Línea 459 (barreras de acceso a cuidado de primera infancia): la
+  pregunta pedía el grupo de edad exacto, la respuesta no lo daba.
+- Línea 480 (bajo logro educativo): la pregunta pedía la edad mínima
+  exacta, la respuesta no la daba.
+- Línea 494 (ECV, versión anterior): la pregunta pedía el año exacto
+  desde el que se aplica de forma continua, la respuesta no lo daba.
+- Línea 530 (modelo de lenguaje del chatbot): la pregunta pedía el
+  modelo "específico", la respuesta solo da un rango de tamaño y el
+  motor (Ollama), consistente con que el código real lo deja como
+  ejemplo no decidido.
+
+No se descartó ningún par completo en esta ronda por falta de fuente —
+se mantiene el conteo exacto 45/60/45 = 150.
