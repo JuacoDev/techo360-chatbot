@@ -2,9 +2,12 @@
 
 ## Archivo canónico
 
-- `entrenamiento.jsonl`: **600 pares**, fuente única de verdad para
+- `entrenamiento.jsonl`: **582 pares**, fuente única de verdad para
   fine-tuning. Se edita/crece en este mismo archivo en rondas futuras — no
   se crean archivos nuevos por ronda.
+- `holdout.jsonl`: **18 pares**, apartados exclusivamente para evaluación
+  (T-93) — nunca deben usarse para entrenar. Ver sección
+  [Holdout de evaluación](#holdout-de-evaluación-t-69) más abajo.
 
 ## Formato
 
@@ -39,14 +42,17 @@ Tres categorías de contenido:
   fuente exacta proviene cada variable del panel. Esta categoría existe
   desde la segunda ronda de escalamiento (ver historial abajo).
 
-## Composición actual
+## Composición actual (`entrenamiento.jsonl`)
 
-- 600 pares totales, 0 duplicados internos (por `instruction`).
-- 370 con fuente (categorías a + c) — 61.7%, 230 sin fuente (categoría b)
-  — 38.3%.
-- Desglose por categoría: (a) 254 pares, (b) 230 pares, (c) 116 pares.
+- 582 pares totales, 0 duplicados internos (por `instruction`).
+- 361 con fuente (categorías a + c) — 62.0%, 221 sin fuente (categoría b)
+  — 38.0%.
+- Desglose por categoría: (a) 247 pares, (b) 221 pares, (c) 114 pares.
 - 0 emojis, 0 montos en pesos ni datos volátiles (cupos, vigencias, topes
   de programas de subsidio).
+- Cifras antes de separar el holdout de T-69 (600 pares totales, 370 con
+  fuente / 230 sin fuente, (a) 254 / (b) 230 / (c) 116) quedan trazables
+  en el commit anterior a T-69 y en las secciones de historial abajo.
 
 ## Historial de consolidación
 
@@ -172,8 +178,9 @@ dane.gov.co (una de ellas el boletín técnico, la otra la página de
 "actualidad-dane") y un tercero externo (Multidimensional Poverty Peer
 Network, MPPN). Las **seis cifras municipales puntuales** que se citan
 como ejemplo de esa medida (Uribia 92,2%, Cumaribo 91,4%, Alto Baudó
-90,6%, Sabaneta 4,5%, Envigado 4,9%, Chía 6,7%, líneas 452-453 de
-`entrenamiento.jsonl`) tienen un nivel de verificación distinto y más
+90,6%, Sabaneta 4,5%, Envigado 4,9%, Chía 6,7%, líneas 434-435 de
+`entrenamiento.jsonl` — antes 452-453, desplazadas -18 tras separar el
+holdout de T-69) tienen un nivel de verificación distinto y más
 débil: no se leyó directamente el boletín del DANE (los PDF del DANE
 resultan ilegibles para extracción automática, igual que en la ronda
 anterior), por lo que esas seis cifras descansan en **una sola fuente
@@ -191,17 +198,58 @@ pares nuevos aplicando el mismo criterio que corrigió el caso del
 Comité de Expertos del IPM (ronda anterior). Se encontraron y corrigieron
 4 preguntas que prometían más especificidad de la que la respuesta
 entregaba — en los cuatro casos se generalizó la pregunta en vez de
-inventar el dato faltante:
-- Línea 459 (barreras de acceso a cuidado de primera infancia): la
-  pregunta pedía el grupo de edad exacto, la respuesta no lo daba.
-- Línea 480 (bajo logro educativo): la pregunta pedía la edad mínima
-  exacta, la respuesta no la daba.
-- Línea 494 (ECV, versión anterior): la pregunta pedía el año exacto
-  desde el que se aplica de forma continua, la respuesta no lo daba.
-- Línea 530 (modelo de lenguaje del chatbot): la pregunta pedía el
-  modelo "específico", la respuesta solo da un rango de tamaño y el
+inventar el dato faltante (números de línea originales; ver nota sobre
+el desplazamiento -18 tras T-69 más abajo):
+- Línea 459 → **441** (barreras de acceso a cuidado de primera infancia):
+  la pregunta pedía el grupo de edad exacto, la respuesta no lo daba.
+- Línea 480 → **462** (bajo logro educativo): la pregunta pedía la edad
+  mínima exacta, la respuesta no la daba.
+- Línea 494 → **476** (ECV, versión anterior): la pregunta pedía el año
+  exacto desde el que se aplica de forma continua, la respuesta no lo daba.
+- Línea 530 → **512** (modelo de lenguaje del chatbot): la pregunta pedía
+  el modelo "específico", la respuesta solo da un rango de tamaño y el
   motor (Ollama), consistente con que el código real lo deja como
   ejemplo no decidido.
 
 No se descartó ningún par completo en esta ronda por falta de fuente —
 se mantiene el conteo exacto 45/60/45 = 150.
+
+## Holdout de evaluación (T-69)
+
+`holdout.jsonl` contiene **18 pares** apartados de `entrenamiento.jsonl`
+exclusivamente para la evaluación posterior del modelo entrenado (T-93).
+**Nunca deben usarse para entrenar** — ni en este fine-tuning ni en
+ninguno futuro sobre este mismo dataset — precisamente para poder medir,
+con datos que el modelo nunca vio, si aprendió el contenido central o
+solo memorizó lo que se le mostró en entrenamiento.
+
+**Criterios de selección**:
+- **Cobertura de ambas categorías amplias**: 9 pares con fuente
+  (categorías a+c, política pública general e híbrida) y 9 pares sin
+  fuente (categoría b, específicos de Techo 360) — ningún extremo
+  sobre-representado.
+- **Representatividad de temas centrales**, no casos raros ni de cola
+  larga: de (a) se tomaron las definiciones y cifras nacionales más
+  básicas (qué es el IPM, sus 15 indicadores, el umbral de privación,
+  déficit habitacional cuantitativo/cualitativo, cobertura nacional de
+  acueducto y alcantarillado, qué es la VIS); de (c) las dos preguntas
+  híbridas más fundamentales (si el Score de Privación equivale al IPM
+  oficial, y cómo se compara la cobertura de acueducto de Techo 360 con
+  la de la SSPD); de (b) los conceptos base de la plataforma (qué es
+  Techo 360, qué es el Score de Privación, cómo se calcula paso a paso,
+  cuándo queda nulo, los cinco repositorios, las siete variables y sus
+  fuentes, autenticación, y el rol del servicio de proyección).
+- **Sin problemas de calidad conocidos**: se excluyeron explícitamente
+  las cuatro preguntas corregidas por desajuste pregunta/respuesta y las
+  dos líneas con verificación más débil (las cifras municipales de la
+  medida censal, líneas 434-435) — el holdout debe medir aprendizaje
+  contra pares de máxima confianza, no arrastrar ninguna duda de calidad
+  ya documentada.
+
+**Efecto en `entrenamiento.jsonl`**: bajó de 600 a 582 pares. Como se
+retiraron 18 líneas de puntos distintos y anteriores a la línea 400, toda
+referencia a un número de línea específico documentada en las secciones
+de historial de arriba (para pares que no fueron parte del holdout) quedó
+desplazada **-18** respecto al número original citado en su momento — se
+anotó el nuevo número junto al original donde aplicaba, en vez de
+reescribir silenciosamente la cifra histórica.
