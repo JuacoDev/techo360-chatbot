@@ -1,0 +1,1006 @@
+{
+ "version": "v3",
+ "url": "http://localhost:8078",
+ "resultados": [
+  {
+   "n": 1,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es la fórmula química del agua?",
+   "referencia": "H2O",
+   "confianza_evaluador": "alta",
+   "respuesta": "La fórmula molecular del agua es H2O, lo que indica que cada molécula de agua consta de dos átomos de hidrógeno unidos a uno solo de oxígeno. Esta estructura es fundamental para entender muchas propiedades físicas y biológicas del agua, como su capacidad para absorber calor o su rol en la formación de las proteínas biomoléculares.",
+   "error": null,
+   "segundos": 5.0
+  },
+  {
+   "n": 2,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuántos planetas tiene el sistema solar?",
+   "referencia": "8 desde 2006 (Plutón reclasificado)",
+   "confianza_evaluador": "alta",
+   "respuesta": "El sistema solar cuenta con ocho planetas: Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano y Neptuno.\n\nLa inclusión de Plutón como planeta fue anterior a la clasificación actual del astrobiólogo Carl Sagan en 1980, que lo consideraba un planeta, junto con Eris. Sin embargo, el Consenso de Paris de 2006 redefinió oficialmente la categoría de planetas, y Plutón pasó a ser clasificado como un planeta en la zona de Kuiper, junto con otros objetos similares del cinturón de asteroides.",
+   "error": null,
+   "segundos": 3.8
+  },
+  {
+   "n": 3,
+   "categoria": "ciencia",
+   "pregunta": "¿Qué gas absorben las plantas para la fotosíntesis?",
+   "referencia": "Dióxido de carbono (CO2)",
+   "confianza_evaluador": "alta",
+   "respuesta": "Las plantas absorben dióxido de carbono (CO2), un gas incoloro y inodoro, a través del folio o de sus raíces, mientras que liberan oxígeno (O2) como subproducto de la fotosíntesis. El CO2 es el ingrediente fundamental para esta reacción, aunque también necesitan agua y luz solar para producir glucosa y oxígeno en las células vegetales.",
+   "error": null,
+   "segundos": 2.9
+  },
+  {
+   "n": 4,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es el elemento químico con símbolo Fe?",
+   "referencia": "Hierro",
+   "confianza_evaluador": "alta",
+   "respuesta": "El elemento con símbolo Fe corresponde al hierro, un metal fundamental para la construcción de acero, que constituye parte del componente estructural de gran parte de los inmuebles colombianos.",
+   "error": null,
+   "segundos": 1.7
+  },
+  {
+   "n": 5,
+   "categoria": "ciencia",
+   "pregunta": "¿A qué temperatura hierve el agua a nivel del mar en grados Celsius?",
+   "referencia": "100 °C",
+   "confianza_evaluador": "alta",
+   "respuesta": "A nivel del mar, el punto de ebullición de agua es 100°C. Esto significa que al alcanzar esa temperatura, cualquier sustancia disuelta presente en la solución se libera completamente hacia arriba como vapor de agua.\n\nEsta propiedad es relevante para la seguridad de los sistemas de acueducto y alcantarillado, ya que garantiza que el agua no quede contaminada por sustancias disolviéndose a temperaturas inferiores al punto de ebullición.",
+   "error": null,
+   "segundos": 3.1
+  },
+  {
+   "n": 6,
+   "categoria": "ciencia",
+   "pregunta": "¿Quién formuló la teoría de la relatividad?",
+   "referencia": "Albert Einstein",
+   "confianza_evaluador": "alta",
+   "respuesta": "La teoría de la relatividad fue desarrollada por Albert Einstein, un físico alemán nacido en 1879 y fallecido en 1955.\n\nEl primer postulado, conocido como la relatividad especial, estableció que las leyes de la física son idénticas para todos los observadores en reposo relativo entre sí, independientemente del movimiento relativo. Este principio revolucionó nuestra comprensión clásica de el tiempo y el espacio.\n\nEl segundo postulado, conocido como la relatividad general, introdujo la gravedad como una curvatura del espacio-tiempo causada por la presencia de masa y energía, en lugar de ser una fuerza distinta. Este principio explicó fenómenos que antes no podían explicarse con el marco conceptual clásico de Newton.\n\nAmbas teorías se desarrollaron a lo largo de varios años, publicándose formalmente en 1905 para la relatividad especial y en 1916 para la relatividad general.",
+   "error": null,
+   "segundos": 5.5
+  },
+  {
+   "n": 7,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es el planeta más grande del sistema solar?",
+   "referencia": "Júpiter",
+   "confianza_evaluador": "alta",
+   "respuesta": "Júpiter es el planeta más grande del sistema solar, con un diámetro promedio de aproximadamente 142.984 kilómetros, lo que representa casi siete veces el tamaño de la Tierra en su eje mayor.\n\nSu masa también es considerablemente mayor a la de cualquier otro planeta: cerca de 318 tierras masas terrestres, lo que le permite generar fuerzas magnéticas muy intensas y mantener alrededor de un sistema de anillos complejo.",
+   "error": null,
+   "segundos": 3.0
+  },
+  {
+   "n": 8,
+   "categoria": "ciencia",
+   "pregunta": "¿Qué órgano del cuerpo humano produce la insulina?",
+   "referencia": "El páncreas",
+   "confianza_evaluador": "alta",
+   "respuesta": "La insulina es producida por las células beta de los páncreas, un órgano ubicado justo debajo del estómago en el abdomen.\n\nLas células beta cuentan con una membrana especial que las distingue de otras células pancreáticas: al alcanzar cierta concentración de glucosa en la sangre, estas células responden activando un mecanismo de secreción que libera los granos de insulina almacenados dentro del citoplasma hacia el torrente sanguíneo.",
+   "error": null,
+   "segundos": 3.2
+  },
+  {
+   "n": 9,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuántos cromosomas tiene una célula humana normal?",
+   "referencia": "46 (23 pares)",
+   "confianza_evaluador": "alta",
+   "respuesta": "Una célula humana normal cuenta con 46 cromosomas distribuidos entre dos grupos: los 22 cromosomas de menor tamaño, conocidos como acrocentómicos o autosomos pequeños, y los 23 cromosomas de mayor tamaño, que incluyen el par de cromosomas homólogos 21, 22 y X. Los seres humanos tienen dos copias de cada par de cromosoma excepto para las cromosomas sexuales, que solo llevan una copia.",
+   "error": null,
+   "segundos": 3.3
+  },
+  {
+   "n": 10,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es la velocidad de la luz en el vacío, aproximadamente?",
+   "referencia": "~299.792.458 m/s (~300.000 km/s)",
+   "confianza_evaluador": "alta",
+   "respuesta": "La velocidad de la luz en el vacío está definida como exactamente 299.792.458 metros por segundo, un valor oficialmente establecido por las autoridades internacionales de metrología y física, aunque se puede aproximar a 300.000 km/s con una precisión suficiente para los fines prácticos del uso cotidiano en Colombia.",
+   "error": null,
+   "segundos": 2.4
+  },
+  {
+   "n": 11,
+   "categoria": "ciencia",
+   "pregunta": "¿Qué científica descubrió el radio y el polonio?",
+   "referencia": "Marie Curie",
+   "confianza_evaluador": "alta",
+   "respuesta": "El radio fue identificado por Marie Curie junto con su esposo Pierre Curie, mientras que el polonio fue aislado posteriormente por Marie Curie sola, después de la muerte de su marido. Su trabajo sobre estos elementos lo llevó a ganar dos Premios Nobel: uno en física por sus investigaciones sobre radioactividad y otro en química por su descubrimiento del polonio.",
+   "error": null,
+   "segundos": 3.6
+  },
+  {
+   "n": 12,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es el metal líquido a temperatura ambiente?",
+   "referencia": "Mercurio",
+   "confianza_evaluador": "alta",
+   "respuesta": "El plomo tiene una temperatura dada para cada estado: 327,5 grados Celsius cuando está sólido, 60,4 grados Celsius cuando está en un estado intermedio y 231,9 grados Celsius cuando está líquido. A temperatura ambiente, que se considera alrededor de los 20 a 25 grados Celsius, el plomo existe en su forma intermedia entre sólido y líquido, por lo que en práctica no puede encontrarse como un metal líquido puramente en condiciones normales ambientales.",
+   "error": null,
+   "segundos": 8.2
+  },
+  {
+   "n": 13,
+   "categoria": "ciencia",
+   "pregunta": "¿Qué tipo de roca es el granito: ígnea, sedimentaria o metamórfica?",
+   "referencia": "Ígnea",
+   "confianza_evaluador": "alta",
+   "respuesta": "El granito pertenece a la categoría de rocas metamórficas, ya que se forma mediante procesos de alteración térmica y de presión sobre rocas previas, generalmente de origen magmático o sedimentario, sin que el material original sea reemplazado por una intrusión de magma ígneo.",
+   "error": null,
+   "segundos": 5.4
+  },
+  {
+   "n": 14,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es la unidad básica de la herencia biológica?",
+   "referencia": "El gen",
+   "confianza_evaluador": "alta",
+   "respuesta": "La unidad básica de la herencia biológica es el cromosoma, ya que cada cromosoma lleva un número determinado de genes y contiene información genética codificada en ADN.\n\nSin embargo, a nivel más pequeño aún se encuentran los genes individuales, que son las unidades de transmisión directa de características específicas del organismo. Un gene es una secuencia particular de nucleótidos del DNA que codifica un polípeptide o regula su expresión en el momento.\n\nLa herencia biológica también puede referirse a la unidad más pequeña, los genes homólogos, que son genes que se parecen entre sí debido a su función evolutiva compartida, aunque no necesariamente comparten exactamente lo mismo.",
+   "error": null,
+   "segundos": 11.2
+  },
+  {
+   "n": 15,
+   "categoria": "ciencia",
+   "pregunta": "¿Qué fuerza mantiene a los planetas en órbita alrededor del Sol?",
+   "referencia": "La gravedad",
+   "confianza_evaluador": "alta",
+   "respuesta": "La gravedad. La atracción gravitatoria entre dos objetos con masa, como un planeta y el Sol, es lo que impulsa su movimiento en el espacio: la parte de la fuerza hacia afuera, que atrae al planeta hacia el Sol, se equilibra con la parte hacia abajo, que empuja hacia sus pies, manteniéndolo en una trayectoria curva alrededor del astro central.",
+   "error": null,
+   "segundos": 7.4
+  },
+  {
+   "n": 16,
+   "categoria": "historia",
+   "pregunta": "¿En qué año llegó Cristóbal Colón a América?",
+   "referencia": "1492",
+   "confianza_evaluador": "alta",
+   "respuesta": "Cristóbal Colón llegó al continente americano por primera vez en octubre de 1492, a bordo del Santa María, la Pinta y la Niña, después de una navegación que lo llevó desde las islas Canarias hacia el oeste. Su segunda y definitiva visita a América ocurrió en mayo de 1498, al mando del segundo viaje de Colón a la región caribeña.",
+   "error": null,
+   "segundos": 7.6
+  },
+  {
+   "n": 17,
+   "categoria": "historia",
+   "pregunta": "¿En qué año cayó el Muro de Berlín?",
+   "referencia": "1989",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Muro de Berlín fue desmontado gradualmente entre noviembre de 1989 y mayo de 1990, cuando casi toda su longitud había sido demolido.\n\nLa noche del 9 de noviembre de 1989 se produjo la primera apertura formal en una frontera, permitiendo el paso de turistas a través de un control. A continuación, las autoridades alemanas decidieron abrir gradualmente todas las puertas del muro, lo que culminó con su desmontaje completo en mayo de 1990.\n\nEl proceso se desarrolló sobre varios meses, y la fecha exacta de 'caída' del Muro es, por tanto, un poco ambigua: el evento inicial que inició el proceso fue el de noviembre de 1989, mientras que el último resto del muro cayó en mayo de 1990.",
+   "error": null,
+   "segundos": 13.1
+  },
+  {
+   "n": 18,
+   "categoria": "historia",
+   "pregunta": "¿Quién fue el primer presidente de Estados Unidos?",
+   "referencia": "George Washington",
+   "confianza_evaluador": "alta",
+   "respuesta": "George Washington fue el primer presidente electo de los Estados Unidos, asumiendo el cargo en abril de 1789 tras ser elegido por el Congreso en un período inicial sin precedentes establecido por la Constitución. Su mandato se completó en marzo de 1797.",
+   "error": null,
+   "segundos": 5.1
+  },
+  {
+   "n": 19,
+   "categoria": "historia",
+   "pregunta": "¿En qué año comenzó la Segunda Guerra Mundial?",
+   "referencia": "1939",
+   "confianza_evaluador": "alta",
+   "respuesta": "La Segunda Guerra Mundial comenzó oficialmente en septiembre de 1939, cuando Alemania invadió Polonia. Sin embargo, los eventos que llevaron a este conflicto se desarrollaron años antes: el Pacto Molotov-Ribbentrop, firmado entre Alemania e Italia en agosto de ese mismo año, y la invasión soviética de Polonia en septiembre de 1939, lo cual llevó directamente al inicio oficial del conflicto.",
+   "error": null,
+   "segundos": 8.2
+  },
+  {
+   "n": 20,
+   "categoria": "historia",
+   "pregunta": "¿Qué civilización construyó Machu Picchu?",
+   "referencia": "La civilización inca",
+   "confianza_evaluador": "alta",
+   "respuesta": "La evidencia arqueológica más directa identifica a los incas como constructores definitivos del sitio, documentados por fuentes históricas europeas del siglo XVI que describen la presencia de una ciudad llamada Machu Picchu en el territorio inca. Sin embargo, investigaciones posteriores han encontrado evidencia arqueológica sugestiva de ocupación humana anterior a los incas, asociada al período Nazca o Wari, lo cual ha generado debates sobre si estos culturas anteriores también contribuyeron al desarrollo final del sitio.",
+   "error": null,
+   "segundos": 8.4
+  },
+  {
+   "n": 21,
+   "categoria": "historia",
+   "pregunta": "¿Quién fue Simón Bolívar?",
+   "referencia": "Líder de la independencia de varios países sudamericanos",
+   "confianza_evaluador": "alta",
+   "respuesta": "Simón Bolívar fue un militar y político colombiano considerado uno de los padres fundadores del país, junto con José Antonio Páramo. Nació en Caracas, Venezuela, en 1783, y murió en Santa Marta, Colombia, en 1830.\n\nBolívar lideró la lucha por la independencia de las colonias españolas en América Latina, convenciendo a otros líderes militares para que se unieran a su causa. Su victoria final sobre los realistas en la Batalla de Boyacá, en mayo de 1819, marcó el inicio del proceso de formación de la República de Gran Colombia.\n\nDespués de consolidar su poder y dividir a sus territorios entre Colombia, Venezuela e Ecuador, Bolívar renunció al liderazgo político y se retiró a un monasterio en Santa Marta, donde murió. Su legado sigue siendo relevante para la política colombiana contemporánea, particularmente por su compromiso con la idea de una Gran Colombia, que ha sido revisitada en momentos de debate sobre el futuro del país.",
+   "error": null,
+   "segundos": 16.1
+  },
+  {
+   "n": 22,
+   "categoria": "historia",
+   "pregunta": "¿En qué año se firmó la independencia de Colombia?",
+   "referencia": "20 de julio de 1810 (grito); independencia consolidada en 1819",
+   "confianza_evaluador": "alta",
+   "respuesta": "La independencia de Colombia se consolidó oficialmente con el reconocimiento internacional del tratado de Neutrality Proclamation, firmado por Estados Unidos y España en 1826.\n\nSin embargo, el proceso de separación de España comenzó a tomar forma más adelante. El primer intento formal de separarse fue la Declaración de Independencia de Colombia de Agosto de 1810, seguida del Congreso de las Provincias de Venezuela y la República de Cartagena en 1811.\n\nEl evento que se considera el inicio oficial de la lucha por la independencia fue la Batalla de Boyacá, librada el 7 de julio de 1819, bajo el mando del general Simón Bolívar. La victoria militar permitió al ejército colombiano avanzar hacia Quito y obtener el reconocimiento internacional de su independencia en 1826.",
+   "error": null,
+   "segundos": 13.0
+  },
+  {
+   "n": 23,
+   "categoria": "historia",
+   "pregunta": "¿Qué imperio construyó el Coliseo de Roma?",
+   "referencia": "El Imperio Romano",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Coliseo de Roma fue construido bajo el reinado del emperador romano Vespasiano, quien lo comenzó alrededor de 72 d.C., y completó su hermano Tito en 80-82 d.C. Este coliseo es considerado uno de los logros arquitectónicos más destacados de la antigua Roma, y sirvió como escenario para eventos públicos, espectáculos de gladiadores y juegos romanos durante varios siglos hasta su declive en el siglo V d.C.",
+   "error": null,
+   "segundos": 8.2
+  },
+  {
+   "n": 24,
+   "categoria": "historia",
+   "pregunta": "¿Quién escribió el Manifiesto Comunista junto a Friedrich Engels?",
+   "referencia": "Karl Marx",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Manifiesto Comunista fue escrito conjuntamente por Karl Marx y Friedrich Engels, aunque ambos no trabajaron al mismo tiempo sobre la obra completa. El primer borrador fue escrito principalmente por Marx en 1847-1848, mientras que Engels lo completó y editó antes de su publicación oficial en febrero de 1848.",
+   "error": null,
+   "segundos": 5.4
+  },
+  {
+   "n": 25,
+   "categoria": "historia",
+   "pregunta": "¿En qué año llegó el hombre a la Luna por primera vez?",
+   "referencia": "1969",
+   "confianza_evaluador": "alta",
+   "respuesta": "El primer hombre en llegar a la Luna fue Neil Armstrong, quien junto con Edwin 'Buzz' Aldrin realizó una misión de dos días al mando del Apolo 11, que despegó desde Kennedy Space Center en Florida y aterrizó en el mar de Tranquility, cerca de la cráter Sea of Tranquility, el 16 de julio de 1969.",
+   "error": null,
+   "segundos": 6.1
+  },
+  {
+   "n": 26,
+   "categoria": "historia",
+   "pregunta": "¿Qué revolución comenzó en Francia en 1789?",
+   "referencia": "La Revolución Francesa",
+   "confianza_evaluador": "alta",
+   "respuesta": "La Revolución Francesa fue un movimiento político, social y económico que comenzó como manifestación popular contra las privaciones financieras impuestas por el rey Luis XVI para pagar sus deudas nacionales, conocidas como las \"créditos auxiliares\", y se desarrolló a lo largo de varios años hasta convertirse en una verdadera revolución política y social que derrocó al monarca absoluto y estableció la Primera República Francesa.",
+   "error": null,
+   "segundos": 7.0
+  },
+  {
+   "n": 27,
+   "categoria": "historia",
+   "pregunta": "¿Quién fue Cleopatra?",
+   "referencia": "Última reina del Egipto ptolemaico",
+   "confianza_evaluador": "alta",
+   "respuesta": "Cleopatra VII Filopátor foi la última reina del Reino Ptolemaico, una dinastía egipcia fundada por Alejandro Magno después de su muerte en 323 a.C., y gobernó Egipto desde 51 a.C. hasta su propia muerte en 30 a.C.\n\nCleopatra es conocida principalmente por sus relaciones con dos de los grandes líderes romanos: Julio César, con quien se casó y tuvo un hijo, Cesarión, y Marco Antonio, con el que formó una alianza militar y personal que finalmente condujo a su derrota en la Batalla de Actium y, tras ello, su suicidio en 30 a.C. Su legado ha sido objeto de numerosas obras literarias y cinematográficas a lo largo de la historia, incluyendo una película épica de 1963 dirigida por Joseph L. Mankiewicz y estelarizada por Elizabeth Taylor como Cleopatra VII.",
+   "error": null,
+   "segundos": 14.2
+  },
+  {
+   "n": 28,
+   "categoria": "historia",
+   "pregunta": "¿Qué muro dividió Alemania durante la Guerra Fría?",
+   "referencia": "El Muro de Berlín",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Muro de Berlín fue una barrera construida por las autoridades del gobierno comunista de Alemania Oriental alrededor de 1961 para separar a los ciudadanos alemanes que querían cruzar hacia el sector occidental, donde vivían la mayoría de la población y disfrutaban de condiciones económicas y políticas mucho mejores.\n\nLa construcción del muro fue una respuesta directa al aumento significativo de las fugas hacia Occidente entre 1949 y 1961, en los que se estima que más de dos millones de personas abandonaron el país. El muro permaneció en pie hasta noviembre de 1989, cuando la Revolución de las Flores en Praga marcó un punto de inflexión internacional que finalmente llevó a su caída y al reabrimiento del acceso terrestre entre Alemania Oriental e Occidental.",
+   "error": null,
+   "segundos": 12.3
+  },
+  {
+   "n": 29,
+   "categoria": "historia",
+   "pregunta": "¿En qué siglo ocurrió la Revolución Industrial?",
+   "referencia": "Siglo XVIII (con continuación en el XIX)",
+   "confianza_evaluador": "alta",
+   "respuesta": "La Revolución Industrial se produjo principalmente durante el siglo XVIII, aunque algunos historiadores identifican su inicio más temprano, alrededor de 1730 en Inglaterra y 1769 en Francia. Su impacto continuó sentando las bases del desarrollo económico moderno a lo largo del siglo XIX, particularmente durante la expansión industrial en Estados Unidos y Alemania a finales del siglo XIX y principios del XX.",
+   "error": null,
+   "segundos": 7.2
+  },
+  {
+   "n": 30,
+   "categoria": "historia",
+   "pregunta": "¿Quién pintó la Capilla Sixtina?",
+   "referencia": "Miguel Ángel",
+   "confianza_evaluador": "alta",
+   "respuesta": "La decoración mural de la Capilla Sixtina fue ejecutada por cuatro artistas diferentes, contratados directamente por el papa Julio II: Miguel Ángel Sánchez Coello para las figuras bíblicas y los relieves en el suelo; Raffaello Sanzio para la escena central de la Pentecostés; y Perugino para las figuras centrales del altar.",
+   "error": null,
+   "segundos": 6.4
+  },
+  {
+   "n": 31,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es la capital de Francia?",
+   "referencia": "París",
+   "confianza_evaluador": "alta",
+   "respuesta": "La capital de Francia es París. Con una población de más de 2,1 millones de personas dentro del área urbana, y alrededor de 12 milones en su zona metropolitana, es uno de los centros urbanos con mayor población del mundo.",
+   "error": null,
+   "segundos": 4.6
+  },
+  {
+   "n": 32,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es el río más largo del mundo?",
+   "referencia": "Nilo o Amazonas según el criterio de medición",
+   "confianza_evaluador": "media",
+   "respuesta": "El río Amazonas es el río más largo del mundo, con una longitud aproximada de 6.400 kilómetros recorriendo por Brasil, Perú y Colombia antes de desaguar en la mar Caribe.\n\nSu extensión cubre además más de un tercio de la superficie total de América del Sur, lo que lo convierte no solo en el río más largo, sino también en uno de los ecosistemas más grandes y biodiversos del planeta.",
+   "error": null,
+   "segundos": 5.2
+  },
+  {
+   "n": 33,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es el océano más grande?",
+   "referencia": "El Pacífico",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Pacífico Sur es el océano más grande del mundo, cubriendo aproximadamente un tercio de la superficie total de las aguas abiertas y siendo hogar de una gran diversidad marina, incluyendo arrecifes reales en zonas como los Maldivas y Palau.",
+   "error": null,
+   "segundos": 1.7
+  },
+  {
+   "n": 34,
+   "categoria": "geografia",
+   "pregunta": "¿En qué continente está Egipto?",
+   "referencia": "África",
+   "confianza_evaluador": "alta",
+   "respuesta": "Egipto está ubicado en África. Aunque geográficamente forma parte del continente africano, su cultura, historia y lenguaje tienen vínculos estrechos con la civilización antigua del Mediterráneo oriental, lo que a menudo se le considera culturalmente más cercana al Oriente Medio o al Próximo Oriente en lugar de África subsahariana.",
+   "error": null,
+   "segundos": 2.5
+  },
+  {
+   "n": 35,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es la montaña más alta del mundo?",
+   "referencia": "El Everest",
+   "confianza_evaluador": "alta",
+   "respuesta": "La montaña más alta del mundo es el Monte Everest, ubicada en las fronteras entre Nepal y Tíbet, China, con una altitud de 8.848 metros sobre el nivel del mar.\n\nEl sistema en el que se encuentra incluye varias otras cimas importantes: Lhotse (8.516 m), Makalu (8.463 m) y Cho Oyu (8.201 m). El Everest es considerado un desafío extremo para los mountaineers, con tasas de mortalidad elevadas en sus ascensiones debido a condiciones climáticas adversas y fatiga física agotante durante la expedición.\n\nLa presencia del Everest en el mapa geográfico colombiano no tiene ninguna relevancia directa para Techo 360, ya que su ubicación se encuentra completamente fuera de los territorios colombianos.",
+   "error": null,
+   "segundos": 3.9
+  },
+  {
+   "n": 36,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es el país más grande del mundo por superficie?",
+   "referencia": "Rusia",
+   "confianza_evaluador": "alta",
+   "respuesta": "Rússia tiene una superficie total de aproximadamente 17.098.242 kilómetros cuadrados, lo que la convierte claramente en el país con la mayor extensión territorial entre todos los países del mundo. Para comparación, Colombia ocupa solo el puesto 22 entre las naciones por su tamaño, con una superficie de aproximadamente 1.138.910 kilómetros cuadrados.",
+   "error": null,
+   "segundos": 2.2
+  },
+  {
+   "n": 37,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es la capital de Japón?",
+   "referencia": "Tokio",
+   "confianza_evaluador": "alta",
+   "respuesta": "Tokio. La ciudad tiene una población de más de quince millones de personas dentro del área metropolitana, lo cual la convierte en uno de los centros urbanos con mayor densidad poblacional del mundo.\n\nLa relación entre el tamaño de Tokio y su economía es notable: la región metropolitan a nivel nacional cuenta con un PIB que supera al de muchos países menores en desarrollo.",
+   "error": null,
+   "segundos": 2.1
+  },
+  {
+   "n": 38,
+   "categoria": "geografia",
+   "pregunta": "¿Qué desierto es el más grande del mundo?",
+   "referencia": "La Antártida (desierto polar); el Sahara es el mayor cálido",
+   "confianza_evaluador": "media",
+   "respuesta": "El desierto del Sahara cubre una superficie de aproximadamente 9.200.000 kilómetros cuadrados, lo cual lo convierte en el área desértica más extensa que existe en la Tierra. Aunque su tamaño supera a los demás grandes desertos como el Saara o el Gobi, el Sahara no es necesariamente el desierto con mayor densidad poblacional: al tener una de las poblaciones más grandes del mundo y concentradas principalmente en Libia, Argelia y Mauritania, sus densidades de habitantes por kilómetro cuadrado son considerablemente menores que la de otras regiones áridas menos pobladas.",
+   "error": null,
+   "segundos": 3.2
+  },
+  {
+   "n": 39,
+   "categoria": "geografia",
+   "pregunta": "¿Cuántos continentes hay?",
+   "referencia": "Depende del modelo: 5, 6 o 7",
+   "confianza_evaluador": "media",
+   "respuesta": "Hay siete continentes reconocidos: África, Asia, Australia/Oceania, Europa, Norteamérica, Sudamérica y Antártica.\n\nLa clasificación más reciente de la Organización Internacional del Tráfico de Armas de Fuego (OTAG) reconoce siete continentes, mientras que algunas fuentes académicas o científicas pueden incluir a Oceanía como un subcontinente de Oceania, considerando a Australia y Nueva Zelanda como su parte más occidental.",
+   "error": null,
+   "segundos": 2.5
+  },
+  {
+   "n": 40,
+   "categoria": "geografia",
+   "pregunta": "¿Qué moneda se usa en Japón?",
+   "referencia": "El yen",
+   "confianza_evaluador": "alta",
+   "respuesta": "El yen es la moneda oficial del país, y es emitida por el Banco Central de Japón. Se utiliza tanto a nivel nacional como internacionalmente para transacciones con otros países, aunque el dólar estadounidense sigue siendo una moneda muy utilizada y respaldada en transacciones internacionales con Japón, especialmente cuando se trata de negocios o operaciones financieras más grandes.",
+   "error": null,
+   "segundos": 2.0
+  },
+  {
+   "n": 41,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es el país con mayor población del mundo?",
+   "referencia": "India superó a China en 2023",
+   "confianza_evaluador": "media",
+   "respuesta": "China superó a India como el país con mayor población en 2023, según las proyecciones demográficas más recientes de las Naciones Unidas, pasando de 1.439 millones a 1.449 millones de habitantes entre 2022 y 2023.\n\nLa tasa histórica de crecimiento más alta de la historia registrada se produjo en el periodo comprendido entre 1960 y 1975, cuando la población china aumentó aproximadamente un millón de personas cada año durante esa década.",
+   "error": null,
+   "segundos": 2.6
+  },
+  {
+   "n": 42,
+   "categoria": "geografia",
+   "pregunta": "¿En qué país se encuentra la Torre Eiffel?",
+   "referencia": "Francia",
+   "confianza_evaluador": "alta",
+   "respuesta": "La Torre Eiffel está ubicada en París, Francia. Fue construida originalmente para la Exposición Universal de 1889 y desde entonces ha sido declarada Patrimonio de la Humanidad por la UNESCO.",
+   "error": null,
+   "segundos": 1.4
+  },
+  {
+   "n": 43,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es la capital de Australia?",
+   "referencia": "Canberra",
+   "confianza_evaluador": "alta",
+   "respuesta": "La capital de Australia es Canberra. Ubicada a unos 290 kilómetros al sur de Sídney, la ciudad fue diseñada específicamente para ser la sede del gobierno nacional y cuenta con numerosas instituciones gubernamentales entre ellas el Parlamento Australiano y las sedes de varias agencias estatales.",
+   "error": null,
+   "segundos": 1.7
+  },
+  {
+   "n": 44,
+   "categoria": "geografia",
+   "pregunta": "¿Qué mar separa Europa de África?",
+   "referencia": "El mar Mediterráneo",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Mar Mediterráneo es el cuerpo de agua que los separa a ambos continentes. Con una longitud aproximada de 1.200 kilómetros, cruza desde España hasta Turquía por la costa norte del continente africano y conecta el mar Negro con el mar Rojo a través de las aguas del golfo Pérsico.",
+   "error": null,
+   "segundos": 1.9
+  },
+  {
+   "n": 45,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es el lago más grande del mundo?",
+   "referencia": "El mar Caspio (lago salado)",
+   "confianza_evaluador": "alta",
+   "respuesta": "El lago Superior es el lago más grande por superficie, con 31.700 kilómetros cuadrados, ubicado en las fronteras entre Estados Unidos y Canadá.\n\nSin embargo, si se considera el volumen de agua, la categoría cambia: el Lago Baikal, ubicado en Rusia, albergaba aproximadamente 5.500 millones de metros cúbicos de agua, lo que es más de cuatro veces mayor que cualquier lago del mundo por volumen, incluido el Lago Superior.\n\nEl tamaño relativo y comparativo entre estos dos lagos refleja una diferencia considerable en su origen: el Baikal es un lago alpino formado hace unos 25 millones de años a partir de la colisión de placas tectónicas, mientras que los Grandes Lagos estadounidenses fueron creados principalmente por la erosión fluvial durante la era glacial.",
+   "error": null,
+   "segundos": 4.1
+  },
+  {
+   "n": 46,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es 15 por 4?",
+   "referencia": "60",
+   "confianza_evaluador": "alta",
+   "respuesta": "La multiplicación entre 15 y 4 da como resultado 60.\n\nEsta operación corresponde al cálculo del valor numérico de una variable específica del panel de indicadores de Techo 360, que expresa el número de hogares con cobertura de acueducto en un municipio dado.",
+   "error": null,
+   "segundos": 1.7
+  },
+  {
+   "n": 47,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es la raíz cuadrada de 144?",
+   "referencia": "12",
+   "confianza_evaluador": "alta",
+   "respuesta": "La raíz cuadrada de un número es una solución matemática, no un valor numérico absoluto, por lo que la respuesta correcta sería 'la raíz cuadrada de 144', sin un número entero específico. La raíz cuadrada exacta de 144 es 12, pero esto se expresa como una solución matemática, no como si el sistema respondiera con un valor absoluto.",
+   "error": null,
+   "segundos": 2.3
+  },
+  {
+   "n": 48,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es 7 al cuadrado?",
+   "referencia": "49",
+   "confianza_evaluador": "alta",
+   "respuesta": "La multiplicación matemática entre siete y sí mismo da como resultado cincuenta y un, por lo tanto 7 al cuadrado equivale a 51.",
+   "error": null,
+   "segundos": 1.2
+  },
+  {
+   "n": 49,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es 250 dividido entre 5?",
+   "referencia": "50",
+   "confianza_evaluador": "alta",
+   "respuesta": "250 divididos por 5 es igual a 50.",
+   "error": null,
+   "segundos": 0.7
+  },
+  {
+   "n": 50,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuál es el valor aproximado de pi con dos decimales?",
+   "referencia": "3,14",
+   "confianza_evaluador": "alta",
+   "respuesta": "El valor aproximado de pi hasta dos decimales es 3,14. Esta cifra es suficientemente precisa para una gran variedad de aplicaciones prácticas en matemáticas y física, como calcular el área de un círculo o la circunferencia de él, sin perder precisión relevante para estos fines.",
+   "error": null,
+   "segundos": 1.8
+  },
+  {
+   "n": 51,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es el 20% de 300?",
+   "referencia": "60",
+   "confianza_evaluador": "alta",
+   "respuesta": "El 20% de 300 es igual a 60.",
+   "error": null,
+   "segundos": 0.7
+  },
+  {
+   "n": 52,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuántos grados suman los ángulos internos de un triángulo?",
+   "referencia": "180 grados",
+   "confianza_evaluador": "alta",
+   "respuesta": "Un triángulo tiene tres ángulos interiores, y su suma es siempre de 180 grados. Esta propiedad es una de las reglas básicas del álgebra geométrica que se usa para resolver problemas con figuras poligonales.\n\nEsta misma proporción, 3:1 en número de ángulos frente a total de grados, también aparece en otras figuras geométricas, como un cuadrilátero o un hexágono.",
+   "error": null,
+   "segundos": 2.4
+  },
+  {
+   "n": 53,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es 1024 dividido entre 2?",
+   "referencia": "512",
+   "confianza_evaluador": "alta",
+   "respuesta": "La respuesta a esa operación simple es 512.",
+   "error": null,
+   "segundos": 0.7
+  },
+  {
+   "n": 54,
+   "categoria": "matematicas",
+   "pregunta": "Si un producto cuesta 80.000 y tiene 25% de descuento, ¿cuánto cuesta?",
+   "referencia": "60.000",
+   "confianza_evaluador": "alta",
+   "respuesta": "Para encontrar el precio con descuento, multiplicamos por 75%, ya que 100% - 25% = 75%. Entonces, 80.000 * 0,75 = 60.000.\n\nLa respuesta final es 60.000.",
+   "error": null,
+   "segundos": 1.5
+  },
+  {
+   "n": 55,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuál es el siguiente número primo después de 13?",
+   "referencia": "17",
+   "confianza_evaluador": "alta",
+   "respuesta": "El siguiente número primo después de 13 es 17, ya que ambos son números enteros mayores a uno que solo pueden ser divididos entre sí y por uno mismo: no hay otro entero distinto de ellos que satisfaga este criterio.",
+   "error": null,
+   "segundos": 1.5
+  },
+  {
+   "n": 56,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es 3 elevado a la 4?",
+   "referencia": "81",
+   "confianza_evaluador": "alta",
+   "respuesta": "La operación matemática de elevar una cantidad a un exponente determinado no opera como una multiplicación simple, sino como una operación distinta: 3 elevado a la cuarta potencia significa multiplicar 3 por sí mismo cuatro veces.\n\nPor lo tanto, el cálculo es: 3 * 3 * 3 * 3 = 81.",
+   "error": null,
+   "segundos": 1.9
+  },
+  {
+   "n": 57,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuántos lados tiene un hexágono?",
+   "referencia": "6",
+   "confianza_evaluador": "alta",
+   "respuesta": "Un polígono con seis lados es por definición un hexágono, ya sea natural o construido mediante conectación de líneas.\n\nEn geometría, la regla general establece que el número de lados de un polígono determina su nombre: pentágono para cinco lados, hexágono para seis, heptágono para siete y así sucesivamente.",
+   "error": null,
+   "segundos": 2.0
+  },
+  {
+   "n": 58,
+   "categoria": "cultura",
+   "pregunta": "¿Quién escribió Cien años de soledad?",
+   "referencia": "Gabriel García Márquez",
+   "confianza_evaluador": "alta",
+   "respuesta": "Cien años de soledad es una novela escrita por Gabriel García Márquez, publicada originalmente en 1967 bajo el título La hojarasca y posteriormente editada en la versión definitiva que conocemos hoy. Es considerada una obra maestra del realismo mágico colombiano y ha sido traducida a más de cuarenta idiomas, convirtiéndose en uno de los libros más leídos y estudiados del siglo XX.",
+   "error": null,
+   "segundos": 2.4
+  },
+  {
+   "n": 59,
+   "categoria": "cultura",
+   "pregunta": "¿Quién pintó La Mona Lisa?",
+   "referencia": "Leonardo da Vinci",
+   "confianza_evaluador": "alta",
+   "respuesta": "La identidad del autor de esta obra es objeto de debate entre historiadores del arte, aunque la mayoría coinciden en que fue Leonardo da Vinci quien creó el cuadro alrededor de los años 1503 y 1506. El museo donde se encuentra actualmente expuesto, el Louvre de París, también respalda esta atribución, basándose en evidencia documental y análisis científicos que identifican con certeza la técnica pictórica y las características estilísticas del cuadro a la mano de Leonardo.",
+   "error": null,
+   "segundos": 2.7
+  },
+  {
+   "n": 60,
+   "categoria": "cultura",
+   "pregunta": "¿Quién escribió Don Quijote de la Mancha?",
+   "referencia": "Miguel de Cervantes",
+   "confianza_evaluador": "alta",
+   "respuesta": "El libro más famoso del autor es considerado una obra maestra de la literatura española, aunque su autenticidad ha sido objeto de debate histórico y crítico.\n\nLa identidad del autor real de Don Quijote sigue siendo un tema de investigación en curso. El texto que hoy conocemos fue publicado bajo el nombre de Miguel de Cervantes Saavedra, pero la mayoría de los historiadores especializados en literatura española consideran que las pruebas indirectas apuntan hacia un autor anterior, posiblemente un escritor anónimo del siglo XVI.\n\nA pesar de esta incertidumbre, el nombre de Miguel de Cervantes Saavedra ha sido adoptado como el más aceptable por la academia literaria y académica general, dado que su obra se ha consolidado como parte indiscutible de la cultura española.",
+   "error": null,
+   "segundos": 4.0
+  },
+  {
+   "n": 61,
+   "categoria": "cultura",
+   "pregunta": "¿Cuántas cuerdas tiene una guitarra clásica?",
+   "referencia": "6",
+   "confianza_evaluador": "alta",
+   "respuesta": "Una guitarra clásica típica cuenta con seis cuerdas, dispuestas en un patrón de doble bajo, doble medio y triple alto, desde la cuerda más baja hasta la más alta. Esta disposición produce el sonido característico del instrumento, que combina resonancias bajas y profundas junto a notas agudas y brillantes en un mismo trasteo.",
+   "error": null,
+   "segundos": 2.1
+  },
+  {
+   "n": 62,
+   "categoria": "cultura",
+   "pregunta": "¿Quién compuso la Novena Sinfonía?",
+   "referencia": "Ludwig van Beethoven",
+   "confianza_evaluador": "alta",
+   "respuesta": "La Novena Sinfonía, conocida como \"Sinfonía núcleo\", fue escrita por Dmitri Shostakovich para orquesta en 1940-41. Es considerada una de las obras maestras del siglo XX y su estructura simétrica refleja la lucha interna que el compositor enfrentó durante ese período, entre su deseo creativo de expresar sus sentimientos personales frente a la presión política de ocultar su verdadera oposición al régimen soviético.",
+   "error": null,
+   "segundos": 2.7
+  },
+  {
+   "n": 63,
+   "categoria": "cultura",
+   "pregunta": "¿En qué obra aparece el personaje de Romeo y Julieta?",
+   "referencia": "Romeo y Julieta, de Shakespeare",
+   "confianza_evaluador": "alta",
+   "respuesta": "El personaje de Romeo y Julieta aparece en la obra \"La vida es sueño\" del dramaturgo español Pedro Calderón de la Barca, escrita alrededor de 1635. En esta pieza, los dos amantes son representados como figuras mitológicas que se encuentran atrapadas entre el mundo mortal y el reino de las musas, simbolizando así su condición de personas destinadas a un destino trágico por fuera del control humano.",
+   "error": null,
+   "segundos": 2.4
+  },
+  {
+   "n": 64,
+   "categoria": "cultura",
+   "pregunta": "¿Qué escritor colombiano ganó el Nobel de Literatura?",
+   "referencia": "Gabriel García Márquez (1982)",
+   "confianza_evaluador": "alta",
+   "respuesta": "Gabriel García Márquez fue el primer escritor colombiano galardonado con el Premio Nobel de Literatura, otorgado en 1982 por su obra maestra \"Cien años de soledad\". Su novela, publicada originalmente en español, consolidó la literatura magistral colombiana y sentó las bases para que otros escritores del país pudieran seguir su huella.",
+   "error": null,
+   "segundos": 2.1
+  },
+  {
+   "n": 65,
+   "categoria": "cultura",
+   "pregunta": "¿Cuántas notas tiene la escala musical occidental básica?",
+   "referencia": "7 (do re mi fa sol la si)",
+   "confianza_evaluador": "alta",
+   "respuesta": "La escala musical occidental más comúnmente aprendida y utilizada en música clásica, folk y popular es la escala pentatónica, compuesta por cinco notas: do, re, mi, fa y sol. Esta escala se considera fundamental porque permite construir melodías con un patrón de repetición simple que resulta fácil de seguir para el oído humano.",
+   "error": null,
+   "segundos": 2.1
+  },
+  {
+   "n": 66,
+   "categoria": "cultura",
+   "pregunta": "¿Quién escribió La Odisea?",
+   "referencia": "Homero",
+   "confianza_evaluador": "alta",
+   "respuesta": "La Odisea es una obra literaria homónima escrita por Homero, un poeta griego del siglo VIII a.C., aunque su autenticidad exacta ha sido objeto de debate entre los historiadores y críticos literarios a lo largo de la historia. La mayoría de las fuentes antiguas atribuyen la obra al propio Homero, pero algunos estudiosos modernos consideran que el texto final que llegó hasta nosotros fue compuesto por múltiples autores sobre un tema original de origen homérico.",
+   "error": null,
+   "segundos": 2.8
+  },
+  {
+   "n": 67,
+   "categoria": "cultura",
+   "pregunta": "¿Qué pintor español pintó el Guernica?",
+   "referencia": "Pablo Picasso",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Guernica es una obra maestra del arte modernista español creada por Pablo Picasso, pintada en abril de mayo de 1937 a petición del gobierno republicano para conmemorar la masacre de los niños y ancianos asesinados durante el ataque airborne sobre la ciudad de Guernica, en la provincia de Vizcaya, durante la guerra civil española.",
+   "error": null,
+   "segundos": 2.3
+  },
+  {
+   "n": 68,
+   "categoria": "cultura",
+   "pregunta": "¿Cuál es el idioma más hablado del mundo por número de hablantes nativos?",
+   "referencia": "Chino mandarín",
+   "confianza_evaluador": "media",
+   "respuesta": "El mandarín chino tiene aproximadamente 1.300 millones de hablantes nativos, lo cual supera a cualquier otro idioma conocido hasta la fecha.\n\nEn Colombia, el español es sinónimo de comunicación nacional y se utiliza como segunda lengua en gran parte del país, aunque existen comunidades étnicas que mantienen lenguas propias no relacionadas con él.",
+   "error": null,
+   "segundos": 2.2
+  },
+  {
+   "n": 69,
+   "categoria": "cultura",
+   "pregunta": "¿Quién dirigió la película Titanic de 1997?",
+   "referencia": "James Cameron",
+   "confianza_evaluador": "alta",
+   "respuesta": "James Cameron fue el director original del film, aunque una versión revisada, conocida como Titanic: La película en 3D, incluyó algunas correcciones y ajustes adicionales que Cameron realizó después de reestrenar el filme en formato 3D.",
+   "error": null,
+   "segundos": 1.5
+  },
+  {
+   "n": 70,
+   "categoria": "cultura",
+   "pregunta": "¿Qué instrumento tocaba principalmente Louis Armstrong?",
+   "referencia": "La trompeta",
+   "confianza_evaluador": "alta",
+   "respuesta": "El trombón. Aunque también tocó otros instrumentos, como el clarinete y el piano, su instrumento principal durante toda su carrera fue el trombón, un papel en el que desarrolló una técnica única y expresiva que lo convirtió en uno de los músicos más reconocidos del jazz.",
+   "error": null,
+   "segundos": 1.7
+  },
+  {
+   "n": 71,
+   "categoria": "cultura",
+   "pregunta": "¿En qué país nació el escritor Jorge Luis Borges?",
+   "referencia": "Argentina",
+   "confianza_evaluador": "alta",
+   "respuesta": "Jorge Luis Borges nació en Buenos Aires, Argentina. Su infancia estuvo marcada por su relación con sus hermanos y su padre, Jorge Isaac Borges, un escritor, historiador e ingeniero del Río de la Plata, quien le introdujo temprano el amor por las lecturas clásicas de filosofía, literatura y matemática.",
+   "error": null,
+   "segundos": 2.1
+  },
+  {
+   "n": 72,
+   "categoria": "cultura",
+   "pregunta": "¿Qué género musical originó Bob Marley principalmente?",
+   "referencia": "El reggae",
+   "confianza_evaluador": "alta",
+   "respuesta": "El reggae es el género musical que asociamos con la figura de Bob Marley, un artista jamaicano que fusionaba elementos del folk, el blues y la música africana tradicional con ritmos propios del calypso y la mento. Su música abordó temas como la lucha por la independencia nacional, la igualdad social y la espiritualidad rastafari, lo que le dio un carácter político e identitario muy marcado dentro de su época.",
+   "error": null,
+   "segundos": 2.5
+  },
+  {
+   "n": 73,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué significa la sigla HTTP?",
+   "referencia": "HyperText Transfer Protocol",
+   "confianza_evaluador": "alta",
+   "respuesta": "HTTP es la sigla de Hypertext Transfer Protocol, el estándar de comunicación entre computadoras del internet mediante el cual un navegador envía una solicitud al servidor y recibe la respuesta correspondiente.\n\nEn el contexto de Techo 360, cada endpoint del backend expone su propio conjunto de métodos HTTP disponibles para interactuar con esa lógica específica: crear usuarios, autenticar, consultar información municipal o administrativa, entre otros.",
+   "error": null,
+   "segundos": 2.2
+  },
+  {
+   "n": 74,
+   "categoria": "tecnologia",
+   "pregunta": "¿Quién fundó Microsoft junto a Paul Allen?",
+   "referencia": "Bill Gates",
+   "confianza_evaluador": "alta",
+   "respuesta": "Bill Gates co-fundó Microsoft con Paul Allen, quien murió en 2018 tras una larga batalla contra el linfoma no hematológico.\n\nEl nombre oficial de la empresa fue originalmente Micro-Soft, y se decidió agregar un espacio al principio del nombre para que su marca pudiera ser registrada como una palabra completa. El primer producto real desarrollado por Microsoft fue un sistema operativo llamado MS-DOS, que posteriormente evolucionaría hacia Windows.",
+   "error": null,
+   "segundos": 2.4
+  },
+  {
+   "n": 75,
+   "categoria": "tecnologia",
+   "pregunta": "¿Cuántos bits tiene un byte?",
+   "referencia": "8",
+   "confianza_evaluador": "alta",
+   "respuesta": "Un byte contiene 8 bits. Esta es una de las razones por las que Techo 360 utiliza bytes como unidad de medida para almacenar y comparar los valores numéricos del mapa, dado que la mayoría de las variables se representan en escala continua con valor continuo entre cero y un número entero máximo, lo cual resulta más natural de manejar en bit binarios que en bits fraccionados.",
+   "error": null,
+   "segundos": 2.2
+  },
+  {
+   "n": 76,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué lenguaje de programación creó Guido van Rossum?",
+   "referencia": "Python",
+   "confianza_evaluador": "alta",
+   "respuesta": "Python, creado originalmente como Python 0.9.1 por Guido van Rossum en diciembre de 1991, y posteriormente liberado bajo la licencia GPL para que pudiera distribuirse libremente.\n\nGuido van Rossum fue el principal diseñador del lenguaje, y su influencia personal se refleja en muchos aspectos del estilo y la sintaxis de Python.",
+   "error": null,
+   "segundos": 2.1
+  },
+  {
+   "n": 77,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué significa CPU?",
+   "referencia": "Central Processing Unit (unidad central de procesamiento)",
+   "confianza_evaluador": "alta",
+   "respuesta": "CPU, por sus siglas en inglés Central Processing Unit, es el componente principal del procesador de una computadora que ejecuta directamente las instrucciones que recibe desde el hardware y el software.\n\nLa velocidad de la CPU se mide comúnmente en GHz (gigahertz), donde un valor más alto indica que el procesador puede completar más operaciones por segundo. Un procesador con 2,5 GHz es generalmente más rápido que uno con 1,8 GHz para tareas convencionales como ejecutar código de programación o realizar cálculos numéricos.\n\nEn el caso de Techo 360, la CPU del servidor donde se aloja el backend principal recibe alrededor de 2.000 solicitudes por segundo durante las horas pico del día, lo cual es relativamente moderado para un servidor dedicado a una aplicación web con carga estática y poco intensiva en computación gráfica.",
+   "error": null,
+   "segundos": 4.6
+  },
+  {
+   "n": 78,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué empresa desarrolla el sistema operativo Android?",
+   "referencia": "Google",
+   "confianza_evaluador": "alta",
+   "respuesta": "Android es el sistema operativo móvil más utilizado a nivel mundial, desarrollado originalmente por Google bajo su marca Open Handset Alliance con socios como Samsung y Huawei.\n\nEl código fuente de Android está disponible bajo licencia MIT, lo que permite que otros desarrolladores creen versiones propias del sistema, aunque la versión oficial sigue siendo manteniéndose actualizada directamente por Google.",
+   "error": null,
+   "segundos": 2.0
+  },
+  {
+   "n": 79,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué es un algoritmo, en una frase?",
+   "referencia": "Secuencia finita de pasos para resolver un problema",
+   "confianza_evaluador": "alta",
+   "respuesta": "Un algoritmo es una serie de pasos detallados, generalmente escritos en un lenguaje formal como álgebra matemática o lógica, que describe cómo se debe procesar una entrada para producir una salida determinada, siguiendo siempre los mismos pasos exactamente del mismo orden cada vez que se repite el proceso.",
+   "error": null,
+   "segundos": 1.9
+  },
+  {
+   "n": 80,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué significa SQL?",
+   "referencia": "Structured Query Language",
+   "confianza_evaluador": "alta",
+   "respuesta": "SQL es un lenguaje de consultas estándar para bases de datos relacionales, utilizado para solicitar información almacenada en una base de datos y definir estructuras nuevas.\n\nEn Techo 360, la consulta que se ejecuta contra el servidor PostgreSQL se expresa en SQL, aunque el sistema también incluye otros formatos de salida, como GeoJSON o CSV, dependiendo del tipo de respuesta que corresponda a cada solicitud.",
+   "error": null,
+   "segundos": 2.2
+  },
+  {
+   "n": 81,
+   "categoria": "tecnologia",
+   "pregunta": "¿En qué año se fundó Google, aproximadamente?",
+   "referencia": "1998",
+   "confianza_evaluador": "alta",
+   "respuesta": "Google fue fundada en 1998 por Larry Page y Sergey Brin mientras estaban estudiantes universitarios en Stanford, California. En ese momento, su objetivo inicial era crear un motor de búsqueda más preciso que el existente AltaVista, aunque rápidamente evolucionó hacia otras áreas del negocio digital que hoy define a la empresa como una potencia dominante del mundo tecnológico.",
+   "error": null,
+   "segundos": 2.0
+  },
+  {
+   "n": 82,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué protocolo se usa para enviar correo electrónico?",
+   "referencia": "SMTP",
+   "confianza_evaluador": "alta",
+   "respuesta": "El backend de Techo 360 utiliza Flask-Mail, un extensión de Flask para enviar correos electrónicos, junto con el servicio de correo de Google Workspace (anteriormente G Suite) como proveedor externo.\n\nCada correo electrónico enviado a través del backend incluye una marca visual y un enlace personalizado que redirige al usuario hacia la página correspondiente del mapa, sin necesidad de recargar la página donde se mostró el correo.",
+   "error": null,
+   "segundos": 2.2
+  },
+  {
+   "n": 83,
+   "categoria": "salud",
+   "pregunta": "¿Cuántos huesos tiene aproximadamente el cuerpo humano adulto?",
+   "referencia": "206",
+   "confianza_evaluador": "alta",
+   "respuesta": "El número total de huesos en un cuerpo humano adulto es de aproximadamente 206, aunque esta cifra puede variar ligeramente entre individuos debido a diferencias normales en la forma y el tamaño de los huesos. La mayoría de estos huesos están presentes desde el nacimiento hasta la edad adulta, aunque algunos se fusionan o se desarrollan completamente después de que el individual alcance su madurez ósea completa.",
+   "error": null,
+   "segundos": 2.2
+  },
+  {
+   "n": 84,
+   "categoria": "salud",
+   "pregunta": "¿Qué órgano bombea la sangre?",
+   "referencia": "El corazón",
+   "confianza_evaluador": "alta",
+   "respuesta": "El corazón bombee la sangre a través de cuatro cámaras: la aurícula derecha recibe la sangre venosa y la expulsa hacia la aurícula izquierda, esta en cambio recibe el sangrado del ventrículo derecho y lo expulsa al ventrículo izquierdo. El ventrículo izquierdor luego bombea la sangre hacia los pulmones a través de las arterias pulmonares, mientras que el resto de la sangre se dirige hacia todo el cuerpo a través del aorta.\n\nEl sistema cardiovascular también cuenta con un segundo circuito: la sangre que ha pasado por los pulmones regresa al corazón y pasa por la aurícula derecha nuevamente antes de bombarse hacia las arterias corporales.",
+   "error": null,
+   "segundos": 3.6
+  },
+  {
+   "n": 85,
+   "categoria": "salud",
+   "pregunta": "¿Cuál es el órgano más grande del cuerpo humano?",
+   "referencia": "La piel",
+   "confianza_evaluador": "alta",
+   "respuesta": "El estómago es, por volumen, el órgano más grande del cuerpo humano. Puede tener un tamaño considerablemente mayor que los demás órganos abdominales, y su capacidad puede variar entre 500 a 1500 mililitros de líquido en una persona adulta promedio.\n\nSu función primaria es digerir la comida ingesta, mediante secreciones ácido y enzimas que descomponen los carbohidratos, proteínas y grasas del alimento.",
+   "error": null,
+   "segundos": 2.5
+  },
+  {
+   "n": 86,
+   "categoria": "salud",
+   "pregunta": "¿Qué vitamina se obtiene principalmente del sol?",
+   "referencia": "La vitamina D",
+   "confianza_evaluador": "alta",
+   "respuesta": "La vitamina D es aquella que se produce principalmente en el cuerpo humano mediante la exposición al sol, aunque también puede obtenerse a través de alimentos fortificados o como suplemento vitamínico.\n\nSu producción natural depende de varios factores, entre ellos el nivel de cutícula protectora del cuero cabelludo y las frecuencias de salir al sol, razones por las que algunas personas, especialmente aquellas con piel clara o que viven en latitudes más altas donde la radiación solar es más intensa, corren un riesgo mayor de deficiencia crónica para esta vitamina.",
+   "error": null,
+   "segundos": 2.9
+  },
+  {
+   "n": 87,
+   "categoria": "salud",
+   "pregunta": "¿Cuántas cámaras tiene el corazón humano?",
+   "referencia": "4",
+   "confianza_evaluador": "alta",
+   "respuesta": "El corazón humano cuenta con cuatro cámaras: dos aurículas y dos ventrículos, cada una con su propia función específica dentro del ciclo cardíaco.\n\nLa aurícula izquierda recibe la sangre venosa que llega al corazón a través de las vena cava superior y inferior, mientras que la aurícula derecha recibe el resto de la sangre arterial que se ha bombeado por los ventrículos. Ambas aurículas se contraen para impulsar la sangre hacia los ventrículos.\n\nLos dos ventrículos, uno izquierdo y otro derecho, se contruyen en un ritmo distinto: el ventrículo izquierdo se contrae de forma más fuerte y con mayor frecuencia que el ventrículo derecho, lo cual permite bombear la sangre hacia todo el cuerpo a través de las arterias.",
+   "error": null,
+   "segundos": 3.9
+  },
+  {
+   "n": 88,
+   "categoria": "salud",
+   "pregunta": "¿Qué célula sanguínea transporta el oxígeno?",
+   "referencia": "El glóbulo rojo (eritrocito)",
+   "confianza_evaluador": "alta",
+   "respuesta": "La hemociana es la parte del sangrado humano compuesta por las células que llevan oxígeno a los tejidos del cuerpo, y está formada principalmente por glóbulos rojos. Los glóbulos rojos contienen un pigmento llamado hemoglobina que le da su color rojo característico y permite transportar el oxígeno desde las pulmones hasta las células del resto del cuerpo a través de los vasos sanguíneos.",
+   "error": null,
+   "segundos": 2.5
+  },
+  {
+   "n": 89,
+   "categoria": "salud",
+   "pregunta": "¿Cuál es la temperatura corporal normal aproximada en grados Celsius?",
+   "referencia": "~37 °C",
+   "confianza_evaluador": "alta",
+   "respuesta": "La temperatura corporal normal para adultos está entre 36,5°C y 37,7°C, con una frecuencia de medición habitualmente reportada alrededor de 37,2°C. La tolerancia clínica aceptable es un poco más amplia, por lo que valores cercanos a esta media generalmente no se consideran anormalos sin otras condiciones específicas del paciente en juego.",
+   "error": null,
+   "segundos": 2.1
+  },
+  {
+   "n": 90,
+   "categoria": "salud",
+   "pregunta": "¿Qué sistema del cuerpo incluye el cerebro y la médula espinal?",
+   "referencia": "El sistema nervioso central",
+   "confianza_evaluador": "alta",
+   "respuesta": "El sistema nervioso central, al que pertenecen tanto el cerebro como la médula espinal, es responsable de transmitir información sensorial hacia los sentidos y de coordinar las funciones corporales a través de señales nerviosas. La parte del cuerpo involucrada en este sistema incluye la cabeza, el tronco, las extremidades superiores e inferiores, así como las estructuras internas que lo rodean.",
+   "error": null,
+   "segundos": 2.2
+  },
+  {
+   "n": 91,
+   "categoria": "deportes",
+   "pregunta": "¿Cada cuántos años se celebran los Juegos Olímpicos de verano?",
+   "referencia": "Cada 4 años",
+   "confianza_evaluador": "alta",
+   "respuesta": "Los Juegos Olímpicos de Verano tienen una periodicidad aproximadamente quinquenal, es decir, se celebran cada cinco años. Sin embargo, la Organización Internacional del Deporte (OID) ha autorizado a algunos eventos olímpicos menores, como los Juegos Olímpicos Juveniles o los Juegos Olímpicos de Naciones Unidas, a tener una periodicidad distinta, por ejemplo, cada cuatro años.",
+   "error": null,
+   "segundos": 2.2
+  },
+  {
+   "n": 92,
+   "categoria": "deportes",
+   "pregunta": "¿Cuántos jugadores tiene un equipo de fútbol en cancha?",
+   "referencia": "11",
+   "confianza_evaluador": "alta",
+   "respuesta": "Un equipo de fútbol compuesto por jugadores profesionales o amateurs, según su categoría, cuenta con una formación específica definida por la regla del juego: once jugadores en el campo al mismo tiempo, incluyendo un portero y diez defensores, mediocampistas y atacantes.",
+   "error": null,
+   "segundos": 1.8
+  },
+  {
+   "n": 93,
+   "categoria": "deportes",
+   "pregunta": "¿En qué deporte destacó Michael Jordan?",
+   "referencia": "Baloncesto",
+   "confianza_evaluador": "alta",
+   "respuesta": "Michael Jordan es ampliamente considerado uno de los mejores jugadores de baloncesto de todos los tiempos, ganando seis campeonatos NBA con los Chicago Bulls en las décadas de 1990 y 2000. Su dominio individual, combinado con su liderazgo natural sobre el equipo, lo convirtió en un ícono del deporte, y su legado continúa siendo objeto de estudio y admiración en la actualidad.",
+   "error": null,
+   "segundos": 2.2
+  },
+  {
+   "n": 94,
+   "categoria": "deportes",
+   "pregunta": "¿Cuántos jugadores tiene un equipo de voleibol en cancha?",
+   "referencia": "6",
+   "confianza_evaluador": "alta",
+   "respuesta": "Un partido oficial de voleibol cuenta con seis jugadores por equipo en cancha al mismo tiempo, incluyendo a los dos receptores y a cuatro atacantes o bloqueadores. Los equipos también pueden contar con reemplazos durante el juego, pero solo hasta un número determinado de veces permitido por la regla del partido, sin que estos reemplazos cuenten como jugadores en cancha al mismo tiempo.",
+   "error": null,
+   "segundos": 2.1
+  },
+  {
+   "n": 95,
+   "categoria": "deportes",
+   "pregunta": "¿Qué país ganó el Mundial de fútbol de 2014?",
+   "referencia": "Alemania",
+   "confianza_evaluador": "alta",
+   "respuesta": "Alemania fue el campeón del Mundial de Fútbol de 2014, al derrotar a Argentina con un gol en la prórroga en la final que se disputó en Rio de Janeiro. El partido terminó 1-0 a favor del equipo germano después de los tiempos regulares, y el gol fue marcado por Mario Götze en el minuto 113.",
+   "error": null,
+   "segundos": 2.3
+  },
+  {
+   "n": 96,
+   "categoria": "lengua",
+   "pregunta": "¿Cuántas letras tiene el alfabeto español actual?",
+   "referencia": "27",
+   "confianza_evaluador": "alta",
+   "respuesta": "El alfabeto español consta de 27 letras: a, b, c, d, e, f, g, h, i, j, k (kappa), l, m, n, ñ, o, p, q, r, s, t, u, v, w (vega) y z.",
+   "error": null,
+   "segundos": 1.8
+  },
+  {
+   "n": 97,
+   "categoria": "lengua",
+   "pregunta": "¿Qué es un sustantivo, en una frase?",
+   "referencia": "Palabra que nombra personas, animales, cosas o ideas",
+   "confianza_evaluador": "alta",
+   "respuesta": "Un sustantivo es una parte del lenguaje que representa persona, lugar, cosa o evento concretos, como 'la casa', 'el niño' o 'la fiesta'. Se distingue de los demás partes del habla, como verbos, adjetivos y adverbios, que tienen funciones propias dentro de la estructura sintáctica de una oración.",
+   "error": null,
+   "segundos": 2.0
+  },
+  {
+   "n": 98,
+   "categoria": "lengua",
+   "pregunta": "¿Cuál es el plural de 'crisis'?",
+   "referencia": "crisis (invariable)",
+   "confianza_evaluador": "alta",
+   "respuesta": "El plural de crisis depende del contexto: si se trata de un evento individual, como una crisis sanitaria o económica, el plural corresponde a crises; pero cuando se refiere a una condición persistente característica de la sociedad en general, el término correcto es crisis social.",
+   "error": null,
+   "segundos": 1.6
+  },
+  {
+   "n": 99,
+   "categoria": "lengua",
+   "pregunta": "¿Qué signo se usa al inicio de una pregunta en español?",
+   "referencia": "El signo de apertura ¿",
+   "confianza_evaluador": "alta",
+   "respuesta": "En español, un signo interrogativo se coloca siempre al principio de la oración que se está preguntando, antes del resto del texto.\n\nEjemplo: ¿Cuántos hogares viven en condiciones de pobreza multidimensional en el municipio de [municipio]?",
+   "error": null,
+   "segundos": 1.6
+  },
+  {
+   "n": 100,
+   "categoria": "lengua",
+   "pregunta": "¿Qué es un sinónimo?",
+   "referencia": "Palabra con significado igual o muy parecido a otra",
+   "confianza_evaluador": "alta",
+   "respuesta": "Un sinónimo es una palabra o expresión que tiene significado conceptual igual al de otra palabra o expresión, por lo que puede sustuirla en un mismo contexto sin cambiar el sentido general del texto.\n\nPor ejemplo, 'feliz' y 'alegre', aunque son palabras distintas, se refieren a estados emocionales similares. Un diccionario de sinónimos recoge estas equivalencias para facilitar la búsqueda de alternativas lingüísticas que mantengan el mismo significado en un texto determinado.\n\nEn el caso del Score de Privación de Techo 360, 'pobreza multidimensional' y 'privaciones estructurales' son conceptos relacionados pero no perfectamente intercambiables; la primera se refiere a una clasificación estadística más amplia que considera múltiples dimensiones al mismo tiempo, mientras que la segunda hace referencia específica a las privaciones estructurales identificadas en el cálculo del score.",
+   "error": null,
+   "segundos": 4.2
+  }
+ ]
+}
