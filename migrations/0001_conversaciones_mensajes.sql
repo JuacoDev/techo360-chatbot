@@ -1,10 +1,11 @@
 -- ============================================================
--- NO EJECUTAR TODAVIA CONTRA PRODUCCION
+-- Aprobada para ejecutar contra produccion (confirmacion explicita
+-- del usuario, 26-sep-2026) -- ver README.md de este repo para el
+-- comando exacto usado para aplicarla contra postgres-vector en el
+-- VPS (docker exec + psql, sin migrar datos existentes: solo crea
+-- las 2 tablas nuevas).
 -- ============================================================
--- Migracion versionada, disenada 25-sep-2026 -- cambio de esquema
--- pendiente de confirmacion explicita del usuario, por separado, y
--- NUNCA en paralelo con una carga de datos en curso en otra BD del
--- mismo VPS (ver techo360/CLAUDE.md, restricciones de infraestructura).
+-- Migracion versionada, disenada 25-sep-2026.
 --
 -- Destino: postgres-vector (DATABASE_VECTOR_URL) -- es la UNICA base a
 -- la que techo360-chatbot ya tiene credenciales inyectadas por

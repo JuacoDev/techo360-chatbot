@@ -5,6 +5,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 from app.ollama_client import OllamaNoDisponibleError, generar_respuesta
+from app.persistencia import persistir_en_background
 from app.rabbitmq_consumer import iniciar_consumidor
 
 # En produccion (docker-compose.yml de techo360-infra) esta variable ya
@@ -29,6 +30,14 @@ app = FastAPI(title="Techo 360 - Servicio IA Chatbot", lifespan=lifespan)
 
 class ChatRequest(BaseModel):
     message: str
+    # T-97: quien llama (backend/frontend) ya sabe quien es el usuario
+    # autenticado y si dio consentimiento de reentrenamiento (mapcaloruser,
+    # en postgres-users) -- este servicio solo tiene credenciales para
+    # postgres-vector (ver AVISO en migrations/0001_conversaciones_mensajes.sql),
+    # asi que ambos valores deben llegar ya resueltos en el payload, nunca
+    # se consultan aqui.
+    usuario_id: int
+    consentimiento_entrenamiento: bool
 
 
 class ChatResponse(BaseModel):
@@ -49,6 +58,13 @@ async def chatbot_send(payload: ChatRequest):
         respuesta_texto = await generar_respuesta(payload.message)
     except OllamaNoDisponibleError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+    # T-97: persistir es best-effort (ver docstring de persistir_intercambio)
+    # y corre en un thread aparte porque psycopg2 es sincrono/bloqueante --
+    # nunca debe demorar ni tumbar la respuesta ya generada.
+    persistir_en_background(
+        payload.usuario_id, payload.consentimiento_entrenamiento, payload.message, respuesta_texto
+    )
 
     return ChatResponse(response=respuesta_texto)
 

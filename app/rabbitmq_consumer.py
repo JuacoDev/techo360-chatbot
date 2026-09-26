@@ -6,6 +6,7 @@ from aio_pika import DeliveryMode, Message
 from aio_pika.abc import AbstractChannel, AbstractIncomingMessage, AbstractRobustConnection
 
 from app.ollama_client import OllamaNoDisponibleError, generar_respuesta
+from app.persistencia import persistir_en_background
 
 logger = logging.getLogger(__name__)
 
@@ -23,6 +24,12 @@ REQUEST_QUEUE = "chatbot_requests"
 # (app/ollama_client.generar_respuesta) para que no puedan divergir en
 # modelo/system prompt/timeout -- solo cambia como se recibe la
 # solicitud y como se entrega la respuesta.
+#
+# T-97: por el mismo motivo, los dos caminos llaman tambien a la MISMA
+# funcion de persistencia (app/persistencia.persistir_intercambio) --
+# quien publique en esta cola debe incluir "usuario_id" (int) y
+# "consentimiento_entrenamiento" (bool) en el payload, ademas de
+# "mensaje", igual que ChatRequest en app/main.py.
 
 
 async def _procesar_mensaje(message: AbstractIncomingMessage, channel: AbstractChannel) -> None:
@@ -30,6 +37,8 @@ async def _procesar_mensaje(message: AbstractIncomingMessage, channel: AbstractC
         try:
             payload = json.loads(message.body)
             mensaje = payload["mensaje"]
+            usuario_id = payload["usuario_id"]
+            consentimiento_entrenamiento = payload["consentimiento_entrenamiento"]
             respuesta_texto = await generar_respuesta(mensaje)
             respuesta = {"status": "ok", "response": respuesta_texto}
         except OllamaNoDisponibleError as error:
@@ -39,6 +48,11 @@ async def _procesar_mensaje(message: AbstractIncomingMessage, channel: AbstractC
         except Exception as error:  # noqa: BLE001 -- limite del consumer, no debe tumbar el proceso
             logger.exception("Error inesperado generando la respuesta del chatbot")
             respuesta = {"status": "error", "tipo": "error_interno", "detail": str(error)}
+        else:
+            # T-97: solo se persiste un intercambio exitoso -- best effort,
+            # nunca bloquea ni puede tumbar la respuesta ya generada (ver
+            # docstring de persistir_intercambio en app/persistencia.py).
+            persistir_en_background(usuario_id, consentimiento_entrenamiento, mensaje, respuesta_texto)
 
         if not message.reply_to:
             logger.warning("Mensaje sin reply_to, no se puede responder: %s", message.correlation_id)
