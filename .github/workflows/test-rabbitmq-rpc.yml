@@ -28,4 +28,4 @@ jobs:
           # se copia el script al contenedor ya corriendo en vez de
           # tocar el Dockerfile solo para poder probar.
           docker cp scripts/probar_rabbitmq_local.py techo360-chatbot:/app/probar_rabbitmq_local.py
-          docker exec techo360-chatbot python probar_rabbitmq_local.py "${{ inputs.mensaje }}"
+          docker exec -e RPC_TIMEOUT_SECONDS=90 techo360-chatbot python probar_rabbitmq_local.py "${{ inputs.mensaje }}"
