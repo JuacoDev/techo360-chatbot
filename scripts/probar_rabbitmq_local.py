@@ -49,7 +49,18 @@ async def probar(mensaje: str) -> None:
         print(f"Publicando en '{REQUEST_QUEUE}': {mensaje!r} (correlation_id={correlation_id})")
         await channel.default_exchange.publish(
             Message(
-                body=json.dumps({"mensaje": mensaje}).encode(),
+                # usuario_id/consentimiento_entrenamiento: contrato T-97
+                # (ver docstring de app/rabbitmq_consumer.py) -- sin estos
+                # dos campos el consumer responde "payload_invalido" antes
+                # de siquiera llamar a Ollama. Valores fijos de prueba:
+                # usuario_id=0 no corresponde a un usuario real, por eso
+                # consentimiento_entrenamiento=False (no se persiste como
+                # si fuera de un usuario real).
+                body=json.dumps({
+                    "mensaje": mensaje,
+                    "usuario_id": 0,
+                    "consentimiento_entrenamiento": False,
+                }).encode(),
                 content_type="application/json",
                 correlation_id=correlation_id,
                 reply_to=reply_queue.name,

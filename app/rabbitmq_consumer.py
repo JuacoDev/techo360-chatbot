@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 
 import aio_pika
 from aio_pika import DeliveryMode, Message
@@ -14,6 +15,17 @@ logger = logging.getLogger(__name__)
 # labs de la universidad -- NO cambiar sin coordinar con el otro extremo
 # (quien publique en esta cola debe usar el mismo nombre exacto).
 REQUEST_QUEUE = "chatbot_requests"
+
+# Prioridad de consumer nativa de RabbitMQ (x-priority, requiere el
+# feature "Consumer Priorities" del broker -- disponible por defecto en
+# rabbitmq:3.13, no hay que habilitar plugin). A mayor numero, mayor
+# prioridad: RabbitMQ entrega los mensajes al consumer de mayor prioridad
+# que este activo, y solo cae a uno de menor prioridad si ese no esta
+# conectado. Default 0 (respaldo/VPS) -- techo360-workers pone esta
+# misma variable en 10 para que el pool de laboratorio tenga prioridad
+# sobre el consumer del VPS sin tocar codigo, ver
+# techo360-workers/README.md.
+CONSUMER_PRIORITY = int(os.environ.get("CHATBOT_CONSUMER_PRIORITY", "0"))
 
 # >>> AVISO -- por que el consumer llama a generar_respuesta() y no
 # reimplementa la llamada a Ollama <<<
@@ -89,6 +101,6 @@ async def iniciar_consumidor(rabbitmq_url: str) -> AbstractRobustConnection:
     async def on_message(message: AbstractIncomingMessage) -> None:
         await _procesar_mensaje(message, channel)
 
-    await queue.consume(on_message)
-    logger.info("Consumidor de '%s' arrancado.", REQUEST_QUEUE)
+    await queue.consume(on_message, arguments={"x-priority": CONSUMER_PRIORITY})
+    logger.info("Consumidor de '%s' arrancado (x-priority=%d).", REQUEST_QUEUE, CONSUMER_PRIORITY)
     return connection
