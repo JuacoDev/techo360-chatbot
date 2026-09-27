@@ -19,6 +19,13 @@ jobs:
   test-rpc:
     runs-on: self-hosted
     steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v4
+
       - name: Publicar mensaje de prueba y esperar respuesta RPC
         run: |
-          docker exec techo360-chatbot python scripts/probar_rabbitmq_local.py "${{ inputs.mensaje }}"
+          # El Dockerfile de produccion solo copia app/, no scripts/ --
+          # se copia el script al contenedor ya corriendo en vez de
+          # tocar el Dockerfile solo para poder probar.
+          docker cp scripts/probar_rabbitmq_local.py techo360-chatbot:/app/probar_rabbitmq_local.py
+          docker exec techo360-chatbot python probar_rabbitmq_local.py "${{ inputs.mensaje }}"
