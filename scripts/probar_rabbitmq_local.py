@@ -26,7 +26,12 @@ from aio_pika.abc import AbstractIncomingMessage
 
 RABBITMQ_URL = os.environ.get("RABBITMQ_URL", "amqp://guest:guest@localhost:5672/")
 REQUEST_QUEUE = "chatbot_requests"
-RPC_TIMEOUT_SECONDS = 15.0
+# Configurable -- el default (15s) alcanza con el modelo ya cargado en
+# memoria, pero la primera peticion tras (re)iniciar Ollama incluye
+# cargar el GGUF (~44s medido en T-95, ver docstring de
+# app/ollama_client.py). Subir con RPC_TIMEOUT_SECONDS=90 al validar un
+# worker recien arrancado (techo360-workers).
+RPC_TIMEOUT_SECONDS = float(os.environ.get("RPC_TIMEOUT_SECONDS", "15.0"))
 
 
 async def probar(mensaje: str) -> None:
