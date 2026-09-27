@@ -60,8 +60,8 @@ async def chatbot_send(payload: ChatRequest):
         raise HTTPException(status_code=502, detail=str(exc)) from exc
 
     # T-97: persistir es best-effort (ver docstring de persistir_intercambio)
-    # y corre en un thread aparte porque psycopg2 es sincrono/bloqueante --
-    # nunca debe demorar ni tumbar la respuesta ya generada.
+    # -- publica un evento a RabbitMQ para que el backend persista, nunca
+    # debe demorar ni tumbar la respuesta ya generada.
     persistir_en_background(
         payload.usuario_id, payload.consentimiento_entrenamiento, payload.message, respuesta_texto
     )

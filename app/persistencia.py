@@ -1,81 +1,90 @@
 import asyncio
+import json
 import logging
 import os
 
-import psycopg2
+import aio_pika
+from aio_pika import DeliveryMode, Message
+from aio_pika.abc import AbstractRobustConnection
 
 logger = logging.getLogger(__name__)
 
 # En produccion (docker-compose.yml de techo360-infra) esta variable ya
-# se define -- ver AVISO en migrations/0001_conversaciones_mensajes.sql
-# sobre por que es la UNICA base a la que este servicio tiene
-# credenciales (postgres-vector, no postgres-principal/postgres-users).
-DATABASE_VECTOR_URL = os.environ.get(
-    "DATABASE_VECTOR_URL", "postgresql://localhost:5432/techo360_vector"
-)
+# se define -- el default de aqui es solo para correr localmente sin
+# RabbitMQ (mismo patron que RABBITMQ_URL en app/main.py).
+RABBITMQ_URL = os.environ.get("RABBITMQ_URL", "amqp://guest:guest@localhost:5672/")
+
+# Contrato interno con techo360-backend (services/chatbot_persistencia_consumer.py
+# lo consume). T-97 (rediseño): este servicio dejo de tener credenciales
+# a postgres-vector -- el pool de workers de laboratorio que se
+# despliega en maquinas con acceso fisico de estudiantes debe quedar
+# limitado a hablar con RabbitMQ, nunca tener una credencial de base de
+# datos. Publicar aqui reemplaza el psycopg2.connect() directo que
+# tenia esta funcion antes.
+EVENTOS_QUEUE = "chatbot_eventos_persistencia"
+
+_connection: AbstractRobustConnection | None = None
+_connection_lock = asyncio.Lock()
 
 
-def persistir_intercambio(
+async def _obtener_channel():
+    global _connection
+    async with _connection_lock:
+        if _connection is None or _connection.is_closed:
+            _connection = await aio_pika.connect_robust(RABBITMQ_URL)
+    channel = await _connection.channel()
+    await channel.declare_queue(EVENTOS_QUEUE, durable=True)
+    return channel
+
+
+async def persistir_intercambio(
     usuario_id: int,
     consentimiento_entrenamiento: bool,
     mensaje_usuario: str,
     respuesta_asistente: str,
 ) -> None:
-    """Guarda un intercambio completo (1 conversacion + 2 mensajes) en
-    conversaciones/mensajes (postgres-vector).
+    """Publica un evento "intercambio_completo" para que el backend
+    (unico servicio con credenciales a postgres-vector) inserte la
+    conversacion + los 2 mensajes.
 
-    Cada llamada a generar_respuesta() es independiente -- sin historial
-    multi-turno (ver docstring de app/ollama_client.generar_respuesta) --
-    por eso cada intercambio crea su propia fila en `conversaciones` en
-    vez de reutilizar una existente. Cuando el servicio implemente
-    multi-turno, esta funcion debera recibir un conversacion_id opcional
-    en vez de crear uno nuevo siempre.
+    Cada llamada a generar_respuesta() es independiente -- sin
+    historial multi-turno (ver docstring de
+    app/ollama_client.generar_respuesta) -- por eso cada evento le pide
+    al backend crear una conversacion nueva en vez de reutilizar una
+    existente. Cuando el servicio implemente multi-turno, este evento
+    debera llevar un conversacion_id opcional en vez de siempre pedir
+    una nueva.
 
     usuario_id y consentimiento_entrenamiento llegan ya resueltos por
     quien llama (el backend, que si tiene acceso a mapcaloruser en
     postgres-users) -- este servicio nunca consulta esa tabla
-    directamente (ver AVISO en la migracion).
+    directamente.
 
-    Deliberadamente "best effort": un fallo al persistir NO debe tumbar
+    Deliberadamente "best effort": un fallo al publicar NO debe tumbar
     ni invalidar la respuesta que Ollama ya genero -- perder la fila de
     historial es preferible a perder la respuesta en si. Se loguea como
     error para que quede visible en monitoreo, nunca se relanza.
     """
     try:
-        # connect_timeout corto (5s) -- esto corre en un thread aparte
-        # (ver app/main.py y app/rabbitmq_consumer.py), pero sin timeout
-        # un postgres-vector lento/caido dejaria el thread colgado
-        # indefinidamente, agotando de a poco el pool de threads de
-        # asyncio.to_thread() aunque cada fallo individual sea
-        # "best effort" y nunca tumbe una respuesta.
-        conn = psycopg2.connect(DATABASE_VECTOR_URL, connect_timeout=5)
+        channel = await _obtener_channel()
+        payload = {
+            "tipo": "intercambio_completo",
+            "usuario_id": usuario_id,
+            "consentimiento_entrenamiento": consentimiento_entrenamiento,
+            "mensaje_usuario": mensaje_usuario,
+            "respuesta_asistente": respuesta_asistente,
+        }
+        await channel.default_exchange.publish(
+            Message(
+                body=json.dumps(payload).encode(),
+                content_type="application/json",
+                delivery_mode=DeliveryMode.PERSISTENT,
+            ),
+            routing_key=EVENTOS_QUEUE,
+        )
+        await channel.close()
     except Exception:
-        logger.exception("No se pudo conectar a postgres-vector para persistir la conversacion")
-        return
-
-    try:
-        with conn:
-            with conn.cursor() as cur:
-                cur.execute(
-                    "INSERT INTO conversaciones (usuario_id, consentimiento_entrenamiento) "
-                    "VALUES (%s, %s) RETURNING id",
-                    (usuario_id, consentimiento_entrenamiento),
-                )
-                conversacion_id = cur.fetchone()[0]
-                cur.execute(
-                    "INSERT INTO mensajes (conversacion_id, rol, contenido) "
-                    "VALUES (%s, 'usuario', %s)",
-                    (conversacion_id, mensaje_usuario),
-                )
-                cur.execute(
-                    "INSERT INTO mensajes (conversacion_id, rol, contenido) "
-                    "VALUES (%s, 'asistente', %s)",
-                    (conversacion_id, respuesta_asistente),
-                )
-    except Exception:
-        logger.exception("No se pudo persistir la conversacion/mensajes en postgres-vector")
-    finally:
-        conn.close()
+        logger.exception("No se pudo publicar el evento de persistencia en RabbitMQ")
 
 
 # T-97: asyncio.create_task() NO retiene una referencia fuerte a la tarea
@@ -96,13 +105,15 @@ def persistir_en_background(
     mensaje_usuario: str,
     respuesta_asistente: str,
 ) -> None:
-    """Lanza persistir_intercambio() en un thread aparte (psycopg2 es
-    sincrono/bloqueante) sin esperar a que termine ni poder tumbar al
-    llamador -- ver docstring de persistir_intercambio."""
+    """Lanza persistir_intercambio() sin esperar a que termine ni poder
+    tumbar al llamador -- ver docstring de persistir_intercambio.
+
+    T-97 (rediseño): ya no necesita asyncio.to_thread() -- publicar en
+    RabbitMQ via aio_pika es I/O async nativo, no bloqueante como lo
+    era psycopg2.
+    """
     tarea = asyncio.create_task(
-        asyncio.to_thread(
-            persistir_intercambio, usuario_id, consentimiento_entrenamiento, mensaje_usuario, respuesta_asistente
-        )
+        persistir_intercambio(usuario_id, consentimiento_entrenamiento, mensaje_usuario, respuesta_asistente)
     )
     _tareas_persistencia.add(tarea)
     tarea.add_done_callback(_tareas_persistencia.discard)

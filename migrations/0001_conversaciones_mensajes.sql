@@ -7,13 +7,18 @@
 -- ============================================================
 -- Migracion versionada, disenada 25-sep-2026.
 --
--- Destino: postgres-vector (DATABASE_VECTOR_URL) -- es la UNICA base a
--- la que techo360-chatbot ya tiene credenciales inyectadas por
--- docker-compose.yml (ver techo360-infra/docker-compose.yml, servicio
--- "chatbot": solo DATABASE_VECTOR_URL, RABBITMQ_URL, OLLAMA_URL -- no
--- DATABASE_URL de postgres-principal). No se crea una BD nueva para
--- esto ni se le pide a techo360-chatbot una credencial que hoy no
--- tiene.
+-- Destino: postgres-vector (DATABASE_VECTOR_URL).
+--
+-- ACTUALIZACION (rediseño T-97, 26-sep-2026): techo360-chatbot YA NO
+-- tiene credenciales a postgres-vector -- el pool de workers de
+-- laboratorio que se despliega en maquinas con acceso fisico de
+-- estudiantes debe quedar limitado a hablar con RabbitMQ, nunca tener
+-- una credencial de base de datos. techo360-chatbot publica un evento
+-- "intercambio_completo" a la cola "chatbot_eventos_persistencia"
+-- (ver app/persistencia.py); techo360-backend es quien lo consume y
+-- escribe aqui (ver techo360-backend/services/chatbot_persistencia_consumer.py
+-- y services/chatbot_service.py) -- es el UNICO servicio con
+-- credenciales a esta base, mismo criterio que postgres-principal.
 --
 -- >>> AVISO -- usuario_id NO tiene FK real <<<
 -- Las cuentas (mapcaloruser) viven en postgres-users, una base DISTINTA
