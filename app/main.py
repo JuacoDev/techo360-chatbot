@@ -1,3 +1,4 @@
+import logging
 import os
 from contextlib import asynccontextmanager
 
@@ -7,6 +8,15 @@ from pydantic import BaseModel
 from app.ollama_client import OllamaNoDisponibleError, generar_respuesta
 from app.persistencia import persistir_en_background
 from app.rabbitmq_consumer import iniciar_consumidor
+
+# Sin esto, logger.info() de app/rabbitmq_consumer.py y app/persistencia.py
+# nunca aparecia en 'docker logs' (el logging estandar de Python no tiene
+# handler configurado por defecto; Uvicorn configura SUS propios loggers,
+# no el root) -- confirmado real al validar el primer worker de
+# techo360-workers (27-sep-2026): la conexion/consumo si funcionaba, pero
+# no habia forma de verlo en el log para confirmarlo sin mirar RabbitMQ
+# directamente.
+logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(name)s:%(message)s")
 
 # En produccion (docker-compose.yml de techo360-infra) esta variable ya
 # se define -- el default de aqui es solo para correr localmente sin
