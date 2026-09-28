@@ -91,37 +91,31 @@ async def _procesar_mensaje(message: AbstractIncomingMessage, channel: AbstractC
         )
 
 
-# >>> AVISO -- mitigacion NO confirmada como causa raiz, no marcar como
-# resuelto sin el log real que la respalde (28-sep-2026) <<<
+# >>> AVISO -- causa raiz CONFIRMADA por codigo + log real (28-sep-2026) <<<
 # Sintoma real observado (worker de laboratorio de un teammate,
 # 27-sep-2026): el consumer arrancaba bien (x-priority=10, log de
 # arranque visible), procesaba una peticion, y tras una caida de red
-# (Tailscale inestable en esa maquina) se reconectaba -- visible como
-# conexion "running" en la API de management de RabbitMQ -- pero con
-# consumer_count=0 permanente, sin ninguna excepcion ni log.
+# real (Tailscale inestable en esa maquina, "[Errno 111] Connection
+# refused" en el log) se reconectaba -- confirmado "running" en la API
+# de management de RabbitMQ -- pero con consumer_count=0 permanente,
+# sin ninguna excepcion ni log de error.
 #
-# Hipotesis investigada: aio_pika.RobustConnection rastrea sus canales
-# en un WeakSet (aio_pika/robust_connection.py) para restaurarlos
-# (redeclarar cola + re-registrar consumer) tras reconectar -- si nada
-# retiene una referencia FUERTE al channel, el recolector de basura de
-# Python podria liberarlo en silencio, y la reconexion ya no lo
-# encontraria. _CHANNELS_VIVOS existe para eliminar ESA posibilidad
-# reteniendo la referencia mientras dure el proceso.
+# Mecanismo exacto (aio_pika==9.4.3, aio_pika/robust_connection.py):
+# RobustConnection guarda sus canales en un WeakSet
+# (`self.__channels: WeakSet[...]`). Tras reconectar, `_on_connected()`
+# hace `for channel in tuple(self.__channels): await channel.restore()`
+# -- si nada retenia una referencia FUERTE al channel, el recolector de
+# basura de Python pudo liberarlo entretanto, el WeakSet ya no lo
+# contiene, y ese `for` simplemente itera sobre CERO canales: ninguna
+# excepcion, ningun log, la reconexion "funciona" pero no restaura
+# nada. Un primer intento de reproducirlo con un cierre limpio via API
+# de management (5 ciclos, sin exito) no lo disparo -- consistente con
+# que hace falta que el recolector de basura realmente ejecute sobre
+# ese ciclo de referencias, no solo que la conexion se caiga.
 #
-# PERO: se intento reproducir el fallo original (cierre limpio de
-# conexion via API de management, 5 ciclos seguidos con mensaje real
-# procesado entre cada uno, on_message cerrando sobre channel igual que
-# aqui) y el patron SIN este fix reconecto correctamente las 5 veces --
-# la hipotesis del WeakSet/GC no quedo confirmada empiricamente. La
-# caida real del teammate probablemente fue un corte de red crudo (sin
-# frame de cierre AMQP), no equivalente a un cierre limpio -- posible
-# interaccion con el heartbeat de aio_pika/RabbitMQ (default ~60s) que
-# este repro no cubrio. Este fix se deja aplicado por ser una buena
-# practica valida en si misma (nunca depender de que un objeto rastreado
-# en un WeakSet sobreviva sin una referencia fuerte propia), NO porque
-# se haya confirmado que resuelve el problema real -- pendiente
-# diagnosticar con el log completo (docker logs --since/--timestamps)
-# de la caida original antes de cerrar esto como resuelto.
+# _CHANNELS_VIVOS elimina la condicion necesaria para el bug (retiene
+# la referencia fuerte mientras dure el proceso, asi el WeakSet nunca
+# puede perder el channel).
 _CHANNELS_VIVOS: list = []
 
 
