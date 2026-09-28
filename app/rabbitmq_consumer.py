@@ -7,7 +7,6 @@ from aio_pika import DeliveryMode, Message
 from aio_pika.abc import AbstractChannel, AbstractIncomingMessage, AbstractRobustConnection
 
 from app.ollama_client import OllamaNoDisponibleError, generar_respuesta
-from app.persistencia import persistir_en_background
 
 logger = logging.getLogger(__name__)
 
@@ -37,11 +36,19 @@ CONSUMER_PRIORITY = int(os.environ.get("CHATBOT_CONSUMER_PRIORITY", "0"))
 # modelo/system prompt/timeout -- solo cambia como se recibe la
 # solicitud y como se entrega la respuesta.
 #
-# T-97: por el mismo motivo, los dos caminos llaman tambien a la MISMA
-# funcion de persistencia (app/persistencia.persistir_intercambio) --
-# quien publique en esta cola debe incluir "usuario_id" (int) y
-# "consentimiento_entrenamiento" (bool) en el payload, ademas de
-# "mensaje", igual que ChatRequest en app/main.py.
+# >>> AVISO -- este consumer YA NO llama a persistir_en_background <<<
+# (cambio del 27-sep-2026, integracion real del ChatBot en
+# techo360-frontend). Quien publica en esta cola ahora es
+# techo360-backend/services/chatbot_rpc_client.py, que espera la
+# respuesta por reply_to y persiste el intercambio el mismo
+# sincronicamente (decision del 26-sep-2026 en
+# techo360-backend/core/config.py: "el backend maneja TODA la
+# persistencia") -- si este consumer tambien publicara el evento de
+# persistencia, el intercambio quedaria duplicado en postgres-vector
+# (una fila por el backend, otra por
+# services/chatbot_persistencia_consumer.py). POST /chatbot/send
+# (app/main.py) es distinto: no tiene un backend esperando la
+# respuesta, asi que ese SI sigue llamando a persistir_en_background.
 
 
 async def _procesar_mensaje(message: AbstractIncomingMessage, channel: AbstractChannel) -> None:
@@ -54,17 +61,20 @@ async def _procesar_mensaje(message: AbstractIncomingMessage, channel: AbstractC
             respuesta_texto = await generar_respuesta(mensaje)
             respuesta = {"status": "ok", "response": respuesta_texto}
         except OllamaNoDisponibleError as error:
+            # Sin este log, un timeout interno de generar_respuesta()
+            # (TIMEOUT_OLLAMA_S=120s en app/ollama_client.py -- carga en
+            # frio del modelo tras keep_alive de Ollama) es invisible en
+            # 'docker logs': el mensaje queda ~80-180s sin ack y sin
+            # rastro alguno, indistinguible de un consumer colgado
+            # (confirmado real diagnosticando la integracion del ChatBot
+            # en techo360-frontend, 27-sep-2026).
+            logger.warning("Ollama no disponible al procesar mensaje: %s", error)
             respuesta = {"status": "error", "tipo": "ollama_no_disponible", "detail": str(error)}
         except (KeyError, json.JSONDecodeError) as error:
             respuesta = {"status": "error", "tipo": "payload_invalido", "detail": str(error)}
         except Exception as error:  # noqa: BLE001 -- limite del consumer, no debe tumbar el proceso
             logger.exception("Error inesperado generando la respuesta del chatbot")
             respuesta = {"status": "error", "tipo": "error_interno", "detail": str(error)}
-        else:
-            # T-97: solo se persiste un intercambio exitoso -- best effort,
-            # nunca bloquea ni puede tumbar la respuesta ya generada (ver
-            # docstring de persistir_intercambio en app/persistencia.py).
-            persistir_en_background(usuario_id, consentimiento_entrenamiento, mensaje, respuesta_texto)
 
         if not message.reply_to:
             logger.warning("Mensaje sin reply_to, no se puede responder: %s", message.correlation_id)

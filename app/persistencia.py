@@ -42,18 +42,19 @@ async def persistir_intercambio(
     consentimiento_entrenamiento: bool,
     mensaje_usuario: str,
     respuesta_asistente: str,
+    conversacion_id: int | None = None,
 ) -> None:
     """Publica un evento "intercambio_completo" para que el backend
-    (unico servicio con credenciales a postgres-vector) inserte la
-    conversacion + los 2 mensajes.
+    (unico servicio con credenciales a postgres-vector) inserte los 2
+    mensajes.
 
-    Cada llamada a generar_respuesta() es independiente -- sin
-    historial multi-turno (ver docstring de
-    app/ollama_client.generar_respuesta) -- por eso cada evento le pide
-    al backend crear una conversacion nueva en vez de reutilizar una
-    existente. Cuando el servicio implemente multi-turno, este evento
-    debera llevar un conversacion_id opcional en vez de siempre pedir
-    una nueva.
+    conversacion_id es opcional: si el llamador ya tiene una
+    conversacion existente (creada via POST /chatbot/conversaciones en
+    techo360-backend), pasarla aqui evita que
+    chatbot_persistencia_consumer.py cree una conversacion nueva en
+    cada intercambio. Si no se pasa (o es None), el backend sigue
+    creando una nueva -- comportamiento historico, usado solo por
+    llamadores sin ese contexto (pruebas locales via POST /chatbot/send).
 
     usuario_id y consentimiento_entrenamiento llegan ya resueltos por
     quien llama (el backend, que si tiene acceso a mapcaloruser en
@@ -73,6 +74,7 @@ async def persistir_intercambio(
             "consentimiento_entrenamiento": consentimiento_entrenamiento,
             "mensaje_usuario": mensaje_usuario,
             "respuesta_asistente": respuesta_asistente,
+            "conversacion_id": conversacion_id,
         }
         await channel.default_exchange.publish(
             Message(
@@ -104,6 +106,7 @@ def persistir_en_background(
     consentimiento_entrenamiento: bool,
     mensaje_usuario: str,
     respuesta_asistente: str,
+    conversacion_id: int | None = None,
 ) -> None:
     """Lanza persistir_intercambio() sin esperar a que termine ni poder
     tumbar al llamador -- ver docstring de persistir_intercambio.
@@ -113,7 +116,9 @@ def persistir_en_background(
     era psycopg2.
     """
     tarea = asyncio.create_task(
-        persistir_intercambio(usuario_id, consentimiento_entrenamiento, mensaje_usuario, respuesta_asistente)
+        persistir_intercambio(
+            usuario_id, consentimiento_entrenamiento, mensaje_usuario, respuesta_asistente, conversacion_id
+        )
     )
     _tareas_persistencia.add(tarea)
     tarea.add_done_callback(_tareas_persistencia.discard)
