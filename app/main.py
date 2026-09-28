@@ -48,6 +48,7 @@ class ChatRequest(BaseModel):
     # se consultan aqui.
     usuario_id: int
     consentimiento_entrenamiento: bool
+    conversacion_id: int | None = None
 
 
 class ChatResponse(BaseModel):
@@ -73,7 +74,11 @@ async def chatbot_send(payload: ChatRequest):
     # -- publica un evento a RabbitMQ para que el backend persista, nunca
     # debe demorar ni tumbar la respuesta ya generada.
     persistir_en_background(
-        payload.usuario_id, payload.consentimiento_entrenamiento, payload.message, respuesta_texto
+        payload.usuario_id,
+        payload.consentimiento_entrenamiento,
+        payload.message,
+        respuesta_texto,
+        payload.conversacion_id,
     )
 
     return ChatResponse(response=respuesta_texto)

@@ -1,0 +1,183 @@
+{
+  "por_par": [
+    {
+      "indice": 0,
+      "categoria": "con_fuente",
+      "rouge_l_base": 0.1734,
+      "rouge_l_v1": 0.2477,
+      "rouge_l_v2": 0.2353,
+      "delta_v2_vs_v1": -0.0124,
+      "delta_v2_vs_base": 0.0619
+    },
+    {
+      "indice": 1,
+      "categoria": "con_fuente",
+      "rouge_l_base": 0.2209,
+      "rouge_l_v1": 0.2612,
+      "rouge_l_v2": 0.2556,
+      "delta_v2_vs_v1": -0.0056,
+      "delta_v2_vs_base": 0.0348
+    },
+    {
+      "indice": 2,
+      "categoria": "con_fuente",
+      "rouge_l_base": 0.1771,
+      "rouge_l_v1": 0.2602,
+      "rouge_l_v2": 0.3046,
+      "delta_v2_vs_v1": 0.0445,
+      "delta_v2_vs_base": 0.1275
+    },
+    {
+      "indice": 3,
+      "categoria": "con_fuente",
+      "rouge_l_base": 0.2145,
+      "rouge_l_v1": 0.2484,
+      "rouge_l_v2": 0.2174,
+      "delta_v2_vs_v1": -0.031,
+      "delta_v2_vs_base": 0.0029
+    },
+    {
+      "indice": 4,
+      "categoria": "sin_fuente",
+      "rouge_l_base": 0.206,
+      "rouge_l_v1": 0.234,
+      "rouge_l_v2": 0.2178,
+      "delta_v2_vs_v1": -0.0162,
+      "delta_v2_vs_base": 0.0118
+    },
+    {
+      "indice": 5,
+      "categoria": "sin_fuente",
+      "rouge_l_base": 0.1994,
+      "rouge_l_v1": 0.2694,
+      "rouge_l_v2": 0.3119,
+      "delta_v2_vs_v1": 0.0425,
+      "delta_v2_vs_base": 0.1125
+    },
+    {
+      "indice": 6,
+      "categoria": "con_fuente",
+      "rouge_l_base": 0.1934,
+      "rouge_l_v1": 0.2459,
+      "rouge_l_v2": 0.233,
+      "delta_v2_vs_v1": -0.0129,
+      "delta_v2_vs_base": 0.0397
+    },
+    {
+      "indice": 7,
+      "categoria": "con_fuente",
+      "rouge_l_base": 0.2353,
+      "rouge_l_v1": 0.2381,
+      "rouge_l_v2": 0.2075,
+      "delta_v2_vs_v1": -0.0305,
+      "delta_v2_vs_base": -0.0277
+    },
+    {
+      "indice": 8,
+      "categoria": "con_fuente",
+      "rouge_l_base": 0.1622,
+      "rouge_l_v1": 0.2235,
+      "rouge_l_v2": 0.1641,
+      "delta_v2_vs_v1": -0.0594,
+      "delta_v2_vs_base": 0.0019
+    },
+    {
+      "indice": 9,
+      "categoria": "sin_fuente",
+      "rouge_l_base": 0.1982,
+      "rouge_l_v1": 0.2577,
+      "rouge_l_v2": 0.2759,
+      "delta_v2_vs_v1": 0.0182,
+      "delta_v2_vs_base": 0.0777
+    },
+    {
+      "indice": 10,
+      "categoria": "sin_fuente",
+      "rouge_l_base": 0.1737,
+      "rouge_l_v1": 0.217,
+      "rouge_l_v2": 0.216,
+      "delta_v2_vs_v1": -0.001,
+      "delta_v2_vs_base": 0.0423
+    },
+    {
+      "indice": 11,
+      "categoria": "sin_fuente",
+      "rouge_l_base": 0.1484,
+      "rouge_l_v1": 0.2703,
+      "rouge_l_v2": 0.2186,
+      "delta_v2_vs_v1": -0.0516,
+      "delta_v2_vs_base": 0.0702
+    },
+    {
+      "indice": 12,
+      "categoria": "sin_fuente",
+      "rouge_l_base": 0.1416,
+      "rouge_l_v1": 0.1803,
+      "rouge_l_v2": 0.2162,
+      "delta_v2_vs_v1": 0.0359,
+      "delta_v2_vs_base": 0.0746
+    },
+    {
+      "indice": 13,
+      "categoria": "sin_fuente",
+      "rouge_l_base": 0.1882,
+      "rouge_l_v1": 0.2174,
+      "rouge_l_v2": 0.1826,
+      "delta_v2_vs_v1": -0.0348,
+      "delta_v2_vs_base": -0.0056
+    },
+    {
+      "indice": 14,
+      "categoria": "sin_fuente",
+      "rouge_l_base": 0.1723,
+      "rouge_l_v1": 0.2538,
+      "rouge_l_v2": 0.1843,
+      "delta_v2_vs_v1": -0.0695,
+      "delta_v2_vs_base": 0.012
+    },
+    {
+      "indice": 15,
+      "categoria": "sin_fuente",
+      "rouge_l_base": 0.1981,
+      "rouge_l_v1": 0.2474,
+      "rouge_l_v2": 0.218,
+      "delta_v2_vs_v1": -0.0294,
+      "delta_v2_vs_base": 0.0199
+    },
+    {
+      "indice": 16,
+      "categoria": "con_fuente",
+      "rouge_l_base": 0.2254,
+      "rouge_l_v1": 0.2648,
+      "rouge_l_v2": 0.2785,
+      "delta_v2_vs_v1": 0.0136,
+      "delta_v2_vs_base": 0.0531
+    },
+    {
+      "indice": 17,
+      "categoria": "con_fuente",
+      "rouge_l_base": 0.1896,
+      "rouge_l_v1": 0.2299,
+      "rouge_l_v2": 0.2884,
+      "delta_v2_vs_v1": 0.0585,
+      "delta_v2_vs_base": 0.0988
+    }
+  ],
+  "promedios": {
+    "general": {
+      "base": 0.18987222222222222,
+      "v1": 0.2426111111111111,
+      "v2": 0.23476111111111111
+    },
+    "con_fuente": {
+      "base": 0.1990888888888889,
+      "v1": 0.24663333333333334,
+      "v2": 0.2427111111111111
+    },
+    "sin_fuente": {
+      "base": 0.18065555555555554,
+      "v1": 0.23858888888888888,
+      "v2": 0.2268111111111111
+    }
+  }
+}
