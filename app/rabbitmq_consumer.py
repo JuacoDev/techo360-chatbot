@@ -91,9 +91,38 @@ async def _procesar_mensaje(message: AbstractIncomingMessage, channel: AbstractC
         )
 
 
+# >>> AVISO -- causa raiz CONFIRMADA por codigo + log real (28-sep-2026) <<<
+# Sintoma real observado (worker de laboratorio de un teammate,
+# 27-sep-2026): el consumer arrancaba bien (x-priority=10, log de
+# arranque visible), procesaba una peticion, y tras una caida de red
+# real (Tailscale inestable en esa maquina, "[Errno 111] Connection
+# refused" en el log) se reconectaba -- confirmado "running" en la API
+# de management de RabbitMQ -- pero con consumer_count=0 permanente,
+# sin ninguna excepcion ni log de error.
+#
+# Mecanismo exacto (aio_pika==9.4.3, aio_pika/robust_connection.py):
+# RobustConnection guarda sus canales en un WeakSet
+# (`self.__channels: WeakSet[...]`). Tras reconectar, `_on_connected()`
+# hace `for channel in tuple(self.__channels): await channel.restore()`
+# -- si nada retenia una referencia FUERTE al channel, el recolector de
+# basura de Python pudo liberarlo entretanto, el WeakSet ya no lo
+# contiene, y ese `for` simplemente itera sobre CERO canales: ninguna
+# excepcion, ningun log, la reconexion "funciona" pero no restaura
+# nada. Un primer intento de reproducirlo con un cierre limpio via API
+# de management (5 ciclos, sin exito) no lo disparo -- consistente con
+# que hace falta que el recolector de basura realmente ejecute sobre
+# ese ciclo de referencias, no solo que la conexion se caiga.
+#
+# _CHANNELS_VIVOS elimina la condicion necesaria para el bug (retiene
+# la referencia fuerte mientras dure el proceso, asi el WeakSet nunca
+# puede perder el channel).
+_CHANNELS_VIVOS: list = []
+
+
 async def iniciar_consumidor(rabbitmq_url: str) -> AbstractRobustConnection:
     connection = await aio_pika.connect_robust(rabbitmq_url)
     channel = await connection.channel()
+    _CHANNELS_VIVOS.append(channel)
     # prefetch_count=1, distinto del 4 de techo360-proyeccion: cada
     # mensaje aqui carga el modelo GGUF si Ollama no lo tiene ya en
     # memoria (~44s medido en T-95) y genera texto token a token -- un
