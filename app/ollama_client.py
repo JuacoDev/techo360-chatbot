@@ -47,12 +47,19 @@ OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "techo360-chatbot:v3.2")
 TIMEOUT_OLLAMA_S = 120.0
 
 # Tope de tokens generados por respuesta (options.num_predict de Ollama). Medido en el VPS con
-# 3 CPU (05-oct-2026): ~5 tokens/s, asi que 400 tokens ~ 80 s -- con la carga en frio del modelo
-# (~12 s) ~ 93 s, y aun a 4 tokens/s ~ 112 s -- por debajo de TIMEOUT_OLLAMA_S (120 s) y del RPC
-# del backend (200 s). Las respuestas reales hasta hoy llegan a ~250 tokens (1010 caracteres).
+# 3 CPU y NUM_THREAD = 3 (05-oct-2026): ~7,5 tokens/s, asi que 400 tokens ~ 54 s (~66 s con la carga
+# en frio del modelo, ~12 s); en el peor caso medido, ~4,6 tokens/s, ~87 s (~99 s con la carga) --
+# por debajo de TIMEOUT_OLLAMA_S (120 s) y del RPC del backend (200 s). Las respuestas reales hasta
+# hoy llegan a ~250 tokens (1010 caracteres).
 # Si se corta por longitud, Ollama devuelve done_reason="length" y el texto puede quedar a medias
 # (ver el warning en generar_respuesta()).
 NUM_PREDICT = 400
+
+# Hilos de CPU de llama.cpp (options.num_thread). Medido en el VPS el 05-oct-2026 con cpus=3 en el
+# contenedor de Ollama: 4,91 tokens/s con el valor por defecto frente a 7,46 con 3 hilos. Debe igualar
+# la cuota de CPU del contenedor de Ollama (cpus en techo360-infra). Todas las peticiones deben usar
+# el mismo valor: cambiar las opciones del runner entre peticiones puede recargar el modelo.
+NUM_THREAD = 3
 
 
 class OllamaNoDisponibleError(RuntimeError):
@@ -90,7 +97,7 @@ async def generar_respuesta(mensaje: str) -> str:
                         {"role": "user", "content": mensaje},
                     ],
                     "stream": False,
-                    "options": {"num_predict": NUM_PREDICT},
+                    "options": {"num_predict": NUM_PREDICT, "num_thread": NUM_THREAD},
                 },
             )
             respuesta.raise_for_status()
