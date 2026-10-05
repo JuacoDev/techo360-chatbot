@@ -1,6 +1,9 @@
+import logging
 import os
 
 import httpx
+
+logger = logging.getLogger(__name__)
 
 # T-94: sincronizado caracter por caracter con SYSTEM_PROMPT de
 # training/convertir_dataset.py (T-70), el mismo con el que se genero
@@ -43,6 +46,14 @@ OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "techo360-chatbot:v3.2")
 # prueba local de T-95).
 TIMEOUT_OLLAMA_S = 120.0
 
+# Tope de tokens generados por respuesta (options.num_predict de Ollama). Medido en el VPS con
+# 3 CPU (05-oct-2026): ~5 tokens/s, asi que 400 tokens ~ 80 s -- con la carga en frio del modelo
+# (~12 s) ~ 93 s, y aun a 4 tokens/s ~ 112 s -- por debajo de TIMEOUT_OLLAMA_S (120 s) y del RPC
+# del backend (200 s). Las respuestas reales hasta hoy llegan a ~250 tokens (1010 caracteres).
+# Si se corta por longitud, Ollama devuelve done_reason="length" y el texto puede quedar a medias
+# (ver el warning en generar_respuesta()).
+NUM_PREDICT = 400
+
 
 class OllamaNoDisponibleError(RuntimeError):
     """No se pudo contactar a Ollama o respondio con error HTTP. Cada
@@ -79,6 +90,7 @@ async def generar_respuesta(mensaje: str) -> str:
                         {"role": "user", "content": mensaje},
                     ],
                     "stream": False,
+                    "options": {"num_predict": NUM_PREDICT},
                 },
             )
             respuesta.raise_for_status()
@@ -86,4 +98,10 @@ async def generar_respuesta(mensaje: str) -> str:
             raise OllamaNoDisponibleError(f"No se pudo contactar a Ollama: {exc}") from exc
 
     datos = respuesta.json()
+    if datos.get("done_reason") == "length":
+        logger.warning(
+            "Respuesta cortada por longitud (done_reason=length, eval_count=%s, NUM_PREDICT=%d)",
+            datos.get("eval_count"),
+            NUM_PREDICT,
+        )
     return datos["message"]["content"]
