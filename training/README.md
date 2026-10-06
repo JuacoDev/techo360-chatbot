@@ -213,6 +213,8 @@ primero; T-70 convierte el dataset real (`../dataset/entrenamiento.jsonl`,
 [`convertir_dataset.py`](convertir_dataset.py). No se entrenó nada en el
 alcance de esta tarea — es puro formateo, el entrenamiento real es T-92.
 
+> **Nota (T-122, 6-oct-2026).** El `convertir_dataset.py` de T-70 no estaba en el repositorio ni en su historial; se reconstruyó y ahora vive en [`convertir_dataset.py`](convertir_dataset.py). `python training/convertir_dataset.py --verificar` regenera `train.jsonl` de v3.2 y exige igualdad byte a byte (CRLF, `date_string="18 Sep 2026"`, system prompt de 399 caracteres). Con él se generó el dataset v3.3 (ver [`../dataset/README.md`](../dataset/README.md)).
+
 **Formato de entrada**: cada línea de `entrenamiento.jsonl` es
 `{"instruction": "...", "response": "...", "source": "..."}` (`source`
 ausente en los pares de categoría (b), ver

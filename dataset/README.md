@@ -1,5 +1,70 @@
 # Dataset de entrenamiento — Techo 360 Chatbot
 
+## Dataset v3.3 (T-122, 6-oct-2026)
+
+**Versión vigente para el próximo entrenamiento.** v3.2 queda intacta (`entrenamiento_v3_2.jsonl`, `holdout.jsonl`, `entrenamiento_formateado_v3_2/` y el adaptador `techo360-v3.2`): v3.3 no la modifica, vive en archivos nuevos.
+
+| Archivo | Contenido |
+|---|---|
+| `entrenamiento_v3_3.jsonl` | 825 pares (384 con `source`, 441 sin). Mismo formato que v3.2 |
+| `holdout_v3_3.jsonl` | 28 pares (13 con `source`, 15 sin) |
+| `entrenamiento_formateado_v3_3/train.jsonl` | 825 líneas `{"text": ...}` listas para entrenar |
+| `entrenamiento_formateado_v3_3/holdout.jsonl` | 28 líneas con el mismo formato (solo para revisar longitudes y formato; la evaluación formatea el prompt por su cuenta) |
+
+El formateo lo hace [`../training/convertir_dataset.py`](../training/convertir_dataset.py) (reconstruido en T-122, porque el script de T-70 no estaba en el repo ni en su historial). Con `python training/convertir_dataset.py --verificar` regenera `train.jsonl` de v3.2 y exige igualdad byte a byte (SHA-256 `1cb53e82de6c8d99…`). Conserva el system prompt de 399 caracteres (se compara con `app/ollama_client.py` al arrancar), la fecha fija `18 Sep 2026`, la salida con CRLF, y `source` nunca llega al prompt.
+
+### Qué cambió: tres cosas a la vez
+
+> **Importante para T-124.** v3.3 cambia varias cosas al mismo tiempo (correcciones, hechos actualizados y pares nuevos), así que una mejora o un empeoramiento en T-124 **no puede atribuirse a un único factor**. Además, **v3.2 debe evaluarse también sobre `holdout_v3_3.jsonl`**: el holdout de v3.2 contenía la fórmula antigua del Score y no sirve para comparar.
+
+**1. Correcciones de hechos obsoletos o contradictorios (55 pares de entrenamiento y 7 de holdout).** Líneas 1-based del archivo de v3.2:
+
+| Grupo | Pares de entrenamiento | Holdout |
+|---|---|---|
+| Fórmula del Score: el tercer componente es el déficit habitacional **cuantitativo**, no el total (el cualitativo incluye agua para cocinar y alcantarillado, que el score ya mide con las coberturas: doble conteo) | 114, 270, 272, 278, 375, 377, 549, 558 y 23, 111, 136, 364, 399, 411, 429, 430, 541, 544, 547, 565, 574 | 6, 13, 17 |
+| Proyección: de LightGBM a regresión lineal sobre los últimos 4 puntos reales | 282, 283, 284, 354, 355, 356, 587 | 16 |
+| Chatbot: de "planeado" a implementado (cola `chatbot_requests`, Ollama); RAG sigue pendiente | 125, 126, 128, 285, 287, 343, 344, 345, 346, 512, 586 | 10 |
+| RAG y pgvector: el RAG **no está implementado** (el chatbot envía la pregunta tal cual a Ollama, ver `app/ollama_client.py` y `app/main.py`); se presenta como diseño futuro y se corrige qué guarda cada base (la de pgvector guarda hoy las conversaciones; los usuarios están en otra) | 127, 129, 347 | — |
+| Cifras y nomenclatura: 1.105 son polígonos del IGAC (no el total de municipios), 2024 como año de las estimaciones, `techo360-` en los nombres de repositorios, sin cifras volátiles | 19, 20, 21, 106, 130, 141, 297, 326, 352, 368, 379, 391, 589 | 5, 12 |
+
+**2. 44 pares nuevos de entrenamiento**, anclados a una fuente verificable o a documentación propia del proyecto:
+
+| Tema | Pares | Fuente |
+|---|---|---|
+| Variables del Score | 10 | `services/score_privacion.py`, aviso de `routers/zonas.py` y `ingestion/` de `techo360-backend`; Boletín Técnico Déficit Habitacional 2018 del DANE (metodología 2020), con `source` |
+| TerriData y SSPD | 9 | Página oficial de TerriData del DNP; funciones y SUI de la SSPD (Ley 142 de 1994, art. 53); `terridata_adapter.py` |
+| Ollama y repositorios | 13 | Código y README de `techo360-backend`, `-chatbot`, `-proyeccion`, `-frontend`, `-infra` y `-workers` |
+| Salud (conocimiento general) | 12 | MedlinePlus (NIH/NLM), OMS (IMC y malnutrición), Ley 100 de 1993; todo con `source` |
+
+**Total real: 44, no los 46 del plan.** El plan proponía 12 (Score), 10 (TerriData/SSPD), 12 (Ollama y repositorios) y 12 (salud). Quedaron 10, 9, 13 y 12: se descartaron candidatos del Score y de TerriData/SSPD por repetir lo que ya había (por ejemplo T17, T73, T120, T245, T274, T365 y T373) o por no poder verificarse en una fuente (la expansión de la sigla REC de TerriData, el plasma sanguíneo), y entró uno más de Ollama y repositorios. Los pares reservados para el holdout se contaron aparte.
+
+**Por qué 23 de los 44 llevan `source`.** Se mantiene la convención de v3.2: `source` solo en las categorías (a) y (c), es decir, cuando el par afirma algo de una fuente externa. Los pares (b), que describen decisiones o código propios de Techo 360, se anclan a un archivo y una línea de los repositorios y no llevan `source`. Son 13 de salud y TerriData de categoría (a), 10 de categoría (c) y 21 de categoría (b): los 13 de Ollama y repositorios y 8 del Score y TerriData/SSPD. Los 12 de salud llevan `source`; de los 9 de TerriData/SSPD, 7 lo llevan (las dos excepciones documentan la decisión propia de leer las coberturas de TerriData y la validación del esquema de sus archivos). Antes de este ajuste eran 16: faltaba `source` en 5 pares de TerriData (columnas, origen `TerriData-proyeccion`, códigos terminados en 000, formato numérico, variante de cobertura) y en 2 del Score que dependen de la estructura del déficit del DANE; ya lo llevan. El manifiesto `validacion_v3_3/manifiesto_pares_nuevos.csv` lista, para cada par nuevo, su categoría, su `source` y su anclaje.
+
+Los pares de salud no repiten ni parafrasean las 100 preguntas de evaluación de `training/evaluacion_alucinacion/` (coseno TF-IDF máximo 0,17 con las preguntas y 0,21 con pregunta más referencia; solape de términos máximo 0,17). La verificación de los datos de salud se hizo con búsquedas dirigidas a medlineplus.gov, who.int y minsalud.gov.co (resumen de cada página, no lectura completa de cada una); el boletín del DANE sobre déficit se leyó completo en el PDF oficial y la página de TerriData en la del DNP, y ninguno pregunta por el eritrocito en sí.
+
+**3. 10 pares nuevos de holdout** (3 Score, 2 TerriData/SSPD, 2 Ollama/repositorios, 3 salud), nunca vistos en entrenamiento y elegidos en temas lejanos a los pares corregidos.
+
+### Validación (similitud = coseno TF-IDF con uni y bigramas, sin tildes)
+
+- Pares nuevos contra todo lo demás: máximo 0,347 sobre el texto completo y 0,578 sobre la pregunta sola (umbral 0,75). 0 duplicados literales. 0 "Según…" entre los nuevos.
+- Cada par corregido (entrenamiento u holdout) tiene una similitud máxima contra el otro conjunto que **no sube** respecto de la que tenía en v3.2.
+- `holdout_v3_3` contra `entrenamiento_v3_3`: máximo 0,357 (texto) y 0,533 (pregunta).
+- Sin montos en pesos ni emojis; los topes siguen en SMLMV.
+
+### Reproducir la validación y el manifiesto
+
+`dataset/validacion_v3_3/` (solo lectura, Python puro):
+
+- `validar_v3_3.py`: similitud de los pares nuevos contra todo lo demás (umbral 0,75, texto y pregunta), pares corregidos que no suben su similitud contra el otro conjunto, disjunción con las 100 preguntas de evaluación, nomenclatura `techo360-`, pesos y emojis, porcentaje de "Según…", duplicados y formato. Sale con código 1 si falla algún control bloqueante, y lista las cifras a revisar y los pares que mencionan RAG o pgvector.
+- `simlib.py`: coseno TF-IDF con unigramas y bigramas, sin tildes (scipy y scikit-learn no hacen falta; Windows bloqueaba sus DLL en el equipo de desarrollo).
+- `anclas_pares_nuevos.py` y `generar_manifiesto.py`: generan `manifiesto_pares_nuevos.csv`, una fila por cada par nuevo (54: 44 de entrenamiento y 10 de holdout) con su línea, categoría, `source`, y el archivo y la línea de código que lo ancla (o la fuente externa y cómo se verificó), con el SHA de cada repositorio (`origin/development`) en el momento de generarlo.
+
+### Residuales conocidos (no se tocaron)
+
+- Tres parejas de v3.2 ya superaban 0,75 solo en la pregunta, y siguen igual: líneas 39 y 441 (0,914), 93 y 206 (0,803), 191 y 304 (≈0,76).
+- Los pares 515 y 516 hablan del RAG como algo que el chatbot "planea" usar, y la 348 lo describe en condicional: son diseño futuro y se dejaron. Ningún par de v3.3 presenta el RAG como algo implementado.
+- El documento de metodología del Score (`score-viabilidad-techo360.md`) no existe en ningún repositorio; los pares del Score se anclaron al código del backend y al aviso de `routers/zonas.py`.
+
 ## Archivo canónico
 
 - `entrenamiento.jsonl`: **582 pares**, fuente única de verdad para
