@@ -118,6 +118,16 @@ async def _procesar_mensaje(message: AbstractIncomingMessage, channel: AbstractC
 # puede perder el channel).
 _CHANNELS_VIVOS: list = []
 
+# Mismo problema, un nivel mas abajo: RobustChannel._queues es un
+# defaultdict(WeakSet) (aio_pika/robust_channel.py), y _on_open() restaura
+# tras reconectar SOLO las colas que siguen vivas ahi. `queue` es local de
+# iniciar_consumidor(); sin otra referencia fuerte el WeakSet queda vacio, el
+# canal se reabre pero no re-declara la cola ni re-registra el consumer
+# (consumer_count=0, sin excepcion ni log). Reproducido en local con aio-pika
+# 9.4.3: recreate de RabbitMQ (cola ausente) y docker restart (cola presente
+# sin consumer). Retener la cola (con su canal arriba) lo evita (T-126).
+_QUEUES_VIVAS: list = []
+
 
 async def iniciar_consumidor(rabbitmq_url: str) -> AbstractRobustConnection:
     connection = await aio_pika.connect_robust(rabbitmq_url)
@@ -136,6 +146,7 @@ async def iniciar_consumidor(rabbitmq_url: str) -> AbstractRobustConnection:
     # consumer arranca despues de que ya se publico, encuentra los
     # mensajes esperando en la cola en vez de perderlos.
     queue = await channel.declare_queue(REQUEST_QUEUE, durable=True)
+    _QUEUES_VIVAS.append(queue)
 
     async def on_message(message: AbstractIncomingMessage) -> None:
         await _procesar_mensaje(message, channel)
