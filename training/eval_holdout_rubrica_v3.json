@@ -1,0 +1,279 @@
+{
+  "criterio": "Auto-evaluacion de IA (Claude), no rubrica humana. Comparacion base/v1/v2/v3.",
+  "por_par": [
+    {
+      "indice": 0,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "v1_exactitud": 3,
+      "v1_relevancia": 3,
+      "v2_exactitud": 3,
+      "v2_relevancia": 3,
+      "v3_exactitud": 2,
+      "v3_relevancia": 3,
+      "nota_v3": "Introduce una atribucion nueva y erronea (PNUD como disenador original, deberia ser DNP) y se autocontradice entre 'cinco dimensiones' y 'seis dimensiones' -- peor que v1."
+    },
+    {
+      "indice": 1,
+      "categoria": "con_fuente",
+      "base_exactitud": 2,
+      "base_relevancia": 2,
+      "v1_exactitud": 4,
+      "v1_relevancia": 4,
+      "v2_exactitud": 4,
+      "v2_relevancia": 4,
+      "v3_exactitud": 4,
+      "v3_relevancia": 4,
+      "nota_v3": "Nivel practicamente identico a v1: distincion cuantitativo/cualitativo correcta en espiritu, sin la regla de doble conteo."
+    },
+    {
+      "indice": 2,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "v1_exactitud": 1,
+      "v1_relevancia": 3,
+      "v2_exactitud": 1,
+      "v2_relevancia": 3,
+      "v3_exactitud": 1,
+      "v3_relevancia": 3,
+      "nota_v3": "Persiste la misma falla de cobertura (fuera del alcance de este experimento, deliberadamente no tocada): cifra nacional inventada (97.1%) con cita confiada, distinta a la real (86.4%)."
+    },
+    {
+      "indice": 3,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "v1_exactitud": 1,
+      "v1_relevancia": 3,
+      "v2_exactitud": 1,
+      "v2_relevancia": 3,
+      "v3_exactitud": 1,
+      "v3_relevancia": 3,
+      "nota_v3": "Misma falla persistente de cobertura: cifra inventada (73.1% en 2025, casi identica a la propia alucinacion de v1) sin corresponder a la real (76.6%)."
+    },
+    {
+      "indice": 4,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "v1_exactitud": 4,
+      "v1_relevancia": 5,
+      "v2_exactitud": 2,
+      "v2_relevancia": 3,
+      "v3_exactitud": 3,
+      "v3_relevancia": 4,
+      "nota_v3": "RECUPERADO parcialmente vs v2: ya no inventa alcance falso (internet, salud) como v2, aunque pierde la precision de v1 sobre las 3 variables exactas del Score."
+    },
+    {
+      "indice": 5,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "v1_exactitud": 3,
+      "v1_relevancia": 4,
+      "v2_exactitud": 2,
+      "v2_relevancia": 4,
+      "v3_exactitud": 2,
+      "v3_relevancia": 4,
+      "nota_v3": "Mismo problema de 'cuatro variables' que YA estaba presente en v1 (no es una regresion de T-95 -- preexistente desde el T-92 original)."
+    },
+    {
+      "indice": 6,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "v1_exactitud": 3,
+      "v1_relevancia": 3,
+      "v2_exactitud": 2,
+      "v2_relevancia": 3,
+      "v3_exactitud": 3,
+      "v3_relevancia": 3,
+      "nota_v3": "REGRESION DE V2 CORREGIDA: ya NO cita la Ley 142 de 1994 (el error especifico que introdujo v2). Nivel de precision comparable a v1 (generico pero sin cita legal falsa)."
+    },
+    {
+      "indice": 7,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "v1_exactitud": 2,
+      "v1_relevancia": 3,
+      "v2_exactitud": 1,
+      "v2_relevancia": 2,
+      "v3_exactitud": 3,
+      "v3_relevancia": 3,
+      "nota_v3": "MEJOR que v1 y v2: los nombres de dimension que si menciona (ninez y juventud, trabajo) son reales, y los indicadores especificos citados son mas cercanos a los reales que los de ambas versiones anteriores, aunque sigue sin listar las 5 dimensiones completas."
+    },
+    {
+      "indice": 8,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "v1_exactitud": 2,
+      "v1_relevancia": 3,
+      "v2_exactitud": 2,
+      "v2_relevancia": 3,
+      "v3_exactitud": 2,
+      "v3_relevancia": 3,
+      "nota_v3": "Nivel similar a v1/v2: mecanismo de conteo simplificado ('mayoria simple') pero sigue sin corresponder al real 33.3% ponderado de 15 indicadores."
+    },
+    {
+      "indice": 9,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "v1_exactitud": 1,
+      "v1_relevancia": 3,
+      "v2_exactitud": 3,
+      "v2_relevancia": 4,
+      "v3_exactitud": 4,
+      "v3_relevancia": 4,
+      "nota_v3": "MEJOR resultado de las tres versiones: nombra 4 de 5 repos reales con el prefijo correcto (techo360-backend/frontend/chatbot/proyeccion) y, a diferencia de v2, NO inventa un quinto repositorio falso -- simplemente no lo menciona. Sigue sin ser perfecto (falta techo360-infra) pero es el patron de falla mas seguro de los tres."
+    },
+    {
+      "indice": 10,
+      "categoria": "sin_fuente",
+      "base_exactitud": 2,
+      "base_relevancia": 2,
+      "v1_exactitud": 4,
+      "v1_relevancia": 5,
+      "v2_exactitud": 2,
+      "v2_relevancia": 3,
+      "v3_exactitud": 4,
+      "v3_relevancia": 5,
+      "nota_v3": "REGRESION DE V2 CORREGIDA: vuelve a identificar correctamente JWT como mecanismo de autenticacion (v2 lo habia reemplazado por un esquema HMAC/IP inventado). Nivel comparable a v1."
+    },
+    {
+      "indice": 11,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "v1_exactitud": 2,
+      "v1_relevancia": 4,
+      "v2_exactitud": 1,
+      "v2_relevancia": 2,
+      "v3_exactitud": 3,
+      "v3_relevancia": 4,
+      "nota_v3": "MEJORA vs v2: mantiene el patron vago de v1 pero fundamenta las 2 variables reales que menciona (acueducto, alcantarillado) con fuentes reales (TerriData, DANE, Censo) en vez de la estructura de '3 bloques de 9 items' que fabrico v2."
+    },
+    {
+      "indice": 12,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "v1_exactitud": 3,
+      "v1_relevancia": 4,
+      "v2_exactitud": 3,
+      "v2_relevancia": 4,
+      "v3_exactitud": 4,
+      "v3_relevancia": 4,
+      "nota_v3": "MEJOR que v1 y v2 en identidad de variables: nombra las 3 variables REALES exactas (deficit habitacional, cobertura acueducto, cobertura alcantarillado) -- v1 tenia 4 (una de mas), v2 tenia 3 pero con una equivocada (tenencia informal en vez de una de las reales). Pesos (40/30/30) siguen sin ser los reales (33/33/33)."
+    },
+    {
+      "indice": 13,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "v1_exactitud": 4,
+      "v1_relevancia": 5,
+      "v2_exactitud": 3,
+      "v2_relevancia": 4,
+      "v3_exactitud": 4,
+      "v3_relevancia": 4,
+      "nota_v3": "Concepto central (nulo = dato faltante) correcto, igual que v1 -- sin la confusion de 'siete componentes' que introdujo v2. Agrega un detalle no verificado (municipios agregados/desagregados) que no esta en la referencia."
+    },
+    {
+      "indice": 14,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "v1_exactitud": 2,
+      "v1_relevancia": 4,
+      "v2_exactitud": 2,
+      "v2_relevancia": 3,
+      "v3_exactitud": 2,
+      "v3_relevancia": 3,
+      "nota_v3": "NUEVA fabricacion no vista en v1 ni v2: inventa una variable 'cobertura de internet' que no existe en el panel real de Techo 360. Nivel de exactitud similar o levemente peor que v1/v2."
+    },
+    {
+      "indice": 15,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "v1_exactitud": 5,
+      "v1_relevancia": 5,
+      "v2_exactitud": 5,
+      "v2_relevancia": 5,
+      "v3_exactitud": 5,
+      "v3_relevancia": 5,
+      "nota_v3": "Igual de preciso que v1 -- capta el proposito real del servicio de proyeccion con precision."
+    },
+    {
+      "indice": 16,
+      "categoria": "con_fuente",
+      "base_exactitud": 2,
+      "base_relevancia": 3,
+      "v1_exactitud": 5,
+      "v1_relevancia": 5,
+      "v2_exactitud": 3,
+      "v2_relevancia": 4,
+      "v3_exactitud": 3,
+      "v3_relevancia": 4,
+      "nota_v3": "Mismo problema que v2, NO corregido por este experimento: sigue atribuyendole a Techo 360 un umbral de 33.33% que la referencia dice explicitamente que Techo 360 NO tiene -- sugiere que este error especifico no viene del bloque de cobertura aislado en este experimento."
+    },
+    {
+      "indice": 17,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "v1_exactitud": 4,
+      "v1_relevancia": 5,
+      "v2_exactitud": 3,
+      "v2_relevancia": 4,
+      "v3_exactitud": 3,
+      "v3_relevancia": 4,
+      "nota_v3": "Nivel similar a v2: pierde la mencion precisa de 'TerriData' como fuente de Techo 360 (usa 'anexo censal del DANE' en su lugar), a diferencia de v1 que si la nombraba correctamente."
+    }
+  ],
+  "promedios_exactitud": {
+    "general": {
+      "base": 1.1666666666666667,
+      "v1": 2.9444444444444446,
+      "v2": 2.388888888888889,
+      "v3": 2.9444444444444446
+    },
+    "con_fuente": {
+      "base": 1.2222222222222223,
+      "v1": 2.7777777777777777,
+      "v2": 2.2222222222222223,
+      "v3": 2.4444444444444446
+    },
+    "sin_fuente": {
+      "base": 1.1111111111111112,
+      "v1": 3.111111111111111,
+      "v2": 2.5555555555555554,
+      "v3": 3.4444444444444446
+    }
+  },
+  "promedios_relevancia": {
+    "general": {
+      "base": 1.7222222222222223,
+      "v1": 3.9444444444444446,
+      "v2": 3.388888888888889,
+      "v3": 3.7222222222222223
+    },
+    "con_fuente": {
+      "base": 1.8888888888888888,
+      "v1": 3.5555555555555554,
+      "v2": 3.2222222222222223,
+      "v3": 3.3333333333333335
+    },
+    "sin_fuente": {
+      "base": 1.5555555555555556,
+      "v1": 4.333333333333333,
+      "v2": 3.5555555555555554,
+      "v3": 4.111111111111111
+    }
+  }
+}

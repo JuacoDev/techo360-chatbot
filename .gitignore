@@ -5,3 +5,13 @@ venv/
 .env
 *.egg-info/
 .pytest_cache/
+
+# Artefactos pesados de entrenamiento/fine-tuning (limpieza 27-sep-2026,
+# ver training/README.md) -- nunca se suben, demasiado pesados para el
+# historial de git. El modelo real de produccion vive en Ollama/GGUF
+# aparte (techo360-workers/models/), no en este repo.
+training/modelo_fusionado/
+training/modelo_gguf/
+training/adapters/*/adapter_model.safetensors
+training/adapters/*/tokenizer.json
+training/_checkpoints_tmp/

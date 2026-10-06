@@ -1,0 +1,36 @@
+name: Techo 360 - Probar RPC de chatbot_requests (E2E workers)
+
+# Manual -- publica un mensaje real en 'chatbot_requests' ejecutando
+# scripts/probar_rabbitmq_local.py DENTRO del contenedor del chatbot ya
+# corriendo en el VPS (docker exec), asi reusa las credenciales reales
+# de RABBITMQ_URL que ya tiene ese contenedor sin que nadie tenga que
+# pegarlas en ningun lado. Sirve para validar de punta a punta el pool
+# de workers de techo360-workers: si un worker de prioridad alta esta
+# conectado, la respuesta la genera su Ollama, no el del VPS.
+on:
+  workflow_dispatch:
+    inputs:
+      mensaje:
+        description: "Mensaje de prueba a enviar al chatbot"
+        required: false
+        default: "Que es el Score de Privacion?"
+
+jobs:
+  test-rpc:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v4
+
+      - name: Publicar mensaje de prueba y esperar respuesta RPC
+        run: |
+          # El Dockerfile de produccion solo copia app/, no scripts/ --
+          # se copia el script al contenedor ya corriendo en vez de
+          # tocar el Dockerfile solo para poder probar.
+          docker cp scripts/probar_rabbitmq_local.py techo360-chatbot:/app/probar_rabbitmq_local.py
+          docker exec -e RPC_TIMEOUT_SECONDS=90 techo360-chatbot python probar_rabbitmq_local.py "${{ inputs.mensaje }}"
+
+      - name: Log del contenedor chatbot del VPS (diagnostico, corre siempre)
+        if: always()
+        run: |
+          docker logs --tail 40 techo360-chatbot

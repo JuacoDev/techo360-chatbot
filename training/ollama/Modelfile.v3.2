@@ -1,0 +1,28 @@
+# Modelfile de Ollama para el adaptador v3.2 -- mismo experimento
+# aislado que v3 (config LoRA identica: r=16/alpha=32/dropout=0.05, 3
+# epocas, lr=2e-4, batch 1, grad_accum 8), pero entrenado sobre
+# dataset/entrenamiento_v3_2.jsonl (781 pares = los 592 de v3 + 189
+# pares nuevos de conocimiento general puro), para medir el efecto de
+# agregar conocimiento general fuera de dominio sobre la alucinacion.
+#
+# Se registra con tag propio (techo360-chatbot:v3.2); NO se toca el tag
+# `latest` (apunta a v1) ni los tags de v1/v2/v3, ni se despliega nada a
+# produccion.
+#
+# Identico a Modelfile.v3 salvo por el FROM -- mismo system prompt,
+# mismos parametros de inferencia, para que la comparacion v3 vs v3.2
+# mida el efecto del dataset y no una diferencia de configuracion.
+FROM ../modelo_gguf/techo360-v3.2-Q4_K_M.gguf
+
+# System prompt sincronizado caracter por caracter con
+# training/convertir_dataset.py (T-70) y app/main.py (T-94) -- debe
+# mantenerse identico en los tres lugares. Un system prompt distinto
+# aqui invalidaria parte de lo aprendido en el fine-tuning.
+SYSTEM """Eres el asistente virtual de Techo 360, una plataforma que analiza la pobreza y el deficit de vivienda en los municipios de Colombia. Respondes en espanol de forma clara y precisa sobre el Score de Privacion y los indicadores de Techo 360, y sobre la politica publica colombiana de vivienda y pobreza (IPM, deficit habitacional, cobertura de acueducto y alcantarillado) en la que se basa el sistema."""
+
+# Mismos parametros conservadores que Modelfile (v1), Modelfile.v2 y
+# Modelfile.v3 -- ver el de v1 para la justificacion completa de cada valor.
+PARAMETER temperature 0.3
+PARAMETER top_p 0.9
+PARAMETER repeat_penalty 1.15
+PARAMETER num_ctx 2048

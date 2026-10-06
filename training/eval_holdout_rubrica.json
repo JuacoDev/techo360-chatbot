@@ -1,0 +1,187 @@
+{
+  "criterio": "Auto-evaluacion de IA (Claude), no rubrica humana. Escala 1-5 en exactitud factual y relevancia a Techo 360.",
+  "por_par": [
+    {
+      "indice": 0,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "ft_exactitud": 3,
+      "ft_relevancia": 3,
+      "nota": "Base: atribuye el IPM al Banco Mundial/ONU e inventa 10 dimensiones sin relacion con la real. FT: cuenta correcta de 15 indicadores, dimensiones aproximadas pero no exactas, sin institucion/umbral."
+    },
+    {
+      "indice": 1,
+      "categoria": "con_fuente",
+      "base_exactitud": 2,
+      "base_relevancia": 2,
+      "ft_exactitud": 4,
+      "ft_relevancia": 4,
+      "nota": "Base: definicion generica cuantidad/calidad, sin la regla real de no-doble-conteo, agrega tie-in a Techo 360 no pedido. FT: capta hacinamiento y mejoramiento correctamente, sin la regla de doble conteo."
+    },
+    {
+      "indice": 2,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "ft_exactitud": 1,
+      "ft_relevancia": 3,
+      "nota": "Ambos alucinan cifras -- base con formato obviamente inventado (lista de departamentos con cifras sueltas); FT con formato de cita 'Segun el DANE' mas convincente pero igual de incorrecto (99.1% vs 86.4% real, departamento top equivocado)."
+    },
+    {
+      "indice": 3,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "ft_exactitud": 1,
+      "ft_relevancia": 3,
+      "nota": "Mismo patron que idx2: FT inventa cifras con formato de fuente creible ('Segun el DANE') pero incorrectas; base ademas confunde 'Score de Privacion' con 'Score de Pobreza' (nombre real del propio sistema, mal citado)."
+    },
+    {
+      "indice": 4,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "ft_exactitud": 4,
+      "ft_relevancia": 5,
+      "nota": "Base: atribuye Techo 360 a una organizacion inventada ('Corvi') y describe mal el Score de Privacion (ingreso vs costo de vivienda). FT: describe correctamente las 3 variables reales del Score y el mapa interactivo."
+    },
+    {
+      "indice": 5,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "ft_exactitud": 3,
+      "ft_relevancia": 4,
+      "nota": "Base: formula completamente inventada basada en umbrales de ingreso. FT: 3 de las variables reales correctas, pero agrega una cuarta variable ('pobreza multidimensional') que no existe en el calculo real -- ver nota de alucinacion abajo."
+    },
+    {
+      "indice": 6,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "ft_exactitud": 3,
+      "ft_relevancia": 3,
+      "nota": "Base: inventa ministerio (MVUDES) y organismos (FONDERA, CORVIVI) que no existen. FT: correcto en espiritu (VIS como mecanismo de equidad de acceso) pero sin la cita legal (Ley 388/1997) ni el tope de 135 SMLMV."
+    },
+    {
+      "indice": 7,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "ft_exactitud": 2,
+      "ft_relevancia": 3,
+      "nota": "Base: dimensiones y los 15 indicadores totalmente inventados. FT: acierta los nombres de las 5 dimensiones reales pero se contradice (dice 'tres dimensiones' y luego lista cinco) y los indicadores/conteos por dimension no coinciden con los 15 reales."
+    },
+    {
+      "indice": 8,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "ft_exactitud": 2,
+      "ft_relevancia": 3,
+      "nota": "Base: confunde el umbral del IPM con una linea de pobreza por ingreso, inventa tres umbrales de Techo 360. FT: mecanismo de conteo de privaciones correcto en espiritu, pero umbral numerico (3 de 5, 50% por dimension) no coincide con el real (33.3% de 15)."
+    },
+    {
+      "indice": 9,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "ft_exactitud": 1,
+      "ft_relevancia": 3,
+      "nota": "Base: inventa una organizacion desarrolladora y tres nombres de repositorio que no existen. FT: tambien inventa nombres de repositorio (data/models/services/routes/utils, estructura interna tipica de un proyecto FastAPI) -- verificado contra dataset/entrenamiento.jsonl: los nombres reales (backend/frontend/chatbot/proyeccion/infra) aparecen docenas de veces en el dataset de entrenamiento, asi que esto ES una alucinacion nueva del modelo, no un reflejo de datos de entrenamiento ambiguos."
+    },
+    {
+      "indice": 10,
+      "categoria": "sin_fuente",
+      "base_exactitud": 2,
+      "base_relevancia": 2,
+      "ft_exactitud": 4,
+      "ft_relevancia": 5,
+      "nota": "Base: admite explicitamente que no sabe y especula de forma generica (mejor que alucinar con confianza, pero no responde). FT: identifica correctamente JWT como mecanismo real, aunque dice 'cookie' en vez de header Authorization/localStorage (detalle impreciso) y no menciona bcrypt."
+    },
+    {
+      "indice": 11,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "ft_exactitud": 2,
+      "ft_relevancia": 4,
+      "nota": "Base: inventa 7 variables tipo 'Pobreza X' que no existen. FT: acierta acueducto y alcantarillado (2 de 7 reales) pero inventa 'acceso a vivienda' y 'calidad del agua', y omite densidad poblacional y tenencia informal."
+    },
+    {
+      "indice": 12,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "ft_exactitud": 3,
+      "ft_relevancia": 4,
+      "nota": "Base: metodologia de umbrales de ingreso totalmente inventada. FT: capta la estructura real (normalizacion + ponderacion), 3 de 4 variables citadas son reales, pero agrega una cuarta inexistente, pesos incorrectos (0.25 vs 0.333 real) y omite el paso de inversion de acueducto/alcantarillado."
+    },
+    {
+      "indice": 13,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "ft_exactitud": 4,
+      "ft_relevancia": 5,
+      "nota": "Base: interpretacion conceptualmente invertida -- confunde 'score nulo' (dato faltante) con 'score cero' (ausencia de pobreza), inventa una lista de que implicaria un score bajo. FT: correctamente identifica que nulo = fila/dato faltante, coincide con el mecanismo real (aunque sin el ejemplo especifico del Area en Litigio Cauca-Huila)."
+    },
+    {
+      "indice": 14,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 1,
+      "ft_exactitud": 2,
+      "ft_relevancia": 4,
+      "nota": "Base: inventa cuatro encuestas/bases de datos que no existen (ENVP, ENS, ENP, BDV). FT: acierta DANE censal para deficit habitacional, pero atribuye acueducto/alcantarillado a SSPD/SUI en vez de TerriData/DNP (institucion real pero variable equivocada), y no menciona IGAC/catastro para tenencia informal."
+    },
+    {
+      "indice": 15,
+      "categoria": "sin_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "ft_exactitud": 5,
+      "ft_relevancia": 5,
+      "nota": "Base: reemplaza el proposito real (llenar datos faltantes) por una narrativa generica de 'pronostico/analisis espacial' con indicadores inventados. FT: coincide de forma precisa con el proposito real -- generar estimaciones estadisticas solo cuando falta el dato real, distinguiendolas de datos observados."
+    },
+    {
+      "indice": 16,
+      "categoria": "con_fuente",
+      "base_exactitud": 2,
+      "base_relevancia": 3,
+      "ft_exactitud": 5,
+      "ft_relevancia": 5,
+      "nota": "Base: confunde la composicion del Score de Privacion con dimensiones del IPM (educacion, salud, seguridad social no son parte del Score real). FT: describe con precision la diferencia real -- 3 variables con peso igual vs 15+ indicadores del IPM con peso propio por dimension."
+    },
+    {
+      "indice": 17,
+      "categoria": "con_fuente",
+      "base_exactitud": 1,
+      "base_relevancia": 2,
+      "ft_exactitud": 4,
+      "ft_relevancia": 5,
+      "nota": "Base: inventa el nombre de la institucion ('Subgerencia de Servicios Publicos Distritales' no existe, el nombre real es Superintendencia de Servicios Publicos Domiciliarios) y una razon de discrepancia inventada (potable vs no potable). FT: identifica correctamente TerriData como fuente de Techo 360 y que la cifra no es la oficial verificada de SSPD, aunque sin detallar las razones especificas de la diferencia (corte, agregacion, prestadores informales)."
+    }
+  ],
+  "promedios": {
+    "general": {
+      "base_exactitud": 1.1666666666666667,
+      "base_relevancia": 1.7222222222222223,
+      "ft_exactitud": 2.9444444444444446,
+      "ft_relevancia": 3.9444444444444446
+    },
+    "con_fuente": {
+      "base_exactitud": 1.2222222222222223,
+      "base_relevancia": 1.8888888888888888,
+      "ft_exactitud": 2.7777777777777777,
+      "ft_relevancia": 3.5555555555555554
+    },
+    "sin_fuente": {
+      "base_exactitud": 1.1111111111111112,
+      "base_relevancia": 1.5555555555555556,
+      "ft_exactitud": 3.111111111111111,
+      "ft_relevancia": 4.333333333333333
+    }
+  }
+}
