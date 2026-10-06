@@ -2276,3 +2276,34 @@ limitación de import de Python) en
 **Estado**: v3.2 queda como modelo de referencia de esta ronda. No hay
 cambios de dataset ni de hiperparámetros pendientes salvo que se decida
 abrir v3.3 para el caso de salud. `latest` sigue sin tocarse (v1).
+
+## T-124 — Criterio de decisión de v3.3 (fijado ANTES de entrenar, 6-oct-2026)
+
+Este criterio se escribió antes de entrenar v3.3 y **no se cambia después**. Las cifras históricas de v3.2 (alucinación 3,2 %, correctas 88,4 %, de `evaluacion_alucinacion/README.md`) son **solo referencia**: la línea base de decisión es v3.2 **re-medido con el mismo método** que v3.3 (ver "Método de medición").
+
+**v3.3 sustituye a v3.2 solo si se cumple TODO lo siguiente:**
+
+1. **100 preguntas fuera de dominio** (las de `evaluacion_alucinacion/preguntas_generales.py`): con el método de abajo, alucinación de v3.3 **≤** la de v3.2 re-medido y correctas de v3.3 **≥** las de v3.2 re-medido. Los porcentajes se calculan sobre las respuestas puntuables de las 3 corridas (las preguntas de confianza media del evaluador se apartan, como en v3.2).
+2. **`holdout_v3_3.jsonl`** (28 pares, 5 corridas por par, `temperature=0,3`): ROUGE-L y rúbrica **≥** los de v3.2 medidos sobre **ese mismo holdout** y con el mismo método.
+3. **Sin regresiones reales nuevas:** ningún par que v3.2 acierte de forma consistente (en las 5 corridas) y v3.3 falle de forma consistente; el patrón de nombres de repositorios se mantiene (5/5).
+4. **RAM del contenedor Ollama en el VPS < 3 GiB** con v3.3 cuantizado a Q4_K_M (límite del contenedor: 3072 MB; con v3.2 se midieron 2,2-2,3 GiB).
+
+Si no se cumple, **v3.2 sigue en producción** y se documenta el motivo.
+
+**Empate técnico.** No se decide cuando (a) la diferencia en alucinación o en correctas entre v3.3 y v3.2 es de 1 o 2 preguntas en las 100 (equivale a ≤ 6 respuestas sobre las ~285 puntuables de las 3 corridas), o (b) hay mezcla de mejoras y regresiones entre criterios o entre pares. En esos casos se presentan los datos y se espera la decisión del responsable del proyecto; quien mide no la toma.
+
+### Método de medición (el mismo para v3.2 y v3.3)
+
+- **100 preguntas:** Ollama local con el GGUF Q4_K_M de cada versión, a través del **servicio actual** (`POST /chatbot/send` de `app/main.py`, con su system prompt y sus opciones vigentes), parámetros del Modelfile (`temperature=0,3`, `top_p=0,9`, `repeat_penalty=1,15`, `num_ctx=2048`), **3 corridas por pregunta**. Las respuestas de ambos modelos se mezclan sin etiqueta y se puntúan **a ciegas** (correcta, incorrecta, alucinación, se negó) con el criterio de `evaluacion_alucinacion/RUBRICA.md` y el formato de `puntajes_v3_2.py` y `calcular.py`. Se reportan alucinación y correctas por categoría y la salud por separado.
+- **Holdout:** Ollama con el GGUF Q4_K_M de cada versión, semillas 1 a 5, `temperature=0,3`, `top_p=0,9`, `repeat_penalty=1,15`, `num_ctx=2048`, mismo servicio y mismo `NUM_PREDICT` para ambos. ROUGE-L (F1) con la función de `metrica_rouge_l_v3.py`. Rúbrica 1-5: los criterios de cada par se fijan **a partir de la referencia, antes de ver ninguna salida**; las respuestas de ambos modelos se mezclan sin etiqueta y se puntúan a ciegas. **La rúbrica y los puntajes de las 100 preguntas los aplica una IA, no una persona.**
+- Es un método distinto del que se usó para v1 y v3 en `METRICAS_CONSOLIDADAS.md` (transformers sin cuantizar, 18 pares): esas cifras no son comparables con las de T-124.
+
+### Fidelidad del entrenador reconstruido
+
+`entrenar_lora.py` y `fusionar_lora.py` nunca estuvieron en el repositorio ni en su historial, y se reconstruyen a partir de este README y del `adapter_config.json` de v3.2. Antes de entrenar v3.3 se hace una corrida de fidelidad de unos 30 steps sobre `entrenamiento_v3_2.jsonl`, y solo se continúa si **todo** esto se cumple: la pérdida queda dentro de **±10 % relativo** de la registrada en el log de v3.2 en los steps comparables, los parámetros entrenables son los mismos que en `adapter_config.json` (r=16, alpha=32, dropout 0,05, las 7 capas lineales) y la configuración es la del README (NF4 + bf16, batch 1 × acumulación 8, lr 2e-4, `PagedAdamW8bit`, `use_reentrant=False`, enmascarado del prompt, 3 épocas, misma semilla). Si no se cumple, **se detiene y se reporta**: no se ajustan hiperparámetros para que cuadre.
+
+### Advertencias que acompañan cualquier resultado
+
+- v3.3 cambia varias cosas a la vez (correcciones de hechos, hechos actualizados y pares nuevos; ver [`../dataset/README.md`](../dataset/README.md)), por lo que una mejora **no es atribuible a un solo factor**.
+- `python training/convertir_dataset.py --verificar` compara contra el `train.jsonl` de v3.2 **en la copia de trabajo de Windows** (saltos de línea CRLF): el repositorio guarda los `.jsonl` con LF por `core.autocrlf=true`, y en Linux esa comparación byte a byte no aplicaría tal cual.
+- v3.2 **nunca se evaluó contra el holdout del dominio** (ni greedy ni muestreo; ver el aviso de alcance de `METRICAS_CONSOLIDADAS.md`), así que para el criterio 2 se mide también v3.2 sobre `holdout_v3_3.jsonl`.
