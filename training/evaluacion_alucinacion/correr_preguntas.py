@@ -26,7 +26,7 @@ with httpx.Client(timeout=300.0) as c:
     for i, (categoria, pregunta, referencia, confianza) in enumerate(PREGUNTAS, 1):
         inicio = time.time()
         try:
-            r = c.post(f"{URL}/chatbot/send", json={"message": pregunta})
+            r = c.post(f"{URL}/chatbot/send", json={"message": pregunta, "usuario_id": 0, "consentimiento_entrenamiento": False})  # T-124: el esquema actual (T-97) exige estos dos campos; no afectan a la generacion
             r.raise_for_status()
             respuesta = r.json()["response"]
             error = None

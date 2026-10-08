@@ -2307,3 +2307,50 @@ Si no se cumple, **v3.2 sigue en producción** y se documenta el motivo.
 - v3.3 cambia varias cosas a la vez (correcciones de hechos, hechos actualizados y pares nuevos; ver [`../dataset/README.md`](../dataset/README.md)), por lo que una mejora **no es atribuible a un solo factor**.
 - `python training/convertir_dataset.py --verificar` compara contra el `train.jsonl` de v3.2 **en la copia de trabajo de Windows** (saltos de línea CRLF): el repositorio guarda los `.jsonl` con LF por `core.autocrlf=true`, y en Linux esa comparación byte a byte no aplicaría tal cual.
 - v3.2 **nunca se evaluó contra el holdout del dominio** (ni greedy ni muestreo; ver el aviso de alcance de `METRICAS_CONSOLIDADAS.md`), así que para el criterio 2 se mide también v3.2 sobre `holdout_v3_3.jsonl`.
+
+### Entrenamiento de v3.3: steps con grad_norm alto (revisión de solo lectura, 8-oct-2026)
+
+Corrida completa en `training/adapters/techo360-v3.3/entrenamiento_log.json`: 312 steps, loss 2,0318 → 0,7725, 50,0 min, VRAM pico reservada 5.018 MB, ningún step sobre 30 s. De los 312 steps, **29 tienen `grad_norm` > 2,3** (media global 1,68; máximo 4,22). No es una divergencia:
+
+- El `grad_norm` crece con la época porque la pérdida baja (media 1,22 en la época 1, 1,67 en la 2 y 2,16 en la 3); 24 de los 29 steps están en la época 3.
+- 3 de los 29 (steps 104, 208 y 312) son el último step de cada época, con **un solo ejemplo** en vez de 8 (825 = 103 × 8 + 1), así que su gradiente es más ruidoso; el step 104 subió su loss 0,36 sobre la media móvil de 10 steps y volvió a 1,16 en el siguiente.
+- En los demás, el loss se separa de la media móvil de los 10 steps previos entre −0,25 y +0,20 y vuelve a ella en 1 a 3 steps; ninguno dispara el loss de los steps siguientes.
+- No se explica por los pares nuevos ni por los largos: correlación de `grad_norm` con la fracción de ejemplos nuevos −0,06 y con los tokens medios del step 0,11 (orden de ejemplos reconstruido con la semilla 42 y el muestreador de `accelerate`; la reconstrucción no se pudo validar contra la corrida y es solo indicativa).
+- El log de v3.2 no registró `grad_norm`, así que no hay comparación directa; el README de v1 reporta 0,7 a 2,3.
+
+No se reentrenó.
+
+### Resultados de T-124 y veredicto (8-oct-2026): v3.3 NO se adopta; v3.2 se queda en producción
+
+Aplicado el criterio sellado en 716ab5b **sin cambiar umbrales**. Ambos modelos, GGUF Q4_K_M en Ollama; holdout por `/api/chat` con los ajustes del servicio (semillas 1-5, temp 0,3, top_p 0,9, repeat_penalty 1,15, num_ctx 2048, `NUM_PREDICT` 400); 100 preguntas por el servicio real (3 corridas). Datos y scripts en `training/t124/`.
+
+| Criterio | v3.2 | v3.3 | Resultado |
+|---|---|---|---|
+| 1. Alucinación, 100 preguntas (285 puntuables) | 2,8 % (8) | 5,3 % (15) | No cumple (7 respuestas de diferencia; tolerancia de empate ≤6) |
+| 1. Correctas, 100 preguntas | 86,0 % (245) | 86,0 % (245) | Empate |
+| 2. ROUGE-L, holdout (28 pares × 5) | 0,2049 | 0,2022 | No cumple (−0,0027) |
+| 2. Rúbrica 1-5, holdout | 1,89 | 2,00 | Cumple |
+| 3. Regresiones consistentes (definición formal) | – | ninguna | Cumple |
+| 3. Repos 5/5 (par 10) | 5/5 nombran los cinco | 3/5 | Regresión |
+| 4. RAM de `techo360-ollama` en el VPS (<3 GiB) | – | – | No medido (no se pasó a fase 5) |
+
+**Pregunta 100 (caso discutible).** Una respuesta de v3.3 ("especialista → *expert*" como ejemplo de sinónimo) se etiquetó alucinación por la regla del caso límite de `evaluacion_alucinacion/RUBRICA.md`. Se informan **ambas lecturas**: como alucinación, la diferencia es de **7** respuestas (15 frente a 8) y no hay empate; como incorrecta, es de **6** (14 frente a 8) y cae en la tolerancia de empate. No se elige la favorable. En ambas lecturas la regresión de repos y las tres preguntas alucinadas en las tres corridas se mantienen, y la decisión de la sesión de T-124 es no adoptar.
+
+**Mejoras de v3.3:** Dialogflow 0/140 frente a 2/140 en el holdout; TerriData vs SSPD par 18 (3/5 frente a 0/5 atribuyen la cobertura a TerriData; par 22 igual en ambos, 3/5 dicen «sí es de la SSPD»); Marie Curie (pregunta 11: v3.2 alucina 2 de 3); eritrocito (pregunta 88: «hemociana» en 2/3 frente a 3/3); par 17 del Score (4/5 frente a 2/5 dicen «tres variables»); salud 2 frente a 3 alucinaciones de 24.
+**Regresiones de v3.3:** repos 3/5: una respuesta sin `techo360-chatbot` y otra sin `techo360-proyeccion` que inventa «Techo 360 Data»; tres preguntas generales alucinadas en las 3 corridas, que v3.2 acierta (2: planeta «Iris/Ídolo»; 21: biografía de Bolívar; 63: obra «La sonrisa eterna»). La rúbrica del holdout no mejora en el par 10 (2,6 → 2,0). Con ~2/5 de rúbrica media en ambos, el holdout apenas distingue los modelos.
+
+**Entrenamiento (adapters/techo360-v3.3):** 312 steps, loss 2,0318 → 0,7725, 50,0 min, VRAM pico 5.018 MB. Fidelidad del entrenador reconstruido: diferencia máxima por step 0,5 % frente al log de v3.2 (tolerancia ±10 %). Revisión de `grad_norm` (sección anterior): 29 steps > 2,3, sin divergencia del loss; no se reentrenó.
+**Empaquetado:** GGUF Q4_K_M 2.019.377.216 bytes, SHA-256 `44379524de01777fb03172d0c4de7e1fd0eda025fe9b90bbcb0cce1a10d2a9e9`; etiqueta local `techo360-chatbot:v3.3` (no se borra), adaptador conservado. GGUF y modelos fusionados no se versionan.
+
+#### Limitaciones
+
+- **Cuantizador distinto:** el Q4_K_M de v3.3 se hizo con el contenedor `ghcr.io/ggml-org/llama.cpp:full` (compilación 11459), no con el b11056 de v3.2 (el `.exe` local lo bloquea Windows App Control). **No se validó la equivalencia** re-cuantizando v3.2 con el mismo contenedor; parte de la diferencia podría deberse al cuantizador.
+- **Puntuación por una IA, a ciegas:** rúbrica del holdout (`rubrica_holdout_v3_3.json`, fijada antes de ver salidas) y etiquetas de las 100 preguntas las asignó Claude con respuestas mezcladas sin etiqueta; no es una evaluación independiente. Cinco preguntas de confianza media quedan fuera del porcentaje.
+- **Diferencia pequeña:** 7 respuestas de 285, con las alucinaciones de v3.3 concentradas en 3 preguntas.
+- `correr_preguntas.py` se modificó solo para enviar `usuario_id` y `consentimiento_entrenamiento` (campos exigidos por el esquema actual del servicio); no afecta a la generación.
+- Los pares y el dataset v3.3 cambian varios factores a la vez (ver advertencias arriba).
+
+#### Deuda técnica
+
+1. **Control del cuantizador:** re-cuantizar v3.2 con el mismo contenedor de llama.cpp (compilación 11459) y reevaluarlo con este mismo método, para aislar el efecto del cuantizador.
+2. **Posibles causas de la regresión en repos para una v3.4** (hipótesis, sin verificar): los pares de arquitectura del dataset v3.3 compiten con los de dominio nuevo y con el conocimiento general; 3 épocas sobre 825 ejemplos (312 steps) sobreajustan más que sobre el dataset anterior (el `grad_norm` crece en la época 3); cuantizador distinto; muestreo con 5 semillas insuficiente para pares con respuesta enumerativa. Revisar qué pares de repos cambió v3.3 antes de decidir. No se inicia v3.4.

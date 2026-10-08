@@ -1,0 +1,1006 @@
+{
+ "version": "A_c1",
+ "url": "http://127.0.0.1:8765",
+ "resultados": [
+  {
+   "n": 1,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es la fórmula química del agua?",
+   "referencia": "H2O",
+   "confianza_evaluador": "alta",
+   "respuesta": "H2O.",
+   "error": null,
+   "segundos": 3.8
+  },
+  {
+   "n": 2,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuántos planetas tiene el sistema solar?",
+   "referencia": "8 desde 2006 (Plutón reclasificado)",
+   "confianza_evaluador": "alta",
+   "respuesta": "8.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 3,
+   "categoria": "ciencia",
+   "pregunta": "¿Qué gas absorben las plantas para la fotosíntesis?",
+   "referencia": "Dióxido de carbono (CO2)",
+   "confianza_evaluador": "alta",
+   "respuesta": "El dióxido de carbono.",
+   "error": null,
+   "segundos": 0.7
+  },
+  {
+   "n": 4,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es el elemento químico con símbolo Fe?",
+   "referencia": "Hierro",
+   "confianza_evaluador": "alta",
+   "respuesta": "Ferro.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 5,
+   "categoria": "ciencia",
+   "pregunta": "¿A qué temperatura hierve el agua a nivel del mar en grados Celsius?",
+   "referencia": "100 °C",
+   "confianza_evaluador": "alta",
+   "respuesta": "100.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 6,
+   "categoria": "ciencia",
+   "pregunta": "¿Quién formuló la teoría de la relatividad?",
+   "referencia": "Albert Einstein",
+   "confianza_evaluador": "alta",
+   "respuesta": "Albert Einstein.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 7,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es el planeta más grande del sistema solar?",
+   "referencia": "Júpiter",
+   "confianza_evaluador": "alta",
+   "respuesta": "Júpiter.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 8,
+   "categoria": "ciencia",
+   "pregunta": "¿Qué órgano del cuerpo humano produce la insulina?",
+   "referencia": "El páncreas",
+   "confianza_evaluador": "alta",
+   "respuesta": "Los páncreas.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 9,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuántos cromosomas tiene una célula humana normal?",
+   "referencia": "46 (23 pares)",
+   "confianza_evaluador": "alta",
+   "respuesta": "46.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 10,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es la velocidad de la luz en el vacío, aproximadamente?",
+   "referencia": "~299.792.458 m/s (~300.000 km/s)",
+   "confianza_evaluador": "alta",
+   "respuesta": "Cien mil kilómetros por segundo.",
+   "error": null,
+   "segundos": 0.7
+  },
+  {
+   "n": 11,
+   "categoria": "ciencia",
+   "pregunta": "¿Qué científica descubrió el radio y el polonio?",
+   "referencia": "Marie Curie",
+   "confianza_evaluador": "alta",
+   "respuesta": "Glenn T. Seaborg.",
+   "error": null,
+   "segundos": 0.7
+  },
+  {
+   "n": 12,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es el metal líquido a temperatura ambiente?",
+   "referencia": "Mercurio",
+   "confianza_evaluador": "alta",
+   "respuesta": "El mercurio.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 13,
+   "categoria": "ciencia",
+   "pregunta": "¿Qué tipo de roca es el granito: ígnea, sedimentaria o metamórfica?",
+   "referencia": "Ígnea",
+   "confianza_evaluador": "alta",
+   "respuesta": "Metamórfica.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 14,
+   "categoria": "ciencia",
+   "pregunta": "¿Cuál es la unidad básica de la herencia biológica?",
+   "referencia": "El gen",
+   "confianza_evaluador": "alta",
+   "respuesta": "El ADN.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 15,
+   "categoria": "ciencia",
+   "pregunta": "¿Qué fuerza mantiene a los planetas en órbita alrededor del Sol?",
+   "referencia": "La gravedad",
+   "confianza_evaluador": "alta",
+   "respuesta": "La gravedad.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 16,
+   "categoria": "historia",
+   "pregunta": "¿En qué año llegó Cristóbal Colón a América?",
+   "referencia": "1492",
+   "confianza_evaluador": "alta",
+   "respuesta": "En 1492.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 17,
+   "categoria": "historia",
+   "pregunta": "¿En qué año cayó el Muro de Berlín?",
+   "referencia": "1989",
+   "confianza_evaluador": "alta",
+   "respuesta": "En noviembre de 1989.",
+   "error": null,
+   "segundos": 0.7
+  },
+  {
+   "n": 18,
+   "categoria": "historia",
+   "pregunta": "¿Quién fue el primer presidente de Estados Unidos?",
+   "referencia": "George Washington",
+   "confianza_evaluador": "alta",
+   "respuesta": "George Washington.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 19,
+   "categoria": "historia",
+   "pregunta": "¿En qué año comenzó la Segunda Guerra Mundial?",
+   "referencia": "1939",
+   "confianza_evaluador": "alta",
+   "respuesta": "En 1939.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 20,
+   "categoria": "historia",
+   "pregunta": "¿Qué civilización construyó Machu Picchu?",
+   "referencia": "La civilización inca",
+   "confianza_evaluador": "alta",
+   "respuesta": "Los incas.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 21,
+   "categoria": "historia",
+   "pregunta": "¿Quién fue Simón Bolívar?",
+   "referencia": "Líder de la independencia de varios países sudamericanos",
+   "confianza_evaluador": "alta",
+   "respuesta": "Simón Bolívar fue un militar, político y líder colonial colombiano que jugó un papel central en la independencia de varias naciones del continente americano, incluyendo Colombia, Venezuela, Ecuador y Panamá.\n\nNacido en Caracas en 1783, Bolívar se distinguió como comandante militar durante las campañas de liberación contra los españoles. Su victoria en la Batalla de Boyacá en 1819 sentó las bases para el movimiento independentista colombiano y venezolano.\n\nDespués de consolidar su poder, Bolívar se convirtió en presidente de Colombia, estableciendo un gobierno centralizado que buscaba modernizar a sus nuevos estados. Su legado ha sido objeto de debate histórico, ya que algunos lo veneran como héroe nacional por su papel en la independencia del continente, mientras que otros critican su autoritarismo y el trágico fin de su vida en Santa Marta.\n\nBolívar falleció en 1830 a los 47 años.",
+   "error": null,
+   "segundos": 4.7
+  },
+  {
+   "n": 22,
+   "categoria": "historia",
+   "pregunta": "¿En qué año se firmó la independencia de Colombia?",
+   "referencia": "20 de julio de 1810 (grito); independencia consolidada en 1819",
+   "confianza_evaluador": "alta",
+   "respuesta": "La Independencia de Colombia fue declarada oficialmente el 7 de agosto de 1819, aunque el proceso de lucha armada que condujo a esa fecha comenzó antes y terminó después.",
+   "error": null,
+   "segundos": 1.3
+  },
+  {
+   "n": 23,
+   "categoria": "historia",
+   "pregunta": "¿Qué imperio construyó el Coliseo de Roma?",
+   "referencia": "El Imperio Romano",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Imperio Romano.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 24,
+   "categoria": "historia",
+   "pregunta": "¿Quién escribió el Manifiesto Comunista junto a Friedrich Engels?",
+   "referencia": "Karl Marx",
+   "confianza_evaluador": "alta",
+   "respuesta": "Karl Marx.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 25,
+   "categoria": "historia",
+   "pregunta": "¿En qué año llegó el hombre a la Luna por primera vez?",
+   "referencia": "1969",
+   "confianza_evaluador": "alta",
+   "respuesta": "Año 1969.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 26,
+   "categoria": "historia",
+   "pregunta": "¿Qué revolución comenzó en Francia en 1789?",
+   "referencia": "La Revolución Francesa",
+   "confianza_evaluador": "alta",
+   "respuesta": "La Revolución Francesa.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 27,
+   "categoria": "historia",
+   "pregunta": "¿Quién fue Cleopatra?",
+   "referencia": "Última reina del Egipto ptolemaico",
+   "confianza_evaluador": "alta",
+   "respuesta": "La reina egipcia del período helenístico.",
+   "error": null,
+   "segundos": 0.8
+  },
+  {
+   "n": 28,
+   "categoria": "historia",
+   "pregunta": "¿Qué muro dividió Alemania durante la Guerra Fría?",
+   "referencia": "El Muro de Berlín",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Muro de Berlín.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 29,
+   "categoria": "historia",
+   "pregunta": "¿En qué siglo ocurrió la Revolución Industrial?",
+   "referencia": "Siglo XVIII (con continuación en el XIX)",
+   "confianza_evaluador": "alta",
+   "respuesta": "El siglo XIX.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 30,
+   "categoria": "historia",
+   "pregunta": "¿Quién pintó la Capilla Sixtina?",
+   "referencia": "Miguel Ángel",
+   "confianza_evaluador": "alta",
+   "respuesta": "Michelangelo Buonarroti.",
+   "error": null,
+   "segundos": 0.7
+  },
+  {
+   "n": 31,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es la capital de Francia?",
+   "referencia": "París",
+   "confianza_evaluador": "alta",
+   "respuesta": "París.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 32,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es el río más largo del mundo?",
+   "referencia": "Nilo o Amazonas según el criterio de medición",
+   "confianza_evaluador": "media",
+   "respuesta": "El Nilo.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 33,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es el océano más grande?",
+   "referencia": "El Pacífico",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Pacífico.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 34,
+   "categoria": "geografia",
+   "pregunta": "¿En qué continente está Egipto?",
+   "referencia": "África",
+   "confianza_evaluador": "alta",
+   "respuesta": "África.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 35,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es la montaña más alta del mundo?",
+   "referencia": "El Everest",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Everest.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 36,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es el país más grande del mundo por superficie?",
+   "referencia": "Rusia",
+   "confianza_evaluador": "alta",
+   "respuesta": "Rusia.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 37,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es la capital de Japón?",
+   "referencia": "Tokio",
+   "confianza_evaluador": "alta",
+   "respuesta": "Tokio.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 38,
+   "categoria": "geografia",
+   "pregunta": "¿Qué desierto es el más grande del mundo?",
+   "referencia": "La Antártida (desierto polar); el Sahara es el mayor cálido",
+   "confianza_evaluador": "media",
+   "respuesta": "El Sahara.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 39,
+   "categoria": "geografia",
+   "pregunta": "¿Cuántos continentes hay?",
+   "referencia": "Depende del modelo: 5, 6 o 7",
+   "confianza_evaluador": "media",
+   "respuesta": "7.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 40,
+   "categoria": "geografia",
+   "pregunta": "¿Qué moneda se usa en Japón?",
+   "referencia": "El yen",
+   "confianza_evaluador": "alta",
+   "respuesta": "Yen japonés.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 41,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es el país con mayor población del mundo?",
+   "referencia": "India superó a China en 2023",
+   "confianza_evaluador": "media",
+   "respuesta": "China.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 42,
+   "categoria": "geografia",
+   "pregunta": "¿En qué país se encuentra la Torre Eiffel?",
+   "referencia": "Francia",
+   "confianza_evaluador": "alta",
+   "respuesta": "Francia.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 43,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es la capital de Australia?",
+   "referencia": "Canberra",
+   "confianza_evaluador": "alta",
+   "respuesta": "Canberra.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 44,
+   "categoria": "geografia",
+   "pregunta": "¿Qué mar separa Europa de África?",
+   "referencia": "El mar Mediterráneo",
+   "confianza_evaluador": "alta",
+   "respuesta": "El Mar Mediterráneo.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 45,
+   "categoria": "geografia",
+   "pregunta": "¿Cuál es el lago más grande del mundo?",
+   "referencia": "El mar Caspio (lago salado)",
+   "confianza_evaluador": "alta",
+   "respuesta": "Baijalasauri, ubicado en Georgia.",
+   "error": null,
+   "segundos": 0.7
+  },
+  {
+   "n": 46,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es 15 por 4?",
+   "referencia": "60",
+   "confianza_evaluador": "alta",
+   "respuesta": "3,75.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 47,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es la raíz cuadrada de 144?",
+   "referencia": "12",
+   "confianza_evaluador": "alta",
+   "respuesta": "12.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 48,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es 7 al cuadrado?",
+   "referencia": "49",
+   "confianza_evaluador": "alta",
+   "respuesta": "49.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 49,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es 250 dividido entre 5?",
+   "referencia": "50",
+   "confianza_evaluador": "alta",
+   "respuesta": "50.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 50,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuál es el valor aproximado de pi con dos decimales?",
+   "referencia": "3,14",
+   "confianza_evaluador": "alta",
+   "respuesta": "3,14.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 51,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es el 20% de 300?",
+   "referencia": "60",
+   "confianza_evaluador": "alta",
+   "respuesta": "60.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 52,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuántos grados suman los ángulos internos de un triángulo?",
+   "referencia": "180 grados",
+   "confianza_evaluador": "alta",
+   "respuesta": "180 grados.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 53,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es 1024 dividido entre 2?",
+   "referencia": "512",
+   "confianza_evaluador": "alta",
+   "respuesta": "512.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 54,
+   "categoria": "matematicas",
+   "pregunta": "Si un producto cuesta 80.000 y tiene 25% de descuento, ¿cuánto cuesta?",
+   "referencia": "60.000",
+   "confianza_evaluador": "alta",
+   "respuesta": "60.000.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 55,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuál es el siguiente número primo después de 13?",
+   "referencia": "17",
+   "confianza_evaluador": "alta",
+   "respuesta": "17.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 56,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuánto es 3 elevado a la 4?",
+   "referencia": "81",
+   "confianza_evaluador": "alta",
+   "respuesta": "81.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 57,
+   "categoria": "matematicas",
+   "pregunta": "¿Cuántos lados tiene un hexágono?",
+   "referencia": "6",
+   "confianza_evaluador": "alta",
+   "respuesta": "6.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 58,
+   "categoria": "cultura",
+   "pregunta": "¿Quién escribió Cien años de soledad?",
+   "referencia": "Gabriel García Márquez",
+   "confianza_evaluador": "alta",
+   "respuesta": "Gabriel García Márquez.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 59,
+   "categoria": "cultura",
+   "pregunta": "¿Quién pintó La Mona Lisa?",
+   "referencia": "Leonardo da Vinci",
+   "confianza_evaluador": "alta",
+   "respuesta": "Leonardo da Vinci.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 60,
+   "categoria": "cultura",
+   "pregunta": "¿Quién escribió Don Quijote de la Mancha?",
+   "referencia": "Miguel de Cervantes",
+   "confianza_evaluador": "alta",
+   "respuesta": "Miguel de Cervantes Saavedra.",
+   "error": null,
+   "segundos": 0.7
+  },
+  {
+   "n": 61,
+   "categoria": "cultura",
+   "pregunta": "¿Cuántas cuerdas tiene una guitarra clásica?",
+   "referencia": "6",
+   "confianza_evaluador": "alta",
+   "respuesta": "6.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 62,
+   "categoria": "cultura",
+   "pregunta": "¿Quién compuso la Novena Sinfonía?",
+   "referencia": "Ludwig van Beethoven",
+   "confianza_evaluador": "alta",
+   "respuesta": "Ludwig van Beethoven.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 63,
+   "categoria": "cultura",
+   "pregunta": "¿En qué obra aparece el personaje de Romeo y Julieta?",
+   "referencia": "Romeo y Julieta, de Shakespeare",
+   "confianza_evaluador": "alta",
+   "respuesta": "En una tragedia romana.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 64,
+   "categoria": "cultura",
+   "pregunta": "¿Qué escritor colombiano ganó el Nobel de Literatura?",
+   "referencia": "Gabriel García Márquez (1982)",
+   "confianza_evaluador": "alta",
+   "respuesta": "Gabriel García Márquez.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 65,
+   "categoria": "cultura",
+   "pregunta": "¿Cuántas notas tiene la escala musical occidental básica?",
+   "referencia": "7 (do re mi fa sol la si)",
+   "confianza_evaluador": "alta",
+   "respuesta": "7.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 66,
+   "categoria": "cultura",
+   "pregunta": "¿Quién escribió La Odisea?",
+   "referencia": "Homero",
+   "confianza_evaluador": "alta",
+   "respuesta": "Homero.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 67,
+   "categoria": "cultura",
+   "pregunta": "¿Qué pintor español pintó el Guernica?",
+   "referencia": "Pablo Picasso",
+   "confianza_evaluador": "alta",
+   "respuesta": "Pablo Picasso.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 68,
+   "categoria": "cultura",
+   "pregunta": "¿Cuál es el idioma más hablado del mundo por número de hablantes nativos?",
+   "referencia": "Chino mandarín",
+   "confianza_evaluador": "media",
+   "respuesta": "El mandarín chino.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 69,
+   "categoria": "cultura",
+   "pregunta": "¿Quién dirigió la película Titanic de 1997?",
+   "referencia": "James Cameron",
+   "confianza_evaluador": "alta",
+   "respuesta": "James Cameron.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 70,
+   "categoria": "cultura",
+   "pregunta": "¿Qué instrumento tocaba principalmente Louis Armstrong?",
+   "referencia": "La trompeta",
+   "confianza_evaluador": "alta",
+   "respuesta": "La trompeta.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 71,
+   "categoria": "cultura",
+   "pregunta": "¿En qué país nació el escritor Jorge Luis Borges?",
+   "referencia": "Argentina",
+   "confianza_evaluador": "alta",
+   "respuesta": "Argentina.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 72,
+   "categoria": "cultura",
+   "pregunta": "¿Qué género musical originó Bob Marley principalmente?",
+   "referencia": "El reggae",
+   "confianza_evaluador": "alta",
+   "respuesta": "El reggae.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 73,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué significa la sigla HTTP?",
+   "referencia": "HyperText Transfer Protocol",
+   "confianza_evaluador": "alta",
+   "respuesta": "HyperText Transfer Protocol.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 74,
+   "categoria": "tecnologia",
+   "pregunta": "¿Quién fundó Microsoft junto a Paul Allen?",
+   "referencia": "Bill Gates",
+   "confianza_evaluador": "alta",
+   "respuesta": "Bill Gates.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 75,
+   "categoria": "tecnologia",
+   "pregunta": "¿Cuántos bits tiene un byte?",
+   "referencia": "8",
+   "confianza_evaluador": "alta",
+   "respuesta": "8.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 76,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué lenguaje de programación creó Guido van Rossum?",
+   "referencia": "Python",
+   "confianza_evaluador": "alta",
+   "respuesta": "Python.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 77,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué significa CPU?",
+   "referencia": "Central Processing Unit (unidad central de procesamiento)",
+   "confianza_evaluador": "alta",
+   "respuesta": "Central Processing Unit.\n\nEs la unidad central del procesador de una computadora donde se realizan las operaciones aritméticas y lógicas directas, como sumar o restar números, comparar valores, y controlar el flujo de datos entre diferentes partes del sistema.",
+   "error": null,
+   "segundos": 1.6
+  },
+  {
+   "n": 78,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué empresa desarrolla el sistema operativo Android?",
+   "referencia": "Google",
+   "confianza_evaluador": "alta",
+   "respuesta": "Google.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 79,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué es un algoritmo, en una frase?",
+   "referencia": "Secuencia finita de pasos para resolver un problema",
+   "confianza_evaluador": "alta",
+   "respuesta": "Un conjunto de instrucciones detalladas que una computadora sigue para resolver un problema o realizar una tarea específica, generalmente escritas en un lenguaje de programación.",
+   "error": null,
+   "segundos": 1.2
+  },
+  {
+   "n": 80,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué significa SQL?",
+   "referencia": "Structured Query Language",
+   "confianza_evaluador": "alta",
+   "respuesta": "Structured Query Language.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 81,
+   "categoria": "tecnologia",
+   "pregunta": "¿En qué año se fundó Google, aproximadamente?",
+   "referencia": "1998",
+   "confianza_evaluador": "alta",
+   "respuesta": "1998.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 82,
+   "categoria": "tecnologia",
+   "pregunta": "¿Qué protocolo se usa para enviar correo electrónico?",
+   "referencia": "SMTP",
+   "confianza_evaluador": "alta",
+   "respuesta": "SMTP.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 83,
+   "categoria": "salud",
+   "pregunta": "¿Cuántos huesos tiene aproximadamente el cuerpo humano adulto?",
+   "referencia": "206",
+   "confianza_evaluador": "alta",
+   "respuesta": "206.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 84,
+   "categoria": "salud",
+   "pregunta": "¿Qué órgano bombea la sangre?",
+   "referencia": "El corazón",
+   "confianza_evaluador": "alta",
+   "respuesta": "El corazón.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 85,
+   "categoria": "salud",
+   "pregunta": "¿Cuál es el órgano más grande del cuerpo humano?",
+   "referencia": "La piel",
+   "confianza_evaluador": "alta",
+   "respuesta": "El hígado.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 86,
+   "categoria": "salud",
+   "pregunta": "¿Qué vitamina se obtiene principalmente del sol?",
+   "referencia": "La vitamina D",
+   "confianza_evaluador": "alta",
+   "respuesta": "La vitamina D.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 87,
+   "categoria": "salud",
+   "pregunta": "¿Cuántas cámaras tiene el corazón humano?",
+   "referencia": "4",
+   "confianza_evaluador": "alta",
+   "respuesta": "4.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 88,
+   "categoria": "salud",
+   "pregunta": "¿Qué célula sanguínea transporta el oxígeno?",
+   "referencia": "El glóbulo rojo (eritrocito)",
+   "confianza_evaluador": "alta",
+   "respuesta": "La hemociana.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 89,
+   "categoria": "salud",
+   "pregunta": "¿Cuál es la temperatura corporal normal aproximada en grados Celsius?",
+   "referencia": "~37 °C",
+   "confianza_evaluador": "alta",
+   "respuesta": "37°C.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 90,
+   "categoria": "salud",
+   "pregunta": "¿Qué sistema del cuerpo incluye el cerebro y la médula espinal?",
+   "referencia": "El sistema nervioso central",
+   "confianza_evaluador": "alta",
+   "respuesta": "El sistema nervioso central.",
+   "error": null,
+   "segundos": 0.7
+  },
+  {
+   "n": 91,
+   "categoria": "deportes",
+   "pregunta": "¿Cada cuántos años se celebran los Juegos Olímpicos de verano?",
+   "referencia": "Cada 4 años",
+   "confianza_evaluador": "alta",
+   "respuesta": "Cuatro años.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 92,
+   "categoria": "deportes",
+   "pregunta": "¿Cuántos jugadores tiene un equipo de fútbol en cancha?",
+   "referencia": "11",
+   "confianza_evaluador": "alta",
+   "respuesta": "11.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 93,
+   "categoria": "deportes",
+   "pregunta": "¿En qué deporte destacó Michael Jordan?",
+   "referencia": "Baloncesto",
+   "confianza_evaluador": "alta",
+   "respuesta": "El baloncesto.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 94,
+   "categoria": "deportes",
+   "pregunta": "¿Cuántos jugadores tiene un equipo de voleibol en cancha?",
+   "referencia": "6",
+   "confianza_evaluador": "alta",
+   "respuesta": "6.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 95,
+   "categoria": "deportes",
+   "pregunta": "¿Qué país ganó el Mundial de fútbol de 2014?",
+   "referencia": "Alemania",
+   "confianza_evaluador": "alta",
+   "respuesta": "Alemania.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 96,
+   "categoria": "lengua",
+   "pregunta": "¿Cuántas letras tiene el alfabeto español actual?",
+   "referencia": "27",
+   "confianza_evaluador": "alta",
+   "respuesta": "26.",
+   "error": null,
+   "segundos": 0.5
+  },
+  {
+   "n": 97,
+   "categoria": "lengua",
+   "pregunta": "¿Qué es un sustantivo, en una frase?",
+   "referencia": "Palabra que nombra personas, animales, cosas o ideas",
+   "confianza_evaluador": "alta",
+   "respuesta": "Una palabra que designa algo o alguien, como \"la casa\" o \"el perro\".",
+   "error": null,
+   "segundos": 0.9
+  },
+  {
+   "n": 98,
+   "categoria": "lengua",
+   "pregunta": "¿Cuál es el plural de 'crisis'?",
+   "referencia": "crisis (invariable)",
+   "confianza_evaluador": "alta",
+   "respuesta": "Crisis.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 99,
+   "categoria": "lengua",
+   "pregunta": "¿Qué signo se usa al inicio de una pregunta en español?",
+   "referencia": "El signo de apertura ¿",
+   "confianza_evaluador": "alta",
+   "respuesta": "La interrogación.",
+   "error": null,
+   "segundos": 0.6
+  },
+  {
+   "n": 100,
+   "categoria": "lengua",
+   "pregunta": "¿Qué es un sinónimo?",
+   "referencia": "Palabra con significado igual o muy parecido a otra",
+   "confianza_evaluador": "alta",
+   "respuesta": "Una palabra intercambiable con otra sin perder su significado original.",
+   "error": null,
+   "segundos": 0.8
+  }
+ ]
+}

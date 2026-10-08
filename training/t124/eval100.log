@@ -1,0 +1,1218 @@
+=== modelo A (techo360-chatbot:v3.2) corrida 1 ===
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]   1/100 (ciencia     )   3.8s  ¿Cuál es la fórmula química del agua?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]   2/100 (ciencia     )   0.5s  ¿Cuántos planetas tiene el sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]   3/100 (ciencia     )   0.7s  ¿Qué gas absorben las plantas para la fotosíntesis?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]   4/100 (ciencia     )   0.6s  ¿Cuál es el elemento químico con símbolo Fe?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]   5/100 (ciencia     )   0.5s  ¿A qué temperatura hierve el agua a nivel del mar en
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]   6/100 (ciencia     )   0.6s  ¿Quién formuló la teoría de la relatividad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]   7/100 (ciencia     )   0.6s  ¿Cuál es el planeta más grande del sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]   8/100 (ciencia     )   0.6s  ¿Qué órgano del cuerpo humano produce la insulina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]   9/100 (ciencia     )   0.6s  ¿Cuántos cromosomas tiene una célula humana normal?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  10/100 (ciencia     )   0.7s  ¿Cuál es la velocidad de la luz en el vacío, aproxim
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  11/100 (ciencia     )   0.7s  ¿Qué científica descubrió el radio y el polonio?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  12/100 (ciencia     )   0.6s  ¿Cuál es el metal líquido a temperatura ambiente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  13/100 (ciencia     )   0.6s  ¿Qué tipo de roca es el granito: ígnea, sedimentaria
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  14/100 (ciencia     )   0.6s  ¿Cuál es la unidad básica de la herencia biológica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  15/100 (ciencia     )   0.6s  ¿Qué fuerza mantiene a los planetas en órbita alrede
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  16/100 (historia    )   0.6s  ¿En qué año llegó Cristóbal Colón a América?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  17/100 (historia    )   0.7s  ¿En qué año cayó el Muro de Berlín?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  18/100 (historia    )   0.6s  ¿Quién fue el primer presidente de Estados Unidos?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  19/100 (historia    )   0.6s  ¿En qué año comenzó la Segunda Guerra Mundial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  20/100 (historia    )   0.6s  ¿Qué civilización construyó Machu Picchu?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  21/100 (historia    )   4.7s  ¿Quién fue Simón Bolívar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  22/100 (historia    )   1.3s  ¿En qué año se firmó la independencia de Colombia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  23/100 (historia    )   0.6s  ¿Qué imperio construyó el Coliseo de Roma?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  24/100 (historia    )   0.6s  ¿Quién escribió el Manifiesto Comunista junto a Frie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  25/100 (historia    )   0.6s  ¿En qué año llegó el hombre a la Luna por primera ve
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  26/100 (historia    )   0.6s  ¿Qué revolución comenzó en Francia en 1789?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  27/100 (historia    )   0.8s  ¿Quién fue Cleopatra?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  28/100 (historia    )   0.6s  ¿Qué muro dividió Alemania durante la Guerra Fría?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  29/100 (historia    )   0.6s  ¿En qué siglo ocurrió la Revolución Industrial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  30/100 (historia    )   0.7s  ¿Quién pintó la Capilla Sixtina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  31/100 (geografia   )   0.6s  ¿Cuál es la capital de Francia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  32/100 (geografia   )   0.6s  ¿Cuál es el río más largo del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  33/100 (geografia   )   0.6s  ¿Cuál es el océano más grande?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  34/100 (geografia   )   0.6s  ¿En qué continente está Egipto?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  35/100 (geografia   )   0.6s  ¿Cuál es la montaña más alta del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  36/100 (geografia   )   0.6s  ¿Cuál es el país más grande del mundo por superficie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  37/100 (geografia   )   0.6s  ¿Cuál es la capital de Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  38/100 (geografia   )   0.6s  ¿Qué desierto es el más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  39/100 (geografia   )   0.5s  ¿Cuántos continentes hay?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  40/100 (geografia   )   0.6s  ¿Qué moneda se usa en Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  41/100 (geografia   )   0.6s  ¿Cuál es el país con mayor población del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  42/100 (geografia   )   0.6s  ¿En qué país se encuentra la Torre Eiffel?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  43/100 (geografia   )   0.6s  ¿Cuál es la capital de Australia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  44/100 (geografia   )   0.6s  ¿Qué mar separa Europa de África?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  45/100 (geografia   )   0.7s  ¿Cuál es el lago más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  46/100 (matematicas )   0.6s  ¿Cuánto es 15 por 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  47/100 (matematicas )   0.5s  ¿Cuánto es la raíz cuadrada de 144?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  48/100 (matematicas )   0.5s  ¿Cuánto es 7 al cuadrado?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  49/100 (matematicas )   0.5s  ¿Cuánto es 250 dividido entre 5?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  50/100 (matematicas )   0.6s  ¿Cuál es el valor aproximado de pi con dos decimales
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  51/100 (matematicas )   0.5s  ¿Cuánto es el 20% de 300?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  52/100 (matematicas )   0.6s  ¿Cuántos grados suman los ángulos internos de un tri
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  53/100 (matematicas )   0.5s  ¿Cuánto es 1024 dividido entre 2?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  54/100 (matematicas )   0.6s  Si un producto cuesta 80.000 y tiene 25% de descuent
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  55/100 (matematicas )   0.6s  ¿Cuál es el siguiente número primo después de 13?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  56/100 (matematicas )   0.5s  ¿Cuánto es 3 elevado a la 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  57/100 (matematicas )   0.5s  ¿Cuántos lados tiene un hexágono?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  58/100 (cultura     )   0.6s  ¿Quién escribió Cien años de soledad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  59/100 (cultura     )   0.6s  ¿Quién pintó La Mona Lisa?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  60/100 (cultura     )   0.7s  ¿Quién escribió Don Quijote de la Mancha?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  61/100 (cultura     )   0.5s  ¿Cuántas cuerdas tiene una guitarra clásica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  62/100 (cultura     )   0.6s  ¿Quién compuso la Novena Sinfonía?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  63/100 (cultura     )   0.6s  ¿En qué obra aparece el personaje de Romeo y Julieta
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  64/100 (cultura     )   0.6s  ¿Qué escritor colombiano ganó el Nobel de Literatura
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  65/100 (cultura     )   0.5s  ¿Cuántas notas tiene la escala musical occidental bá
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  66/100 (cultura     )   0.6s  ¿Quién escribió La Odisea?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  67/100 (cultura     )   0.6s  ¿Qué pintor español pintó el Guernica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  68/100 (cultura     )   0.6s  ¿Cuál es el idioma más hablado del mundo por número 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  69/100 (cultura     )   0.6s  ¿Quién dirigió la película Titanic de 1997?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  70/100 (cultura     )   0.6s  ¿Qué instrumento tocaba principalmente Louis Armstro
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  71/100 (cultura     )   0.6s  ¿En qué país nació el escritor Jorge Luis Borges?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  72/100 (cultura     )   0.6s  ¿Qué género musical originó Bob Marley principalment
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  73/100 (tecnologia  )   0.6s  ¿Qué significa la sigla HTTP?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  74/100 (tecnologia  )   0.6s  ¿Quién fundó Microsoft junto a Paul Allen?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  75/100 (tecnologia  )   0.6s  ¿Cuántos bits tiene un byte?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  76/100 (tecnologia  )   0.5s  ¿Qué lenguaje de programación creó Guido van Rossum?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  77/100 (tecnologia  )   1.6s  ¿Qué significa CPU?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  78/100 (tecnologia  )   0.6s  ¿Qué empresa desarrolla el sistema operativo Android
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  79/100 (tecnologia  )   1.2s  ¿Qué es un algoritmo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  80/100 (tecnologia  )   0.6s  ¿Qué significa SQL?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  81/100 (tecnologia  )   0.6s  ¿En qué año se fundó Google, aproximadamente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  82/100 (tecnologia  )   0.6s  ¿Qué protocolo se usa para enviar correo electrónico
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  83/100 (salud       )   0.6s  ¿Cuántos huesos tiene aproximadamente el cuerpo huma
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  84/100 (salud       )   0.6s  ¿Qué órgano bombea la sangre?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  85/100 (salud       )   0.6s  ¿Cuál es el órgano más grande del cuerpo humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  86/100 (salud       )   0.6s  ¿Qué vitamina se obtiene principalmente del sol?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  87/100 (salud       )   0.5s  ¿Cuántas cámaras tiene el corazón humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  88/100 (salud       )   0.6s  ¿Qué célula sanguínea transporta el oxígeno?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  89/100 (salud       )   0.6s  ¿Cuál es la temperatura corporal normal aproximada e
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  90/100 (salud       )   0.7s  ¿Qué sistema del cuerpo incluye el cerebro y la médu
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  91/100 (deportes    )   0.6s  ¿Cada cuántos años se celebran los Juegos Olímpicos 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  92/100 (deportes    )   0.6s  ¿Cuántos jugadores tiene un equipo de fútbol en canc
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  93/100 (deportes    )   0.6s  ¿En qué deporte destacó Michael Jordan?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  94/100 (deportes    )   0.5s  ¿Cuántos jugadores tiene un equipo de voleibol en ca
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  95/100 (deportes    )   0.6s  ¿Qué país ganó el Mundial de fútbol de 2014?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  96/100 (lengua      )   0.5s  ¿Cuántas letras tiene el alfabeto español actual?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  97/100 (lengua      )   0.9s  ¿Qué es un sustantivo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  98/100 (lengua      )   0.6s  ¿Cuál es el plural de 'crisis'?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1]  99/100 (lengua      )   0.6s  ¿Qué signo se usa al inicio de una pregunta en españ
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c1] 100/100 (lengua      )   0.8s  ¿Qué es un sinónimo?
+
+[A_c1] terminado en 1.2 min. 100 respuestas, 0 con error. Guardado en C:\Users\Eridanus_2\OneDrive\Documentos\Visual Studio\techo360\techo360-chatbot\training\t124\respuestas_A_c1.json
+=== modelo A (techo360-chatbot:v3.2) corrida 2 ===
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]   1/100 (ciencia     )   0.6s  ¿Cuál es la fórmula química del agua?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]   2/100 (ciencia     )   0.6s  ¿Cuántos planetas tiene el sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]   3/100 (ciencia     )   0.7s  ¿Qué gas absorben las plantas para la fotosíntesis?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]   4/100 (ciencia     )   0.6s  ¿Cuál es el elemento químico con símbolo Fe?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]   5/100 (ciencia     )   0.6s  ¿A qué temperatura hierve el agua a nivel del mar en
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]   6/100 (ciencia     )   0.6s  ¿Quién formuló la teoría de la relatividad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]   7/100 (ciencia     )   0.6s  ¿Cuál es el planeta más grande del sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]   8/100 (ciencia     )   1.3s  ¿Qué órgano del cuerpo humano produce la insulina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]   9/100 (ciencia     )   0.5s  ¿Cuántos cromosomas tiene una célula humana normal?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  10/100 (ciencia     )   0.7s  ¿Cuál es la velocidad de la luz en el vacío, aproxim
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  11/100 (ciencia     )   0.6s  ¿Qué científica descubrió el radio y el polonio?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  12/100 (ciencia     )   0.6s  ¿Cuál es el metal líquido a temperatura ambiente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  13/100 (ciencia     )   0.7s  ¿Qué tipo de roca es el granito: ígnea, sedimentaria
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  14/100 (ciencia     )   0.6s  ¿Cuál es la unidad básica de la herencia biológica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  15/100 (ciencia     )   0.6s  ¿Qué fuerza mantiene a los planetas en órbita alrede
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  16/100 (historia    )   0.6s  ¿En qué año llegó Cristóbal Colón a América?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  17/100 (historia    )   0.6s  ¿En qué año cayó el Muro de Berlín?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  18/100 (historia    )   0.6s  ¿Quién fue el primer presidente de Estados Unidos?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  19/100 (historia    )   0.6s  ¿En qué año comenzó la Segunda Guerra Mundial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  20/100 (historia    )   0.8s  ¿Qué civilización construyó Machu Picchu?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  21/100 (historia    )   1.0s  ¿Quién fue Simón Bolívar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  22/100 (historia    )   0.7s  ¿En qué año se firmó la independencia de Colombia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  23/100 (historia    )   0.8s  ¿Qué imperio construyó el Coliseo de Roma?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  24/100 (historia    )   0.7s  ¿Quién escribió el Manifiesto Comunista junto a Frie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  25/100 (historia    )   0.7s  ¿En qué año llegó el hombre a la Luna por primera ve
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  26/100 (historia    )   0.7s  ¿Qué revolución comenzó en Francia en 1789?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  27/100 (historia    )   0.9s  ¿Quién fue Cleopatra?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  28/100 (historia    )   0.6s  ¿Qué muro dividió Alemania durante la Guerra Fría?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  29/100 (historia    )   0.6s  ¿En qué siglo ocurrió la Revolución Industrial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  30/100 (historia    )   0.7s  ¿Quién pintó la Capilla Sixtina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  31/100 (geografia   )   0.6s  ¿Cuál es la capital de Francia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  32/100 (geografia   )   0.6s  ¿Cuál es el río más largo del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  33/100 (geografia   )   0.6s  ¿Cuál es el océano más grande?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  34/100 (geografia   )   0.6s  ¿En qué continente está Egipto?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  35/100 (geografia   )   0.6s  ¿Cuál es la montaña más alta del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  36/100 (geografia   )   0.6s  ¿Cuál es el país más grande del mundo por superficie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  37/100 (geografia   )   0.6s  ¿Cuál es la capital de Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  38/100 (geografia   )   0.6s  ¿Qué desierto es el más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  39/100 (geografia   )   0.6s  ¿Cuántos continentes hay?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  40/100 (geografia   )   0.6s  ¿Qué moneda se usa en Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  41/100 (geografia   )   0.6s  ¿Cuál es el país con mayor población del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  42/100 (geografia   )   0.6s  ¿En qué país se encuentra la Torre Eiffel?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  43/100 (geografia   )   0.6s  ¿Cuál es la capital de Australia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  44/100 (geografia   )   0.6s  ¿Qué mar separa Europa de África?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  45/100 (geografia   )   0.6s  ¿Cuál es el lago más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  46/100 (matematicas )   0.6s  ¿Cuánto es 15 por 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  47/100 (matematicas )   0.5s  ¿Cuánto es la raíz cuadrada de 144?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  48/100 (matematicas )   0.6s  ¿Cuánto es 7 al cuadrado?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  49/100 (matematicas )   0.6s  ¿Cuánto es 250 dividido entre 5?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  50/100 (matematicas )   0.6s  ¿Cuál es el valor aproximado de pi con dos decimales
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  51/100 (matematicas )   0.6s  ¿Cuánto es el 20% de 300?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  52/100 (matematicas )   0.6s  ¿Cuántos grados suman los ángulos internos de un tri
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  53/100 (matematicas )   0.6s  ¿Cuánto es 1024 dividido entre 2?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  54/100 (matematicas )   0.6s  Si un producto cuesta 80.000 y tiene 25% de descuent
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  55/100 (matematicas )   0.6s  ¿Cuál es el siguiente número primo después de 13?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  56/100 (matematicas )   0.6s  ¿Cuánto es 3 elevado a la 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  57/100 (matematicas )   0.6s  ¿Cuántos lados tiene un hexágono?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  58/100 (cultura     )   0.8s  ¿Quién escribió Cien años de soledad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  59/100 (cultura     )   0.6s  ¿Quién pintó La Mona Lisa?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  60/100 (cultura     )   0.7s  ¿Quién escribió Don Quijote de la Mancha?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  61/100 (cultura     )   0.5s  ¿Cuántas cuerdas tiene una guitarra clásica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  62/100 (cultura     )   0.6s  ¿Quién compuso la Novena Sinfonía?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  63/100 (cultura     )   0.7s  ¿En qué obra aparece el personaje de Romeo y Julieta
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  64/100 (cultura     )   0.6s  ¿Qué escritor colombiano ganó el Nobel de Literatura
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  65/100 (cultura     )   0.5s  ¿Cuántas notas tiene la escala musical occidental bá
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  66/100 (cultura     )   0.6s  ¿Quién escribió La Odisea?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  67/100 (cultura     )   0.6s  ¿Qué pintor español pintó el Guernica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  68/100 (cultura     )   0.6s  ¿Cuál es el idioma más hablado del mundo por número 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  69/100 (cultura     )   0.6s  ¿Quién dirigió la película Titanic de 1997?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  70/100 (cultura     )   0.6s  ¿Qué instrumento tocaba principalmente Louis Armstro
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  71/100 (cultura     )   0.6s  ¿En qué país nació el escritor Jorge Luis Borges?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  72/100 (cultura     )   0.6s  ¿Qué género musical originó Bob Marley principalment
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  73/100 (tecnologia  )   0.6s  ¿Qué significa la sigla HTTP?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  74/100 (tecnologia  )   0.6s  ¿Quién fundó Microsoft junto a Paul Allen?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  75/100 (tecnologia  )   0.6s  ¿Cuántos bits tiene un byte?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  76/100 (tecnologia  )   0.6s  ¿Qué lenguaje de programación creó Guido van Rossum?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  77/100 (tecnologia  )   1.5s  ¿Qué significa CPU?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  78/100 (tecnologia  )   0.6s  ¿Qué empresa desarrolla el sistema operativo Android
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  79/100 (tecnologia  )   1.2s  ¿Qué es un algoritmo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  80/100 (tecnologia  )   1.4s  ¿Qué significa SQL?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  81/100 (tecnologia  )   0.6s  ¿En qué año se fundó Google, aproximadamente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  82/100 (tecnologia  )   0.5s  ¿Qué protocolo se usa para enviar correo electrónico
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  83/100 (salud       )   0.6s  ¿Cuántos huesos tiene aproximadamente el cuerpo huma
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  84/100 (salud       )   0.6s  ¿Qué órgano bombea la sangre?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  85/100 (salud       )   0.6s  ¿Cuál es el órgano más grande del cuerpo humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  86/100 (salud       )   0.6s  ¿Qué vitamina se obtiene principalmente del sol?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  87/100 (salud       )   0.5s  ¿Cuántas cámaras tiene el corazón humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  88/100 (salud       )   0.6s  ¿Qué célula sanguínea transporta el oxígeno?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  89/100 (salud       )   0.6s  ¿Cuál es la temperatura corporal normal aproximada e
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  90/100 (salud       )   0.6s  ¿Qué sistema del cuerpo incluye el cerebro y la médu
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  91/100 (deportes    )   0.6s  ¿Cada cuántos años se celebran los Juegos Olímpicos 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  92/100 (deportes    )   0.6s  ¿Cuántos jugadores tiene un equipo de fútbol en canc
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  93/100 (deportes    )   0.6s  ¿En qué deporte destacó Michael Jordan?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  94/100 (deportes    )   0.6s  ¿Cuántos jugadores tiene un equipo de voleibol en ca
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  95/100 (deportes    )   0.6s  ¿Qué país ganó el Mundial de fútbol de 2014?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  96/100 (lengua      )   0.6s  ¿Cuántas letras tiene el alfabeto español actual?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  97/100 (lengua      )   1.1s  ¿Qué es un sustantivo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  98/100 (lengua      )   0.6s  ¿Cuál es el plural de 'crisis'?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2]  99/100 (lengua      )   0.6s  ¿Qué signo se usa al inicio de una pregunta en españ
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c2] 100/100 (lengua      )   0.8s  ¿Qué es un sinónimo?
+
+[A_c2] terminado en 1.1 min. 100 respuestas, 0 con error. Guardado en C:\Users\Eridanus_2\OneDrive\Documentos\Visual Studio\techo360\techo360-chatbot\training\t124\respuestas_A_c2.json
+=== modelo A (techo360-chatbot:v3.2) corrida 3 ===
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]   1/100 (ciencia     )   0.6s  ¿Cuál es la fórmula química del agua?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]   2/100 (ciencia     )   0.5s  ¿Cuántos planetas tiene el sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]   3/100 (ciencia     )   0.7s  ¿Qué gas absorben las plantas para la fotosíntesis?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]   4/100 (ciencia     )   0.6s  ¿Cuál es el elemento químico con símbolo Fe?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]   5/100 (ciencia     )   0.6s  ¿A qué temperatura hierve el agua a nivel del mar en
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]   6/100 (ciencia     )   0.6s  ¿Quién formuló la teoría de la relatividad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]   7/100 (ciencia     )   0.6s  ¿Cuál es el planeta más grande del sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]   8/100 (ciencia     )   0.7s  ¿Qué órgano del cuerpo humano produce la insulina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]   9/100 (ciencia     )   0.6s  ¿Cuántos cromosomas tiene una célula humana normal?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  10/100 (ciencia     )   0.7s  ¿Cuál es la velocidad de la luz en el vacío, aproxim
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  11/100 (ciencia     )   0.6s  ¿Qué científica descubrió el radio y el polonio?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  12/100 (ciencia     )   0.6s  ¿Cuál es el metal líquido a temperatura ambiente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  13/100 (ciencia     )   0.6s  ¿Qué tipo de roca es el granito: ígnea, sedimentaria
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  14/100 (ciencia     )   0.6s  ¿Cuál es la unidad básica de la herencia biológica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  15/100 (ciencia     )   0.6s  ¿Qué fuerza mantiene a los planetas en órbita alrede
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  16/100 (historia    )   0.6s  ¿En qué año llegó Cristóbal Colón a América?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  17/100 (historia    )   0.7s  ¿En qué año cayó el Muro de Berlín?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  18/100 (historia    )   0.6s  ¿Quién fue el primer presidente de Estados Unidos?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  19/100 (historia    )   0.6s  ¿En qué año comenzó la Segunda Guerra Mundial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  20/100 (historia    )   0.6s  ¿Qué civilización construyó Machu Picchu?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  21/100 (historia    )   1.7s  ¿Quién fue Simón Bolívar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  22/100 (historia    )   1.6s  ¿En qué año se firmó la independencia de Colombia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  23/100 (historia    )   0.6s  ¿Qué imperio construyó el Coliseo de Roma?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  24/100 (historia    )   0.6s  ¿Quién escribió el Manifiesto Comunista junto a Frie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  25/100 (historia    )   0.9s  ¿En qué año llegó el hombre a la Luna por primera ve
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  26/100 (historia    )   0.6s  ¿Qué revolución comenzó en Francia en 1789?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  27/100 (historia    )   0.8s  ¿Quién fue Cleopatra?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  28/100 (historia    )   0.6s  ¿Qué muro dividió Alemania durante la Guerra Fría?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  29/100 (historia    )   0.6s  ¿En qué siglo ocurrió la Revolución Industrial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  30/100 (historia    )   0.7s  ¿Quién pintó la Capilla Sixtina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  31/100 (geografia   )   0.6s  ¿Cuál es la capital de Francia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  32/100 (geografia   )   0.6s  ¿Cuál es el río más largo del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  33/100 (geografia   )   0.6s  ¿Cuál es el océano más grande?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  34/100 (geografia   )   0.6s  ¿En qué continente está Egipto?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  35/100 (geografia   )   0.6s  ¿Cuál es la montaña más alta del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  36/100 (geografia   )   0.6s  ¿Cuál es el país más grande del mundo por superficie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  37/100 (geografia   )   0.6s  ¿Cuál es la capital de Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  38/100 (geografia   )   0.6s  ¿Qué desierto es el más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  39/100 (geografia   )   1.1s  ¿Cuántos continentes hay?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  40/100 (geografia   )   0.6s  ¿Qué moneda se usa en Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  41/100 (geografia   )   0.6s  ¿Cuál es el país con mayor población del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  42/100 (geografia   )   0.6s  ¿En qué país se encuentra la Torre Eiffel?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  43/100 (geografia   )   0.6s  ¿Cuál es la capital de Australia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  44/100 (geografia   )   0.6s  ¿Qué mar separa Europa de África?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  45/100 (geografia   )   0.8s  ¿Cuál es el lago más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  46/100 (matematicas )   0.6s  ¿Cuánto es 15 por 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  47/100 (matematicas )   0.6s  ¿Cuánto es la raíz cuadrada de 144?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  48/100 (matematicas )   0.6s  ¿Cuánto es 7 al cuadrado?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  49/100 (matematicas )   0.6s  ¿Cuánto es 250 dividido entre 5?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  50/100 (matematicas )   0.6s  ¿Cuál es el valor aproximado de pi con dos decimales
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  51/100 (matematicas )   0.6s  ¿Cuánto es el 20% de 300?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  52/100 (matematicas )   0.6s  ¿Cuántos grados suman los ángulos internos de un tri
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  53/100 (matematicas )   0.6s  ¿Cuánto es 1024 dividido entre 2?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  54/100 (matematicas )   0.6s  Si un producto cuesta 80.000 y tiene 25% de descuent
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  55/100 (matematicas )   0.6s  ¿Cuál es el siguiente número primo después de 13?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  56/100 (matematicas )   0.6s  ¿Cuánto es 3 elevado a la 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  57/100 (matematicas )   0.6s  ¿Cuántos lados tiene un hexágono?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  58/100 (cultura     )   0.7s  ¿Quién escribió Cien años de soledad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  59/100 (cultura     )   0.6s  ¿Quién pintó La Mona Lisa?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  60/100 (cultura     )   0.7s  ¿Quién escribió Don Quijote de la Mancha?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  61/100 (cultura     )   0.6s  ¿Cuántas cuerdas tiene una guitarra clásica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  62/100 (cultura     )   0.7s  ¿Quién compuso la Novena Sinfonía?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  63/100 (cultura     )   0.7s  ¿En qué obra aparece el personaje de Romeo y Julieta
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  64/100 (cultura     )   0.7s  ¿Qué escritor colombiano ganó el Nobel de Literatura
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  65/100 (cultura     )   0.5s  ¿Cuántas notas tiene la escala musical occidental bá
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  66/100 (cultura     )   0.6s  ¿Quién escribió La Odisea?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  67/100 (cultura     )   0.6s  ¿Qué pintor español pintó el Guernica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  68/100 (cultura     )   0.6s  ¿Cuál es el idioma más hablado del mundo por número 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  69/100 (cultura     )   0.6s  ¿Quién dirigió la película Titanic de 1997?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  70/100 (cultura     )   0.6s  ¿Qué instrumento tocaba principalmente Louis Armstro
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  71/100 (cultura     )   0.5s  ¿En qué país nació el escritor Jorge Luis Borges?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  72/100 (cultura     )   0.6s  ¿Qué género musical originó Bob Marley principalment
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  73/100 (tecnologia  )   0.6s  ¿Qué significa la sigla HTTP?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  74/100 (tecnologia  )   0.6s  ¿Quién fundó Microsoft junto a Paul Allen?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  75/100 (tecnologia  )   0.6s  ¿Cuántos bits tiene un byte?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  76/100 (tecnologia  )   0.6s  ¿Qué lenguaje de programación creó Guido van Rossum?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  77/100 (tecnologia  )   1.6s  ¿Qué significa CPU?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  78/100 (tecnologia  )   0.5s  ¿Qué empresa desarrolla el sistema operativo Android
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  79/100 (tecnologia  )   1.3s  ¿Qué es un algoritmo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  80/100 (tecnologia  )   0.6s  ¿Qué significa SQL?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  81/100 (tecnologia  )   0.6s  ¿En qué año se fundó Google, aproximadamente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  82/100 (tecnologia  )   0.6s  ¿Qué protocolo se usa para enviar correo electrónico
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  83/100 (salud       )   0.5s  ¿Cuántos huesos tiene aproximadamente el cuerpo huma
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  84/100 (salud       )   0.6s  ¿Qué órgano bombea la sangre?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  85/100 (salud       )   0.6s  ¿Cuál es el órgano más grande del cuerpo humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  86/100 (salud       )   0.6s  ¿Qué vitamina se obtiene principalmente del sol?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  87/100 (salud       )   0.5s  ¿Cuántas cámaras tiene el corazón humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  88/100 (salud       )   0.6s  ¿Qué célula sanguínea transporta el oxígeno?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  89/100 (salud       )   0.6s  ¿Cuál es la temperatura corporal normal aproximada e
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  90/100 (salud       )   0.6s  ¿Qué sistema del cuerpo incluye el cerebro y la médu
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  91/100 (deportes    )   0.6s  ¿Cada cuántos años se celebran los Juegos Olímpicos 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  92/100 (deportes    )   0.5s  ¿Cuántos jugadores tiene un equipo de fútbol en canc
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  93/100 (deportes    )   0.6s  ¿En qué deporte destacó Michael Jordan?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  94/100 (deportes    )   0.5s  ¿Cuántos jugadores tiene un equipo de voleibol en ca
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  95/100 (deportes    )   0.6s  ¿Qué país ganó el Mundial de fútbol de 2014?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  96/100 (lengua      )   0.5s  ¿Cuántas letras tiene el alfabeto español actual?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  97/100 (lengua      )   0.7s  ¿Qué es un sustantivo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  98/100 (lengua      )   0.6s  ¿Cuál es el plural de 'crisis'?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3]  99/100 (lengua      )   0.6s  ¿Qué signo se usa al inicio de una pregunta en españ
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[A_c3] 100/100 (lengua      )   0.7s  ¿Qué es un sinónimo?
+
+[A_c3] terminado en 1.1 min. 100 respuestas, 0 con error. Guardado en C:\Users\Eridanus_2\OneDrive\Documentos\Visual Studio\techo360\techo360-chatbot\training\t124\respuestas_A_c3.json
+=== modelo B (techo360-chatbot:v3.3) corrida 1 ===
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]   1/100 (ciencia     )   2.8s  ¿Cuál es la fórmula química del agua?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]   2/100 (ciencia     )   1.1s  ¿Cuántos planetas tiene el sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]   3/100 (ciencia     )   0.7s  ¿Qué gas absorben las plantas para la fotosíntesis?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]   4/100 (ciencia     )   0.6s  ¿Cuál es el elemento químico con símbolo Fe?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]   5/100 (ciencia     )   0.6s  ¿A qué temperatura hierve el agua a nivel del mar en
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]   6/100 (ciencia     )   0.6s  ¿Quién formuló la teoría de la relatividad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]   7/100 (ciencia     )   0.6s  ¿Cuál es el planeta más grande del sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]   8/100 (ciencia     )   0.6s  ¿Qué órgano del cuerpo humano produce la insulina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]   9/100 (ciencia     )   0.6s  ¿Cuántos cromosomas tiene una célula humana normal?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  10/100 (ciencia     )   0.7s  ¿Cuál es la velocidad de la luz en el vacío, aproxim
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  11/100 (ciencia     )   0.6s  ¿Qué científica descubrió el radio y el polonio?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  12/100 (ciencia     )   0.6s  ¿Cuál es el metal líquido a temperatura ambiente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  13/100 (ciencia     )   0.6s  ¿Qué tipo de roca es el granito: ígnea, sedimentaria
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  14/100 (ciencia     )   0.6s  ¿Cuál es la unidad básica de la herencia biológica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  15/100 (ciencia     )   0.6s  ¿Qué fuerza mantiene a los planetas en órbita alrede
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  16/100 (historia    )   0.6s  ¿En qué año llegó Cristóbal Colón a América?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  17/100 (historia    )   0.7s  ¿En qué año cayó el Muro de Berlín?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  18/100 (historia    )   0.6s  ¿Quién fue el primer presidente de Estados Unidos?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  19/100 (historia    )   0.6s  ¿En qué año comenzó la Segunda Guerra Mundial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  20/100 (historia    )   0.6s  ¿Qué civilización construyó Machu Picchu?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  21/100 (historia    )   4.3s  ¿Quién fue Simón Bolívar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  22/100 (historia    )   0.6s  ¿En qué año se firmó la independencia de Colombia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  23/100 (historia    )   0.6s  ¿Qué imperio construyó el Coliseo de Roma?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  24/100 (historia    )   0.6s  ¿Quién escribió el Manifiesto Comunista junto a Frie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  25/100 (historia    )   0.6s  ¿En qué año llegó el hombre a la Luna por primera ve
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  26/100 (historia    )   0.6s  ¿Qué revolución comenzó en Francia en 1789?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  27/100 (historia    )   1.2s  ¿Quién fue Cleopatra?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  28/100 (historia    )   0.7s  ¿Qué muro dividió Alemania durante la Guerra Fría?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  29/100 (historia    )   0.6s  ¿En qué siglo ocurrió la Revolución Industrial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  30/100 (historia    )   0.7s  ¿Quién pintó la Capilla Sixtina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  31/100 (geografia   )   0.6s  ¿Cuál es la capital de Francia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  32/100 (geografia   )   0.6s  ¿Cuál es el río más largo del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  33/100 (geografia   )   0.7s  ¿Cuál es el océano más grande?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  34/100 (geografia   )   0.6s  ¿En qué continente está Egipto?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  35/100 (geografia   )   0.8s  ¿Cuál es la montaña más alta del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  36/100 (geografia   )   0.6s  ¿Cuál es el país más grande del mundo por superficie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  37/100 (geografia   )   0.6s  ¿Cuál es la capital de Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  38/100 (geografia   )   0.6s  ¿Qué desierto es el más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  39/100 (geografia   )   0.9s  ¿Cuántos continentes hay?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  40/100 (geografia   )   0.7s  ¿Qué moneda se usa en Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  41/100 (geografia   )   0.6s  ¿Cuál es el país con mayor población del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  42/100 (geografia   )   0.6s  ¿En qué país se encuentra la Torre Eiffel?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  43/100 (geografia   )   0.6s  ¿Cuál es la capital de Australia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  44/100 (geografia   )   0.6s  ¿Qué mar separa Europa de África?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  45/100 (geografia   )   0.6s  ¿Cuál es el lago más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  46/100 (matematicas )   0.6s  ¿Cuánto es 15 por 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  47/100 (matematicas )   0.6s  ¿Cuánto es la raíz cuadrada de 144?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  48/100 (matematicas )   0.6s  ¿Cuánto es 7 al cuadrado?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  49/100 (matematicas )   0.6s  ¿Cuánto es 250 dividido entre 5?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  50/100 (matematicas )   0.6s  ¿Cuál es el valor aproximado de pi con dos decimales
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  51/100 (matematicas )   0.6s  ¿Cuánto es el 20% de 300?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  52/100 (matematicas )   0.6s  ¿Cuántos grados suman los ángulos internos de un tri
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  53/100 (matematicas )   0.6s  ¿Cuánto es 1024 dividido entre 2?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  54/100 (matematicas )   0.6s  Si un producto cuesta 80.000 y tiene 25% de descuent
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  55/100 (matematicas )   0.6s  ¿Cuál es el siguiente número primo después de 13?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  56/100 (matematicas )   0.5s  ¿Cuánto es 3 elevado a la 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  57/100 (matematicas )   0.6s  ¿Cuántos lados tiene un hexágono?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  58/100 (cultura     )   0.7s  ¿Quién escribió Cien años de soledad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  59/100 (cultura     )   0.6s  ¿Quién pintó La Mona Lisa?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  60/100 (cultura     )   0.7s  ¿Quién escribió Don Quijote de la Mancha?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  61/100 (cultura     )   0.6s  ¿Cuántas cuerdas tiene una guitarra clásica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  62/100 (cultura     )   0.6s  ¿Quién compuso la Novena Sinfonía?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  63/100 (cultura     )   0.6s  ¿En qué obra aparece el personaje de Romeo y Julieta
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  64/100 (cultura     )   0.6s  ¿Qué escritor colombiano ganó el Nobel de Literatura
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  65/100 (cultura     )   0.6s  ¿Cuántas notas tiene la escala musical occidental bá
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  66/100 (cultura     )   0.6s  ¿Quién escribió La Odisea?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  67/100 (cultura     )   0.6s  ¿Qué pintor español pintó el Guernica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  68/100 (cultura     )   0.6s  ¿Cuál es el idioma más hablado del mundo por número 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  69/100 (cultura     )   0.6s  ¿Quién dirigió la película Titanic de 1997?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  70/100 (cultura     )   0.6s  ¿Qué instrumento tocaba principalmente Louis Armstro
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  71/100 (cultura     )   0.5s  ¿En qué país nació el escritor Jorge Luis Borges?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  72/100 (cultura     )   0.6s  ¿Qué género musical originó Bob Marley principalment
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  73/100 (tecnologia  )   0.6s  ¿Qué significa la sigla HTTP?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  74/100 (tecnologia  )   0.6s  ¿Quién fundó Microsoft junto a Paul Allen?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  75/100 (tecnologia  )   0.6s  ¿Cuántos bits tiene un byte?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  76/100 (tecnologia  )   0.6s  ¿Qué lenguaje de programación creó Guido van Rossum?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  77/100 (tecnologia  )   1.4s  ¿Qué significa CPU?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  78/100 (tecnologia  )   0.6s  ¿Qué empresa desarrolla el sistema operativo Android
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  79/100 (tecnologia  )   1.2s  ¿Qué es un algoritmo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  80/100 (tecnologia  )   0.6s  ¿Qué significa SQL?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  81/100 (tecnologia  )   0.6s  ¿En qué año se fundó Google, aproximadamente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  82/100 (tecnologia  )   0.6s  ¿Qué protocolo se usa para enviar correo electrónico
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  83/100 (salud       )   0.6s  ¿Cuántos huesos tiene aproximadamente el cuerpo huma
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  84/100 (salud       )   0.6s  ¿Qué órgano bombea la sangre?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  85/100 (salud       )   0.6s  ¿Cuál es el órgano más grande del cuerpo humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  86/100 (salud       )   0.6s  ¿Qué vitamina se obtiene principalmente del sol?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  87/100 (salud       )   0.6s  ¿Cuántas cámaras tiene el corazón humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  88/100 (salud       )   0.7s  ¿Qué célula sanguínea transporta el oxígeno?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  89/100 (salud       )   0.6s  ¿Cuál es la temperatura corporal normal aproximada e
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  90/100 (salud       )   0.6s  ¿Qué sistema del cuerpo incluye el cerebro y la médu
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  91/100 (deportes    )   1.5s  ¿Cada cuántos años se celebran los Juegos Olímpicos 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  92/100 (deportes    )   0.6s  ¿Cuántos jugadores tiene un equipo de fútbol en canc
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  93/100 (deportes    )   0.6s  ¿En qué deporte destacó Michael Jordan?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  94/100 (deportes    )   0.6s  ¿Cuántos jugadores tiene un equipo de voleibol en ca
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  95/100 (deportes    )   0.6s  ¿Qué país ganó el Mundial de fútbol de 2014?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  96/100 (lengua      )   0.6s  ¿Cuántas letras tiene el alfabeto español actual?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  97/100 (lengua      )   0.9s  ¿Qué es un sustantivo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  98/100 (lengua      )   0.6s  ¿Cuál es el plural de 'crisis'?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1]  99/100 (lengua      )   0.6s  ¿Qué signo se usa al inicio de una pregunta en españ
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c1] 100/100 (lengua      )   1.2s  ¿Qué es un sinónimo?
+
+[B_c1] terminado en 1.2 min. 100 respuestas, 0 con error. Guardado en C:\Users\Eridanus_2\OneDrive\Documentos\Visual Studio\techo360\techo360-chatbot\training\t124\respuestas_B_c1.json
+=== modelo B (techo360-chatbot:v3.3) corrida 2 ===
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]   1/100 (ciencia     )   0.6s  ¿Cuál es la fórmula química del agua?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]   2/100 (ciencia     )   1.1s  ¿Cuántos planetas tiene el sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]   3/100 (ciencia     )   0.7s  ¿Qué gas absorben las plantas para la fotosíntesis?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]   4/100 (ciencia     )   0.6s  ¿Cuál es el elemento químico con símbolo Fe?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]   5/100 (ciencia     )   0.6s  ¿A qué temperatura hierve el agua a nivel del mar en
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]   6/100 (ciencia     )   0.6s  ¿Quién formuló la teoría de la relatividad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]   7/100 (ciencia     )   0.6s  ¿Cuál es el planeta más grande del sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]   8/100 (ciencia     )   0.6s  ¿Qué órgano del cuerpo humano produce la insulina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]   9/100 (ciencia     )   0.6s  ¿Cuántos cromosomas tiene una célula humana normal?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  10/100 (ciencia     )   0.7s  ¿Cuál es la velocidad de la luz en el vacío, aproxim
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  11/100 (ciencia     )   0.6s  ¿Qué científica descubrió el radio y el polonio?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  12/100 (ciencia     )   0.6s  ¿Cuál es el metal líquido a temperatura ambiente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  13/100 (ciencia     )   1.6s  ¿Qué tipo de roca es el granito: ígnea, sedimentaria
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  14/100 (ciencia     )   0.7s  ¿Cuál es la unidad básica de la herencia biológica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  15/100 (ciencia     )   0.6s  ¿Qué fuerza mantiene a los planetas en órbita alrede
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  16/100 (historia    )   0.6s  ¿En qué año llegó Cristóbal Colón a América?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  17/100 (historia    )   0.7s  ¿En qué año cayó el Muro de Berlín?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  18/100 (historia    )   0.6s  ¿Quién fue el primer presidente de Estados Unidos?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  19/100 (historia    )   0.6s  ¿En qué año comenzó la Segunda Guerra Mundial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  20/100 (historia    )   0.6s  ¿Qué civilización construyó Machu Picchu?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  21/100 (historia    )   2.6s  ¿Quién fue Simón Bolívar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  22/100 (historia    )   0.6s  ¿En qué año se firmó la independencia de Colombia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  23/100 (historia    )   0.6s  ¿Qué imperio construyó el Coliseo de Roma?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  24/100 (historia    )   0.6s  ¿Quién escribió el Manifiesto Comunista junto a Frie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  25/100 (historia    )   0.6s  ¿En qué año llegó el hombre a la Luna por primera ve
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  26/100 (historia    )   0.6s  ¿Qué revolución comenzó en Francia en 1789?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  27/100 (historia    )   1.2s  ¿Quién fue Cleopatra?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  28/100 (historia    )   0.6s  ¿Qué muro dividió Alemania durante la Guerra Fría?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  29/100 (historia    )   0.7s  ¿En qué siglo ocurrió la Revolución Industrial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  30/100 (historia    )   0.7s  ¿Quién pintó la Capilla Sixtina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  31/100 (geografia   )   0.6s  ¿Cuál es la capital de Francia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  32/100 (geografia   )   0.6s  ¿Cuál es el río más largo del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  33/100 (geografia   )   0.6s  ¿Cuál es el océano más grande?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  34/100 (geografia   )   0.6s  ¿En qué continente está Egipto?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  35/100 (geografia   )   0.8s  ¿Cuál es la montaña más alta del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  36/100 (geografia   )   0.6s  ¿Cuál es el país más grande del mundo por superficie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  37/100 (geografia   )   0.6s  ¿Cuál es la capital de Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  38/100 (geografia   )   0.6s  ¿Qué desierto es el más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  39/100 (geografia   )   0.9s  ¿Cuántos continentes hay?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  40/100 (geografia   )   0.6s  ¿Qué moneda se usa en Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  41/100 (geografia   )   0.6s  ¿Cuál es el país con mayor población del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  42/100 (geografia   )   0.6s  ¿En qué país se encuentra la Torre Eiffel?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  43/100 (geografia   )   0.6s  ¿Cuál es la capital de Australia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  44/100 (geografia   )   0.6s  ¿Qué mar separa Europa de África?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  45/100 (geografia   )   0.7s  ¿Cuál es el lago más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  46/100 (matematicas )   0.6s  ¿Cuánto es 15 por 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  47/100 (matematicas )   0.6s  ¿Cuánto es la raíz cuadrada de 144?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  48/100 (matematicas )   0.5s  ¿Cuánto es 7 al cuadrado?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  49/100 (matematicas )   0.6s  ¿Cuánto es 250 dividido entre 5?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  50/100 (matematicas )   0.6s  ¿Cuál es el valor aproximado de pi con dos decimales
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  51/100 (matematicas )   0.6s  ¿Cuánto es el 20% de 300?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  52/100 (matematicas )   0.6s  ¿Cuántos grados suman los ángulos internos de un tri
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  53/100 (matematicas )   0.5s  ¿Cuánto es 1024 dividido entre 2?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  54/100 (matematicas )   0.6s  Si un producto cuesta 80.000 y tiene 25% de descuent
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  55/100 (matematicas )   0.6s  ¿Cuál es el siguiente número primo después de 13?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  56/100 (matematicas )   0.6s  ¿Cuánto es 3 elevado a la 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  57/100 (matematicas )   0.6s  ¿Cuántos lados tiene un hexágono?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  58/100 (cultura     )   0.7s  ¿Quién escribió Cien años de soledad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  59/100 (cultura     )   0.6s  ¿Quién pintó La Mona Lisa?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  60/100 (cultura     )   0.8s  ¿Quién escribió Don Quijote de la Mancha?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  61/100 (cultura     )   0.6s  ¿Cuántas cuerdas tiene una guitarra clásica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  62/100 (cultura     )   0.7s  ¿Quién compuso la Novena Sinfonía?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  63/100 (cultura     )   0.7s  ¿En qué obra aparece el personaje de Romeo y Julieta
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  64/100 (cultura     )   0.7s  ¿Qué escritor colombiano ganó el Nobel de Literatura
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  65/100 (cultura     )   0.6s  ¿Cuántas notas tiene la escala musical occidental bá
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  66/100 (cultura     )   0.6s  ¿Quién escribió La Odisea?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  67/100 (cultura     )   0.6s  ¿Qué pintor español pintó el Guernica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  68/100 (cultura     )   0.7s  ¿Cuál es el idioma más hablado del mundo por número 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  69/100 (cultura     )   0.6s  ¿Quién dirigió la película Titanic de 1997?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  70/100 (cultura     )   0.6s  ¿Qué instrumento tocaba principalmente Louis Armstro
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  71/100 (cultura     )   0.6s  ¿En qué país nació el escritor Jorge Luis Borges?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  72/100 (cultura     )   0.6s  ¿Qué género musical originó Bob Marley principalment
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  73/100 (tecnologia  )   0.6s  ¿Qué significa la sigla HTTP?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  74/100 (tecnologia  )   0.6s  ¿Quién fundó Microsoft junto a Paul Allen?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  75/100 (tecnologia  )   0.6s  ¿Cuántos bits tiene un byte?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  76/100 (tecnologia  )   0.6s  ¿Qué lenguaje de programación creó Guido van Rossum?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  77/100 (tecnologia  )   1.0s  ¿Qué significa CPU?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  78/100 (tecnologia  )   0.6s  ¿Qué empresa desarrolla el sistema operativo Android
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  79/100 (tecnologia  )   1.3s  ¿Qué es un algoritmo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  80/100 (tecnologia  )   0.6s  ¿Qué significa SQL?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  81/100 (tecnologia  )   0.6s  ¿En qué año se fundó Google, aproximadamente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  82/100 (tecnologia  )   0.6s  ¿Qué protocolo se usa para enviar correo electrónico
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  83/100 (salud       )   0.6s  ¿Cuántos huesos tiene aproximadamente el cuerpo huma
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  84/100 (salud       )   0.6s  ¿Qué órgano bombea la sangre?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  85/100 (salud       )   0.6s  ¿Cuál es el órgano más grande del cuerpo humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  86/100 (salud       )   0.6s  ¿Qué vitamina se obtiene principalmente del sol?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  87/100 (salud       )   0.6s  ¿Cuántas cámaras tiene el corazón humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  88/100 (salud       )   0.6s  ¿Qué célula sanguínea transporta el oxígeno?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  89/100 (salud       )   0.6s  ¿Cuál es la temperatura corporal normal aproximada e
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  90/100 (salud       )   0.6s  ¿Qué sistema del cuerpo incluye el cerebro y la médu
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  91/100 (deportes    )   4.6s  ¿Cada cuántos años se celebran los Juegos Olímpicos 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  92/100 (deportes    )   0.6s  ¿Cuántos jugadores tiene un equipo de fútbol en canc
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  93/100 (deportes    )   0.6s  ¿En qué deporte destacó Michael Jordan?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  94/100 (deportes    )   0.6s  ¿Cuántos jugadores tiene un equipo de voleibol en ca
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  95/100 (deportes    )   0.6s  ¿Qué país ganó el Mundial de fútbol de 2014?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  96/100 (lengua      )   0.6s  ¿Cuántas letras tiene el alfabeto español actual?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  97/100 (lengua      )   1.1s  ¿Qué es un sustantivo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  98/100 (lengua      )   0.6s  ¿Cuál es el plural de 'crisis'?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2]  99/100 (lengua      )   0.6s  ¿Qué signo se usa al inicio de una pregunta en españ
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c2] 100/100 (lengua      )   0.8s  ¿Qué es un sinónimo?
+
+[B_c2] terminado en 1.2 min. 100 respuestas, 0 con error. Guardado en C:\Users\Eridanus_2\OneDrive\Documentos\Visual Studio\techo360\techo360-chatbot\training\t124\respuestas_B_c2.json
+=== modelo B (techo360-chatbot:v3.3) corrida 3 ===
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]   1/100 (ciencia     )   0.6s  ¿Cuál es la fórmula química del agua?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]   2/100 (ciencia     )   1.1s  ¿Cuántos planetas tiene el sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]   3/100 (ciencia     )   0.7s  ¿Qué gas absorben las plantas para la fotosíntesis?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]   4/100 (ciencia     )   0.6s  ¿Cuál es el elemento químico con símbolo Fe?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]   5/100 (ciencia     )   0.6s  ¿A qué temperatura hierve el agua a nivel del mar en
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]   6/100 (ciencia     )   0.6s  ¿Quién formuló la teoría de la relatividad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]   7/100 (ciencia     )   0.6s  ¿Cuál es el planeta más grande del sistema solar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]   8/100 (ciencia     )   0.6s  ¿Qué órgano del cuerpo humano produce la insulina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]   9/100 (ciencia     )   0.6s  ¿Cuántos cromosomas tiene una célula humana normal?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  10/100 (ciencia     )   0.7s  ¿Cuál es la velocidad de la luz en el vacío, aproxim
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  11/100 (ciencia     )   0.6s  ¿Qué científica descubrió el radio y el polonio?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  12/100 (ciencia     )   0.6s  ¿Cuál es el metal líquido a temperatura ambiente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  13/100 (ciencia     )   0.7s  ¿Qué tipo de roca es el granito: ígnea, sedimentaria
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  14/100 (ciencia     )   0.6s  ¿Cuál es la unidad básica de la herencia biológica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  15/100 (ciencia     )   0.6s  ¿Qué fuerza mantiene a los planetas en órbita alrede
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  16/100 (historia    )   0.6s  ¿En qué año llegó Cristóbal Colón a América?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  17/100 (historia    )   0.6s  ¿En qué año cayó el Muro de Berlín?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  18/100 (historia    )   0.6s  ¿Quién fue el primer presidente de Estados Unidos?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  19/100 (historia    )   0.7s  ¿En qué año comenzó la Segunda Guerra Mundial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  20/100 (historia    )   0.6s  ¿Qué civilización construyó Machu Picchu?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  21/100 (historia    )   4.4s  ¿Quién fue Simón Bolívar?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  22/100 (historia    )   0.9s  ¿En qué año se firmó la independencia de Colombia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  23/100 (historia    )   0.6s  ¿Qué imperio construyó el Coliseo de Roma?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  24/100 (historia    )   0.6s  ¿Quién escribió el Manifiesto Comunista junto a Frie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  25/100 (historia    )   0.6s  ¿En qué año llegó el hombre a la Luna por primera ve
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  26/100 (historia    )   0.7s  ¿Qué revolución comenzó en Francia en 1789?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  27/100 (historia    )   1.1s  ¿Quién fue Cleopatra?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  28/100 (historia    )   0.7s  ¿Qué muro dividió Alemania durante la Guerra Fría?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  29/100 (historia    )   0.7s  ¿En qué siglo ocurrió la Revolución Industrial?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  30/100 (historia    )   0.9s  ¿Quién pintó la Capilla Sixtina?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  31/100 (geografia   )   0.6s  ¿Cuál es la capital de Francia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  32/100 (geografia   )   0.6s  ¿Cuál es el río más largo del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  33/100 (geografia   )   0.7s  ¿Cuál es el océano más grande?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  34/100 (geografia   )   0.7s  ¿En qué continente está Egipto?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  35/100 (geografia   )   0.8s  ¿Cuál es la montaña más alta del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  36/100 (geografia   )   0.6s  ¿Cuál es el país más grande del mundo por superficie
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  37/100 (geografia   )   0.6s  ¿Cuál es la capital de Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  38/100 (geografia   )   0.6s  ¿Qué desierto es el más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  39/100 (geografia   )   1.0s  ¿Cuántos continentes hay?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  40/100 (geografia   )   0.6s  ¿Qué moneda se usa en Japón?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  41/100 (geografia   )   0.6s  ¿Cuál es el país con mayor población del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  42/100 (geografia   )   0.7s  ¿En qué país se encuentra la Torre Eiffel?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  43/100 (geografia   )   0.7s  ¿Cuál es la capital de Australia?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  44/100 (geografia   )   0.7s  ¿Qué mar separa Europa de África?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  45/100 (geografia   )   0.8s  ¿Cuál es el lago más grande del mundo?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  46/100 (matematicas )   0.8s  ¿Cuánto es 15 por 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  47/100 (matematicas )   0.8s  ¿Cuánto es la raíz cuadrada de 144?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  48/100 (matematicas )   0.8s  ¿Cuánto es 7 al cuadrado?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  49/100 (matematicas )   0.8s  ¿Cuánto es 250 dividido entre 5?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  50/100 (matematicas )   0.9s  ¿Cuál es el valor aproximado de pi con dos decimales
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  51/100 (matematicas )   0.7s  ¿Cuánto es el 20% de 300?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  52/100 (matematicas )   0.6s  ¿Cuántos grados suman los ángulos internos de un tri
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  53/100 (matematicas )   0.7s  ¿Cuánto es 1024 dividido entre 2?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  54/100 (matematicas )   0.6s  Si un producto cuesta 80.000 y tiene 25% de descuent
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  55/100 (matematicas )   0.6s  ¿Cuál es el siguiente número primo después de 13?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  56/100 (matematicas )   0.6s  ¿Cuánto es 3 elevado a la 4?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  57/100 (matematicas )   0.7s  ¿Cuántos lados tiene un hexágono?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  58/100 (cultura     )   0.9s  ¿Quién escribió Cien años de soledad?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  59/100 (cultura     )   0.8s  ¿Quién pintó La Mona Lisa?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  60/100 (cultura     )   0.9s  ¿Quién escribió Don Quijote de la Mancha?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  61/100 (cultura     )   0.7s  ¿Cuántas cuerdas tiene una guitarra clásica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  62/100 (cultura     )   0.9s  ¿Quién compuso la Novena Sinfonía?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  63/100 (cultura     )   0.8s  ¿En qué obra aparece el personaje de Romeo y Julieta
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  64/100 (cultura     )   0.8s  ¿Qué escritor colombiano ganó el Nobel de Literatura
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  65/100 (cultura     )   0.8s  ¿Cuántas notas tiene la escala musical occidental bá
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  66/100 (cultura     )   0.7s  ¿Quién escribió La Odisea?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  67/100 (cultura     )   0.8s  ¿Qué pintor español pintó el Guernica?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  68/100 (cultura     )   0.8s  ¿Cuál es el idioma más hablado del mundo por número 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  69/100 (cultura     )   0.7s  ¿Quién dirigió la película Titanic de 1997?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  70/100 (cultura     )   0.8s  ¿Qué instrumento tocaba principalmente Louis Armstro
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  71/100 (cultura     )   0.7s  ¿En qué país nació el escritor Jorge Luis Borges?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  72/100 (cultura     )   0.7s  ¿Qué género musical originó Bob Marley principalment
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  73/100 (tecnologia  )   0.8s  ¿Qué significa la sigla HTTP?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  74/100 (tecnologia  )   0.8s  ¿Quién fundó Microsoft junto a Paul Allen?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  75/100 (tecnologia  )   0.7s  ¿Cuántos bits tiene un byte?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  76/100 (tecnologia  )   0.8s  ¿Qué lenguaje de programación creó Guido van Rossum?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  77/100 (tecnologia  )   1.6s  ¿Qué significa CPU?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  78/100 (tecnologia  )   0.6s  ¿Qué empresa desarrolla el sistema operativo Android
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  79/100 (tecnologia  )   1.3s  ¿Qué es un algoritmo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  80/100 (tecnologia  )   0.9s  ¿Qué significa SQL?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  81/100 (tecnologia  )   0.7s  ¿En qué año se fundó Google, aproximadamente?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  82/100 (tecnologia  )   0.6s  ¿Qué protocolo se usa para enviar correo electrónico
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  83/100 (salud       )   0.6s  ¿Cuántos huesos tiene aproximadamente el cuerpo huma
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  84/100 (salud       )   0.7s  ¿Qué órgano bombea la sangre?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  85/100 (salud       )   0.6s  ¿Cuál es el órgano más grande del cuerpo humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  86/100 (salud       )   0.7s  ¿Qué vitamina se obtiene principalmente del sol?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  87/100 (salud       )   0.7s  ¿Cuántas cámaras tiene el corazón humano?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  88/100 (salud       )   1.4s  ¿Qué célula sanguínea transporta el oxígeno?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  89/100 (salud       )   0.7s  ¿Cuál es la temperatura corporal normal aproximada e
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  90/100 (salud       )   0.8s  ¿Qué sistema del cuerpo incluye el cerebro y la médu
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  91/100 (deportes    )   1.3s  ¿Cada cuántos años se celebran los Juegos Olímpicos 
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  92/100 (deportes    )   0.7s  ¿Cuántos jugadores tiene un equipo de fútbol en canc
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  93/100 (deportes    )   0.7s  ¿En qué deporte destacó Michael Jordan?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  94/100 (deportes    )   0.6s  ¿Cuántos jugadores tiene un equipo de voleibol en ca
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  95/100 (deportes    )   0.6s  ¿Qué país ganó el Mundial de fútbol de 2014?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  96/100 (lengua      )   0.6s  ¿Cuántas letras tiene el alfabeto español actual?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  97/100 (lengua      )   1.0s  ¿Qué es un sustantivo, en una frase?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  98/100 (lengua      )   0.6s  ¿Cuál es el plural de 'crisis'?
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3]  99/100 (lengua      )   0.7s  ¿Qué signo se usa al inicio de una pregunta en españ
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+[B_c3] 100/100 (lengua      )   0.9s  ¿Qué es un sinónimo?
+
+[B_c3] terminado en 1.3 min. 100 respuestas, 0 con error. Guardado en C:\Users\Eridanus_2\OneDrive\Documentos\Visual Studio\techo360\techo360-chatbot\training\t124\respuestas_B_c3.json

@@ -1,0 +1,3302 @@
+[
+ {
+  "n": 1,
+  "categoria": "ciencia",
+  "pregunta": "¿Cuál es la fórmula química del agua?",
+  "referencia": "H2O",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "aouux",
+    "texto": "H2O."
+   },
+   {
+    "id": "dzowv",
+    "texto": "H2O."
+   },
+   {
+    "id": "uzamd",
+    "texto": "H2O."
+   },
+   {
+    "id": "xnwpb",
+    "texto": "H2O."
+   },
+   {
+    "id": "zfsgg",
+    "texto": "H2O."
+   },
+   {
+    "id": "odbbs",
+    "texto": "H2O."
+   }
+  ]
+ },
+ {
+  "n": 2,
+  "categoria": "ciencia",
+  "pregunta": "¿Cuántos planetas tiene el sistema solar?",
+  "referencia": "8 desde 2006 (Plutón reclasificado)",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "vhyxb",
+    "texto": "8: Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano e Iris (no es un planeta)."
+   },
+   {
+    "id": "aatze",
+    "texto": "8: Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano e Ídolo."
+   },
+   {
+    "id": "nwwyz",
+    "texto": "8."
+   },
+   {
+    "id": "gftnc",
+    "texto": "8: Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano e Iris (no forma parte del sistema solar)."
+   },
+   {
+    "id": "ooxcy",
+    "texto": "8."
+   },
+   {
+    "id": "bngvh",
+    "texto": "8."
+   }
+  ]
+ },
+ {
+  "n": 3,
+  "categoria": "ciencia",
+  "pregunta": "¿Qué gas absorben las plantas para la fotosíntesis?",
+  "referencia": "Dióxido de carbono (CO2)",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "hxupb",
+    "texto": "El dióxido de carbono (CO2)."
+   },
+   {
+    "id": "gxhba",
+    "texto": "El dióxido de carbono."
+   },
+   {
+    "id": "vbirw",
+    "texto": "El dióxido de carbono."
+   },
+   {
+    "id": "kpdka",
+    "texto": "El dióxido de carbono."
+   },
+   {
+    "id": "yhhsy",
+    "texto": "El dióxido de carbono."
+   },
+   {
+    "id": "bjcho",
+    "texto": "El dióxido de carbono."
+   }
+  ]
+ },
+ {
+  "n": 4,
+  "categoria": "ciencia",
+  "pregunta": "¿Cuál es el elemento químico con símbolo Fe?",
+  "referencia": "Hierro",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "ljsmf",
+    "texto": "Ferro."
+   },
+   {
+    "id": "izvxr",
+    "texto": "Ferro."
+   },
+   {
+    "id": "rqbdz",
+    "texto": "Ferro."
+   },
+   {
+    "id": "tzlgh",
+    "texto": "Hierro."
+   },
+   {
+    "id": "zdvkh",
+    "texto": "Ferro."
+   },
+   {
+    "id": "itnxp",
+    "texto": "Ferro."
+   }
+  ]
+ },
+ {
+  "n": 5,
+  "categoria": "ciencia",
+  "pregunta": "¿A qué temperatura hierve el agua a nivel del mar en grados Celsius?",
+  "referencia": "100 °C",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "ybvbu",
+    "texto": "100."
+   },
+   {
+    "id": "dssyi",
+    "texto": "100°C."
+   },
+   {
+    "id": "miyuy",
+    "texto": "100°C."
+   },
+   {
+    "id": "nkvcw",
+    "texto": "100 °C."
+   },
+   {
+    "id": "uecqr",
+    "texto": "100°C."
+   },
+   {
+    "id": "emjup",
+    "texto": "100°C."
+   }
+  ]
+ },
+ {
+  "n": 6,
+  "categoria": "ciencia",
+  "pregunta": "¿Quién formuló la teoría de la relatividad?",
+  "referencia": "Albert Einstein",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "nedhw",
+    "texto": "Albert Einstein."
+   },
+   {
+    "id": "wltmk",
+    "texto": "Albert Einstein."
+   },
+   {
+    "id": "irvxk",
+    "texto": "Albert Einstein."
+   },
+   {
+    "id": "aynfb",
+    "texto": "Albert Einstein."
+   },
+   {
+    "id": "dcmlc",
+    "texto": "Albert Einstein."
+   },
+   {
+    "id": "rrwcd",
+    "texto": "Albert Einstein."
+   }
+  ]
+ },
+ {
+  "n": 7,
+  "categoria": "ciencia",
+  "pregunta": "¿Cuál es el planeta más grande del sistema solar?",
+  "referencia": "Júpiter",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "lkoku",
+    "texto": "Júpiter."
+   },
+   {
+    "id": "vhske",
+    "texto": "Júpiter."
+   },
+   {
+    "id": "snynz",
+    "texto": "Júpiter."
+   },
+   {
+    "id": "quhxn",
+    "texto": "Júpiter."
+   },
+   {
+    "id": "uvqwq",
+    "texto": "Júpiter."
+   },
+   {
+    "id": "tflkp",
+    "texto": "Júpiter."
+   }
+  ]
+ },
+ {
+  "n": 8,
+  "categoria": "ciencia",
+  "pregunta": "¿Qué órgano del cuerpo humano produce la insulina?",
+  "referencia": "El páncreas",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "hwyfw",
+    "texto": "El páncreas."
+   },
+   {
+    "id": "gxeqk",
+    "texto": "La glándula tiroides no es la responsable de producir insulinas; esa función está a cargo de las células beta del páncreas, una parte endocrina del organismo."
+   },
+   {
+    "id": "xjpie",
+    "texto": "Los páncreas."
+   },
+   {
+    "id": "ylzjp",
+    "texto": "El páncreas."
+   },
+   {
+    "id": "pvngi",
+    "texto": "Los isletas de Langerhans."
+   },
+   {
+    "id": "nhwsf",
+    "texto": "El páncreas."
+   }
+  ]
+ },
+ {
+  "n": 9,
+  "categoria": "ciencia",
+  "pregunta": "¿Cuántos cromosomas tiene una célula humana normal?",
+  "referencia": "46 (23 pares)",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "yolrd",
+    "texto": "46."
+   },
+   {
+    "id": "oiton",
+    "texto": "46."
+   },
+   {
+    "id": "ynlxt",
+    "texto": "46."
+   },
+   {
+    "id": "opgjm",
+    "texto": "46."
+   },
+   {
+    "id": "kgizx",
+    "texto": "46."
+   },
+   {
+    "id": "xjxxz",
+    "texto": "46."
+   }
+  ]
+ },
+ {
+  "n": 10,
+  "categoria": "ciencia",
+  "pregunta": "¿Cuál es la velocidad de la luz en el vacío, aproximadamente?",
+  "referencia": "~299.792.458 m/s (~300.000 km/s)",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "amify",
+    "texto": "300.000 kilómetros por segundo."
+   },
+   {
+    "id": "xcuqq",
+    "texto": "Cien mil kilómetros por segundo."
+   },
+   {
+    "id": "jdsou",
+    "texto": "Cien mil kilómetros por segundo."
+   },
+   {
+    "id": "sisap",
+    "texto": "300.000 kilómetros por segundo."
+   },
+   {
+    "id": "wnzpu",
+    "texto": "299.792 kilómetros por segundo."
+   },
+   {
+    "id": "uwfhi",
+    "texto": "Cien mil kilómetros por segundo."
+   }
+  ]
+ },
+ {
+  "n": 11,
+  "categoria": "ciencia",
+  "pregunta": "¿Qué científica descubrió el radio y el polonio?",
+  "referencia": "Marie Curie",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "ykqjn",
+    "texto": "Marie Curie."
+   },
+   {
+    "id": "lvpgu",
+    "texto": "Marie Curie."
+   },
+   {
+    "id": "dsnge",
+    "texto": "Marie Curie."
+   },
+   {
+    "id": "qvsyc",
+    "texto": "Glórea Kirchhoff."
+   },
+   {
+    "id": "ybzqd",
+    "texto": "Glórea Kirchhoff."
+   },
+   {
+    "id": "auvgr",
+    "texto": "Glenn T. Seaborg."
+   }
+  ]
+ },
+ {
+  "n": 12,
+  "categoria": "ciencia",
+  "pregunta": "¿Cuál es el metal líquido a temperatura ambiente?",
+  "referencia": "Mercurio",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "blvyg",
+    "texto": "El mercurio."
+   },
+   {
+    "id": "cakux",
+    "texto": "El mercurio."
+   },
+   {
+    "id": "yemip",
+    "texto": "El mercurio."
+   },
+   {
+    "id": "guwca",
+    "texto": "El mercurio."
+   },
+   {
+    "id": "ayguv",
+    "texto": "El mercurio."
+   },
+   {
+    "id": "gdalh",
+    "texto": "El mercurio."
+   }
+  ]
+ },
+ {
+  "n": 13,
+  "categoria": "ciencia",
+  "pregunta": "¿Qué tipo de roca es el granito: ígnea, sedimentaria o metamórfica?",
+  "referencia": "Ígnea",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "mkdef",
+    "texto": "Metamórfica."
+   },
+   {
+    "id": "fnuys",
+    "texto": "Metamórfica."
+   },
+   {
+    "id": "lxxph",
+    "texto": "Metamórfica."
+   },
+   {
+    "id": "jbxqv",
+    "texto": "Es una roca metamórfica."
+   },
+   {
+    "id": "hwwzb",
+    "texto": "Metamórfica."
+   },
+   {
+    "id": "haorn",
+    "texto": "Metamórfica. El granito es una roca compuesta principalmente por mineral de feldespato y queso volcánico, formada a partir del recalentamiento de rocas ígneas ya consolidadas, generalmente de origen basáltico o andinoso."
+   }
+  ]
+ },
+ {
+  "n": 14,
+  "categoria": "ciencia",
+  "pregunta": "¿Cuál es la unidad básica de la herencia biológica?",
+  "referencia": "El gen",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "jysor",
+    "texto": "El cromosoma."
+   },
+   {
+    "id": "ismof",
+    "texto": "El cromosoma."
+   },
+   {
+    "id": "etbgk",
+    "texto": "El cromosoma."
+   },
+   {
+    "id": "bywju",
+    "texto": "El ADN."
+   },
+   {
+    "id": "crbcc",
+    "texto": "El cromosoma."
+   },
+   {
+    "id": "tufpd",
+    "texto": "El cromosoma."
+   }
+  ]
+ },
+ {
+  "n": 15,
+  "categoria": "ciencia",
+  "pregunta": "¿Qué fuerza mantiene a los planetas en órbita alrededor del Sol?",
+  "referencia": "La gravedad",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "bxcba",
+    "texto": "La gravedad."
+   },
+   {
+    "id": "dtqqc",
+    "texto": "La gravedad."
+   },
+   {
+    "id": "suykq",
+    "texto": "La gravedad."
+   },
+   {
+    "id": "sgdlq",
+    "texto": "La gravedad."
+   },
+   {
+    "id": "niogx",
+    "texto": "La gravedad."
+   },
+   {
+    "id": "wvmfa",
+    "texto": "La gravedad."
+   }
+  ]
+ },
+ {
+  "n": 16,
+  "categoria": "historia",
+  "pregunta": "¿En qué año llegó Cristóbal Colón a América?",
+  "referencia": "1492",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "wgkfy",
+    "texto": "En 1492."
+   },
+   {
+    "id": "getxy",
+    "texto": "En 1492."
+   },
+   {
+    "id": "gtdlg",
+    "texto": "En 1492."
+   },
+   {
+    "id": "vonjp",
+    "texto": "En 1492."
+   },
+   {
+    "id": "uclon",
+    "texto": "En 1492."
+   },
+   {
+    "id": "qwpzm",
+    "texto": "En 1492."
+   }
+  ]
+ },
+ {
+  "n": 17,
+  "categoria": "historia",
+  "pregunta": "¿En qué año cayó el Muro de Berlín?",
+  "referencia": "1989",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "eohbn",
+    "texto": "En noviembre de 1989."
+   },
+   {
+    "id": "gacmb",
+    "texto": "En noviembre de 1989."
+   },
+   {
+    "id": "oycou",
+    "texto": "En noviembre de 1989."
+   },
+   {
+    "id": "tyopt",
+    "texto": "En 1989."
+   },
+   {
+    "id": "gjsdj",
+    "texto": "En noviembre de 1989."
+   },
+   {
+    "id": "zscil",
+    "texto": "En 1989."
+   }
+  ]
+ },
+ {
+  "n": 18,
+  "categoria": "historia",
+  "pregunta": "¿Quién fue el primer presidente de Estados Unidos?",
+  "referencia": "George Washington",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "eqifa",
+    "texto": "George Washington."
+   },
+   {
+    "id": "oqiyc",
+    "texto": "George Washington."
+   },
+   {
+    "id": "uqkzn",
+    "texto": "George Washington."
+   },
+   {
+    "id": "tabzk",
+    "texto": "George Washington."
+   },
+   {
+    "id": "xsqit",
+    "texto": "George Washington."
+   },
+   {
+    "id": "mktxf",
+    "texto": "George Washington."
+   }
+  ]
+ },
+ {
+  "n": 19,
+  "categoria": "historia",
+  "pregunta": "¿En qué año comenzó la Segunda Guerra Mundial?",
+  "referencia": "1939",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "wxagg",
+    "texto": "En septiembre de 1939."
+   },
+   {
+    "id": "nhiad",
+    "texto": "En 1939."
+   },
+   {
+    "id": "lazim",
+    "texto": "En 1939."
+   },
+   {
+    "id": "bsagm",
+    "texto": "En 1939."
+   },
+   {
+    "id": "quuom",
+    "texto": "En 1939."
+   },
+   {
+    "id": "pgilt",
+    "texto": "En 1939."
+   }
+  ]
+ },
+ {
+  "n": 20,
+  "categoria": "historia",
+  "pregunta": "¿Qué civilización construyó Machu Picchu?",
+  "referencia": "La civilización inca",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "hvvcj",
+    "texto": "Los incas."
+   },
+   {
+    "id": "kxnip",
+    "texto": "Los incas."
+   },
+   {
+    "id": "abezz",
+    "texto": "Los incas."
+   },
+   {
+    "id": "frpub",
+    "texto": "Los incas."
+   },
+   {
+    "id": "mcdqm",
+    "texto": "Los incas."
+   },
+   {
+    "id": "tbbld",
+    "texto": "Los incas."
+   }
+  ]
+ },
+ {
+  "n": 21,
+  "categoria": "historia",
+  "pregunta": "¿Quién fue Simón Bolívar?",
+  "referencia": "Líder de la independencia de varios países sudamericanos",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "fjhga",
+    "texto": "Simón Bolívar fue un militar, político y líder colonial colombiano que jugó un papel central en la independencia de varias naciones del continente americano, incluyendo Colombia, Venezuela, Ecuador y Panamá.\n\nNacido en Caracas en 1783, Bolívar se distinguió como comandante militar durante las campañas de liberación contra los españoles. Su victoria en la Batalla de Boyacá en 1819 sentó las bases para el movimiento independentista colombiano y venezolano.\n\nDespués de consolidar su poder, Bolívar se convirtió en presidente de Colombia, estableciendo un gobierno centralizado que buscaba modernizar a sus nuevos estados. Su legado ha sido objeto de debate histórico, ya que algunos lo veneran como héroe nacional por su papel en la independencia del continente, mientras que otros critican su autoritarismo y el trágico fin de su vida en Santa Marta.\n\nBolívar falleció en 1830 a los 47 años."
+   },
+   {
+    "id": "aiekm",
+    "texto": "Simón Bolívar (1777-1830) fue un militar, político y líder colombiano que lideró la lucha por la independencia de varias naciones del continente americano contra España.\n\nNació en Caracas, Venezuela, y comenzó su carrera militar como oficial español. Sin embargo, se rebeló contra el gobierno español y se unió a las fuerzas independentistas, convirtiéndose en uno de sus líderes más destacados junto con José Antonio Páez y Sucre.\n\nBolívar lideró exitosamente la lucha por la independencia de Venezuela, Ecuador, Colombia y Perú. Después de lograr la independencia de estos países, se convirtió en el primer presidente de una república colombiana unificada, aunque su mandato fue interrumpido por conflictos con Páez.\n\nSu legado es ampliamente reconocido como el padre de la nación colombiana y del movimiento independentista latinoamericano."
+   },
+   {
+    "id": "khpyt",
+    "texto": "Simón Bolívar fue un militar y político colombiano que lideró los movimientos independentistas contra España, contribuyendo a liberar varios países de América Latina del dominio colonial español.\n\nLa figura histórica más destacada de la independencia colombiana es, sin embargo, José María Córdova."
+   },
+   {
+    "id": "fpnfr",
+    "texto": "Simón Bolívar Escobar fue un militar, político y líder colombiano que jugó un papel central en la lucha por la independencia de América del Sur contra España durante los primeros años del siglo XIX.\n\nNacido el 24 de julio de 1783 en Santa Cruz de La Vera Cruz, Cartagena, Bolívar se convirtió rápidamente en una figura emblemática de la lucha por la independencia latinoamericana. Su liderazgo militar exitoso y su visión política inspiraron a otros líderes nacionales de la región para que también lucharan contra el dominio español.\n\nBolívar fue declarado Libertador de Colombia, Perú, Ecuador, Bolivia y Venezuela por sus respectivos gobiernos en 1819. Su legado sigue siendo relevante hoy en día en Colombia, donde su figura es objeto de culto nacional e inspira a figuras políticas del país."
+   },
+   {
+    "id": "cygxw",
+    "texto": "Simón Bolívar (1783-1830) fue un militar y político colombiano que lideró la lucha por la independencia de Colombia, Panamá, Venezuela y Ecuador del dominio español. Después de liberar a estos países, se estableció en Santa Marta, donde falleció en 1830.\n\nBolívar es considerado uno de los padres de la nación colombiana y su legado sigue celebrado en Colombia con festividades anuales que culminan en Bogotá."
+   },
+   {
+    "id": "bofrr",
+    "texto": "Simón Bolívar (1783-1830)."
+   }
+  ]
+ },
+ {
+  "n": 22,
+  "categoria": "historia",
+  "pregunta": "¿En qué año se firmó la independencia de Colombia?",
+  "referencia": "20 de julio de 1810 (grito); independencia consolidada en 1819",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "scnmp",
+    "texto": "En 1810."
+   },
+   {
+    "id": "zrtgo",
+    "texto": "De julio de 1810."
+   },
+   {
+    "id": "zewlv",
+    "texto": "La Independencia de Colombia fue firmada el 20 de julio de 1810."
+   },
+   {
+    "id": "zajfn",
+    "texto": "La Independencia de Colombia fue declarada oficialmente el 7 de agosto de 1819, aunque el proceso de lucha armada que condujo a esa fecha comenzó varios años antes y terminó con la victoria de Pablo Morillo en Boyacá en mayo de 1819."
+   },
+   {
+    "id": "lqrgn",
+    "texto": "La Independencia de Colombia fue declarada oficialmente el 7 de agosto de 1819, aunque el proceso de lucha armada que condujo a esa fecha comenzó antes y terminó después."
+   },
+   {
+    "id": "aabqa",
+    "texto": "En 1810."
+   }
+  ]
+ },
+ {
+  "n": 23,
+  "categoria": "historia",
+  "pregunta": "¿Qué imperio construyó el Coliseo de Roma?",
+  "referencia": "El Imperio Romano",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "snldz",
+    "texto": "El Imperio Romano."
+   },
+   {
+    "id": "lonrk",
+    "texto": "El Imperio Romano."
+   },
+   {
+    "id": "bxqen",
+    "texto": "El Imperio Romano."
+   },
+   {
+    "id": "zyoaz",
+    "texto": "El Imperio Romano."
+   },
+   {
+    "id": "uknwc",
+    "texto": "El Imperio Romano."
+   },
+   {
+    "id": "druog",
+    "texto": "El Imperio Romano."
+   }
+  ]
+ },
+ {
+  "n": 24,
+  "categoria": "historia",
+  "pregunta": "¿Quién escribió el Manifiesto Comunista junto a Friedrich Engels?",
+  "referencia": "Karl Marx",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "rwrde",
+    "texto": "Karl Marx."
+   },
+   {
+    "id": "hjuqn",
+    "texto": "Karl Marx."
+   },
+   {
+    "id": "ymbam",
+    "texto": "Karl Marx."
+   },
+   {
+    "id": "hynnw",
+    "texto": "Karl Marx."
+   },
+   {
+    "id": "vhqfw",
+    "texto": "Karl Marx."
+   },
+   {
+    "id": "sckex",
+    "texto": "Karl Marx."
+   }
+  ]
+ },
+ {
+  "n": 25,
+  "categoria": "historia",
+  "pregunta": "¿En qué año llegó el hombre a la Luna por primera vez?",
+  "referencia": "1969",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "ooelo",
+    "texto": "Año 1969."
+   },
+   {
+    "id": "sqyqb",
+    "texto": "Año 1969."
+   },
+   {
+    "id": "jhslx",
+    "texto": "Año 1969."
+   },
+   {
+    "id": "rduym",
+    "texto": "Año 1969."
+   },
+   {
+    "id": "ogixh",
+    "texto": "Aboard la nave espacial Apolo 11, en julio de 1969."
+   },
+   {
+    "id": "dqisr",
+    "texto": "Año 1969."
+   }
+  ]
+ },
+ {
+  "n": 26,
+  "categoria": "historia",
+  "pregunta": "¿Qué revolución comenzó en Francia en 1789?",
+  "referencia": "La Revolución Francesa",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "uikbm",
+    "texto": "La Revolución Francesa."
+   },
+   {
+    "id": "zbogi",
+    "texto": "La Revolución Francesa."
+   },
+   {
+    "id": "cyswv",
+    "texto": "La Revolución Francesa."
+   },
+   {
+    "id": "wwfqf",
+    "texto": "La Revolución Francesa."
+   },
+   {
+    "id": "qxhlc",
+    "texto": "La Revolución Francesa."
+   },
+   {
+    "id": "nplzp",
+    "texto": "La Revolución Francesa."
+   }
+  ]
+ },
+ {
+  "n": 27,
+  "categoria": "historia",
+  "pregunta": "¿Quién fue Cleopatra?",
+  "referencia": "Última reina del Egipto ptolemaico",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "vgzzi",
+    "texto": "La reina egipcia del siglo II a.C., conocida por su relación con Julio César y Marco Antonio, líderes romanos."
+   },
+   {
+    "id": "ojzgl",
+    "texto": "La reina egipcia del período helenístico."
+   },
+   {
+    "id": "meicb",
+    "texto": "La reina egipcia del siglo II a.C., conocida por su relación con Julio César y Marco Antonio, líderes romanos."
+   },
+   {
+    "id": "eqzqd",
+    "texto": "La reina egipcia del período helenístico."
+   },
+   {
+    "id": "qfpyw",
+    "texto": "La reina egipcia del período helenístico."
+   },
+   {
+    "id": "alcqz",
+    "texto": "La reina egipcia del siglo II a.C., líder de Egipto durante su conflicto con Roma, conocida por sus relaciones con Julio César y Marco Antonio."
+   }
+  ]
+ },
+ {
+  "n": 28,
+  "categoria": "historia",
+  "pregunta": "¿Qué muro dividió Alemania durante la Guerra Fría?",
+  "referencia": "El Muro de Berlín",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "eyufz",
+    "texto": "El Muro de Berlín."
+   },
+   {
+    "id": "tlbri",
+    "texto": "El Muro de Berlín."
+   },
+   {
+    "id": "iwvzq",
+    "texto": "El Muro de Berlín."
+   },
+   {
+    "id": "pmhok",
+    "texto": "El Muro de Berlín."
+   },
+   {
+    "id": "smnzy",
+    "texto": "El Muro de Berlín."
+   },
+   {
+    "id": "ophhy",
+    "texto": "El Muro de Berlín."
+   }
+  ]
+ },
+ {
+  "n": 29,
+  "categoria": "historia",
+  "pregunta": "¿En qué siglo ocurrió la Revolución Industrial?",
+  "referencia": "Siglo XVIII (con continuación en el XIX)",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "fdnqv",
+    "texto": "El siglo XIX."
+   },
+   {
+    "id": "rhbhh",
+    "texto": "El siglo XIX."
+   },
+   {
+    "id": "ieqry",
+    "texto": "El siglo XIX."
+   },
+   {
+    "id": "vgfzr",
+    "texto": "El siglo XIX."
+   },
+   {
+    "id": "jdnlw",
+    "texto": "El siglo XIX."
+   },
+   {
+    "id": "nllxh",
+    "texto": "El siglo XIX."
+   }
+  ]
+ },
+ {
+  "n": 30,
+  "categoria": "historia",
+  "pregunta": "¿Quién pintó la Capilla Sixtina?",
+  "referencia": "Miguel Ángel",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "uxpjt",
+    "texto": "Michel Ángel Buonarroti."
+   },
+   {
+    "id": "gltkh",
+    "texto": "Michelangelo Buonarroti."
+   },
+   {
+    "id": "qwrxb",
+    "texto": "Michelangelo Buonarroti."
+   },
+   {
+    "id": "ddpau",
+    "texto": "Michelangelo Buonarroti."
+   },
+   {
+    "id": "ddzgj",
+    "texto": "Michelangelo Buonarroti."
+   },
+   {
+    "id": "avjga",
+    "texto": "Michelangelo Buonarroti."
+   }
+  ]
+ },
+ {
+  "n": 31,
+  "categoria": "geografia",
+  "pregunta": "¿Cuál es la capital de Francia?",
+  "referencia": "París",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "oalqp",
+    "texto": "París."
+   },
+   {
+    "id": "bdjrv",
+    "texto": "París."
+   },
+   {
+    "id": "gfxyk",
+    "texto": "París."
+   },
+   {
+    "id": "ubwgr",
+    "texto": "París."
+   },
+   {
+    "id": "rwfdm",
+    "texto": "París."
+   },
+   {
+    "id": "ttmev",
+    "texto": "París."
+   }
+  ]
+ },
+ {
+  "n": 32,
+  "categoria": "geografia",
+  "pregunta": "¿Cuál es el río más largo del mundo?",
+  "referencia": "Nilo o Amazonas según el criterio de medición",
+  "confianza_evaluador": "media",
+  "respuestas": [
+   {
+    "id": "ruzyh",
+    "texto": "El Nilo."
+   },
+   {
+    "id": "pbich",
+    "texto": "El Nilo."
+   },
+   {
+    "id": "knxid",
+    "texto": "El Nilo."
+   },
+   {
+    "id": "doxpp",
+    "texto": "El Nilo."
+   },
+   {
+    "id": "zvrdz",
+    "texto": "El Nilo."
+   },
+   {
+    "id": "pidms",
+    "texto": "El Nilo."
+   }
+  ]
+ },
+ {
+  "n": 33,
+  "categoria": "geografia",
+  "pregunta": "¿Cuál es el océano más grande?",
+  "referencia": "El Pacífico",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "dpegn",
+    "texto": "El Pacífico."
+   },
+   {
+    "id": "qwyoc",
+    "texto": "El Pacífico."
+   },
+   {
+    "id": "ofjii",
+    "texto": "El Pacífico."
+   },
+   {
+    "id": "csxba",
+    "texto": "El Pacífico."
+   },
+   {
+    "id": "illja",
+    "texto": "El Pacífico."
+   },
+   {
+    "id": "leisv",
+    "texto": "El Pacífico."
+   }
+  ]
+ },
+ {
+  "n": 34,
+  "categoria": "geografia",
+  "pregunta": "¿En qué continente está Egipto?",
+  "referencia": "África",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "ktucw",
+    "texto": "África."
+   },
+   {
+    "id": "oeqqy",
+    "texto": "África."
+   },
+   {
+    "id": "qmzmp",
+    "texto": "África."
+   },
+   {
+    "id": "dsoyl",
+    "texto": "África."
+   },
+   {
+    "id": "vfuzf",
+    "texto": "África."
+   },
+   {
+    "id": "hottg",
+    "texto": "África."
+   }
+  ]
+ },
+ {
+  "n": 35,
+  "categoria": "geografia",
+  "pregunta": "¿Cuál es la montaña más alta del mundo?",
+  "referencia": "El Everest",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "wdiaq",
+    "texto": "El Everest."
+   },
+   {
+    "id": "pcyyw",
+    "texto": "El Everest."
+   },
+   {
+    "id": "rhbhk",
+    "texto": "El Everest, ubicada en los Himalayas entre Nepal y Tíbet."
+   },
+   {
+    "id": "hlcjt",
+    "texto": "El Monte Everest, ubicado entre Nepal e India."
+   },
+   {
+    "id": "cwcih",
+    "texto": "El Everest."
+   },
+   {
+    "id": "ruzbx",
+    "texto": "El Everest, ubicada en las cordilleras de Himalaya entre Nepal y China."
+   }
+  ]
+ },
+ {
+  "n": 36,
+  "categoria": "geografia",
+  "pregunta": "¿Cuál es el país más grande del mundo por superficie?",
+  "referencia": "Rusia",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "mejom",
+    "texto": "Rusia."
+   },
+   {
+    "id": "sayek",
+    "texto": "Rusia."
+   },
+   {
+    "id": "sxfew",
+    "texto": "Rusia."
+   },
+   {
+    "id": "pxllm",
+    "texto": "Rusia."
+   },
+   {
+    "id": "gzfgr",
+    "texto": "Rusia."
+   },
+   {
+    "id": "ururw",
+    "texto": "Rusia."
+   }
+  ]
+ },
+ {
+  "n": 37,
+  "categoria": "geografia",
+  "pregunta": "¿Cuál es la capital de Japón?",
+  "referencia": "Tokio",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "yzfgx",
+    "texto": "Tokio."
+   },
+   {
+    "id": "uahnh",
+    "texto": "Tokio."
+   },
+   {
+    "id": "twsxd",
+    "texto": "Tokio."
+   },
+   {
+    "id": "mswgl",
+    "texto": "Tokio."
+   },
+   {
+    "id": "txzgy",
+    "texto": "Tokio."
+   },
+   {
+    "id": "hjdvv",
+    "texto": "Tokio."
+   }
+  ]
+ },
+ {
+  "n": 38,
+  "categoria": "geografia",
+  "pregunta": "¿Qué desierto es el más grande del mundo?",
+  "referencia": "La Antártida (desierto polar); el Sahara es el mayor cálido",
+  "confianza_evaluador": "media",
+  "respuestas": [
+   {
+    "id": "ftasa",
+    "texto": "El Sahara."
+   },
+   {
+    "id": "ptxwn",
+    "texto": "El desierto de Sahara."
+   },
+   {
+    "id": "raxpx",
+    "texto": "El desierto de Sahara."
+   },
+   {
+    "id": "enora",
+    "texto": "El Sahara."
+   },
+   {
+    "id": "xxtbg",
+    "texto": "El Sahara."
+   },
+   {
+    "id": "ndmlq",
+    "texto": "El Sahara."
+   }
+  ]
+ },
+ {
+  "n": 39,
+  "categoria": "geografia",
+  "pregunta": "¿Cuántos continentes hay?",
+  "referencia": "Depende del modelo: 5, 6 o 7",
+  "confianza_evaluador": "media",
+  "respuestas": [
+   {
+    "id": "xvutc",
+    "texto": "6: África, Asia, Australia/Oceania, Europa, Norteamérica y Sudamérica."
+   },
+   {
+    "id": "akiah",
+    "texto": "7."
+   },
+   {
+    "id": "rveha",
+    "texto": "7."
+   },
+   {
+    "id": "mqngp",
+    "texto": "7: África, Asia, Australia/Oceania, Europa, Norteamérica, Sudamérica y Antártida."
+   },
+   {
+    "id": "bqurd",
+    "texto": "6: África, Asia, Australia/Oceania, Europa, Norteamérica y Sudamérica."
+   },
+   {
+    "id": "ctlbj",
+    "texto": "7: África, Asia, Australia/Oceania, Europa, Norteamérica, Sudamérica y Antártida."
+   }
+  ]
+ },
+ {
+  "n": 40,
+  "categoria": "geografia",
+  "pregunta": "¿Qué moneda se usa en Japón?",
+  "referencia": "El yen",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "ovncm",
+    "texto": "El yen."
+   },
+   {
+    "id": "dgcjt",
+    "texto": "El yen."
+   },
+   {
+    "id": "pmqpa",
+    "texto": "El yen."
+   },
+   {
+    "id": "slzqc",
+    "texto": "Yen japonés (JPY)."
+   },
+   {
+    "id": "hmuxl",
+    "texto": "Yen japonés."
+   },
+   {
+    "id": "ngqky",
+    "texto": "El yen."
+   }
+  ]
+ },
+ {
+  "n": 41,
+  "categoria": "geografia",
+  "pregunta": "¿Cuál es el país con mayor población del mundo?",
+  "referencia": "India superó a China en 2023",
+  "confianza_evaluador": "media",
+  "respuestas": [
+   {
+    "id": "dvntv",
+    "texto": "China."
+   },
+   {
+    "id": "qzaqv",
+    "texto": "China."
+   },
+   {
+    "id": "wnhxx",
+    "texto": "China."
+   },
+   {
+    "id": "kljpw",
+    "texto": "China."
+   },
+   {
+    "id": "dahqe",
+    "texto": "China."
+   },
+   {
+    "id": "ntmpu",
+    "texto": "China."
+   }
+  ]
+ },
+ {
+  "n": 42,
+  "categoria": "geografia",
+  "pregunta": "¿En qué país se encuentra la Torre Eiffel?",
+  "referencia": "Francia",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "guilu",
+    "texto": "Francia."
+   },
+   {
+    "id": "xtrfq",
+    "texto": "Francia."
+   },
+   {
+    "id": "bbxog",
+    "texto": "Francia."
+   },
+   {
+    "id": "zuqeh",
+    "texto": "Francia."
+   },
+   {
+    "id": "rkwtu",
+    "texto": "Francia."
+   },
+   {
+    "id": "jfqhp",
+    "texto": "Francia."
+   }
+  ]
+ },
+ {
+  "n": 43,
+  "categoria": "geografia",
+  "pregunta": "¿Cuál es la capital de Australia?",
+  "referencia": "Canberra",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "iwwcm",
+    "texto": "Canberra."
+   },
+   {
+    "id": "juitt",
+    "texto": "Canberra."
+   },
+   {
+    "id": "edbxy",
+    "texto": "Canberra."
+   },
+   {
+    "id": "ubsyf",
+    "texto": "Canberra."
+   },
+   {
+    "id": "bvxvi",
+    "texto": "Canberra."
+   },
+   {
+    "id": "afwwf",
+    "texto": "Canberra."
+   }
+  ]
+ },
+ {
+  "n": 44,
+  "categoria": "geografia",
+  "pregunta": "¿Qué mar separa Europa de África?",
+  "referencia": "El mar Mediterráneo",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "lmfgj",
+    "texto": "El Mar Mediterráneo."
+   },
+   {
+    "id": "qiwcd",
+    "texto": "El Mediterráneo."
+   },
+   {
+    "id": "ryafy",
+    "texto": "El Mediterráneo."
+   },
+   {
+    "id": "plhmz",
+    "texto": "El Mediterráneo."
+   },
+   {
+    "id": "ltpha",
+    "texto": "El Mediterráneo."
+   },
+   {
+    "id": "ihihr",
+    "texto": "El Mediterráneo."
+   }
+  ]
+ },
+ {
+  "n": 45,
+  "categoria": "geografia",
+  "pregunta": "¿Cuál es el lago más grande del mundo?",
+  "referencia": "El mar Caspio (lago salado)",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "shxby",
+    "texto": "El Gran Lago Saimaa, ubicado en Finlandia."
+   },
+   {
+    "id": "wluym",
+    "texto": "Lake Baikal, ubicado en Rusia."
+   },
+   {
+    "id": "wiumn",
+    "texto": "Bajos de China."
+   },
+   {
+    "id": "ngmpw",
+    "texto": "El Caspi."
+   },
+   {
+    "id": "nzlzp",
+    "texto": "Baijinalasal."
+   },
+   {
+    "id": "hmwwl",
+    "texto": "Baijalasauri, ubicado en Georgia."
+   }
+  ]
+ },
+ {
+  "n": 46,
+  "categoria": "matematicas",
+  "pregunta": "¿Cuánto es 15 por 4?",
+  "referencia": "60",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "sfmmu",
+    "texto": "3,75."
+   },
+   {
+    "id": "uvrfi",
+    "texto": "3,75."
+   },
+   {
+    "id": "dgzpo",
+    "texto": "3,75."
+   },
+   {
+    "id": "skurh",
+    "texto": "3,75."
+   },
+   {
+    "id": "aogna",
+    "texto": "3,75."
+   },
+   {
+    "id": "ulboi",
+    "texto": "3,75."
+   }
+  ]
+ },
+ {
+  "n": 47,
+  "categoria": "matematicas",
+  "pregunta": "¿Cuánto es la raíz cuadrada de 144?",
+  "referencia": "12",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "guqzi",
+    "texto": "12."
+   },
+   {
+    "id": "umvmm",
+    "texto": "12."
+   },
+   {
+    "id": "gdajd",
+    "texto": "12."
+   },
+   {
+    "id": "itaxq",
+    "texto": "12."
+   },
+   {
+    "id": "jqxiv",
+    "texto": "12."
+   },
+   {
+    "id": "vqbsi",
+    "texto": "12."
+   }
+  ]
+ },
+ {
+  "n": 48,
+  "categoria": "matematicas",
+  "pregunta": "¿Cuánto es 7 al cuadrado?",
+  "referencia": "49",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "bvsat",
+    "texto": "49."
+   },
+   {
+    "id": "joido",
+    "texto": "49."
+   },
+   {
+    "id": "snciz",
+    "texto": "49."
+   },
+   {
+    "id": "tzvcq",
+    "texto": "49."
+   },
+   {
+    "id": "dqqge",
+    "texto": "49."
+   },
+   {
+    "id": "hduvy",
+    "texto": "49."
+   }
+  ]
+ },
+ {
+  "n": 49,
+  "categoria": "matematicas",
+  "pregunta": "¿Cuánto es 250 dividido entre 5?",
+  "referencia": "50",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "nnnma",
+    "texto": "50."
+   },
+   {
+    "id": "hspmd",
+    "texto": "50."
+   },
+   {
+    "id": "xjqdm",
+    "texto": "50."
+   },
+   {
+    "id": "dzlze",
+    "texto": "50."
+   },
+   {
+    "id": "rgdfb",
+    "texto": "50."
+   },
+   {
+    "id": "vgene",
+    "texto": "50."
+   }
+  ]
+ },
+ {
+  "n": 50,
+  "categoria": "matematicas",
+  "pregunta": "¿Cuál es el valor aproximado de pi con dos decimales?",
+  "referencia": "3,14",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "iaaur",
+    "texto": "3,14."
+   },
+   {
+    "id": "rcpbt",
+    "texto": "3,14."
+   },
+   {
+    "id": "cudht",
+    "texto": "3,14."
+   },
+   {
+    "id": "jzduq",
+    "texto": "3,14."
+   },
+   {
+    "id": "pkgdh",
+    "texto": "3,14."
+   },
+   {
+    "id": "itlqk",
+    "texto": "3,14."
+   }
+  ]
+ },
+ {
+  "n": 51,
+  "categoria": "matematicas",
+  "pregunta": "¿Cuánto es el 20% de 300?",
+  "referencia": "60",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "asgls",
+    "texto": "60."
+   },
+   {
+    "id": "rihcd",
+    "texto": "60."
+   },
+   {
+    "id": "csznr",
+    "texto": "60."
+   },
+   {
+    "id": "iwcpf",
+    "texto": "60."
+   },
+   {
+    "id": "tdbgq",
+    "texto": "60."
+   },
+   {
+    "id": "odhxv",
+    "texto": "60."
+   }
+  ]
+ },
+ {
+  "n": 52,
+  "categoria": "matematicas",
+  "pregunta": "¿Cuántos grados suman los ángulos internos de un triángulo?",
+  "referencia": "180 grados",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "ofisl",
+    "texto": "180 grados."
+   },
+   {
+    "id": "vellm",
+    "texto": "180 grados."
+   },
+   {
+    "id": "macqu",
+    "texto": "180."
+   },
+   {
+    "id": "uzvpb",
+    "texto": "180 grados."
+   },
+   {
+    "id": "ldhdp",
+    "texto": "180 grados."
+   },
+   {
+    "id": "lkrnr",
+    "texto": "180 grados."
+   }
+  ]
+ },
+ {
+  "n": 53,
+  "categoria": "matematicas",
+  "pregunta": "¿Cuánto es 1024 dividido entre 2?",
+  "referencia": "512",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "yubip",
+    "texto": "512."
+   },
+   {
+    "id": "omsnp",
+    "texto": "512."
+   },
+   {
+    "id": "wxhji",
+    "texto": "512."
+   },
+   {
+    "id": "qstqx",
+    "texto": "512."
+   },
+   {
+    "id": "vkovl",
+    "texto": "512."
+   },
+   {
+    "id": "kmjap",
+    "texto": "512."
+   }
+  ]
+ },
+ {
+  "n": 54,
+  "categoria": "matematicas",
+  "pregunta": "Si un producto cuesta 80.000 y tiene 25% de descuento, ¿cuánto cuesta?",
+  "referencia": "60.000",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "nnggl",
+    "texto": "60.000."
+   },
+   {
+    "id": "rfjtz",
+    "texto": "60.000."
+   },
+   {
+    "id": "pquso",
+    "texto": "60.000."
+   },
+   {
+    "id": "jysgz",
+    "texto": "60.000."
+   },
+   {
+    "id": "xwtke",
+    "texto": "60.000."
+   },
+   {
+    "id": "pqcxm",
+    "texto": "60.000."
+   }
+  ]
+ },
+ {
+  "n": 55,
+  "categoria": "matematicas",
+  "pregunta": "¿Cuál es el siguiente número primo después de 13?",
+  "referencia": "17",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "kjrzv",
+    "texto": "17."
+   },
+   {
+    "id": "hocdm",
+    "texto": "17."
+   },
+   {
+    "id": "iqerk",
+    "texto": "17."
+   },
+   {
+    "id": "giecd",
+    "texto": "17."
+   },
+   {
+    "id": "aolzx",
+    "texto": "17."
+   },
+   {
+    "id": "hbdac",
+    "texto": "17."
+   }
+  ]
+ },
+ {
+  "n": 56,
+  "categoria": "matematicas",
+  "pregunta": "¿Cuánto es 3 elevado a la 4?",
+  "referencia": "81",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "jdqay",
+    "texto": "81."
+   },
+   {
+    "id": "acnqq",
+    "texto": "81."
+   },
+   {
+    "id": "wnxpq",
+    "texto": "81."
+   },
+   {
+    "id": "yugjq",
+    "texto": "81."
+   },
+   {
+    "id": "yfrsi",
+    "texto": "81."
+   },
+   {
+    "id": "dgizl",
+    "texto": "81."
+   }
+  ]
+ },
+ {
+  "n": 57,
+  "categoria": "matematicas",
+  "pregunta": "¿Cuántos lados tiene un hexágono?",
+  "referencia": "6",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "jqcou",
+    "texto": "6."
+   },
+   {
+    "id": "opjpz",
+    "texto": "6."
+   },
+   {
+    "id": "oyqii",
+    "texto": "6."
+   },
+   {
+    "id": "qqbvq",
+    "texto": "6."
+   },
+   {
+    "id": "qgtzd",
+    "texto": "6."
+   },
+   {
+    "id": "bauek",
+    "texto": "6."
+   }
+  ]
+ },
+ {
+  "n": 58,
+  "categoria": "cultura",
+  "pregunta": "¿Quién escribió Cien años de soledad?",
+  "referencia": "Gabriel García Márquez",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "umhhe",
+    "texto": "Gabriel García Márquez."
+   },
+   {
+    "id": "hgxhz",
+    "texto": "Gabriel García Márquez."
+   },
+   {
+    "id": "temww",
+    "texto": "Gabriel García Márquez."
+   },
+   {
+    "id": "blqnk",
+    "texto": "Gabriel García Márquez."
+   },
+   {
+    "id": "cnwfb",
+    "texto": "Gabriel García Márquez."
+   },
+   {
+    "id": "yinfr",
+    "texto": "Gabriel García Márquez."
+   }
+  ]
+ },
+ {
+  "n": 59,
+  "categoria": "cultura",
+  "pregunta": "¿Quién pintó La Mona Lisa?",
+  "referencia": "Leonardo da Vinci",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "qpvnb",
+    "texto": "Leonardo da Vinci."
+   },
+   {
+    "id": "cwezz",
+    "texto": "Leonardo da Vinci."
+   },
+   {
+    "id": "jnuly",
+    "texto": "Leonardo da Vinci."
+   },
+   {
+    "id": "vpccu",
+    "texto": "Leonardo da Vinci."
+   },
+   {
+    "id": "ujbku",
+    "texto": "Leonardo da Vinci."
+   },
+   {
+    "id": "pewju",
+    "texto": "Leonardo da Vinci."
+   }
+  ]
+ },
+ {
+  "n": 60,
+  "categoria": "cultura",
+  "pregunta": "¿Quién escribió Don Quijote de la Mancha?",
+  "referencia": "Miguel de Cervantes",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "ebpnj",
+    "texto": "Miguel de Cervantes Saavedra."
+   },
+   {
+    "id": "cswcs",
+    "texto": "Miguel de Cervantes Saavedra."
+   },
+   {
+    "id": "awiis",
+    "texto": "Miguel de Cervantes Saavedra."
+   },
+   {
+    "id": "ltlfz",
+    "texto": "Miguel de Cervantes Saavedra."
+   },
+   {
+    "id": "fswya",
+    "texto": "Miguel de Cervantes Saavedra."
+   },
+   {
+    "id": "wjgnd",
+    "texto": "Miguel de Cervantes Saavedra."
+   }
+  ]
+ },
+ {
+  "n": 61,
+  "categoria": "cultura",
+  "pregunta": "¿Cuántas cuerdas tiene una guitarra clásica?",
+  "referencia": "6",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "seshc",
+    "texto": "6."
+   },
+   {
+    "id": "enpbz",
+    "texto": "6."
+   },
+   {
+    "id": "wxsru",
+    "texto": "6."
+   },
+   {
+    "id": "ytylg",
+    "texto": "6."
+   },
+   {
+    "id": "lylnk",
+    "texto": "6."
+   },
+   {
+    "id": "mlqqy",
+    "texto": "6."
+   }
+  ]
+ },
+ {
+  "n": 62,
+  "categoria": "cultura",
+  "pregunta": "¿Quién compuso la Novena Sinfonía?",
+  "referencia": "Ludwig van Beethoven",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "sgmcz",
+    "texto": "Ludwig van Beethoven."
+   },
+   {
+    "id": "jnmid",
+    "texto": "Ludwig van Beethoven."
+   },
+   {
+    "id": "cjdpy",
+    "texto": "Ludwig van Beethoven."
+   },
+   {
+    "id": "mfbej",
+    "texto": "Ludwig van Beethoven."
+   },
+   {
+    "id": "gqjqg",
+    "texto": "Ludwig van Beethoven."
+   },
+   {
+    "id": "jvpvx",
+    "texto": "Ludwig van Beethoven."
+   }
+  ]
+ },
+ {
+  "n": 63,
+  "categoria": "cultura",
+  "pregunta": "¿En qué obra aparece el personaje de Romeo y Julieta?",
+  "referencia": "Romeo y Julieta, de Shakespeare",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "bvwno",
+    "texto": "En una tragedia romana."
+   },
+   {
+    "id": "zpzfm",
+    "texto": "En una de las comedias de William Shakespeare."
+   },
+   {
+    "id": "ctjht",
+    "texto": "La sonrisa eterna."
+   },
+   {
+    "id": "zrksb",
+    "texto": "La sonrisa eterna."
+   },
+   {
+    "id": "nqjhk",
+    "texto": "En una tragedia de William Shakespeare."
+   },
+   {
+    "id": "olxkm",
+    "texto": "La sonrisa eterna del amor trágico."
+   }
+  ]
+ },
+ {
+  "n": 64,
+  "categoria": "cultura",
+  "pregunta": "¿Qué escritor colombiano ganó el Nobel de Literatura?",
+  "referencia": "Gabriel García Márquez (1982)",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "bivoo",
+    "texto": "Gabriel García Márquez."
+   },
+   {
+    "id": "jqdun",
+    "texto": "Gabriel García Márquez."
+   },
+   {
+    "id": "wmizg",
+    "texto": "Gabriel García Márquez."
+   },
+   {
+    "id": "chmtw",
+    "texto": "Gabriel García Márquez."
+   },
+   {
+    "id": "vbgrb",
+    "texto": "Gabriel García Márquez."
+   },
+   {
+    "id": "nbhzb",
+    "texto": "Gabriel García Márquez."
+   }
+  ]
+ },
+ {
+  "n": 65,
+  "categoria": "cultura",
+  "pregunta": "¿Cuántas notas tiene la escala musical occidental básica?",
+  "referencia": "7 (do re mi fa sol la si)",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "sanro",
+    "texto": "7."
+   },
+   {
+    "id": "sygtw",
+    "texto": "7."
+   },
+   {
+    "id": "uldch",
+    "texto": "7."
+   },
+   {
+    "id": "erpww",
+    "texto": "7."
+   },
+   {
+    "id": "pljzk",
+    "texto": "7."
+   },
+   {
+    "id": "jocfw",
+    "texto": "7."
+   }
+  ]
+ },
+ {
+  "n": 66,
+  "categoria": "cultura",
+  "pregunta": "¿Quién escribió La Odisea?",
+  "referencia": "Homero",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "jxwzr",
+    "texto": "Homer."
+   },
+   {
+    "id": "yevwj",
+    "texto": "Homero."
+   },
+   {
+    "id": "ouzrr",
+    "texto": "H Homero."
+   },
+   {
+    "id": "dmcls",
+    "texto": "Homero."
+   },
+   {
+    "id": "prfhj",
+    "texto": "Homer."
+   },
+   {
+    "id": "okemz",
+    "texto": "Homero."
+   }
+  ]
+ },
+ {
+  "n": 67,
+  "categoria": "cultura",
+  "pregunta": "¿Qué pintor español pintó el Guernica?",
+  "referencia": "Pablo Picasso",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "pvlld",
+    "texto": "Pablo Picasso."
+   },
+   {
+    "id": "ncegc",
+    "texto": "Pablo Picasso."
+   },
+   {
+    "id": "bnjrm",
+    "texto": "Pablo Picasso."
+   },
+   {
+    "id": "nysze",
+    "texto": "Pablo Picasso."
+   },
+   {
+    "id": "lcuhu",
+    "texto": "Pablo Picasso."
+   },
+   {
+    "id": "bzplp",
+    "texto": "Pablo Picasso."
+   }
+  ]
+ },
+ {
+  "n": 68,
+  "categoria": "cultura",
+  "pregunta": "¿Cuál es el idioma más hablado del mundo por número de hablantes nativos?",
+  "referencia": "Chino mandarín",
+  "confianza_evaluador": "media",
+  "respuestas": [
+   {
+    "id": "kowtn",
+    "texto": "El mandarín chino."
+   },
+   {
+    "id": "qqfdq",
+    "texto": "El mandarín chino."
+   },
+   {
+    "id": "vkwcl",
+    "texto": "El mandarín chino."
+   },
+   {
+    "id": "fdrpj",
+    "texto": "El mandarín chino."
+   },
+   {
+    "id": "ltroc",
+    "texto": "El mandarín chino."
+   },
+   {
+    "id": "verul",
+    "texto": "El mandarín chino."
+   }
+  ]
+ },
+ {
+  "n": 69,
+  "categoria": "cultura",
+  "pregunta": "¿Quién dirigió la película Titanic de 1997?",
+  "referencia": "James Cameron",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "euzmz",
+    "texto": "James Cameron."
+   },
+   {
+    "id": "ktqcu",
+    "texto": "James Cameron."
+   },
+   {
+    "id": "yugue",
+    "texto": "James Cameron."
+   },
+   {
+    "id": "zdltj",
+    "texto": "James Cameron."
+   },
+   {
+    "id": "wemnv",
+    "texto": "James Cameron."
+   },
+   {
+    "id": "jsxxz",
+    "texto": "James Cameron."
+   }
+  ]
+ },
+ {
+  "n": 70,
+  "categoria": "cultura",
+  "pregunta": "¿Qué instrumento tocaba principalmente Louis Armstrong?",
+  "referencia": "La trompeta",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "lxedz",
+    "texto": "La trompeta."
+   },
+   {
+    "id": "osgia",
+    "texto": "La trompeta."
+   },
+   {
+    "id": "novzz",
+    "texto": "La trompeta."
+   },
+   {
+    "id": "afeeu",
+    "texto": "La trompeta."
+   },
+   {
+    "id": "kvzje",
+    "texto": "La trompeta."
+   },
+   {
+    "id": "nsvgp",
+    "texto": "La trompeta."
+   }
+  ]
+ },
+ {
+  "n": 71,
+  "categoria": "cultura",
+  "pregunta": "¿En qué país nació el escritor Jorge Luis Borges?",
+  "referencia": "Argentina",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "crgwp",
+    "texto": "Argentina."
+   },
+   {
+    "id": "qcmsl",
+    "texto": "Argentina."
+   },
+   {
+    "id": "thamn",
+    "texto": "Argentina."
+   },
+   {
+    "id": "mbhie",
+    "texto": "Argentina."
+   },
+   {
+    "id": "hhurp",
+    "texto": "Argentina."
+   },
+   {
+    "id": "hzpzf",
+    "texto": "Argentina."
+   }
+  ]
+ },
+ {
+  "n": 72,
+  "categoria": "cultura",
+  "pregunta": "¿Qué género musical originó Bob Marley principalmente?",
+  "referencia": "El reggae",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "hofbg",
+    "texto": "El reggae."
+   },
+   {
+    "id": "wzfzi",
+    "texto": "El reggae."
+   },
+   {
+    "id": "ctfsy",
+    "texto": "El reggae."
+   },
+   {
+    "id": "rlbqo",
+    "texto": "El reggae."
+   },
+   {
+    "id": "xnspa",
+    "texto": "El reggae."
+   },
+   {
+    "id": "xexcs",
+    "texto": "El reggae."
+   }
+  ]
+ },
+ {
+  "n": 73,
+  "categoria": "tecnologia",
+  "pregunta": "¿Qué significa la sigla HTTP?",
+  "referencia": "HyperText Transfer Protocol",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "rdcqj",
+    "texto": "Hypertext Transfer Protocol."
+   },
+   {
+    "id": "krjwq",
+    "texto": "Hypertext Transfer Protocol."
+   },
+   {
+    "id": "fnflt",
+    "texto": "Hyper Text Transfer Protocol."
+   },
+   {
+    "id": "xkxfy",
+    "texto": "Hypertext Transfer Protocol."
+   },
+   {
+    "id": "qmqxm",
+    "texto": "HyperText Transfer Protocol."
+   },
+   {
+    "id": "wqzft",
+    "texto": "HyperText Transfer Protocol."
+   }
+  ]
+ },
+ {
+  "n": 74,
+  "categoria": "tecnologia",
+  "pregunta": "¿Quién fundó Microsoft junto a Paul Allen?",
+  "referencia": "Bill Gates",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "oqcpg",
+    "texto": "Bill Gates."
+   },
+   {
+    "id": "rxodh",
+    "texto": "Bill Gates."
+   },
+   {
+    "id": "fajyv",
+    "texto": "Bill Gates."
+   },
+   {
+    "id": "bqaod",
+    "texto": "Bill Gates."
+   },
+   {
+    "id": "arggg",
+    "texto": "Bill Gates."
+   },
+   {
+    "id": "yowub",
+    "texto": "Bill Gates."
+   }
+  ]
+ },
+ {
+  "n": 75,
+  "categoria": "tecnologia",
+  "pregunta": "¿Cuántos bits tiene un byte?",
+  "referencia": "8",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "rhfae",
+    "texto": "8."
+   },
+   {
+    "id": "jqsfu",
+    "texto": "8."
+   },
+   {
+    "id": "aitsl",
+    "texto": "8."
+   },
+   {
+    "id": "sizlz",
+    "texto": "8."
+   },
+   {
+    "id": "yqrud",
+    "texto": "8."
+   },
+   {
+    "id": "skixr",
+    "texto": "8."
+   }
+  ]
+ },
+ {
+  "n": 76,
+  "categoria": "tecnologia",
+  "pregunta": "¿Qué lenguaje de programación creó Guido van Rossum?",
+  "referencia": "Python",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "ylugy",
+    "texto": "Python."
+   },
+   {
+    "id": "duroy",
+    "texto": "Python."
+   },
+   {
+    "id": "isepz",
+    "texto": "Python."
+   },
+   {
+    "id": "reapj",
+    "texto": "Python."
+   },
+   {
+    "id": "gkfbn",
+    "texto": "Python."
+   },
+   {
+    "id": "frvqm",
+    "texto": "Python."
+   }
+  ]
+ },
+ {
+  "n": 77,
+  "categoria": "tecnologia",
+  "pregunta": "¿Qué significa CPU?",
+  "referencia": "Central Processing Unit (unidad central de procesamiento)",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "zhnlx",
+    "texto": "Central Processing Unit.\n\nEs la unidad central del procesador de un ordenador donde se ejecutan las instrucciones."
+   },
+   {
+    "id": "ldatx",
+    "texto": "Central Processing Unit.\n\nEs la unidad central del procesador de una computadora donde se realizan las operaciones aritméticas y lógicas directas, como sumar o restar números, comparar valores, y controlar el flujo de datos entre diferentes partes del sistema."
+   },
+   {
+    "id": "yhmwf",
+    "texto": "Central Processing Unit.\n\nEs la unidad central del procesador de una computadora donde se realizan las operaciones aritméticas básas, como sumar o restar, así como los cálculos más complejos que exigen instrucciones condicionales y de flujo."
+   },
+   {
+    "id": "ijcbm",
+    "texto": "Central Processing Unit.\n\nEs la unidad del procesador principal de una computadora donde se llevan a cabo las operaciones aritméticas, lógicas e indicadores, además de ejecutar los programas almacenados en su memoria."
+   },
+   {
+    "id": "pkkcp",
+    "texto": "Central Processing Unit.\n\nEs la unidad central del procesador de una computadora donde se realizan las operaciones aritméticas, lógicas y de control de flujo que ejecutan directamente los programas almacenados en su memoria principal."
+   },
+   {
+    "id": "kbvxm",
+    "texto": "Central Processing Unit.\n\nEs el componente principal del procesador de un ordenador donde se ejecutan las instrucciones que le da el usuario o el sistema operativo, toma decisiones y realiza cálculos."
+   }
+  ]
+ },
+ {
+  "n": 78,
+  "categoria": "tecnologia",
+  "pregunta": "¿Qué empresa desarrolla el sistema operativo Android?",
+  "referencia": "Google",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "gcakc",
+    "texto": "Google."
+   },
+   {
+    "id": "qnicr",
+    "texto": "Google."
+   },
+   {
+    "id": "xcekh",
+    "texto": "Google."
+   },
+   {
+    "id": "aqijb",
+    "texto": "Google."
+   },
+   {
+    "id": "ocvgb",
+    "texto": "Google."
+   },
+   {
+    "id": "jnyhy",
+    "texto": "Google."
+   }
+  ]
+ },
+ {
+  "n": 79,
+  "categoria": "tecnologia",
+  "pregunta": "¿Qué es un algoritmo, en una frase?",
+  "referencia": "Secuencia finita de pasos para resolver un problema",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "fizrh",
+    "texto": "Un conjunto de reglas o procedimientos aplicados sistemáticamente a datos para producir una salida determinada, generalmente mediante una serie de pasos ordenados y definidos con anticipación."
+   },
+   {
+    "id": "svvxm",
+    "texto": "Un conjunto de reglas detalladas que una computadora sigue para resolver un problema o realizar una tarea específica, como ordenar datos o reconocer patrones en imágenes."
+   },
+   {
+    "id": "qowsp",
+    "texto": "Un conjunto de instrucciones bien ordenadas que transforman información de entrada en salida, generalmente mediante una serie de pasos aplicados de forma secuencial a los datos o a las decisiones del sistema."
+   },
+   {
+    "id": "gmhxy",
+    "texto": "Un conjunto de reglas o procedimientos aplicados sistemáticamente para resolver un problema determinado, generalmente mediante una secuencia de pasos definidos y ejecutados por una máquina."
+   },
+   {
+    "id": "jdxmk",
+    "texto": "Un conjunto de instrucciones detalladas que una computadora sigue para resolver un problema o realizar una tarea específica, generalmente escritas en un lenguaje de programación."
+   },
+   {
+    "id": "iuwub",
+    "texto": "Un conjunto de reglas detalladas por las cuales se resuelve un problema o se clasifica un dato, ejecutándose una vez después de haberse cargado la información en memoria."
+   }
+  ]
+ },
+ {
+  "n": 80,
+  "categoria": "tecnologia",
+  "pregunta": "¿Qué significa SQL?",
+  "referencia": "Structured Query Language",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "vbonu",
+    "texto": "Structured Query Language."
+   },
+   {
+    "id": "xbfsb",
+    "texto": "Structured Query Language."
+   },
+   {
+    "id": "ulsow",
+    "texto": "Structured Query Language.\n\nEs un lenguaje estándar utilizado para interactuar con bases de datos relacionales, permitiendo consultar, crear, modificar y eliminar registros según una serie de instrucciones estructuradas en este propio idioma."
+   },
+   {
+    "id": "unjko",
+    "texto": "Structured Query Language."
+   },
+   {
+    "id": "qkggv",
+    "texto": "Structured Query Language (lenguaje de consultas estructuradas)."
+   },
+   {
+    "id": "rqzny",
+    "texto": "Structured Query Language."
+   }
+  ]
+ },
+ {
+  "n": 81,
+  "categoria": "tecnologia",
+  "pregunta": "¿En qué año se fundó Google, aproximadamente?",
+  "referencia": "1998",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "umbra",
+    "texto": "1998."
+   },
+   {
+    "id": "kgbko",
+    "texto": "1998."
+   },
+   {
+    "id": "pqvto",
+    "texto": "1998."
+   },
+   {
+    "id": "kmygy",
+    "texto": "1998."
+   },
+   {
+    "id": "lbxnd",
+    "texto": "1998."
+   },
+   {
+    "id": "pwooo",
+    "texto": "1998."
+   }
+  ]
+ },
+ {
+  "n": 82,
+  "categoria": "tecnologia",
+  "pregunta": "¿Qué protocolo se usa para enviar correo electrónico?",
+  "referencia": "SMTP",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "nvbls",
+    "texto": "SMTP."
+   },
+   {
+    "id": "mphex",
+    "texto": "SMTP."
+   },
+   {
+    "id": "ehrrm",
+    "texto": "SMTP."
+   },
+   {
+    "id": "lmuxf",
+    "texto": "SMTP."
+   },
+   {
+    "id": "uikrk",
+    "texto": "SMTP (Simple Mail Transfer Protocol)."
+   },
+   {
+    "id": "vboxr",
+    "texto": "SMTP."
+   }
+  ]
+ },
+ {
+  "n": 83,
+  "categoria": "salud",
+  "pregunta": "¿Cuántos huesos tiene aproximadamente el cuerpo humano adulto?",
+  "referencia": "206",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "xwxba",
+    "texto": "206."
+   },
+   {
+    "id": "xhslw",
+    "texto": "206."
+   },
+   {
+    "id": "fnsff",
+    "texto": "206."
+   },
+   {
+    "id": "qvniy",
+    "texto": "206."
+   },
+   {
+    "id": "oyrvj",
+    "texto": "206."
+   },
+   {
+    "id": "ggskj",
+    "texto": "206."
+   }
+  ]
+ },
+ {
+  "n": 84,
+  "categoria": "salud",
+  "pregunta": "¿Qué órgano bombea la sangre?",
+  "referencia": "El corazón",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "mnkyd",
+    "texto": "El corazón."
+   },
+   {
+    "id": "vciow",
+    "texto": "El corazón."
+   },
+   {
+    "id": "ruqxf",
+    "texto": "El corazón."
+   },
+   {
+    "id": "zairl",
+    "texto": "El corazón."
+   },
+   {
+    "id": "xvxxi",
+    "texto": "El corazón."
+   },
+   {
+    "id": "nszyp",
+    "texto": "El corazón."
+   }
+  ]
+ },
+ {
+  "n": 85,
+  "categoria": "salud",
+  "pregunta": "¿Cuál es el órgano más grande del cuerpo humano?",
+  "referencia": "La piel",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "offog",
+    "texto": "El cerebro."
+   },
+   {
+    "id": "opnze",
+    "texto": "El cerebro."
+   },
+   {
+    "id": "tgigg",
+    "texto": "El hígado."
+   },
+   {
+    "id": "lnixt",
+    "texto": "El cerebro."
+   },
+   {
+    "id": "kfcpw",
+    "texto": "El hígado."
+   },
+   {
+    "id": "jystb",
+    "texto": "El hígado."
+   }
+  ]
+ },
+ {
+  "n": 86,
+  "categoria": "salud",
+  "pregunta": "¿Qué vitamina se obtiene principalmente del sol?",
+  "referencia": "La vitamina D",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "mkgfe",
+    "texto": "La vitamina D."
+   },
+   {
+    "id": "ftsrt",
+    "texto": "La vitamina D."
+   },
+   {
+    "id": "bnaji",
+    "texto": "La vitamina D."
+   },
+   {
+    "id": "fqiwn",
+    "texto": "La vitamina D."
+   },
+   {
+    "id": "ubrml",
+    "texto": "La vitamina D."
+   },
+   {
+    "id": "lgwtx",
+    "texto": "La vitamina D."
+   }
+  ]
+ },
+ {
+  "n": 87,
+  "categoria": "salud",
+  "pregunta": "¿Cuántas cámaras tiene el corazón humano?",
+  "referencia": "4",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "dymbc",
+    "texto": "4."
+   },
+   {
+    "id": "yofoc",
+    "texto": "Tres."
+   },
+   {
+    "id": "yqfsb",
+    "texto": "4."
+   },
+   {
+    "id": "bdboz",
+    "texto": "4."
+   },
+   {
+    "id": "aayia",
+    "texto": "4."
+   },
+   {
+    "id": "lsbdv",
+    "texto": "4."
+   }
+  ]
+ },
+ {
+  "n": 88,
+  "categoria": "salud",
+  "pregunta": "¿Qué célula sanguínea transporta el oxígeno?",
+  "referencia": "El glóbulo rojo (eritrocito)",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "wxkjx",
+    "texto": "La hemociana."
+   },
+   {
+    "id": "xxszn",
+    "texto": "La hemociana o eritrocito."
+   },
+   {
+    "id": "myjkp",
+    "texto": "La hemociana."
+   },
+   {
+    "id": "kghwv",
+    "texto": "La hemoglobina se encuentra dentro de las glóbulas rojas o eritrocitos, que son las células responsables del transporte de oxígeno desde los pulmones hacia los tejidos del cuerpo."
+   },
+   {
+    "id": "njsmd",
+    "texto": "La hemociana."
+   },
+   {
+    "id": "vogpn",
+    "texto": "La hemociana."
+   }
+  ]
+ },
+ {
+  "n": 89,
+  "categoria": "salud",
+  "pregunta": "¿Cuál es la temperatura corporal normal aproximada en grados Celsius?",
+  "referencia": "~37 °C",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "pjvoq",
+    "texto": "37°C."
+   },
+   {
+    "id": "bwxur",
+    "texto": "37°C."
+   },
+   {
+    "id": "ufnrb",
+    "texto": "37°C."
+   },
+   {
+    "id": "vhxku",
+    "texto": "37°C."
+   },
+   {
+    "id": "ygbth",
+    "texto": "37°C."
+   },
+   {
+    "id": "canso",
+    "texto": "37 grados."
+   }
+  ]
+ },
+ {
+  "n": 90,
+  "categoria": "salud",
+  "pregunta": "¿Qué sistema del cuerpo incluye el cerebro y la médula espinal?",
+  "referencia": "El sistema nervioso central",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "aqdhu",
+    "texto": "El sistema nervioso central."
+   },
+   {
+    "id": "isdln",
+    "texto": "El sistema nervioso central."
+   },
+   {
+    "id": "djkwc",
+    "texto": "El sistema nervioso central."
+   },
+   {
+    "id": "klwdq",
+    "texto": "El sistema nervioso central."
+   },
+   {
+    "id": "ooukj",
+    "texto": "El sistema nervioso central."
+   },
+   {
+    "id": "kvene",
+    "texto": "El sistema nervioso central."
+   }
+  ]
+ },
+ {
+  "n": 91,
+  "categoria": "deportes",
+  "pregunta": "¿Cada cuántos años se celebran los Juegos Olímpicos de verano?",
+  "referencia": "Cada 4 años",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "pbsnw",
+    "texto": "Los Juegos Olímpicos de Verano tienen una periodicidad de cuatro años, aunque no todos son igualmente frecuentes: algunos años dan la vuelta a un ciclo completo en un tiempo determinado."
+   },
+   {
+    "id": "olqcm",
+    "texto": "Cuatro años."
+   },
+   {
+    "id": "rklcv",
+    "texto": "Los Juegos Olímpicos de Verano tienen una periodicidad de cuatro años, aunque no todos son igualmente frecuentes: los primeros juegos olímpicos se disputaron en Atenas 1896 y desde entonces se repiten cada cuatro años. Sin embargo, la Asociación Internacional de Fertilizantes decidió celebrar un año adicional en 1900, lo que llevó a una variación en el calendario posterior: los juegos de Verano se han disputado de forma regular a partir del año 1904 y luego se repitieron en 1908, 1912, 1920, 1924, 1936, 1948, 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016 y 2020."
+   },
+   {
+    "id": "jxbrf",
+    "texto": "Los Juegos Olímpicos de Verano tienen una periodicidad de cuatro años entre uno y otro evento, aunque no todos cuentan con la misma frecuencia. Los Juegos Olímpicos de Invierno, en cambio, se celebran cada cuatro años."
+   },
+   {
+    "id": "ryghy",
+    "texto": "Cuatro años."
+   },
+   {
+    "id": "qfezs",
+    "texto": "Cuatro años."
+   }
+  ]
+ },
+ {
+  "n": 92,
+  "categoria": "deportes",
+  "pregunta": "¿Cuántos jugadores tiene un equipo de fútbol en cancha?",
+  "referencia": "11",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "lkjen",
+    "texto": "11."
+   },
+   {
+    "id": "ncrnz",
+    "texto": "11."
+   },
+   {
+    "id": "iirli",
+    "texto": "11."
+   },
+   {
+    "id": "rkrcp",
+    "texto": "11."
+   },
+   {
+    "id": "iirtz",
+    "texto": "11."
+   },
+   {
+    "id": "caajl",
+    "texto": "11."
+   }
+  ]
+ },
+ {
+  "n": 93,
+  "categoria": "deportes",
+  "pregunta": "¿En qué deporte destacó Michael Jordan?",
+  "referencia": "Baloncesto",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "clpiz",
+    "texto": "El baloncesto."
+   },
+   {
+    "id": "psahb",
+    "texto": "El baloncesto."
+   },
+   {
+    "id": "jmhzp",
+    "texto": "El baloncesto."
+   },
+   {
+    "id": "ilvpm",
+    "texto": "El baloncesto."
+   },
+   {
+    "id": "tjbob",
+    "texto": "El baloncesto."
+   },
+   {
+    "id": "uyucj",
+    "texto": "El baloncesto."
+   }
+  ]
+ },
+ {
+  "n": 94,
+  "categoria": "deportes",
+  "pregunta": "¿Cuántos jugadores tiene un equipo de voleibol en cancha?",
+  "referencia": "6",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "iunpr",
+    "texto": "6."
+   },
+   {
+    "id": "ptlds",
+    "texto": "6."
+   },
+   {
+    "id": "mtfdt",
+    "texto": "6."
+   },
+   {
+    "id": "faerq",
+    "texto": "6."
+   },
+   {
+    "id": "czdgf",
+    "texto": "6."
+   },
+   {
+    "id": "fdkwg",
+    "texto": "6."
+   }
+  ]
+ },
+ {
+  "n": 95,
+  "categoria": "deportes",
+  "pregunta": "¿Qué país ganó el Mundial de fútbol de 2014?",
+  "referencia": "Alemania",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "ockjo",
+    "texto": "Alemania."
+   },
+   {
+    "id": "vhsdt",
+    "texto": "Alemania."
+   },
+   {
+    "id": "boucm",
+    "texto": "Alemania."
+   },
+   {
+    "id": "uzyvu",
+    "texto": "Alemania."
+   },
+   {
+    "id": "mrmul",
+    "texto": "Alemania."
+   },
+   {
+    "id": "cydux",
+    "texto": "Alemania."
+   }
+  ]
+ },
+ {
+  "n": 96,
+  "categoria": "lengua",
+  "pregunta": "¿Cuántas letras tiene el alfabeto español actual?",
+  "referencia": "27",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "szdoq",
+    "texto": "26."
+   },
+   {
+    "id": "qchgf",
+    "texto": "26."
+   },
+   {
+    "id": "gjcty",
+    "texto": "26."
+   },
+   {
+    "id": "qhasf",
+    "texto": "26."
+   },
+   {
+    "id": "dewyf",
+    "texto": "26."
+   },
+   {
+    "id": "qpblq",
+    "texto": "26."
+   }
+  ]
+ },
+ {
+  "n": 97,
+  "categoria": "lengua",
+  "pregunta": "¿Qué es un sustantivo, en una frase?",
+  "referencia": "Palabra que nombra personas, animales, cosas o ideas",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "tabxf",
+    "texto": "Un nombre propio o un término común que denota persona, lugar, cosa, evento o idea."
+   },
+   {
+    "id": "sobpc",
+    "texto": "Una palabra que designa algo o alguien."
+   },
+   {
+    "id": "lotbz",
+    "texto": "Una categoría de palabra que expresa algo o alguien, como \"la casa\" o \"el niño\"."
+   },
+   {
+    "id": "bvjhv",
+    "texto": "Un nombre propio o un término común que designa a algo distinto.\n\nEjemplo: \"La ciudad\" es un sustantivo."
+   },
+   {
+    "id": "ddwoe",
+    "texto": "Una palabra que designa algo o alguien, como \"la casa\" o \"el perro\"."
+   },
+   {
+    "id": "ixqhr",
+    "texto": "Un nombre propio o un término común utilizado para designar a alguien o algo específico."
+   }
+  ]
+ },
+ {
+  "n": 98,
+  "categoria": "lengua",
+  "pregunta": "¿Cuál es el plural de 'crisis'?",
+  "referencia": "crisis (invariable)",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "mbhbi",
+    "texto": "Crisis."
+   },
+   {
+    "id": "wtnys",
+    "texto": "Crisis."
+   },
+   {
+    "id": "hkynb",
+    "texto": "Crisis."
+   },
+   {
+    "id": "lqbbs",
+    "texto": "Crisis."
+   },
+   {
+    "id": "knxko",
+    "texto": "Crisis."
+   },
+   {
+    "id": "gxdrf",
+    "texto": "Crisis."
+   }
+  ]
+ },
+ {
+  "n": 99,
+  "categoria": "lengua",
+  "pregunta": "¿Qué signo se usa al inicio de una pregunta en español?",
+  "referencia": "El signo de apertura ¿",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "chkxc",
+    "texto": "La interrogación."
+   },
+   {
+    "id": "tjboc",
+    "texto": "La interrogación."
+   },
+   {
+    "id": "tsfug",
+    "texto": "La interrogación."
+   },
+   {
+    "id": "hhiny",
+    "texto": "La interrogación."
+   },
+   {
+    "id": "ifxma",
+    "texto": "La interrogación."
+   },
+   {
+    "id": "pydtd",
+    "texto": "El punto y coma."
+   }
+  ]
+ },
+ {
+  "n": 100,
+  "categoria": "lengua",
+  "pregunta": "¿Qué es un sinónimo?",
+  "referencia": "Palabra con significado igual o muy parecido a otra",
+  "confianza_evaluador": "alta",
+  "respuestas": [
+   {
+    "id": "uletw",
+    "texto": "Una palabra intercambiable con otra sin perder significado."
+   },
+   {
+    "id": "qyran",
+    "texto": "Una palabra o expresión intercambiable con otra sin cambiar su significado."
+   },
+   {
+    "id": "wtejj",
+    "texto": "Una palabra intercambiable con otra sin perder su significado original."
+   },
+   {
+    "id": "pydbn",
+    "texto": "Una palabra intercambiable con otra sin cambiar su significado."
+   },
+   {
+    "id": "ltplo",
+    "texto": "Una palabra o expresión que tiene el mismo significado o concepto que otra.\n\nEn lugar de decir \"especialista\", se podría decir \"expert\" con igual sentido."
+   },
+   {
+    "id": "nokwa",
+    "texto": "Una palabra o expresión intercambiable con otra sin cambiar su significado."
+   }
+  ]
+ }
+]
