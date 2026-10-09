@@ -13,8 +13,9 @@ DNP = ("DNP - TerriData, Sistema de Estadísticas Territoriales", "https://dnp.g
 SSPD = ("SSPD - Funciones y SUI (Ley 142 de 1994, art. 53)", "https://www.superservicios.gov.co/Nuestra-entidad/Quienes-somos/funciones", "resultado de busqueda dirigida a dominios oficiales (superservicios.gov.co, funcionpublica.gov.co)")
 DANE = ("DANE - Boletín Técnico Déficit Habitacional 2018 (metodología 2020)", "https://www.dane.gov.co/files/investigaciones/deficit-habitacional/deficit-hab-2020-boletin.pdf", "PDF oficial descargado y leido (texto completo, secciones 2 y 3)")
 MP = lambda tema, url: ("MedlinePlus (NIH/NLM) - " + tema, url, "resultado de busqueda dirigida a medlineplus.gov (resumen de la pagina)")  # noqa: E731
-OMS = lambda tema, url: ("OMS - " + tema, url, "resultado de busqueda dirigida a who.int (nota descriptiva)")  # noqa: E731
-LEY100 = ("Ley 100 de 1993 (SGSSS)", "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=5248", "resultado de busqueda dirigida a minsalud.gov.co y funcionpublica.gov.co")
+OMS = lambda tema, url, v="resultado de busqueda dirigida a who.int (nota descriptiva)": ("OMS - " + tema, url, v)  # noqa: E731
+LEY100_157 = ("Ley 100 de 1993, art. 157 (tipos de afiliados al SGSSS)", "https://minsalud.gov.co/Normatividad_Nuevo/LEY%200100%20DE%201993.pdf", "texto completo de la ley (PDF de Minsalud, 132 paginas) leido en T-124 fase 0")
+LEY100_153 = ("Ley 100 de 1993, art. 153 numeral 2 (obligatoriedad de la afiliacion)", "https://minsalud.gov.co/Normatividad_Nuevo/LEY%200100%20DE%201993.pdf", "texto completo de la ley (PDF de Minsalud, 132 paginas) leido en T-124 fase 0")
 
 ANCLAS = [
     # ---------------- Score ----------------
@@ -110,10 +111,10 @@ ANCLAS = [
     {"pregunta": "¿Sirven los antibióticos para curar un resfriado?", "cat": "a", "externa": [MP("Resfriados y gripe - antibióticos", "https://medlineplus.gov/spanish/ency/article/002070.htm")]},
     {"pregunta": "¿En qué se diferencian un virus y una bacteria?", "cat": "a", "externa": [MP("Enfermedades infecciosas", "https://medlineplus.gov/infectiousdiseases.html")]},
     {"pregunta": "¿Cómo protege una vacuna?", "cat": "a", "externa": [MP("Vacunas", "https://medlineplus.gov/spanish/ency/article/002024.htm")]},
-    {"pregunta": "¿Cómo se calcula el índice de masa corporal?", "cat": "a", "externa": [OMS("Obesidad y sobrepeso (nota descriptiva)", "https://www.who.int/es/news-room/fact-sheets/detail/obesity-and-overweight")]},
+    {"pregunta": "¿Cómo se calcula el índice de masa corporal?", "cat": "a", "externa": [OMS("Obesidad y sobrepeso (nota descriptiva)", "https://www.who.int/es/news-room/fact-sheets/detail/obesity-and-overweight", "pagina oficial leida completa (WebFetch, T-124 fase 0): IMC = peso(kg)/estatura(m)^2; adultos: sobrepeso >= 25, obesidad >= 30")]},
     {"pregunta": "¿Qué formas de desnutrición distingue la OMS?", "cat": "a", "externa": [OMS("Malnutrición (nota descriptiva)", "https://www.who.int/es/news-room/fact-sheets/detail/malnutrition")]},
-    {"pregunta": "¿En qué se diferencian el régimen contributivo y el subsidiado", "cat": "a", "externa": [LEY100]},
+    {"pregunta": "¿En qué se diferencian el régimen contributivo y el subsidiado", "cat": "a", "externa": [LEY100_157]},
     {"pregunta": "¿Qué es el sistema inmunitario?", "cat": "a", "externa": [MP("Sistema inmunitario y sus enfermedades", "https://medlineplus.gov/immunesystemanddisorders.html")]},
     {"pregunta": "¿Qué es el colesterol?", "cat": "a", "externa": [MP("Colesterol total", "https://medlineplus.gov/spanish/ency/article/007813.htm")]},
-    {"pregunta": "¿Es obligatoria la afiliación al sistema de salud en Colombia?", "cat": "a", "externa": [LEY100]},
+    {"pregunta": "¿Es obligatoria la afiliación al sistema de salud en Colombia?", "cat": "a", "externa": [LEY100_153]},
 ]
