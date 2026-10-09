@@ -20,6 +20,8 @@ entrenamiento en [`dataset/`](dataset/). El entrenamiento corre localmente
 
 ## Contrato de entrada (T-97, 26/09)
 
+> **Actualizacion (SEGURIDAD, 09/10/2026):** `POST /chatbot/send` ya no existe en produccion (nginx no lo publica y el servicio solo lo registra con `CHATBOT_HABILITAR_SEND_LOCAL=1`, para la evaluacion local de `training/`). Cuando esta habilitado solo recibe `message` y **no persiste nada**. `/docs`, `/redoc` y `/openapi.json` solo existen con `CHATBOT_HABILITAR_DOCS=1`. Lo que sigue describe el contrato historico.
+
 Tanto `POST /chatbot/send` como el consumer de RabbitMQ (cola
 `chatbot_requests`) requieren, ademas del mensaje, `usuario_id` (int) y
 `consentimiento_entrenamiento` (bool) — este servicio no tiene
