@@ -16,6 +16,9 @@ os.chdir(RAIZ)
 
 import uvicorn  # noqa: E402
 
+# POST /chatbot/send ya no se registra salvo con esta variable (SEGURIDAD, ver app/main.py).
+os.environ.setdefault("CHATBOT_HABILITAR_SEND_LOCAL", "1")
+
 import app.main as principal  # noqa: E402
 
 
@@ -25,7 +28,6 @@ async def _sin_rabbitmq(_app):
 
 
 principal.app.router.lifespan_context = _sin_rabbitmq
-principal.persistir_en_background = lambda *a, **k: None
 
 if __name__ == "__main__":
     uvicorn.run(principal.app, host="127.0.0.1", port=int(sys.argv[1]), log_level="warning")
