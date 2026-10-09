@@ -6,7 +6,6 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 from app.ollama_client import OllamaNoDisponibleError, generar_respuesta
-from app.persistencia import persistir_en_background
 from app.rabbitmq_consumer import iniciar_consumidor
 
 # Sin esto, logger.info() de app/rabbitmq_consumer.py y app/persistencia.py
@@ -23,6 +22,15 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(name)s:%(message
 # RabbitMQ (ver README de techo360-proyeccion, mismo patron).
 RABBITMQ_URL = os.environ.get("RABBITMQ_URL", "amqp://guest:guest@localhost:5672/")
 
+# SEGURIDAD: POST /chatbot/send NO se registra en produccion. Estaba publicado por
+# nginx sin sesion ni limite y confiaba en usuario_id/conversacion_id del cuerpo
+# (inyectaba mensajes en conversaciones ajenas via el evento de persistencia y
+# cargaba Ollama). El camino real es el consumer de RabbitMQ (backend -> RPC).
+# Solo existe si CHATBOT_HABILITAR_SEND_LOCAL=1, para la evaluacion local
+# (training/servicio_eval_sin_rabbitmq.py, en 127.0.0.1), y aun asi NO persiste
+# nada: ya no recibe ni usa usuario_id ni conversacion_id.
+HABILITAR_SEND_LOCAL = os.environ.get("CHATBOT_HABILITAR_SEND_LOCAL") == "1"
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -35,53 +43,40 @@ async def lifespan(app: FastAPI):
     await connection.close()
 
 
-app = FastAPI(title="Techo 360 - Servicio IA Chatbot", lifespan=lifespan)
+# SEGURIDAD: sin /docs, /redoc ni /openapi.json salvo CHATBOT_HABILITAR_DOCS=1 (desarrollo).
+_DOCS = os.environ.get("CHATBOT_HABILITAR_DOCS") == "1"
+app = FastAPI(
+    title="Techo 360 - Servicio IA Chatbot",
+    lifespan=lifespan,
+    docs_url="/docs" if _DOCS else None,
+    redoc_url="/redoc" if _DOCS else None,
+    openapi_url="/openapi.json" if _DOCS else None,
+)
 
 
 class ChatRequest(BaseModel):
+    # Solo el texto. Los campos viejos (usuario_id, consentimiento_entrenamiento,
+    # conversacion_id) se ignoran si llegan: este endpoint ya no persiste.
     message: str
-    # T-97: quien llama (backend/frontend) ya sabe quien es el usuario
-    # autenticado y si dio consentimiento de reentrenamiento (mapcaloruser,
-    # en postgres-users) -- este servicio solo tiene credenciales para
-    # postgres-vector (ver AVISO en migrations/0001_conversaciones_mensajes.sql),
-    # asi que ambos valores deben llegar ya resueltos en el payload, nunca
-    # se consultan aqui.
-    usuario_id: int
-    consentimiento_entrenamiento: bool
-    conversacion_id: int | None = None
 
 
 class ChatResponse(BaseModel):
     response: str
 
 
-@app.post("/chatbot/send", response_model=ChatResponse)
 async def chatbot_send(payload: ChatRequest):
-    """Recibe un mensaje del usuario, lo envia a Ollama (API HTTP local)
-    con el system prompt sincronizado, y devuelve la respuesta generada.
-
-    T-96: se mantiene solo para pruebas locales rapidas sin levantar
-    RabbitMQ -- el camino real de produccion es ahora el consumer de
-    app/rabbitmq_consumer.py (cola 'chatbot_requests'), que llama a la
-    misma logica compartida (app/ollama_client.generar_respuesta).
-    """
+    """Solo evaluacion local (CHATBOT_HABILITAR_SEND_LOCAL=1): envia el mensaje a
+    Ollama con el system prompt y las opciones de produccion y devuelve la
+    respuesta. No persiste nada (SEGURIDAD, ver HABILITAR_SEND_LOCAL arriba)."""
     try:
         respuesta_texto = await generar_respuesta(payload.message)
     except OllamaNoDisponibleError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
-
-    # T-97: persistir es best-effort (ver docstring de persistir_intercambio)
-    # -- publica un evento a RabbitMQ para que el backend persista, nunca
-    # debe demorar ni tumbar la respuesta ya generada.
-    persistir_en_background(
-        payload.usuario_id,
-        payload.consentimiento_entrenamiento,
-        payload.message,
-        respuesta_texto,
-        payload.conversacion_id,
-    )
-
     return ChatResponse(response=respuesta_texto)
+
+
+if HABILITAR_SEND_LOCAL:
+    app.add_api_route("/chatbot/send", chatbot_send, methods=["POST"], response_model=ChatResponse)
 
 
 @app.get("/health")
