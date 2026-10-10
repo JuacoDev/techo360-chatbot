@@ -20,6 +20,8 @@ entrenamiento en [`dataset/`](dataset/). El entrenamiento corre localmente
 
 ## Contrato de entrada (T-97, 26/09)
 
+> **Actualizacion (SEGURIDAD, 09/10/2026):** `POST /chatbot/send` ya no existe en produccion (nginx no lo publica y el servicio solo lo registra con `CHATBOT_HABILITAR_SEND_LOCAL=1`, para la evaluacion local de `training/`). Cuando esta habilitado solo recibe `message` y **no persiste nada**. `/docs`, `/redoc` y `/openapi.json` solo existen con `CHATBOT_HABILITAR_DOCS=1`. Lo que sigue describe el contrato historico.
+
 Tanto `POST /chatbot/send` como el consumer de RabbitMQ (cola
 `chatbot_requests`) requieren, ademas del mensaje, `usuario_id` (int) y
 `consentimiento_entrenamiento` (bool) — este servicio no tiene
@@ -65,9 +67,12 @@ Estado de `development` (lo que corre en producción) hasta el SHA `e681b88`. La
 ### Ollama: opciones de la petición (`app/ollama_client.py`)
 - `TIMEOUT_OLLAMA_S = 120.0` (constante): tiempo máximo que espera el chatbot a Ollama. El backend espera hasta 200 s por el RPC.
 - `NUM_PREDICT = 400`: tope de tokens por respuesta (`options.num_predict`). Si Ollama corta por longitud (`done_reason = "length"`), el chatbot registra un `warning` con `eval_count` y el texto puede quedar a medias. Las respuestas reales hasta el 5-oct llegaron como máximo a ~250 tokens (1010 caracteres), así que el tope no se alcanzó.
-- `NUM_THREAD = 3` (`options.num_thread`): debe igualar la cuota de CPU del contenedor de Ollama (`cpus: 3.0` en `techo360-infra`) y todas las peticiones deben usar el mismo valor (cambiar las opciones del runner puede recargar el modelo). Medición directa a Ollama con un prompt corto: 5,32 → 7,18 tokens/s. **No verificado** el efecto con respuestas reales por la app.
+- `NUM_THREAD` (`options.num_thread`) se lee de la variable de entorno `OLLAMA_NUM_THREAD` (entero ≥ 1; sin ella o con un valor inválido, 3 —el valor medido en producción—, con un `warning` si es inválido). En la VPS **no se ha cambiado**: subirlo (la medición local sugiere 4) se decide tras medirlo allí. Valor actual 3: debe igualar la cuota de CPU del contenedor de Ollama (`cpus: 3.0` en `techo360-infra`) y todas las peticiones deben usar el mismo valor (cambiar las opciones del runner puede recargar el modelo). Medición directa a Ollama con un prompt corto: 5,32 → 7,18 tokens/s. **No verificado** el efecto con respuestas reales por la app.
 - El consumer de RabbitMQ usa `prefetch 1`: **atiende los mensajes en serie** (~46 s por mensaje antes de D11). Con 4 envíos simultáneos la última respuesta tardó 183,8 s (antes de D11), a ~16 s del tope de 200 s del backend; el quinto no se probó.
 - Los workers de laboratorio reutilizan esta imagen; el tope y los hilos solo les aplican cuando reconstruyen desde el repo actualizado (no verificado qué hacen).
+
+### Aviso de cancelación (opcional)
+Si el payload trae `mensaje_id` e `intento` y el backend publica un aviso en el exchange fanout `chatbot_cancelaciones` (cuerpo `{"mensaje_id", "intento"}`), el consumer aborta la llamada a Ollama de ese intento (o no la inicia si el aviso llegó antes) y responde `{"status": "error", "tipo": "cancelado"}`, que el backend descarta con su 409 habitual. Sin esos campos o sin aviso, todo funciona como siempre; una imagen vieja ignora ambos. Cada consumer (VPS y workers) usa su propia cola exclusiva `chatbot_cancelaciones.<uuid>`. **No verificado:** que Ollama detenga su cálculo al cerrarse la conexión (hay que medirlo en la VPS).
 
 ### Despliegue
 Un push a `development` ejecuta `deploy-service.sh chatbot` (backup, build y recreación del contenedor). Si cambia `app/`, el contenedor se recrea y `chatbot_requests` queda ~3,1 s sin consumer (medido en D10 y D11). No verificado: el reencolado de un mensaje que esté en vuelo en ese momento (en ambos despliegues no había ninguno).

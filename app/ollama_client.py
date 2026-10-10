@@ -59,7 +59,27 @@ NUM_PREDICT = 400
 # contenedor de Ollama: 4,91 tokens/s con el valor por defecto frente a 7,46 con 3 hilos. Debe igualar
 # la cuota de CPU del contenedor de Ollama (cpus en techo360-infra). Todas las peticiones deben usar
 # el mismo valor: cambiar las opciones del runner entre peticiones puede recargar el modelo.
-NUM_THREAD = 3
+# Configurable con OLLAMA_NUM_THREAD (p. ej. un worker nuevo con otro numero de CPU); sin la variable
+# (o con un valor invalido) queda en 3, el valor medido en produccion. Cambiarlo en la VPS se decide
+# tras medirlo alli (scripts/medir-presupuesto-recursos.sh --ollama en techo360-infra), no aqui.
+NUM_THREAD_POR_DEFECTO = 3
+
+
+def _num_thread_desde_entorno(valor: str | None) -> int:
+    """Entero positivo de OLLAMA_NUM_THREAD, o el valor por defecto si falta o es invalido."""
+    if valor is None or not valor.strip():
+        return NUM_THREAD_POR_DEFECTO
+    try:
+        hilos = int(valor)
+    except ValueError:
+        hilos = 0
+    if hilos < 1:
+        logger.warning("OLLAMA_NUM_THREAD invalido (%r): se usa %d.", valor, NUM_THREAD_POR_DEFECTO)
+        return NUM_THREAD_POR_DEFECTO
+    return hilos
+
+
+NUM_THREAD = _num_thread_desde_entorno(os.environ.get("OLLAMA_NUM_THREAD"))
 
 
 class OllamaNoDisponibleError(RuntimeError):

@@ -1,6 +1,10 @@
+import asyncio
 import json
 import logging
 import os
+import time
+import uuid
+from collections import OrderedDict
 
 import aio_pika
 from aio_pika import DeliveryMode, Message
@@ -25,6 +29,97 @@ REQUEST_QUEUE = "chatbot_requests"
 # sobre el consumer del VPS sin tocar codigo, ver
 # techo360-workers/README.md.
 CONSUMER_PRIORITY = int(os.environ.get("CHATBOT_CONSUMER_PRIORITY", "0"))
+
+# >>> Aviso de cancelacion (opcional, mejor esfuerzo) <<<
+# Cancelar un mensaje en el backend NO detenia al asistente: la generacion (~46 s de CPU) seguia
+# y su resultado se descartaba con un 409 (medido el 9-oct: 3 de 10 generaciones). Ahora el
+# backend, ademas de marcar el mensaje 'cancelado', publica {"mensaje_id", "intento"} en este
+# exchange fanout NO durable (mismo nombre y argumentos que techo360-backend,
+# services/chatbot_rpc_client.EXCHANGE_CANCELACIONES). Cada consumer se enlaza con su propia
+# cola exclusiva y, si el aviso corresponde a una generacion en curso, cancela la llamada a
+# Ollama (httpx cierra la conexion); si llega antes de empezar, no genera.
+# COMPATIBILIDAD: todo es opcional. Sin `mensaje_id`/`intento` en el payload (backend viejo) o
+# sin aviso (backend con CHATBOT_AVISAR_CANCELACION=false) el consumer se comporta como siempre;
+# una imagen vieja de este servicio ignora los campos nuevos y el exchange.
+EXCHANGE_CANCELACIONES = "chatbot_cancelaciones"
+# Cuanto se recuerda un aviso por si llega ANTES que el mensaje (cola ocupada): tope del RPC
+# del backend (200 s) mas margen.
+RECUERDO_CANCELACION_S = 600
+MAX_CANCELACIONES_RECORDADAS = 500
+
+
+class GeneracionCancelada(Exception):
+    """El usuario cancelo este intento: no hace falta (seguir) generando."""
+
+
+class _Cancelaciones:
+    """Avisos de cancelacion recientes y generaciones en curso, por (mensaje_id, intento)."""
+
+    def __init__(self) -> None:
+        self._recientes: OrderedDict[tuple[int, int], float] = OrderedDict()
+        self.activas: dict[tuple[int, int], asyncio.Future] = {}
+
+    @staticmethod
+    def clave(datos: object) -> tuple[int, int] | None:
+        """(mensaje_id, intento) si ambos son enteros; None si falta alguno (payload viejo)."""
+        if not isinstance(datos, dict):
+            return None
+        mensaje_id, intento = datos.get("mensaje_id"), datos.get("intento")
+        if isinstance(mensaje_id, int) and isinstance(intento, int) and not isinstance(mensaje_id, bool) and not isinstance(intento, bool):
+            return mensaje_id, intento
+        return None
+
+    def registrar(self, clave: tuple[int, int]) -> bool:
+        """Recuerda el aviso y cancela la generacion en curso de ese intento. True si la cancelo."""
+        self._recientes[clave] = time.monotonic()
+        while len(self._recientes) > MAX_CANCELACIONES_RECORDADAS:
+            self._recientes.popitem(last=False)
+        tarea = self.activas.get(clave)
+        if tarea is not None and not tarea.done():
+            tarea.cancel()
+            return True
+        return False
+
+    def fue_cancelado(self, clave: tuple[int, int]) -> bool:
+        desde = self._recientes.get(clave)
+        if desde is None:
+            return False
+        if time.monotonic() - desde > RECUERDO_CANCELACION_S:
+            del self._recientes[clave]
+            return False
+        return True
+
+
+_cancelaciones = _Cancelaciones()
+
+
+async def _generar_cancelable(mensaje: str, clave: tuple[int, int] | None) -> str:
+    """generar_respuesta(), cancelable por un aviso del backend. Sin `clave` (payload viejo),
+    exactamente lo de siempre."""
+    if clave is None:
+        return await generar_respuesta(mensaje)
+    if _cancelaciones.fue_cancelado(clave):
+        raise GeneracionCancelada()
+    tarea = asyncio.ensure_future(generar_respuesta(mensaje))
+    _cancelaciones.activas[clave] = tarea
+    try:
+        return await tarea
+    except asyncio.CancelledError:
+        if tarea.cancelled() and _cancelaciones.fue_cancelado(clave):
+            raise GeneracionCancelada() from None
+        tarea.cancel()  # cancelacion del propio consumer (apagado): no se deja huerfana la llamada
+        raise
+    finally:
+        _cancelaciones.activas.pop(clave, None)
+
+
+async def _on_aviso_cancelacion(message: AbstractIncomingMessage) -> None:
+    try:
+        clave = _Cancelaciones.clave(json.loads(message.body))
+    except (json.JSONDecodeError, UnicodeDecodeError):
+        return
+    if clave is not None and _cancelaciones.registrar(clave):
+        logger.info("Generacion abortada por cancelacion (mensaje %s, intento %s).", *clave)
 
 # >>> AVISO -- por que el consumer llama a generar_respuesta() y no
 # reimplementa la llamada a Ollama <<<
@@ -58,8 +153,12 @@ async def _procesar_mensaje(message: AbstractIncomingMessage, channel: AbstractC
             mensaje = payload["mensaje"]
             usuario_id = payload["usuario_id"]
             consentimiento_entrenamiento = payload["consentimiento_entrenamiento"]
-            respuesta_texto = await generar_respuesta(mensaje)
+            respuesta_texto = await _generar_cancelable(mensaje, _Cancelaciones.clave(payload))
             respuesta = {"status": "ok", "response": respuesta_texto}
+        except GeneracionCancelada:
+            # El backend ya marco el mensaje 'cancelado': esta respuesta solo sirve para que su
+            # RPC termine pronto (la descarta con 409) en vez de esperar al timeout.
+            respuesta = {"status": "error", "tipo": "cancelado", "detail": "Mensaje cancelado; no se genero respuesta."}
         except OllamaNoDisponibleError as error:
             # Sin este log, un timeout interno de generar_respuesta()
             # (TIMEOUT_OLLAMA_S=120s en app/ollama_client.py -- carga en
@@ -129,6 +228,30 @@ _CHANNELS_VIVOS: list = []
 _QUEUES_VIVAS: list = []
 
 
+async def _suscribir_avisos_cancelacion(connection: AbstractRobustConnection) -> None:
+    """Cola exclusiva propia enlazada al exchange de avisos, en un canal aparte (el prefetch 1
+    del canal de trabajo no debe retrasar un aviso). Si algo falla, el consumer sigue como
+    siempre: cancelar solo dejaria de abortar la generacion."""
+    try:
+        canal = await connection.channel()
+        _CHANNELS_VIVOS.append(canal)
+        exchange = await canal.declare_exchange(EXCHANGE_CANCELACIONES, aio_pika.ExchangeType.FANOUT, durable=False)
+        # Nombre explicito (no el generado por el servidor): aio-pika puede re-declararla tal cual
+        # al reconectar. Solo se conservan avisos recientes (x-message-ttl).
+        cola = await canal.declare_queue(
+            f"{EXCHANGE_CANCELACIONES}.{uuid.uuid4().hex}",
+            exclusive=True,
+            auto_delete=True,
+            arguments={"x-message-ttl": RECUERDO_CANCELACION_S * 1000},
+        )
+        _QUEUES_VIVAS.append(cola)
+        await cola.bind(exchange)
+        await cola.consume(_on_aviso_cancelacion, no_ack=True)
+        logger.info("Suscrito a los avisos de cancelacion ('%s').", EXCHANGE_CANCELACIONES)
+    except Exception:  # noqa: BLE001 -- opcional: nunca debe impedir que el consumer arranque
+        logger.warning("No se pudo suscribir a los avisos de cancelacion; cancelar no abortara la generacion.", exc_info=True)
+
+
 async def iniciar_consumidor(rabbitmq_url: str) -> AbstractRobustConnection:
     connection = await aio_pika.connect_robust(rabbitmq_url)
     channel = await connection.channel()
@@ -153,4 +276,5 @@ async def iniciar_consumidor(rabbitmq_url: str) -> AbstractRobustConnection:
 
     await queue.consume(on_message, arguments={"x-priority": CONSUMER_PRIORITY})
     logger.info("Consumidor de '%s' arrancado (x-priority=%d).", REQUEST_QUEUE, CONSUMER_PRIORITY)
+    await _suscribir_avisos_cancelacion(connection)
     return connection
