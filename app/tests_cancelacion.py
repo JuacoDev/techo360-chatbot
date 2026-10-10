@@ -129,6 +129,14 @@ class TestCancelarAntesDeGenerar(Base):
 
         asyncio.run(caso())
 
+    def test_los_avisos_recordados_tienen_tope(self):
+        """Un aviso que llega antes que su mensaje se recuerda, pero la memoria esta acotada."""
+        for n in range(consumer.MAX_CANCELACIONES_RECORDADAS + 100):
+            consumer._cancelaciones.registrar((n, 1))
+        self.assertEqual(len(consumer._cancelaciones._recientes), consumer.MAX_CANCELACIONES_RECORDADAS)
+        self.assertFalse(consumer._cancelaciones.fue_cancelado((0, 1)))  # el mas viejo se descarto
+        self.assertTrue(consumer._cancelaciones.fue_cancelado((consumer.MAX_CANCELACIONES_RECORDADAS + 99, 1)))
+
 
 class TestCancelarDuranteLaGeneracion(Base):
     def test_el_aviso_aborta_la_llamada_a_ollama(self):
