@@ -1,5 +1,6 @@
 import logging
 import os
+import time
 
 import httpx
 
@@ -132,3 +133,76 @@ async def generar_respuesta(mensaje: str) -> str:
             NUM_PREDICT,
         )
     return datos["message"]["content"]
+
+
+# ---------------------------------------------------------------------------------------------
+# Camino v2 del contrato RPC (fase2-2 / fase4-especificacion-2, 4.4): los mensajes (system incluido)
+# llegan ya ensamblados por el backend y se envian tal cual. generar_respuesta() de arriba (v1) NO cambia.
+# Mismas opciones del runner que v1 (num_predict, num_thread; num_ctx lo fija el Modelfile: 2048): cambiarlas
+# entre peticiones puede recargar el modelo.
+# ---------------------------------------------------------------------------------------------
+NUM_CTX = 2048
+CARACTERES_POR_TOKEN = 3.0  # estimacion conservadora para español (medido 3,5-3,6)
+_digest_cache: dict[str, str] = {}
+
+
+def tokens_estimados(mensajes: list[dict]) -> int:
+    return int(sum(len(m["content"]) for m in mensajes) / CARACTERES_POR_TOKEN) + 1
+
+
+async def obtener_digest(forzar: bool = False) -> str | None:
+    """Digest del modelo (de /api/tags de Ollama), cacheado en memoria por tag; None si no se puede obtener
+    (el campo queda ausente en la respuesta). Se refresca con forzar=True (arranque, fallo de generacion)."""
+    if not forzar and OLLAMA_MODEL in _digest_cache:
+        return _digest_cache[OLLAMA_MODEL]
+    try:
+        async with httpx.AsyncClient(timeout=10.0) as client:
+            r = await client.get(f"{OLLAMA_URL}/api/tags")
+            r.raise_for_status()
+        for modelo in r.json().get("models", []):
+            if modelo.get("name") == OLLAMA_MODEL or modelo.get("model") == OLLAMA_MODEL:
+                digest = modelo.get("digest")
+                if digest:
+                    _digest_cache[OLLAMA_MODEL] = digest
+                    return digest
+    except Exception as exc:  # noqa: BLE001 -- el digest es informativo: nunca debe impedir responder
+        logger.warning("No se pudo obtener el digest del modelo: %s", exc)
+    _digest_cache.pop(OLLAMA_MODEL, None)
+    return None
+
+
+async def generar_respuesta_v2(mensajes: list[dict]) -> dict:
+    """mensajes: [{"role", "content"}, ...] tal como se envian a /api/chat. Devuelve
+    {"texto", "done_reason", "prompt_eval_count", "eval_count", "duracion_ms"}."""
+    inicio = time.monotonic()
+    async with httpx.AsyncClient(timeout=TIMEOUT_OLLAMA_S) as client:
+        try:
+            respuesta = await client.post(
+                f"{OLLAMA_URL}/api/chat",
+                json={
+                    "model": OLLAMA_MODEL,
+                    "messages": mensajes,
+                    "stream": False,
+                    "options": {"num_predict": NUM_PREDICT, "num_thread": NUM_THREAD},
+                },
+            )
+            respuesta.raise_for_status()
+        except httpx.HTTPError as exc:
+            _digest_cache.pop(OLLAMA_MODEL, None)  # tras un fallo se vuelve a leer el digest
+            raise OllamaNoDisponibleError(f"No se pudo contactar a Ollama: {exc}") from exc
+
+    datos = respuesta.json()
+    if datos.get("done_reason") == "length":
+        logger.warning(
+            "Respuesta cortada por longitud (done_reason=length, eval_count=%s, NUM_PREDICT=%d)",
+            datos.get("eval_count"),
+            NUM_PREDICT,
+        )
+    total_ns = datos.get("total_duration")
+    return {
+        "texto": datos["message"]["content"],
+        "done_reason": datos.get("done_reason"),
+        "prompt_eval_count": datos.get("prompt_eval_count"),
+        "eval_count": datos.get("eval_count"),
+        "duracion_ms": int(total_ns / 1e6) if isinstance(total_ns, (int, float)) else int((time.monotonic() - inicio) * 1000),
+    }
