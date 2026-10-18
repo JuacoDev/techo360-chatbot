@@ -252,6 +252,7 @@ class Monitor(TrainerCallback):
 
     def on_step_end(self, args, state, control, **kw):
         seg = time.time() - self.t_step
+        torch.cuda.empty_cache()  # libera la fragmentacion del asignador (la reservada llego a 6.576 MB con 5.050 MB asignados)
         res = torch.cuda.memory_reserved() / 2**20
         self.filas.append({"step": state.global_step, "epoch": round(state.epoch, 4), "segundos_step": round(seg, 3),
                            "vram_allocated_mb": round(torch.cuda.memory_allocated() / 2**20, 1), "vram_reserved_mb": round(res, 1),
@@ -350,7 +351,7 @@ def main() -> int:
         for h in hist:
             if "loss" in h:
                 w.writerow([h["step"], h.get("epoch"), h["loss"], h.get("grad_norm"), h.get("learning_rate")])
-    if not args.humo:
+    if not args.humo and monitor.motivo_parada is None:
         model.save_pretrained(args.salida)
         tokenizer.save_pretrained(args.salida)
     print(f"\nterminado en {(time.time() - t0) / 60:.1f} min | steps {trainer.state.global_step} | loss {log['loss_inicial']:.4f} -> {log['loss_final']:.4f} | "
