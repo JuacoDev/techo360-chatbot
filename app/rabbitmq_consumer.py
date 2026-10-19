@@ -10,7 +10,16 @@ import aio_pika
 from aio_pika import DeliveryMode, Message
 from aio_pika.abc import AbstractChannel, AbstractIncomingMessage, AbstractRobustConnection
 
-from app.ollama_client import OllamaNoDisponibleError, generar_respuesta
+from app.contrato_v2 import ErrorContrato, validar_peticion
+from app.ollama_client import (
+    NUM_CTX,
+    OllamaNoDisponibleError,
+    PRESUPUESTO_PROMPT,
+    generar_respuesta,
+    generar_respuesta_v2,
+    obtener_digest,
+    tokens_estimados,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -93,14 +102,15 @@ class _Cancelaciones:
 _cancelaciones = _Cancelaciones()
 
 
-async def _generar_cancelable(mensaje: str, clave: tuple[int, int] | None) -> str:
+async def _generar_cancelable(mensaje, clave: tuple[int, int] | None, generador=None):
     """generar_respuesta(), cancelable por un aviso del backend. Sin `clave` (payload viejo),
-    exactamente lo de siempre."""
+    exactamente lo de siempre. `generador` (solo el camino v2) sustituye a generar_respuesta."""
+    generador = generador or generar_respuesta
     if clave is None:
-        return await generar_respuesta(mensaje)
+        return await generador(mensaje)
     if _cancelaciones.fue_cancelado(clave):
         raise GeneracionCancelada()
-    tarea = asyncio.ensure_future(generar_respuesta(mensaje))
+    tarea = asyncio.ensure_future(generador(mensaje))
     _cancelaciones.activas[clave] = tarea
     try:
         return await tarea
@@ -146,10 +156,61 @@ async def _on_aviso_cancelacion(message: AbstractIncomingMessage) -> None:
 # respuesta, asi que ese SI sigue llamando a persistir_en_background.
 
 
+CONTRATO_MAXIMO = 2
+
+
+def _error_v2(tipo: str, detail: str) -> dict:
+    return {"version_contrato": 2, "status": "error", "tipo": tipo, "detail": detail}
+
+
+async def _procesar_v2(payload: dict) -> dict:
+    """Camino v2 (fase4-especificacion-2, 4.4): valida con el esquema, usa `mensajes` tal cual (el system viene en
+    la peticion), mismas opciones que v1 y responde con metadatos. Todos los errores salen con forma v2."""
+    try:
+        peticion = validar_peticion(payload)
+    except ErrorContrato as error:
+        return _error_v2(error.tipo, error.detail)
+    mensajes = [{"role": m.rol, "content": m.contenido} for m in peticion.mensajes]
+    if tokens_estimados(mensajes) > PRESUPUESTO_PROMPT:
+        return _error_v2("contexto_excedido", f"El prompt estimado no deja espacio para la respuesta (presupuesto {PRESUPUESTO_PROMPT} tokens; num_ctx {NUM_CTX}).")
+    meta = peticion.metadatos
+    clave = _Cancelaciones.clave({"mensaje_id": meta.mensaje_id, "intento": meta.intento})
+    try:
+        generada = await _generar_cancelable(mensajes, clave, generador=generar_respuesta_v2)
+    except GeneracionCancelada:
+        return _error_v2("cancelado", "Mensaje cancelado; no se genero respuesta.")
+    except OllamaNoDisponibleError as error:
+        logger.warning("Ollama no disponible al procesar mensaje v2: %s", error)
+        return _error_v2("ollama_no_disponible", str(error))
+    except Exception as error:  # noqa: BLE001 -- limite del consumer
+        logger.exception("Error inesperado generando la respuesta v2 del chatbot")
+        return _error_v2("error_interno", str(error))
+    from app.ollama_client import OLLAMA_MODEL
+
+    metadatos = {
+        "modelo": OLLAMA_MODEL,
+        "done_reason": generada["done_reason"],
+        "prompt_eval_count": generada["prompt_eval_count"],
+        "eval_count": generada["eval_count"],
+        "duracion_ms": generada["duracion_ms"],
+        "contexto_ids": [c.id for c in peticion.contexto],
+    }
+    digest = await obtener_digest()
+    if digest:
+        metadatos["digest"] = digest
+    return {"version_contrato": 2, "status": "ok", "response": generada["texto"],
+            "metadatos": {k: v for k, v in metadatos.items() if v is not None}}
+
+
 async def _procesar_mensaje(message: AbstractIncomingMessage, channel: AbstractChannel) -> None:
     async with message.process():
         try:
             payload = json.loads(message.body)
+            if isinstance(payload, dict) and payload.get("version_contrato", 1) != 1:
+                # v2 (o mayor: validar_peticion responde contrato_no_soportado). v1 sigue por el camino de siempre.
+                respuesta = await _procesar_v2(payload)
+                await _publicar(message, channel, respuesta)
+                return
             mensaje = payload["mensaje"]
             usuario_id = payload["usuario_id"]
             consentimiento_entrenamiento = payload["consentimiento_entrenamiento"]
@@ -175,19 +236,22 @@ async def _procesar_mensaje(message: AbstractIncomingMessage, channel: AbstractC
             logger.exception("Error inesperado generando la respuesta del chatbot")
             respuesta = {"status": "error", "tipo": "error_interno", "detail": str(error)}
 
-        if not message.reply_to:
-            logger.warning("Mensaje sin reply_to, no se puede responder: %s", message.correlation_id)
-            return
+        await _publicar(message, channel, respuesta)
 
-        await channel.default_exchange.publish(
-            Message(
-                body=json.dumps(respuesta).encode(),
-                content_type="application/json",
-                correlation_id=message.correlation_id,
-                delivery_mode=DeliveryMode.PERSISTENT,
-            ),
-            routing_key=message.reply_to,
-        )
+
+async def _publicar(message: AbstractIncomingMessage, channel: AbstractChannel, respuesta: dict) -> None:
+    if not message.reply_to:
+        logger.warning("Mensaje sin reply_to, no se puede responder: %s", message.correlation_id)
+        return
+    await channel.default_exchange.publish(
+        Message(
+            body=json.dumps(respuesta).encode(),
+            content_type="application/json",
+            correlation_id=message.correlation_id,
+            delivery_mode=DeliveryMode.PERSISTENT,
+        ),
+        routing_key=message.reply_to,
+    )
 
 
 # >>> AVISO -- causa raiz CONFIRMADA por codigo + log real (28-sep-2026) <<<

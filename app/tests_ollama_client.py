@@ -1,4 +1,4 @@
-"""Pruebas de la lectura de OLLAMA_NUM_THREAD en app/ollama_client.py (sin red).
+"""Pruebas de la lectura de OLLAMA_NUM_THREAD y OLLAMA_NUM_CTX en app/ollama_client.py (sin red).
 
 Uso:
     python -m unittest app.tests_ollama_client
@@ -11,8 +11,9 @@ from unittest.mock import patch
 
 
 def _recargar(**entorno):
-    """Recarga app.ollama_client con exactamente este entorno de OLLAMA_NUM_THREAD."""
+    """Recarga app.ollama_client con exactamente este entorno de OLLAMA_NUM_THREAD / OLLAMA_NUM_CTX."""
     os.environ.pop("OLLAMA_NUM_THREAD", None)
+    os.environ.pop("OLLAMA_NUM_CTX", None)
     os.environ.update(entorno)
     import app.ollama_client as cliente
     return importlib.reload(cliente)
@@ -68,6 +69,57 @@ class NumThreadDesdeEntorno(unittest.TestCase):
                 with patch.object(cliente.httpx, "AsyncClient", _Cliente):
                     self.assertEqual(asyncio.run(cliente.generar_respuesta("hola")), "ok")
                 self.assertEqual(enviado["options"]["num_thread"], esperado)
+
+class NumCtxDesdeEntorno(unittest.TestCase):
+    def tearDown(self):
+        _recargar()
+
+    def test_sin_variable_queda_en_3072_y_el_presupuesto_en_2608(self):
+        c = _recargar()
+        self.assertEqual((c.NUM_CTX, c.NUM_PREDICT, c.MARGEN_TOKENS, c.PRESUPUESTO_PROMPT, c.CARACTERES_POR_TOKEN), (3072, 400, 64, 2608, 2.3))
+
+    def test_valor_valido_mueve_el_presupuesto(self):
+        c = _recargar(OLLAMA_NUM_CTX=" 4096 ")
+        self.assertEqual((c.NUM_CTX, c.PRESUPUESTO_PROMPT), (4096, 4096 - 400 - 64))
+
+    def test_valores_invalidos_vuelven_al_defecto_con_aviso(self):
+        for malo in ("", "   ", "abc", "0", "-2", "2.5", "464"):  # 464 no deja ni 1 token de prompt
+            with self.subTest(valor=malo):
+                with patch("logging.Logger.warning") as aviso:
+                    c = _recargar(OLLAMA_NUM_CTX=malo)
+                self.assertEqual(c.NUM_CTX, 3072)
+                self.assertEqual(aviso.called, malo.strip() != "")
+
+    def test_num_ctx_no_se_envia_a_ollama(self):
+        # num_ctx lo fija el Modelfile: cambiarlo entre peticiones recargaria el modelo
+        c = _recargar()
+        enviado = {}
+
+        class _R:
+            def raise_for_status(self):
+                pass
+
+            def json(self):
+                return {"message": {"content": "ok"}, "done_reason": "stop"}
+
+        class _C:
+            def __init__(self, *a, **k):
+                pass
+
+            async def __aenter__(self):
+                return self
+
+            async def __aexit__(self, *a):
+                return False
+
+            async def post(self, url, json=None):
+                enviado.update(json)
+                return _R()
+
+        with patch.object(c.httpx, "AsyncClient", _C):
+            asyncio.run(c.generar_respuesta_v2([{"role": "user", "content": "hola"}]))
+        self.assertEqual(sorted(enviado["options"]), ["num_predict", "num_thread"])
+
 
 if __name__ == "__main__":
     unittest.main()
