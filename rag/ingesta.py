@@ -178,7 +178,8 @@ def fecha_iso(s: str):
         return None
 
 
-def plan_y_aplicar(dsn: str, frags: list[Fragmento], shas: dict[str, str], clave_modelo: str, dry_run: bool) -> dict:
+def plan_y_aplicar(dsn: str, frags: list[Fragmento], shas: dict[str, str], clave_modelo: str, dry_run: bool,
+                   aprobado_por: str | None = None) -> dict:
     import psycopg
     from pgvector.psycopg import register_vector
 
@@ -228,14 +229,17 @@ def plan_y_aplicar(dsn: str, frags: list[Fragmento], shas: dict[str, str], clave
             delf = [f for f in frags if f.documento == nombre]
             fecha_max = max((fecha_iso(f.meta["fecha"]) for f in delf if fecha_iso(f.meta["fecha"])), default=None)
             row = con.execute("""
-                INSERT INTO rag_documentos (nombre, titulo, fuente, tipo_fuente, fecha_fuente, vigente_desde, version, sha256)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO rag_documentos (nombre, titulo, fuente, tipo_fuente, fecha_fuente, vigente_desde, version, sha256,
+                                            aprobado_por, aprobado_en)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, CASE WHEN %s::text IS NULL THEN NULL ELSE now() END)
                 ON CONFLICT (nombre) DO UPDATE SET titulo = EXCLUDED.titulo, fecha_fuente = EXCLUDED.fecha_fuente,
                     vigente_desde = EXCLUDED.vigente_desde, version = EXCLUDED.version, sha256 = EXCLUDED.sha256,
+                    aprobado_por = COALESCE(EXCLUDED.aprobado_por, rag_documentos.aprobado_por),
+                    aprobado_en = COALESCE(EXCLUDED.aprobado_en, rag_documentos.aprobado_en),
                     activo = true, actualizado_en = now()
                 RETURNING id""",
                 (nombre, TITULOS.get(nombre, nombre), "varias (ver cada fragmento)", "mixta", fecha_max, fecha_max,
-                 VERSION_CORPUS, sha)).fetchone()
+                 VERSION_CORPUS, sha, aprobado_por, aprobado_por)).fetchone()
             ids_doc[nombre] = row[0]
         for (f, h), v, t in zip(pendientes, vecs, toks):
             m = f.meta
@@ -264,6 +268,7 @@ def main(argv=None) -> int:
     ap.add_argument("--corpus", type=Path, default=CORPUS_DEFECTO)
     ap.add_argument("--modelo", choices=sorted(MODELOS), default=MODELO_DEFECTO)
     ap.add_argument("--dry-run", action="store_true", help="solo lectura: informa que haria, no escribe ni carga el modelo")
+    ap.add_argument("--aprobado-por", help="marca aprobado_por/aprobado_en en los documentos (p. ej. claude-revision-18oct)")
     ap.add_argument("--solo-analizar", action="store_true", help="no usa base de datos: valida y fragmenta el corpus")
     a = ap.parse_args(argv)
 
@@ -278,7 +283,7 @@ def main(argv=None) -> int:
     if not dsn:
         raise SystemExit("Falta RAG_DATABASE_URL (base LOCAL desechable). Con --solo-analizar no hace falta.")
     exigir_base_local(dsn)
-    stats = plan_y_aplicar(dsn, frags, shas, a.modelo, a.dry_run)
+    stats = plan_y_aplicar(dsn, frags, shas, a.modelo, a.dry_run, a.aprobado_por)
     print(("[dry-run] " if a.dry_run else "") + ", ".join(f"{k}={v}" for k, v in stats.items()))
     return 0
 

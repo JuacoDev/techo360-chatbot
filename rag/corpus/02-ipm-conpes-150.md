@@ -115,17 +115,3 @@ Identificación de las personas en pobreza multidimensional
 Se considera que un hogar, y todas las personas que lo componen, es
 multidimensionalmente pobre si tiene privaciones en al menos el 33% de las 15 variables
 seleccionadas, teniendo en cuenta la ponderación asignada a cada una de ellas.
-
----
-fragmento: 02-ipm-vs-score
-fuente: Proyecto Techo 360 - zonas.py
-ruta: techo360-backend/routers/zonas.py
-fecha: 2026-10-10
-vigencia: vigente en el codigo de la rama revisada
-version: techo360-backend@f10a0e0
-tema: Relacion entre el IPM oficial y el Score de privacion del proyecto
-nota: Texto del proyecto (codigo), no del CONPES: contrasta el IPM oficial (umbral k=33 %) con el Score.
----
-de nombres de campo de la API). Alkire-Foster / IPM adaptado, sin el
-umbral k=33% oficial -- aqui es un promedio simple de 3 componentes
-con peso igual 1/3 cada uno.
