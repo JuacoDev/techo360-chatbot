@@ -50,7 +50,11 @@ EXCLUIR = {
     "01-nota-discrepancias",  # nota de mantenimiento, no contenido para usuarios
     "06-reglas-asistente",  # ya esta en el system prompt (decision de Claude, 18-oct)
 }
-REEMPLAZOS = {"03-tenencia": [("con el equipo ", "")]}
+REEMPLAZOS = {"03-tenencia": [("con el equipo ", "")],
+              # solo quita la numeracion y la etiqueta de auditoria del informe; las cifras no se tocan
+              "05-resumen-municipios": [("1. **COMPROBADO:** la lista", "La lista")],
+              # regla de 6.1 «sin rutas internas»: se quita la referencia al archivo del backend
+              "06-mapa-semaforo": [(" -- ver\n_score_privacion en techo360-backend/routers/zonas.py", "")]}
 
 
 def x(doc, id_, tema, ruta, ini, fin, modo, incl=False, vigencia=VIG, nota=None, corte=None):
@@ -150,6 +154,9 @@ D5 = "05-divipola"
 x(D5, "codigos-oficiales", "Cuantos municipios y codigos DIVIPOLA hay en Colombia: 1.122 codigos oficiales y sus tipos", "claude/fase1-2-divipola-cruce.md",
   "Hoja `Municipios`: **1 122 códigos", "**Corrección a un dato del encargo:**", "md",
   vigencia="DIVIPOLA DANE actualizado al 30-jun-2026")
+x(D5, "resumen-municipios", "Cuantos municipios hay en Colombia segun DIVIPOLA: 1 103 municipios, San Andres y 18 areas no municipalizadas (1 122 codigos)",
+  "claude/fase1-2-divipola-cruce.md", "la lista oficial vigente (30-jun-2026) tiene 1 122", "\n", "md",
+  vigencia="DIVIPOLA DANE actualizado al 30-jun-2026")
 x(D5, "areas-no-municipalizadas", "Las 18 areas no municipalizadas sin poligono en el mapa", "claude/fase1-2-divipola-cruce.md",
   "**18 códigos en DIVIPOLA sin geometría en el geojson.**", "(Nombres de Vaupés verificados", "md",
   vigencia="DIVIPOLA DANE actualizado al 30-jun-2026")
@@ -169,6 +176,16 @@ x(D6, "tarjeta-fiabilidad", "Panel de indicadores: dato confirmado frente a proy
   "// `proyectado` es el prop historico", "js")
 x(D6, "estado-mensajes", "TechoBot: estados de un mensaje", "techo360-frontend/README.md",
   "- Cada mensaje de usuario tiene estado:", "- Un mensaje sin resolver", "md")
+# Ampliacion C3 (19-oct-2026): texto literal de MapView.jsx (rama Testing del frontend). Sin definicion de umbrales
+# de «prioridad alta»: no existe en ningun documento revisado (ver rag/PENDIENTES_JUAN.md).
+MAP = "techo360-frontend/src/components/MapView.jsx"
+x(D6, "leyenda-escala", "Que significa prioridad o necesidad de intervencion: escala de privacion de 0.0 a 1.0 de la leyenda del mapa",
+  MAP, "Índice de 0.0 a 1.0 que promedia las carencias", "\n", "str",
+  incl=True, nota="Texto de la leyenda del mapa (tooltip «i» de «Escala de Privación»). No define un umbral de «prioridad alta».")
+x(D6, "mapa-color-por-variable", "Mapa de proyeccion: que significa mas rojo segun la variable (Score, deficit, tenencia informal, cobertura, densidad)",
+  "techo360-frontend/src/pages/Proyeccion/variablesProyeccion.js", "// color:", "// serie:", "js")
+x(D6, "mapa-semaforo", "Como interpretar el color de un municipio en el mapa: semaforo blanco, amarillo y rojo del Score",
+  MAP, "// Semaforo del score de privacion", "// Antes estos umbrales", "js")
 
 NOTA_DISCREPANCIAS = """\
 Revision de discrepancias entre fuentes (hecha al construir el corpus, 2026-10-18):
@@ -203,6 +220,8 @@ def _limpiar(linea: str, modo: str) -> str:
         return re.sub(r"^>>>\s{0,3}", "", linea)
     if modo == "js":
         return re.sub(r"^//\s?", "", linea)
+    if modo == "str":  # literal de cadena JS/JSX en una linea: quita el `: '` inicial y el `'` final
+        return re.sub(r"""^\s*[:?]?\s*['"]|['"],?\s*$""", "", linea)
     if modo == "py":
         linea = linea.replace('"""', "")
         return linea[4:] if linea.startswith("    ") else linea
@@ -362,7 +381,9 @@ def main() -> None:
 HUECOS_FIJOS = [
     "- Glosario: no hay texto fuente en los repos con la definicion oficial de cobertura de acueducto ni de alcantarillado (DANE/SSPD/DNP); no se inventa. Pendiente de aprobacion de una fuente publica.",
     "- Glosario: la densidad poblacional solo tiene la formula del proyecto (poblacion DANE / area), no una definicion oficial.",
-    "- Guia de uso (#6): no existe README de usuario; solo reglas del prompt, comentarios del frontend y estados de mensaje. No hay texto fuente que describa el mapa de calor ni el panel en lenguaje de usuario.",
+    "- Guia de uso (#6): no existe README de usuario; solo reglas del prompt, comentarios del frontend y estados de mensaje. Solo hay texto fuente para la escala y el semaforo del mapa (06-leyenda-escala, 06-mapa-semaforo); no lo hay para el panel en lenguaje de usuario.",
+    "- Prioridad alta: ningun documento revisado define umbrales ni categorias (alta/media/baja) de prioridad. Solo existe la frase de la leyenda («1.0 indica la maxima prioridad o necesidad de intervencion»). Pendiente de Juan (ver rag/PENDIENTES_JUAN.md).",
+    "- Mapa: el gris de «Sin dato / Area en litigio» y las notas de la leyenda (deficit constante, fiabilidad al pasar el cursor) solo existen como constantes/JSX, sin prosa fuente; no se incluyeron.",
     "- IPM: solo CONPES Social 150 (2012). Las actualizaciones posteriores del IPM (p. ej. DANE 2018) no estan en el corpus.",
 ]
 

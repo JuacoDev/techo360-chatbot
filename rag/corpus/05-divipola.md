@@ -17,6 +17,17 @@ Hoja `Municipios`: **1 122 códigos de 5 dígitos, todos distintos**, con prefij
 | **Total** | **1 122** |
 
 ---
+fragmento: 05-resumen-municipios
+fuente: Proyecto Techo 360 - fase1-2-divipola-cruce.md
+ruta: claude/fase1-2-divipola-cruce.md
+fecha: 2026-10-16
+vigencia: DIVIPOLA DANE actualizado al 30-jun-2026
+version: sin-control-de-versiones (mtime)
+tema: Cuantos municipios hay en Colombia segun DIVIPOLA: 1 103 municipios, San Andres y 18 areas no municipalizadas (1 122 codigos)
+---
+La lista oficial vigente (30-jun-2026) tiene 1 122 códigos; 1 103 municipios, San Andrés y 18 áreas no municipalizadas.
+
+---
 fragmento: 05-areas-no-municipalizadas
 fuente: Proyecto Techo 360 - fase1-2-divipola-cruce.md
 ruta: claude/fase1-2-divipola-cruce.md
