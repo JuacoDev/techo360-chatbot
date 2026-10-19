@@ -15,3 +15,8 @@ training/modelo_gguf/
 training/adapters/*/adapter_model.safetensors
 training/adapters/*/tokenizer.json
 training/_checkpoints_tmp/
+# 0.4.0: pesos, checkpoints y modelos nunca se versionan (solo scripts y docs)
+*.safetensors
+*.gguf
+training/adapters/*/checkpoints/
+training/adapters/*/tokenizer.json
