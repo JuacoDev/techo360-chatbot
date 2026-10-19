@@ -762,7 +762,8 @@ def escribir_resultados(todo: list[dict], por_id: dict) -> None:
         p = DIR_SALIDA / nombre
         if p.exists():
             sumas[nombre] = sha256_archivo(p)
-    (DIR_SALIDA / "SHA256.txt").write_text("".join(f"{h}  {n}\n" for n, h in sumas.items()), encoding="utf-8")
+    with open(DIR_SALIDA / "SHA256.txt", "w", encoding="utf-8", newline="\n") as f:  # LF: sha256sum -c no tolera CRLF
+        f.write("".join(f"{h}  {n}\n" for n, h in sumas.items()))
     print("sha256:", json.dumps(sumas, indent=1))
 
 
