@@ -499,3 +499,10 @@ HUECOS_OBLIGATORIOS = {
     "fp_estimar": {"v", "MD", "Y"},
 }
 # Texto SIN bloque para G6 cuando no hay datos: no forma parte de PLANTILLAS (se controla aparte).
+
+# ======================================================================================= HS multi-turno (adenda 7.1b §4)
+from . import respuestas_hs as _hs  # noqa: E402
+
+PLANTILLAS.update(_hs.PLANTILLAS)
+HUECOS_PERMITIDOS.update(_hs.HUECOS_PERMITIDOS)
+HUECOS_OBLIGATORIOS.update(_hs.HUECOS_OBLIGATORIOS)

@@ -35,6 +35,8 @@ def main(argv: list[str] | None = None) -> int:
     for sub, lista in {**{f"preguntas/{k}": v for k, v in cp.items()}, **{f"respuestas/{k}": v for k, v in cr.items()}}.items():
         fallos += [f"{sub}: {x}" for x in lista]
     fallos += [f"notas: {x}" for x in ct.controlar_notas()]
+    fallos += [f"listas: {x}" for x in ct.controlar_listas()]
+    fallos += [f"turno previo: {x}" for x in ct.controlar_turno_previo()]
     fallos += [f"diversidad: {x}" for x in ct.controlar_diversidad()]
     fallos += [f"cuotas: {x}" for x in ct.controlar_cuotas()]
     conjuntos, faltantes = ct.cargar_conjuntos_evaluacion(RAIZ_CHATBOT, Path(args.raiz_monorepo))
@@ -44,7 +46,7 @@ def main(argv: list[str] | None = None) -> int:
     cnt_p, tot_p = ct.distribucion_aperturas(pq.BANCOS)
     cnt_r, tot_r = ct.distribucion_aperturas(rp.PLANTILLAS)
     lineas = [
-        "# Fase A de 7.3: bancos de preguntas y plantillas de respuesta (G1–G6 y F+)", "",
+        "# Fase A de 7.3: bancos de preguntas y plantillas de respuesta (G1–G6, F+, HS y listas)", "",
         f"Resultado: {'**sin fallos**' if not fallos else f'**{len(fallos)} fallos**'}. Generado por `python -m training.dataset_0_4_1.verificar_bancos`.", "",
         "## Conteos por subfamilia", "",
         "| Subfamilia | Cuota | Preguntas | Plantillas de respuesta | Con bloque |", "|---|---:|---:|---:|:--:|",
@@ -53,7 +55,8 @@ def main(argv: list[str] | None = None) -> int:
         lineas.append(f"| {sub} | {c} | {len(pq.BANCOS[sub])} | {len(rp.PLANTILLAS[sub])} | {'sí' if sub in rp.CON_BLOQUE else 'no'} |")
     lineas += [
         f"| **Total** | **{sum(cat.CUOTAS.values())}** | **{sum(len(v) for v in pq.BANCOS.values())}** | **{sum(len(v) for v in rp.PLANTILLAS.values())}** | |", "",
-        "Por familia: " + ", ".join(f"{k} {v}" for k, v in cat.CUOTAS_FAMILIA.items()) + " (G 410 + F+ 60 = 470; H 400 queda para la Fase B).", "",
+        "Por familia: " + ", ".join(f"{k} {v}" for k, v in cat.CUOTAS_FAMILIA.items()) + " (G 410 + F+ 60 + HS 220 = 690; H 400 queda para la Fase B).", "",
+        "Listas (adenda 7.1b §2), plantillas que regeneran A3/A4/A5 con ≥ 3 elementos: " + ", ".join(f"{k} {len(v[0])} introducciones" for k, v in __import__("training.dataset_0_4_1.listas", fromlist=["x"]).TIPOS.items()) + ".", "",
         "## Diversidad (ponderada por cuota; dos primeras palabras)", "",
         "| Medida | Preguntas | Respuestas |", "|---|---:|---:|",
         f"| Apertura más frecuente | {cnt_p.most_common(1)[0][0]} ({cnt_p.most_common(1)[0][1] / tot_p:.1%}) | {cnt_r.most_common(1)[0][0]} ({cnt_r.most_common(1)[0][1] / tot_r:.1%}) |",

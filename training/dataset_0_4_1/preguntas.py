@@ -694,3 +694,24 @@ ARTICULO_TIPO = {
 # Subfamilias que deben ser de EVOLUCION (la serie completa entra al contexto) y las que no.
 DEBE_SER_EVOLUCION = {"g1_lineas_individual", "g1_lineas_comparar", "g3_un_anio", "g3_sin_dato"}
 NO_DEBE_SER_EVOLUCION = {"g1_barras_ranking", "g1_barras_agrupadas_ind", "g1_barras_agrupadas_cmp", "g1_gauge"}
+
+# ======================================================================================= HS multi-turno (adenda 7.1b §4)
+from . import preguntas_hs as _hs  # noqa: E402
+
+BANCOS.update({
+    "hs1_anio": _hs.HS1_ANIO,
+    "hs2_municipio": _hs.HS2_MUNICIPIO,
+    "hs3_variable": _hs.HS3_VARIABLE,
+    "hs4_real": _hs.HS4_REFERENCIA,
+    "hs4_estimado": _hs.HS4_REFERENCIA,  # la misma pregunta: lo que cambia es la etiqueta de la linea de contexto
+    "hs5_cambio_tema": _hs.HS5_CAMBIO_TEMA,
+    "hs6_inyeccion_previa": _hs.HS6_SEGUIMIENTO,
+})
+HUECOS_PERMITIDOS.update({
+    "hs1_anio": {"Y"}, "hs2_municipio": {"M"}, "hs3_variable": {"V", "v"}, "hs4_real": set(), "hs4_estimado": set(),
+    "hs5_cambio_tema": {"M", "V", "v", "Y"}, "hs6_inyeccion_previa": {"Y"},
+})
+NO_DEBE_ACTIVAR_GRAFICA |= set(HUECOS_PERMITIDOS) & {"hs1_anio", "hs2_municipio", "hs3_variable", "hs4_real", "hs4_estimado", "hs5_cambio_tema", "hs6_inyeccion_previa"}
+# Obligatorio de HS: el hueco que el seguimiento aporta (el resto se hereda del turno previo)
+HUECOS_OBLIGATORIOS_PREGUNTA = {"hs1_anio": {"Y"}, "hs2_municipio": {"M"}, "hs3_variable": {"V", "v"}, "hs5_cambio_tema": {"M", "Y"}, "hs6_inyeccion_previa": {"Y"}}
+TURNO_PREVIO_INYECCION = _hs.HS6_TURNO_PREVIO

@@ -172,6 +172,8 @@ def muestra_respuesta(i: int, con_nota: bool = False, con_alterno: bool = False)
         "alterno": rp.ALTERNOS[0].format(v=v, MD=md, Ya="2018", val="94,2 %") if con_alterno else "",
         "t": cat.TIPOS_NO_SOPORTADOS[i % len(cat.TIPOS_NO_SOPORTADOS)],
         "dato": f"En 2022, {V} en {md} fue de 94,2 %.",
+        "fuente": ["DNP - TerriData", "DANE - CNPV 2018", "Proyección Techo 360", "IGAC Catastro"][i % 4],
+        "F": "de 30 %" if i % 2 else "entre 30 % y 60 %", "Fn": "30 %", "Vn": v[0].upper() + v[1:],
     }
 
 
@@ -329,6 +331,61 @@ def controlar_respuestas() -> dict[str, list[str]]:
     return salida
 
 
+def controlar_listas() -> list[str]:
+    """Plantillas de lista (adenda 7.1b §2): introduccion, elementos, cierres y el validador de formato."""
+    from . import listas as ls
+    pr: list[str] = []
+    for tipo, (intros, items, permitidos) in ls.TIPOS.items():
+        if len(intros) < 12 or len(set(intros)) != len(intros):
+            pr.append(f"{tipo}: introducciones insuficientes o repetidas")
+        aperturas = collections.Counter(apertura(t) for t in intros)
+        if aperturas.most_common(1)[0][1] / len(intros) > cat.MAX_APERTURA * 4:  # 8 % del total ponderado ~ 1/3 de la familia
+            pr.append(f"{tipo}: una apertura domina las introducciones")
+        for i, t in enumerate(intros):
+            if not huecos(t) <= permitidos:
+                pr.append(f"{tipo} #{i}: huecos no permitidos {sorted(huecos(t) - permitidos)}")
+            if not t.rstrip().endswith(":"):
+                pr.append(f"{tipo} #{i}: la introduccion no termina en ':'")
+            sin = re.sub(r"\{\w+\}", "§", t)
+            if DIGITO.search(sin):
+                pr.append(f"{tipo} #{i}: digitos literales")
+            pr += [f"{tipo} #{i}: {x}" for x in lint_plantilla_respuesta(t[:-1] + ".")]
+            r = t.format(**muestra_respuesta(i))
+            for patron, nombre in LINT:
+                if patron.search(r.replace(":", "")):
+                    pr.append(f"{tipo} #{i}: lint {nombre}: {r!r}")
+        for estado, it in items.items():
+            if not huecos(it) <= ls.HUECOS_ITEM[tipo]:
+                pr.append(f"{tipo}/{estado}: huecos de elemento no permitidos")
+            if DIGITO.search(re.sub(r"\{\w+\}", "§", it)):
+                pr.append(f"{tipo}/{estado}: digitos literales en el elemento")
+        # ensamblado de muestra: 3 elementos mezclando real y estimado
+        m = muestra_respuesta(1)
+        elementos = [items["real"].format(**{**m, "Y": "2019", "val": "90,1 %"}), items["real"].format(**{**m, "Y": "2020", "val": "91,5 %"}),
+                     items["estimado"].format(**{**m, "Y": "2025", "val": "95,0 %"})]
+        texto = ls.armar_lista(intros[0].format(**m), elementos, ls.CIERRES_ESTIMACION[0])
+        if ls.validar_formato(texto):
+            pr.append(f"{tipo}: el ensamblado de muestra falla el formato: {ls.validar_formato(texto)}")
+        try:
+            ls.armar_lista(intros[0].format(**m), elementos[:2])
+            pr.append(f"{tipo}: armo una lista con 2 elementos")
+        except ValueError:
+            pass
+    if len(set(ls.CIERRES_ESTIMACION)) != len(ls.CIERRES_ESTIMACION) or any(DIGITO.search(c) for c in ls.CIERRES_ESTIMACION):
+        pr.append("cierres repetidos o con digitos")
+    return pr
+
+
+def controlar_turno_previo() -> list[str]:
+    pr = []
+    t = pq.TURNO_PREVIO_INYECCION
+    if len(t) < cat.MINIMO_PREGUNTAS or len(set(t)) != len(t):
+        pr.append("HS6: turnos previos con inyeccion insuficientes o repetidos")
+    if any(DIGITO.search(x) for x in t):
+        pr.append("HS6: digitos en un turno previo")
+    return pr
+
+
 def controlar_notas() -> list[str]:
     pr = []
     for t in rp.NOTAS_SERIE + rp.NOTAS_PUNTUAL:
@@ -386,8 +443,8 @@ def controlar_cuotas() -> list[str]:
         por_fam[cat.familia(sub)] += c
     if dict(por_fam) != cat.CUOTAS_FAMILIA:
         pr.append(f"cuotas por familia {dict(por_fam)} ≠ {cat.CUOTAS_FAMILIA}")
-    if sum(cat.CUOTAS.values()) != 470:
-        pr.append("G + F+ debe sumar 470")
+    if sum(cat.CUOTAS.values()) != 690:
+        pr.append("G + F+ + HS debe sumar 690")
     return pr
 
 

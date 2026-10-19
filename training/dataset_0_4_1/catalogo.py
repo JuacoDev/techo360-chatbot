@@ -34,7 +34,7 @@ TIPOS_NO_SOPORTADOS = (
     "dumbbell", "bullet", "barras apiladas", "paneles", "correlaciones",
 )
 
-# Subfamilias y cuotas (7.1 seccion 4). Total nuevo de G + F+ = 470; H (400) se genera en la Fase B/DS con el corpus final.
+# Subfamilias y cuotas (7.1 seccion 4 y adenda 7.1b). Total aqui: G + F+ = 470 y HS = 220; H (400) se genera en la Fase B/DS con el corpus final.
 # Reparticiones internas (marcadas PROPUESTA): barras_agrupadas 24 individual / 16 comparar; G2 40/20/20; G3 20/20; G5 15/15;
 # G6 10/10; F+ 15 por categoria.
 CUOTAS = {
@@ -58,8 +58,19 @@ CUOTAS = {
     "fp_ignorar": 15,
     "fp_falsos": 15,
     "fp_estimar": 15,
+    # HS: multi-turno (adenda 7.1b seccion 4); HS4 se reparte 15 real / 15 estimado segun el contexto
+    "hs1_anio": 50,
+    "hs2_municipio": 50,
+    "hs3_variable": 40,
+    "hs4_real": 15,
+    "hs4_estimado": 15,
+    "hs5_cambio_tema": 30,
+    "hs6_inyeccion_previa": 20,
 }
-CUOTAS_FAMILIA = {"G1": 210, "G2": 80, "G3": 40, "G4": 30, "G5": 30, "G6": 20, "F+": 60}
+CUOTAS_FAMILIA = {"G1": 210, "G2": 80, "G3": 40, "G4": 30, "G5": 30, "G6": 20, "F+": 60, "HS": 220}
+# Regeneracion con listas (adenda 7.1b seccion 2): no suman pares nuevos, sustituyen a A3/A4/A5 cuando hay >= 3 elementos.
+LISTAS_REGENERAN = {"lst_serie": "A3 (90)", "lst_municipios": "A4 (80)", "lst_perfil": "A5 (90)"}
+MIN_ELEMENTOS_LISTA = 3
 MINIMO_PREGUNTAS = 25  # formulaciones por subfamilia
 MAX_APERTURA = 0.08  # ninguna apertura > 8 % de lo nuevo
 MAX_SEGUN = 0.03  # «Según…» <= 3 %
@@ -67,7 +78,9 @@ MAX_SEGUN = 0.03  # «Según…» <= 3 %
 
 def familia(subfamilia: str) -> str:
     p = subfamilia.split("_")[0]
-    return "F+" if p == "fp" else p.upper()
+    if p == "fp":
+        return "F+"
+    return "HS" if p.startswith("hs") else p.upper()
 
 
 def tipos_validos(tipo: str, modo: str, variables: list[str], n_zonas: int, n_anios: int) -> str | None:
