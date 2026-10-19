@@ -91,7 +91,7 @@ opciones `--humo`, `--reanudar`, `--equivalencia`, `--guardar-cada`,
 
 ## Documentacion de fases
 
-[techo360-claude](https://github.com/JuacoDev/techo360-claude)
+La documentacion de fases se mantiene fuera de este repositorio.
 
 Servicio IA - Chatbot conversacional (LLM propio via Ollama + RAG sobre pgvector).
 

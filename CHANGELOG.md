@@ -2,6 +2,8 @@
 
 La numeracion es una reconstruccion documental del historial y de PRs fusionados. No existen tags semanticos oficiales para estas versiones.
 
+La documentacion de fases se mantiene fuera de este repositorio.
+
 ## Sin publicar
 
 ### 0.4.1
