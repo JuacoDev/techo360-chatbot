@@ -60,3 +60,11 @@ Prueba dorada (re-armar con el pipeline da los mismos mensajes; 250 al azar en l
 
 ## No hecho
 No se entrenó, no se tocó la base, no se escribió en el VPS (la sesión SSH ya estaba cerrada). `sp-0.4.1-1` aún no está en `prompts/` del backend.
+
+## Decisiones de Juan (19/10/2026)
+1. **H1/H2:** se acepta el déficit (H1 61/120). No se amplía el enrutador. **Mejora posterior:** ampliar los patrones de `intencion_conceptual` (≈ 40 % de las formulaciones naturales no consultan el RAG), revisar el tope de 350 tokens que corta la tabla del IPM y la variante «datos + fragmento» (H4) del enrutador.
+2. **H4:** el dataset de entrenamiento es `dataset_0_4_1_sin_h4.jsonl` (**2.890 pares**, sha256 `fce62d6014c8f25be20a917065ac926ac73f9db49b3cb8acfc2efbfa91eb1c76`). `dataset_0_4_1.jsonl` (con H4) queda solo como referencia.
+3. **C0/C1 sin `[dN]`** (251 + 3 = 254 pares): se dejan como están.
+4. **Los 29 pares largos** (> 1.720 tokens, casi todos A7) se quitan solo si la prueba de VRAM lo exige.
+5. **Cuotas aceptadas:** H5 28/30, HS4 13/15 y `holdout_rag` 35/40.
+Nada más cambia hasta la revisión 7.3b de Juan.
