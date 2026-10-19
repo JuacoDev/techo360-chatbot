@@ -42,6 +42,20 @@ VIG = "vigente en el codigo de la rama revisada"
 
 E = []
 
+# Limpieza de la revision del 18-oct-2026 (decision de Claude tras revisar el contenido; paso 6.5):
+# fragmentos que NO se ingieren y frases que se quitan del texto copiado.
+EXCLUIR = {
+    "05-join-por-codigo", "04-metodos-por-variable-1", "04-metodos-por-variable-2",
+    "01-doble-conteo-magnitud", "03-tenencia-limitacion-2", "02-ipm-vs-score",
+    "01-nota-discrepancias",  # nota de mantenimiento, no contenido para usuarios
+    "06-reglas-asistente",  # ya esta en el system prompt (decision de Claude, 18-oct)
+}
+REEMPLAZOS = {"03-tenencia": [("con el equipo ", "")],
+              # solo quita la numeracion y la etiqueta de auditoria del informe; las cifras no se tocan
+              "05-resumen-municipios": [("1. **COMPROBADO:** la lista", "La lista")],
+              # regla de 6.1 «sin rutas internas»: se quita la referencia al archivo del backend
+              "06-mapa-semaforo": [(" -- ver\n_score_privacion en techo360-backend/routers/zonas.py", "")]}
+
 
 def x(doc, id_, tema, ruta, ini, fin, modo, incl=False, vigencia=VIG, nota=None, corte=None):
     """corte: si se da, la ULTIMA linea extraida se corta justo despues de esa cadena (fin de oracion)."""
@@ -137,8 +151,11 @@ x(D4, "metodos-por-variable", "Metodo por variable y caso (huecos municipio-anio
   nota="Contiene la regla del deficit 2019-2023 por interpolacion lineal entre 2018 real y 2024 proyectado.")
 
 D5 = "05-divipola"
-x(D5, "codigos-oficiales", "Codigos DIVIPOLA oficiales: 1.122 codigos y sus tipos", "claude/fase1-2-divipola-cruce.md",
+x(D5, "codigos-oficiales", "Cuantos municipios y codigos DIVIPOLA hay en Colombia: 1.122 codigos oficiales y sus tipos", "claude/fase1-2-divipola-cruce.md",
   "Hoja `Municipios`: **1 122 códigos", "**Corrección a un dato del encargo:**", "md",
+  vigencia="DIVIPOLA DANE actualizado al 30-jun-2026")
+x(D5, "resumen-municipios", "Cuantos municipios hay en Colombia segun DIVIPOLA: 1 103 municipios, San Andres y 18 areas no municipalizadas (1 122 codigos)",
+  "claude/fase1-2-divipola-cruce.md", "la lista oficial vigente (30-jun-2026) tiene 1 122", "\n", "md",
   vigencia="DIVIPOLA DANE actualizado al 30-jun-2026")
 x(D5, "areas-no-municipalizadas", "Las 18 areas no municipalizadas sin poligono en el mapa", "claude/fase1-2-divipola-cruce.md",
   "**18 códigos en DIVIPOLA sin geometría en el geojson.**", "(Nombres de Vaupés verificados", "md",
@@ -159,6 +176,31 @@ x(D6, "tarjeta-fiabilidad", "Panel de indicadores: dato confirmado frente a proy
   "// `proyectado` es el prop historico", "js")
 x(D6, "estado-mensajes", "TechoBot: estados de un mensaje", "techo360-frontend/README.md",
   "- Cada mensaje de usuario tiene estado:", "- Un mensaje sin resolver", "md")
+# Ampliacion C3 (19-oct-2026): texto literal de MapView.jsx (rama Testing del frontend). Sin definicion de umbrales
+# de «prioridad alta»: no existe en ningun documento revisado (ver rag/PENDIENTES_JUAN.md).
+MAP = "techo360-frontend/src/components/MapView.jsx"
+# (el fragmento 06-leyenda-escala, literal de la leyenda, se reemplazo el 19-oct por 06-prioridad: ver APROBADOS)
+x(D6, "mapa-color-por-variable", "Mapa de proyeccion: que significa mas rojo segun la variable (Score, deficit, tenencia informal, cobertura, densidad)",
+  "techo360-frontend/src/pages/Proyeccion/variablesProyeccion.js", "// color:", "// serie:", "js")
+x(D6, "mapa-semaforo", "Como interpretar el color de un municipio en el mapa: semaforo blanco, amarillo y rojo del Score",
+  MAP, "// Semaforo del score de privacion", "// Antes estos umbrales", "js")
+
+# Textos redactados por C3 y APROBADOS por Juan el 19-oct-2026 (no son copia literal de un archivo): (doc, id, tema, fuente, texto).
+# Juan confirmo: el Score es continuo en [0, 1], sin categorias ni punto de corte oficial (metodologia de Techo 360, pares
+# train_v3_3 revisados), y dio la frase del gris.
+APROBADO_FECHA = "2026-10-19"
+APROBADOS = [
+    ("06-guia-uso", "06-prioridad",
+     "Que significa prioridad alta de un municipio: no hay categorias de prioridad ni punto de corte",
+     "Aprobado por Juan (2026-10-19). Fuentes: leyenda del mapa (MapView.jsx) y 01-formula (score_privacion.py)",
+     "No existen categorias de prioridad (alta, media o baja) ni un punto de corte oficial. Que un municipio tenga prioridad alta, "
+     "o la maxima prioridad, significa un valor cercano a 1: segun la leyenda del mapa, 1.0 indica la maxima prioridad o necesidad "
+     "de intervencion. El valor es continuo, entre 0 (mejor) y 1 (peor); la prioridad de intervencion se calcula como el promedio "
+     "simple de acueducto invertido, alcantarillado invertido y deficit habitacional cuantitativo."),
+    ("06-guia-uso", "06-mapa-gris", "Que significa el color gris en el mapa",
+     "Aprobado por Juan (2026-10-19)",
+     "Los municipios en gris no tienen dato para la variable y el año seleccionados."),
+]
 
 NOTA_DISCREPANCIAS = """\
 Revision de discrepancias entre fuentes (hecha al construir el corpus, 2026-10-18):
@@ -193,6 +235,8 @@ def _limpiar(linea: str, modo: str) -> str:
         return re.sub(r"^>>>\s{0,3}", "", linea)
     if modo == "js":
         return re.sub(r"^//\s?", "", linea)
+    if modo == "str":  # literal de cadena JS/JSX en una linea: quita el `: '` inicial y el `'` final
+        return re.sub(r"""^\s*[:?]?\s*['"]|['"],?\s*$""", "", linea)
     if modo == "py":
         linea = linea.replace('"""', "")
         return linea[4:] if linea.startswith("    ") else linea
@@ -299,6 +343,12 @@ def main() -> None:
         trozos = partir(extraer(lineas, e))
         for n, t in enumerate(trozos, 1):
             fid = f"{e['doc'][:2]}-{e['id']}" + (f"-{n}" if len(trozos) > 1 else "")
+            if fid in EXCLUIR:
+                continue
+            for antes, despues in REEMPLAZOS.get(fid, []):
+                if antes not in t:
+                    raise SystemExit(f"reemplazo no aplicable en {fid}: {antes!r}")
+                t = t.replace(antes, despues)
             cab = [f"fragmento: {fid}", f"fuente: {fuente}", f"ruta: {ruta_txt}", f"fecha: {fecha}",
                    f"vigencia: {e['vigencia']}", f"version: {version}", f"tema: {e['tema']}"]
             if e["nota"]:
@@ -308,12 +358,19 @@ def main() -> None:
             filas.append((e["doc"], fid, len(t)))
 
     # Nota de discrepancias (texto del corpus, no copiado de una fuente)
-    docs.setdefault("01-nota-discrepancias", []).append(
+    if "01-nota-discrepancias" not in EXCLUIR:
+      docs.setdefault("01-nota-discrepancias", []).append(
         "---\nfragmento: 01-nota-discrepancias\nfuente: Nota del corpus (revision de discrepancias)\n"
         "ruta: rag/construir_corpus.py\nfecha: 2026-10-18\nvigencia: hasta aplicar la carga M4\n"
         "version: corpus-0.1\ntema: Diferencias detectadas entre codigo y README sobre el Score y el deficit\n---\n"
         + NOTA_DISCREPANCIAS)
-    filas.append(("01-nota-discrepancias", "01-nota-discrepancias", len(NOTA_DISCREPANCIAS)))
+      filas.append(("01-nota-discrepancias", "01-nota-discrepancias", len(NOTA_DISCREPANCIAS)))
+
+    for doc, fid, tema, fuente, texto in APROBADOS:
+        docs.setdefault(doc, []).append(
+            f"---\nfragmento: {fid}\nfuente: {fuente}\nruta: rag/construir_corpus.py\nfecha: {APROBADO_FECHA}\n"
+            f"vigencia: decision de Juan del {APROBADO_FECHA}\nversion: corpus-0.2\ntema: {tema}\n---\n{texto}\n")
+        filas.append((doc, fid, len(texto)))
 
     if a.dry_run:
         for d, f, n in filas:
@@ -345,7 +402,9 @@ def main() -> None:
 HUECOS_FIJOS = [
     "- Glosario: no hay texto fuente en los repos con la definicion oficial de cobertura de acueducto ni de alcantarillado (DANE/SSPD/DNP); no se inventa. Pendiente de aprobacion de una fuente publica.",
     "- Glosario: la densidad poblacional solo tiene la formula del proyecto (poblacion DANE / area), no una definicion oficial.",
-    "- Guia de uso (#6): no existe README de usuario; solo reglas del prompt, comentarios del frontend y estados de mensaje. No hay texto fuente que describa el mapa de calor ni el panel en lenguaje de usuario.",
+    "- Guia de uso (#6): no existe README de usuario; solo reglas del prompt, comentarios del frontend y estados de mensaje. Solo hay texto fuente para la escala y el semaforo del mapa (06-leyenda-escala, 06-mapa-semaforo); no lo hay para el panel en lenguaje de usuario.",
+    "- Prioridad alta: no hay categorias ni punto de corte (confirmado por Juan, 19-oct-2026); ver 06-prioridad y rag/PENDIENTES_JUAN.md.",
+    "- Mapa: las notas de la leyenda (deficit constante, fiabilidad al pasar el cursor) solo existen en JSX, sin prosa fuente; no se incluyeron. El gris lo cubre 06-mapa-gris (frase aprobada por Juan).",
     "- IPM: solo CONPES Social 150 (2012). Las actualizaciones posteriores del IPM (p. ej. DANE 2018) no estan en el corpus.",
 ]
 
