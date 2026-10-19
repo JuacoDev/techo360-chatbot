@@ -48,15 +48,11 @@ Máximo coseno de cualquier formulación (renderizada con 3 muestras de huecos) 
 |---|---:|---:|
 | holdout_v3_3 | 28 | 0.410 |
 | holdout_v0_4 | 28 | 0.410 |
-| holdout_ctx_v0_4 | 60 | 0.659 |
+| holdout_ctx_v0_4 | 60 | 0.658 |
 | conjunto_5_6b | 50 | 0.513 |
-| preguntas_6_4 | 50 | 0.407 |
+| preguntas_6_4 | 50 | 0.408 |
 | rag_prueba | 10 | 0.308 |
-| ciega_6_7b | 12 | 0.407 |
-
-No cargados o parciales:
-
-- ciega_6_7b: solo las 12 frases literales de fase6-5-6-6-rag.md; las 6 bloqueadas no están literales en ningún documento
+| ciega_6_7b | 18 | 0.407 |
 
 ## Alcance de los controles
 

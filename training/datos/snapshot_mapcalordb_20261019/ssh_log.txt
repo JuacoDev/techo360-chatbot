@@ -16,3 +16,5 @@ echo "@@@fin"
 # 2026-10-19T12:11:29Z UTC  2a sesion SSH (script corregido, sin 'docker exec -i') DENEGADA por el clasificador de permisos del arnes ([Production Reads]). NO se ejecuto ningun comando remoto en esa sesion. No se intento otra via.
 # Estado: SIN extraccion. La 1a sesion solo ejecuto el SHOW (default_transaction_read_only = on) y no extrajo datos.
 # Script corregido listo, sin ejecutar: extraer_snapshot_remoto.sh (mismo alcance: 3 SELECT de solo lectura, sin credenciales visibles).
+# 2026-10-19T12:16:28Z UTC  Autorizacion personal de Juan (chat): una sesion SSH de solo lectura para ejecutar extraer_snapshot_remoto.sh una vez. ssh -o BatchMode=yes -o ConnectTimeout=20 techo360-admin@207.248.81.115 'bash -s' < extraer_snapshot_remoto.sh
+# 2026-10-19T12:16:31Z UTC  sesion SSH cerrada, exit=0

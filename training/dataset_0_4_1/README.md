@@ -16,7 +16,7 @@ Especificación: `techo360/claude/fase7-1-especificacion.md` (manda), `fase5-1-p
 
 ## Qué falta (a 19/10/2026)
 
-- **Snapshot de `mapcalordb`:** NO se extrajo. Ver `training/datos/snapshot_mapcalordb_20261019/ssh_log.txt`: la primera sesión SSH se cortó tras el `SHOW` por un error mío (`docker exec -i` consumió el stdin del script) y la segunda fue denegada por el arnés. El script corregido está en `extraer_snapshot_remoto.sh` (3 `SELECT` de solo lectura).
+- **Snapshot de `mapcalordb`:** extraído el 19/10/2026 en una sesión SSH de solo lectura autorizada por Juan (log en `training/datos/snapshot_mapcalordb_20261019/ssh_log.txt`, sha256 en `SHA256SUMS`): `mapcalordb.csv` (167.031 filas, 5 variables de BD; el score se deriva) y `zonas_municipio.csv` (1.105). Falta el generador que lo use sin volver a la BD.
 - Generador (pares completos con el ensamblador real), H1–H6 y los controles por par: Fase B, tras «W1 y C3 fusionados».
 
 ## Reglas que cumplen los bancos
