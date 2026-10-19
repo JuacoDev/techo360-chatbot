@@ -1,7 +1,7 @@
 """Fine-tuning LoRA/QLoRA de Llama-3.2-3B-Instruct para techo360 0.4.1 (paso 7.4 del plan).
 
 Copia de `entrenar_lora_v040.py` (0.4.0), que no se modifica: mismos hiperparametros, misma perdida recortada. Cambios de 0.4.1:
-  - SHA256_DATASET = el de `formateado-sin-h4/train_tokenizado.jsonl` (2.890 pares, sin H4; multi-turno con perdida solo sobre la ULTIMA respuesta).
+  - SHA256_DATASET = el de `formateado-sin-h4/train_tokenizado.jsonl` (2.891 pares, sin H4, revision 7.3b aprobada: dataset sha256 f045dea8...; multi-turno con perdida solo sobre la ULTIMA respuesta).
   - `--humo` hace 20 pasos (G0 de 7.4); `--excluir <archivo>` quita del entrenamiento los ids listados (los pares de mas de 1.720 tokens, solo
     si la prueba de VRAM lo exige) y registra el sha256 de la lista y cuantos ejemplos quedan.
   - La verificacion de `cargar_tokenizado` y del enmascarado sigue igual (el ultimo header de asistente marca el inicio de lo aprendido).
@@ -57,7 +57,7 @@ from transformers import (AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfi
                           TrainingArguments)
 
 MODELO = "meta-llama/Llama-3.2-3B-Instruct"
-SHA256_DATASET = "d6e3fc1594f49ac15724856691531d6ab09953f3c9fb381c1817338d0d083078"
+SHA256_DATASET = "9dadb21a258267c76c1cd7a29dfccbf9c2ffe00e81a3be53b2f9f8791b262c8d"
 MAX_LENGTH = 2048
 EOT_ID = 128009
 CAPAS = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
