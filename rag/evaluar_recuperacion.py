@@ -81,6 +81,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--preguntas", type=Path, required=True)
     ap.add_argument("--csv", type=Path)
+    ap.add_argument("--excluir", nargs="*", default=[], help="ids de pregunta que no entran en el calculo (p. ej. rag-39)")
     a = ap.parse_args()
     dsn = os.environ.get("RAG_DATABASE_URL") or sys.exit("Falta RAG_DATABASE_URL (base LOCAL).")
     exigir_base_local(dsn)
@@ -88,7 +89,7 @@ def main() -> int:
     from pgvector.psycopg import register_vector
 
     preguntas = [json.loads(l) for l in a.preguntas.read_text(encoding="utf-8").splitlines() if l.strip()]
-    conceptuales = [p for p in preguntas if p["tipo"] == "conceptual"]
+    conceptuales = [p for p in preguntas if p["tipo"] == "conceptual" and p["id"] not in a.excluir]
     modelo, pq, _, _ = cargar_modelo("e5-small")
     resultados: dict[str, list[list[str]]] = {"a_vectores": [], "b_texto": [], "b2_ts_rank": [], "c_rrf": []}
     detalle = []

@@ -5,7 +5,7 @@ ruta: claude/fase1-2-divipola-cruce.md
 fecha: 2026-10-16
 vigencia: DIVIPOLA DANE actualizado al 30-jun-2026
 version: sin-control-de-versiones (mtime)
-tema: Codigos DIVIPOLA oficiales: 1.122 codigos y sus tipos
+tema: Cuantos municipios y codigos DIVIPOLA hay en Colombia: 1.122 codigos oficiales y sus tipos
 ---
 Hoja `Municipios`: **1 122 códigos de 5 dígitos, todos distintos**, con prefijo de departamento válido (33 códigos de departamento = 32 + Bogotá D.C.).
 
