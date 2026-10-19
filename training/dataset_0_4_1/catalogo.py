@@ -67,6 +67,9 @@ CUOTAS = {
     "hs5_cambio_tema": 30,
     "hs6_inyeccion_previa": 20,
 }
+# H (RAG): las subfamilias H1/H2 las decide lo que recupera el retriever real; el total H1 + H2 es 180
+CUOTAS_H = {"h1_un_fragmento": 120, "h2_marginal": 60, "h3_sin_cobertura": 80, "h4_datos_y_documento": 50, "h5_premisa": 30, "h6_concepto_general": 60}
+CUOTAS_FAMILIA_H = {"H": 400}
 CUOTAS_FAMILIA = {"G1": 210, "G2": 80, "G3": 40, "G4": 30, "G5": 30, "G6": 20, "F+": 60, "HS": 220}
 # Regeneracion con listas (adenda 7.1b seccion 2): no suman pares nuevos, sustituyen a A3/A4/A5 cuando hay >= 3 elementos.
 LISTAS_REGENERAN = {"lst_serie": "A3 (90)", "lst_municipios": "A4 (80)", "lst_perfil": "A5 (90)"}
@@ -80,7 +83,7 @@ def familia(subfamilia: str) -> str:
     p = subfamilia.split("_")[0]
     if p == "fp":
         return "F+"
-    return "HS" if p.startswith("hs") else p.upper()
+    return "HS" if p.startswith("hs") else ("H" if p[:1] == "h" and p[1:2].isdigit() else p.upper())
 
 
 def tipos_validos(tipo: str, modo: str, variables: list[str], n_zonas: int, n_anios: int) -> str | None:

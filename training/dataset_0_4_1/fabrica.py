@@ -57,7 +57,7 @@ class Fabrica:
 
     def rango_anios(self, rng: random.Random, variable: str, ancho=(3, 8), desde: int = 2010) -> tuple[int, int]:
         minimo = max(ANIO_MIN_VAR[variable], desde)
-        a = rng.randint(*ancho)
+        a = min(rng.randint(*ancho), 2024 - minimo)
         y1 = rng.randint(minimo, 2024 - a) if rng.random() < 0.8 else rng.randint(2019, 2030 - a)
         return y1, y1 + a - 1
 
@@ -66,9 +66,15 @@ class Fabrica:
         return con, sin
 
     # ------------------------------------------------------------------ pregunta
+    RESERVA_HOLDOUT = 5  # las ultimas formulaciones de cada banco son SOLO del holdout (nunca entran al train)
+
+    def _banco(self, banco: list[str]) -> list[str]:
+        n = self.RESERVA_HOLDOUT
+        return banco[-n:] if self.modo == "holdout" else banco[:-n]
+
     def pregunta(self, sub: str, banco: list[str], slots: dict, obligatorias: set[str] | None = None, envolver: bool = True,
                  informal_ok: bool = True) -> tuple[str, str] | None:
-        frames = ar.formulaciones(banco, set(slots), obligatorias)
+        frames = ar.formulaciones(self._banco(banco), set(slots), obligatorias)
         if not frames:
             self.descarta(sub, "sin_formulacion")
             return None
@@ -80,7 +86,7 @@ class Fabrica:
 
     def pregunta_cruda(self, sub: str, banco: list[str], slots: dict) -> tuple[str, str] | None:
         """Formulacion con los huecos puestos, SIN mayuscula inicial, envoltura ni informalizacion (F+ con lineas `[cN]` falsas)."""
-        frames = ar.formulaciones(banco, set(slots))
+        frames = ar.formulaciones(self._banco(banco), set(slots))
         if not frames:
             self.descarta(sub, "sin_formulacion")
             return None
@@ -122,7 +128,7 @@ class Fabrica:
     # ------------------------------------------------------------------ par
     def par(self, familia: str, sub: str, texto: str, r: dict, respuesta: str, plantilla_p: str, plantilla_r: str, *,
             huecos_: list[dict] | None = None, historial: list[dict] | None = None, previas: list[str] | None = None,
-            meta: dict | None = None, identificador: str | None = None) -> Par:
+            meta: dict | None = None, identificador: str | None = None, rag_forzado: bool = False) -> Par:
         res = r["resolucion"]
         entrada = {
             "pregunta": texto,
@@ -136,6 +142,8 @@ class Fabrica:
             entrada["previas"] = previas or [h["pregunta"] for h in historial]
         if r.get("rag_resultados"):
             entrada["rag_resultados"] = r["rag_resultados"]
+        if rag_forzado:
+            entrada["rag_forzado"] = True
         meta = dict(meta or {})
         if historial:
             meta["heredado"] = r["notas"].get("heredado", [])

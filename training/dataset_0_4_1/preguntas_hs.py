@@ -46,6 +46,10 @@ HS4_REFERENCIA = [
     "y ese dato, ¿es real?", "¿Me confirmas si ese valor es observado o estimado?", "¿Eso lo midieron o es una estimación?",
     "¿En qué se basa ese valor?", "¿Es oficial ese dato?", "¿Ese año tiene dato real?",
     "¿Esa cifra es estimada?", "Dime si ese dato es real.", "¿Quién genera esa cifra?", "¿Eso es proyección o dato real?",
+    "Cuéntame si ese valor viene de una medición o de un cálculo.", "¿Ese resultado es dato real o una proyección?",
+    "¿Qué tan confiable es esa cifra?", "¿De qué fuente es ese valor?", "¿Esa cifra es oficial o estimada?",
+    "Dime si ese dato fue observado o proyectado.", "¿Ese valor es real?", "¿Quién calculó esa cifra?",
+    "¿Ese dato tiene fiabilidad?", "¿Es real o estimado ese valor?",
 ]
 
 # HS5: cambio de tema (el historial no es relevante; el contexto actual trae el dato nuevo)

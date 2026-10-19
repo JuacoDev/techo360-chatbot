@@ -18,7 +18,7 @@ Resultado: **sin fallos**. Generado por `python -m training.dataset_0_4_1.verifi
 | g3_un_anio | 20 | 25 | 12 | no |
 | g3_sin_dato | 20 | 25 | 12 | no |
 | g4_tipo_no_soportado | 30 | 26 | 12 | no |
-| g5_sin_municipio | 15 | 26 | 12 | no |
+| g5_sin_municipio | 15 | 26 | 20 | no |
 | g5_sin_variable | 15 | 26 | 12 | no |
 | g6_valores | 10 | 25 | 12 | sí |
 | g6_codigo | 10 | 25 | 12 | sí |
@@ -29,15 +29,15 @@ Resultado: **sin fallos**. Generado por `python -m training.dataset_0_4_1.verifi
 | hs1_anio | 50 | 26 | 14 | no |
 | hs2_municipio | 50 | 26 | 14 | no |
 | hs3_variable | 40 | 25 | 12 | no |
-| hs4_real | 15 | 25 | 12 | no |
-| hs4_estimado | 15 | 25 | 12 | no |
+| hs4_real | 15 | 35 | 12 | no |
+| hs4_estimado | 15 | 35 | 12 | no |
 | hs5_cambio_tema | 30 | 26 | 12 | no |
 | hs6_inyeccion_previa | 20 | 26 | 12 | no |
-| **Total** | **690** | **705** | **368** | |
+| **Total** | **690** | **725** | **376** | |
 
 Por familia: G1 210, G2 80, G3 40, G4 30, G5 30, G6 20, F+ 60, HS 220 (G 410 + F+ 60 + HS 220 = 690; H 400 queda para la Fase B).
 
-Listas (adenda 7.1b §2), plantillas que regeneran A3/A4/A5 con ≥ 3 elementos: lst_serie 14 introducciones, lst_municipios 14 introducciones, lst_perfil 14 introducciones.
+Listas (adenda 7.1b §2), plantillas que regeneran A3/A4/A5 con ≥ 3 elementos: lst_serie 14 introducciones, lst_municipios 14 introducciones, lst_perfil 14 introducciones, lst_general 14 introducciones.
 
 ## Diversidad (ponderada por cuota; dos primeras palabras)
 
@@ -45,7 +45,7 @@ Listas (adenda 7.1b §2), plantillas que regeneran A3/A4/A5 con ≥ 3 elementos:
 |---|---:|---:|
 | Apertura más frecuente | y en (2.3%) | en huecoy (3.0%) |
 | «Según…» | 0.0% | 0.2% |
-| Aperturas distintas | 356 | 213 |
+| Aperturas distintas | 360 | 219 |
 
 Límites: ninguna apertura > 8 %, «Según…» ≤ 3 %.
 
@@ -57,11 +57,12 @@ Máximo coseno de cualquier formulación (renderizada con 3 muestras de huecos) 
 |---|---:|---:|
 | holdout_v3_3 | 28 | 0.443 |
 | holdout_v0_4 | 28 | 0.443 |
-| holdout_ctx_v0_4 | 60 | 0.643 |
+| holdout_ctx_v0_4 | 60 | 0.641 |
 | conjunto_5_6b | 50 | 0.514 |
-| preguntas_6_4 | 50 | 0.508 |
-| rag_prueba | 10 | 0.312 |
-| ciega_6_7b | 18 | 0.514 |
+| preguntas_6_4 | 50 | 0.494 |
+| rag_prueba | 10 | 0.315 |
+| ciega_6_7b | 18 | 0.567 |
+| validacion_independiente | 10 | 0.538 |
 
 ## Alcance de los controles
 

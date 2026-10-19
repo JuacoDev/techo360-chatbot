@@ -57,6 +57,24 @@ INTROS_PERFIL = [
     "Resumen de {MD}, variable por variable:",
     "{MD}, con los datos disponibles:",
 ]
+INTROS_GENERAL = [
+    "Estos son los datos que encontré para tu consulta:",
+    "Esto es lo que registra la plataforma:",
+    "Te muestro los valores disponibles:",
+    "Aquí tienes los datos, uno por línea:",
+    "Con la información de la plataforma, esto es lo que hay:",
+    "Estos son los valores que pediste:",
+    "Revisé tu consulta y los datos son estos:",
+    "Los datos disponibles son los siguientes:",
+    "Claro. Esto es lo que dice la plataforma:",
+    "Así quedan los datos de tu consulta:",
+    "Te comparto los valores, ordenados como en la consulta:",
+    "Esta es la información disponible:",
+    "Aquí va el detalle de tu consulta:",
+    "Los resultados son estos:",
+]
+# elemento con etiqueta compuesta (variables x años, municipios x años...): «- Cobertura de acueducto, 2019: 90,1 % (dato real)»
+ITEM_GENERAL = {"real": "- {Etiqueta}: {val} (dato real)", "estimado": "- {Etiqueta}: {val} (estimación con fiabilidad de {Fn})"}
 ITEM_SERIE = {"real": "- {Y}: {val} (dato real)", "estimado": "- {Y}: {val} (estimación con fiabilidad de {Fn})"}
 ITEM_MUNICIPIO = {"real": "- {MD}: {val} (dato real)", "estimado": "- {MD}: {val} (estimación con fiabilidad de {Fn})"}
 ITEM_PERFIL = {"real": "- {Vn}: {val} (dato real)", "estimado": "- {Vn}: {val} (estimación con fiabilidad de {Fn})"}
@@ -77,8 +95,9 @@ TIPOS = {
     "lst_serie": (INTROS_SERIE, ITEM_SERIE, {"MD", "V", "Vc", "v", "Y1", "Y2"}),
     "lst_municipios": (INTROS_MUNICIPIOS, ITEM_MUNICIPIO, {"V", "Vc", "v", "Y"}),
     "lst_perfil": (INTROS_PERFIL, ITEM_PERFIL, {"MD", "Y"}),
+    "lst_general": (INTROS_GENERAL, ITEM_GENERAL, set()),
 }
-HUECOS_ITEM = {"lst_serie": {"Y", "val", "Fn"}, "lst_municipios": {"MD", "val", "Fn", "Y"}, "lst_perfil": {"Vn", "val", "Fn", "Y"}}
+HUECOS_ITEM = {"lst_serie": {"Y", "val", "Fn"}, "lst_municipios": {"MD", "val", "Fn", "Y"}, "lst_perfil": {"Vn", "val", "Fn", "Y"}, "lst_general": {"Etiqueta", "val", "Fn"}}
 
 
 def armar_lista(intro: str, items: list[str], cierre: str | None = None) -> str:

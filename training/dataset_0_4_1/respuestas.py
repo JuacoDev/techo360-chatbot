@@ -277,6 +277,14 @@ G5_SIN_MUNICIPIO = [
     "Necesito precisar la consulta: ¿qué municipio quieres graficar? También me ayuda saber la variable y los años.",
     "Dime primero el municipio. Con eso y una variable, como la densidad poblacional o el score de privación, armo la gráfica.",
     "Todavía no puedo graficar porque no tengo un municipio. ¿Cuál te interesa?",
+    "Sin un municipio no hay gráfica posible. ¿Cuál quieres que use?",
+    "Para dibujarla me hace falta el municipio. Escríbelo y, si puedes, agrega la variable.",
+    "No identifico ningún municipio en tu mensaje. Dime cuál quieres graficar.",
+    "Falta saber de qué municipio es la gráfica. ¿Me lo indicas?",
+    "Necesito el nombre de un municipio para armar la gráfica. ¿De cuál la quieres?",
+    "Puedo hacer la gráfica en cuanto me digas el municipio. ¿Cuál es?",
+    "Antes de graficar, dime el municipio. También puedes indicar la variable y los años.",
+    "Me falta el municipio: sin él no sé qué datos dibujar. ¿Cuál prefieres?",
 ]
 
 G5_SIN_VARIABLE = [

@@ -79,7 +79,8 @@ class Entorno:
         return resolver_cadena(preguntas, self.catalogo, self.hoy) if preguntas else None
 
     def preparar(self, pregunta: str, *, huecos: list[dict] | None = None, historial: list[dict] | None = None,
-                 previas: list[str] | None = None, rag_resultados: list[dict] | None = None, usar_rag: bool = True) -> dict:
+                 previas: list[str] | None = None, rag_resultados: list[dict] | None = None, usar_rag: bool = True,
+                 forzar_rag: bool = False) -> dict:
         """-> el dict de `preparar_consulta` ({"accion": "consultar"|"aclarar", "peticion", "notas", "resolucion", ...})
         mas `rag_resultados` (lo que devolvio el recuperador, para re-armar sin base)."""
         hc = {(h["variable"], h["divipola"], int(h["anio"])): h.get("motivo") for h in (huecos or [])}
@@ -96,10 +97,17 @@ class Entorno:
             return usados["r"]
 
         previa = self.previa_de(previas or [])
-        r = asyncio.run(preparar_consulta(
-            pregunta, None, dict(META), hoy=self.hoy, catalogo=self.catalogo, rag_fn=rag_fn,
-            historial=historial, previa=previa, leer_serie_fn=leer, completar=completar, score_fn=score_fn,
-        ))
+        import services.orquestador.orquestador as oq  # noqa: E402
+        original = oq.intencion_conceptual
+        if forzar_rag:  # H4: dato + definicion. Con municipio el enrutador actual NO consulta el RAG (hallazgo del informe)
+            oq.intencion_conceptual = lambda *a, **k: True
+        try:
+            r = asyncio.run(preparar_consulta(
+                pregunta, None, dict(META), hoy=self.hoy, catalogo=self.catalogo, rag_fn=rag_fn,
+                historial=historial, previa=previa, leer_serie_fn=leer, completar=completar, score_fn=score_fn,
+            ))
+        finally:
+            oq.intencion_conceptual = original
         r["rag_resultados"] = usados.get("r")
         return r
 
@@ -112,7 +120,7 @@ class Entorno:
         e = par["entrada"]
         r = self.preparar(
             e["pregunta"], huecos=e.get("huecos"), historial=e.get("historial"), previas=e.get("previas"),
-            rag_resultados=e.get("rag_resultados"), usar_rag=bool(e.get("rag_resultados")),
+            rag_resultados=e.get("rag_resultados"), usar_rag=bool(e.get("rag_resultados")), forzar_rag=bool(e.get("rag_forzado")),
         )
         return r["peticion"]["mensajes"] if r["accion"] == "consultar" else None
 
