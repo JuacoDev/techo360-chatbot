@@ -1,0 +1,8 @@
+recuperador,id,pregunta,recuperado_top5,esperado
+b_texto,rag-08,¿Cómo se normalizan las variables del Score?,01-variables | 01-limites-base | 01-decision-cuantitativo | 01-limites-por-anio | 01-formula,01-normalizacion
+b_texto,rag-11,¿Puede el Score dar un valor negativo?,01-limites-base | 01-variables | 01-decision-cuantitativo | 04-metodo-ultimo-valor-1 | 04-metodos-implementados,01-normalizacion
+b_texto,rag-28,¿De dónde sale el déficit habitacional de cada municipio?,03-deficit-columnas | 01-doble-conteo | 03-deficit-componentes | 01-universo | 04-metodo-deficit-2024,04-fuente-cnpv
+c_rrf,rag-28,¿De dónde sale el déficit habitacional de cada municipio?,03-deficit-columnas | 03-deficit-componentes | 01-universo | 04-metodo-deficit-2024 | 01-doble-conteo,04-fuente-cnpv
+a_vectores,rag-38,¿Qué puede responder el asistente y qué no?,06-estado-mensajes | 06-tarjeta-fiabilidad | 04-principio-procedencia | 04-metodo-ultimo-valor-1 | 04-metodo-regresion-densidad,06-reglas-asistente
+b_texto,rag-38,¿Qué puede responder el asistente y qué no?,06-estado-mensajes | 01-normalizacion | 04-principio-procedencia | 03-tenencia,06-reglas-asistente
+c_rrf,rag-38,¿Qué puede responder el asistente y qué no?,06-estado-mensajes | 04-principio-procedencia | 01-normalizacion | 06-tarjeta-fiabilidad | 03-tenencia,06-reglas-asistente

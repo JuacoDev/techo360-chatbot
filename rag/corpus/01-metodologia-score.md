@@ -59,31 +59,6 @@ Municipios") y se leyeron las columnas de componentes que ese adapter
 NO usa (11-28):
 
 ---
-fragmento: 01-doble-conteo-magnitud
-fuente: Proyecto Techo 360 - zonas.py
-ruta: techo360-backend/routers/zonas.py
-fecha: 2026-10-10
-vigencia: vigente en el codigo de la rama revisada
-version: techo360-backend@f10a0e0
-tema: Magnitud del solapamiento entre deficit total y coberturas
----
-MAGNITUD del solapamiento: el cociente (Agua para cocinar jerarquizado
-+ Alcantarillado jerarquizado) / hogares en deficit cualitativo tiene
-mediana 0.677 sobre 1.121 municipios del anexo, y supera 0.5 en el
-68,8% de ellos. Los componentes NO son mutuamente excluyentes entre si
-(un hogar puede tener varias carencias a la vez), asi que ese cociente
-mide PESO, no una descomposicion exacta -- puede pasar de 1.
-
-CONFIRMACION EMPIRICA INDEPENDIENTE (mapcalordb, yearm=2024), que
-coincide con lo que predice la estructura de componentes del anexo:
-  corr(deficit_cualitativo,  cobertura_alcantarillado) = -0.358
-  corr(deficit_total,        cobertura_alcantarillado) = -0.307
-  corr(deficit_CUANTITATIVO, cobertura_alcantarillado) = -0.022
-  corr(deficit_CUANTITATIVO, cobertura_acueducto)      = -0.073
-El cuantitativo es practicamente ortogonal a las coberturas -- justo
-lo que se espera de una variable que no las contiene.
-
----
 fragmento: 01-decision-cuantitativo
 fuente: Proyecto Techo 360 - zonas.py
 ruta: techo360-backend/routers/zonas.py

@@ -70,7 +70,7 @@ tema: Tenencia informal: unidad de medida y formula
 UNIDAD DE MEDIDA: a diferencia del diseño original (que fue pensado en
 base al Censo del DANE, midiendo HOGARES), esta fuente mide PREDIOS
 (unidades de terreno), no hogares. Esto se decidio conscientemente
-con el equipo -- son conceptos relacionados pero no identicos (un
+-- son conceptos relacionados pero no identicos (un
 predio puede tener varios hogares o estar vacio). La formula final:
 
 % Tenencia Informal = (Predios con condicion_predio='Informal'
@@ -104,26 +104,6 @@ condicion de tenencia en este municipio" -- el campo `total` (linea
 119) SI viene poblado (por eso el municipio no se descarta por completo
 en la linea 120), pero eso solo confirma que existen predios
 catastrados, no que su condicion_predio ya fue evaluada.
-
----
-fragmento: 03-tenencia-limitacion-2
-fuente: Proyecto Techo 360 - igac_catastro_adapter.py
-ruta: techo360-backend/ingestion/igac_catastro_adapter.py
-fecha: 2026-09-23
-vigencia: vigente en el codigo de la rama revisada
-version: techo360-backend@5716e20
-tema: Tenencia informal: limitacion conocida de la fuente
----
-Contraste con una fuente independiente (UPRA, Indice de Informalidad en
-la Tenencia de la Tierra): segun su metadata oficial
-(catalogometadatos.upra.gov.co, uuid c45c0895-43c9-4a2b-b350-a4ca7da900aa,
-consultada en vivo 22-sep-2026), de los 1.104 municipios evaluados solo
-79 caen en la banda 0%-25% de informalidad -- un panorama radicalmente
-distinto al 73% en 0% exacto que produce este adaptador. Esto es
-evidencia corroborante (no una prueba matematica directa, las dos
-fuentes miden con metodologias distintas) de que el 0.0 de este
-adaptador subestima la informalidad real en una parte importante de los
-municipios, en vez de reflejarla genuinamente.
 
 ---
 fragmento: 03-dato-real-proyeccion
