@@ -1,0 +1,12 @@
+[
+  {"q": "¿Qué significa un Score de privación alto?", "esperado": ["01-formula", "01-variables"]},
+  {"q": "¿Qué es el déficit cualitativo de vivienda?", "esperado": ["03-deficit-componentes", "03-deficit-columnas"]},
+  {"q": "¿Cuáles son las cinco dimensiones del IPM?", "esperado": ["02-ipm-dimensiones", "02-ipm-tabla"]},
+  {"q": "¿Cuándo se considera que un hogar es pobre multidimensional?", "esperado": ["02-ipm-umbral"]},
+  {"q": "¿Qué diferencia hay entre un dato real y una proyección?", "esperado": ["03-dato-real-proyeccion", "03-dato-real", "04-principio-procedencia"]},
+  {"q": "¿Cómo se calcula la fiabilidad de una proyección de cobertura de acueducto?", "esperado": ["04-metodo-ultimo-valor", "03-fiabilidad"]},
+  {"q": "¿Por qué el Score usa el déficit cuantitativo y no el total?", "esperado": ["01-doble-conteo", "01-decision-cuantitativo"]},
+  {"q": "¿Qué es el código 00000 del mapa?", "esperado": ["05-caso-00000"]},
+  {"q": "¿Cómo se proyecta la densidad poblacional hacia el futuro?", "esperado": ["04-metodo-regresion-densidad", "04-metodos-por-variable-1"]},
+  {"q": "¿Qué puede y qué no puede responder el asistente sobre cifras de municipios?", "esperado": ["06-reglas-asistente"]}
+]
