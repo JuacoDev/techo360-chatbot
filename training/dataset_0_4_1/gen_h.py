@@ -129,7 +129,7 @@ class GenH(Fabrica):
         return t, pid
 
     # ------------------------------------------------------------------ H1 / H2 / H5
-    def _con_docs(self, sub: str, texto: str, intent: dict, aperturas: list[str], tipo_sub: str | None = None) -> Par | None:
+    def _con_docs(self, sub: str, texto: str, intent: dict, aperturas: list[str], tipo_sub: str | None = None, aperturas_lista: list[str] | None = None) -> Par | None:
         got = self.preparar(sub, texto)
         if got is None:
             return None
@@ -140,17 +140,18 @@ class GenH(Fabrica):
         e, usadas, es_lista = self.texto_intencion(intent)
         relevantes = [d for d in ctx.docs if any(limpiar(p).lower() in limpiar(d).lower() for p in usadas)]
         if not all(self._pieza_en(p, ctx.docs) for p in usadas):
-            # el recuperador real no trajo (o corto) lo que responde: con ESE contexto la respuesta correcta es abstenerse (H3)
-            i, resp = self.g.el("h3_sin_cobertura:r").de("r", hd.H3_RESPUESTAS)
-            j, sug = self.g.el("h3_sin_cobertura:s").de("s", hd.H3_SUGERENCIAS)
-            return self.par("H", "h3_sin_cobertura", texto, r, resp + sug, "", f"h3_sin_cobertura.r{i:02d}s{j}",
-                            meta={"docs_en_contexto": len(ctx.docs), "cobertura_en_corpus": True, "intencion": intent["id"]})
+            # el recuperador real no trajo (o corto) lo que responde. Revision 7.3b: ese par NO es H3 (el tema esta en el corpus): se descarta
+            self.descarta(sub, "recuperacion_fallida_tema_en_corpus")
+            self.nuevo_id("h3_sin_cobertura")  # conserva la numeracion de ids de la corrida anterior (los holdouts no cambian)
+            self.g.el("h3_sin_cobertura:r").de("r", hd.H3_RESPUESTAS)  # y los sorteos de plantilla (idem)
+            self.g.el("h3_sin_cobertura:s").de("s", hd.H3_SUGERENCIAS)
+            return None
         marginales = [d for d in ctx.docs if d not in relevantes]
         if tipo_sub is None:
             sub_real = "h2_marginal" if marginales else "h1_un_fragmento"
         else:
             sub_real = tipo_sub
-        out = self._respuesta(sub_real, e, es_lista, aperturas)
+        out = self._respuesta(sub_real, e, es_lista, aperturas, aperturas_lista)
         if out is None:
             return None
         resp, pr = out
@@ -177,7 +178,7 @@ class GenH(Fabrica):
             return None
         iid, q, _ = c
         texto, pid = self._preguntar_fija(sub, q)
-        par = self._con_docs(sub, texto, INTENCION[iid], hd.H5_APERTURAS, tipo_sub="h5_premisa")
+        par = self._con_docs(sub, texto, INTENCION[iid], hd.H5_APERTURAS, tipo_sub="h5_premisa", aperturas_lista=hd.H5_APERTURAS_LISTA)
         if par is not None:
             par.plantilla_p = pid
         return par

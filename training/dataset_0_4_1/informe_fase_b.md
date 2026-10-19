@@ -68,3 +68,6 @@ No se entrenó, no se tocó la base, no se escribió en el VPS (la sesión SSH y
 4. **Los 29 pares largos** (> 1.720 tokens, casi todos A7) se quitan solo si la prueba de VRAM lo exige.
 5. **Cuotas aceptadas:** H5 28/30, HS4 13/15 y `holdout_rag` 35/40.
 Nada más cambia hasta la revisión 7.3b de Juan.
+
+## Revisión 7.3b del 20/10/2026 (segunda entrega)
+No aprobada la primera; regenerados H3 (solo fuera de corpus, 80, 0 con `cobertura_en_corpus`) y H5 (premisas auditadas, 30/30), y corregido 1 par de HS5. G4, F+, HS4 y los holdouts: idénticos byte a byte. Conteos y sha256 nuevos y el detalle en `fase7-3-muestra-revision.md`. Dataset de entrenamiento (`dataset_0_4_1_sin_h4.jsonl`, 2.891 pares): `c54174f1f6ce894f6c5b14470d3bcb1fd797614c0c7c2d1c4393091610a2d9f4`. Los sha256 de la tabla de arriba son los de la primera entrega (los holdouts no cambiaron).

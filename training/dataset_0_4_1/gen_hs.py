@@ -4,6 +4,8 @@ Cada par se arma con `preparar_consulta(..., historial=[...], previa=resolver_ca
 el saneado del historial y el recorte a 400 tokens son los de produccion (docs/fase7-1b-historial-formato.md). El historial son
 turnos de chat normales (sin CONTEXTO), y solo el ultimo `user` lleva el CONTEXTO fresco del turno actual.
 """
+import re
+
 from . import armado as ar
 from . import preguntas as pq
 from . import preguntas_hs as pqh
@@ -251,10 +253,13 @@ class GenHS(Fabrica):
         d = self.dato_puntual("hs5", it)
         if d is None:
             return None
-        out = self.render(sub, rp.PLANTILLAS[sub], {"dato": d[0]})
+        dato = d[0]
+        out = self.render(sub, rp.PLANTILLAS[sub], {"dato": dato})
         if out is None:
             return None
         resp, pr = out
+        if self.modo == "train" and len(re.findall(r"\b(?:Claro|Con gusto|Listo|Entendido)\b", resp)) >= 2:
+            resp = resp.replace(dato, re.sub(r"^(?:Claro|Con gusto|Listo|Entendido)[.,] ", "", dato), 1)  # marcador repetido: se quita el del dato
         return self.par("HS", sub, texto, r, resp, pid, pr + d[1], historial=self._historial(previos))
 
     # ------------------------------------------------------------------ HS6 (inyeccion en un turno previo)

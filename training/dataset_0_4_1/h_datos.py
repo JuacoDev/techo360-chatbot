@@ -381,6 +381,13 @@ INTENCIONES = [
            "¿Un municipio gris tiene datos?", "¿Por qué algunos municipios no tienen color en el mapa?", "¿Qué pasa con los municipios sin dato en el mapa?"],
         qh="¿A qué se debe que ciertos municipios aparezcan grises?",
     ),
+    dict(  # solo para H5: la respuesta dice EXPLICITAMENTE que no tienen poligono
+        id="areas-sin-poligono", esperados=["05-areas-no-municipalizadas"],
+        piezas=["18 códigos en DIVIPOLA sin geometría en el geojson. Son exactamente las 18 «áreas no municipalizadas»",
+                "Amazonas (9)", "Guainía (6)", "Vaupés (3)"],
+        forma=("lista", "No tienen polígono en el mapa. {p1}. Están repartidas así:", [2, 3, 4]),
+        q=[], qh=None,
+    ),
 ]
 
 # Premisas contrarias al fragmento (H5): (id de intencion, preguntas con la premisa falsa, apertura que corrige = plantilla de respuesta)
@@ -410,14 +417,11 @@ PREMISAS = [
 H3_PREGUNTAS = [
     # definiciones oficiales ausentes
     "¿Cómo define la Superservicios la cobertura de acueducto?", "¿Cuál es la definición oficial de cobertura de alcantarillado?",
-    "¿Qué es la cobertura de acueducto según el DANE?", "¿Cuál es la definición oficial de la densidad poblacional?",
-    "¿Qué es el índice de privación según la OCDE?", "¿Cómo define el DANE el déficit cualitativo en sus informes más recientes?",
-    "¿Qué significa la cobertura de acueducto en términos legales?", "¿Qué es el saneamiento básico según la plataforma?",
-    "¿Cómo se define un hogar en el IPM de 2018?", "¿Qué es el mínimo vital según la plataforma?",
+    "¿Qué es la cobertura de acueducto según el DANE?", "¿Qué es el índice de privación según la OCDE?", "¿Qué significa la cobertura de acueducto en términos legales?", "¿Qué es el saneamiento básico según la plataforma?",
+    "¿Qué es el mínimo vital según la plataforma?",
     # IPM no cubierto
     "¿Cuál es el IPM de Colombia más reciente?", "¿Cómo se calcula el IPM departamental?", "¿Qué actualizaciones tuvo el IPM después de 2012?",
-    "¿Qué pesos tiene el IPM de 2018?", "¿Cuántos hogares son pobres según el IPM?", "¿Qué diferencia hay entre el IPM y la línea de pobreza monetaria?",
-    "¿Cómo se calcula el IPM rural?", "¿Qué es el IPM-Bogotá?", "¿Cómo se calcula el IPM de Venezuela?",
+    "¿Qué pesos tiene el IPM de 2018?", "¿Cuántos hogares son pobres según el IPM?", "¿Cómo se calcula el IPM rural?", "¿Qué es el IPM-Bogotá?", "¿Cómo se calcula el IPM de Venezuela?",
     # plataforma operativa y alcance
     "¿Quién financia la plataforma Techo 360?", "¿Qué licencia tiene el código de la plataforma?", "¿Cuánto cuesta usar la plataforma?",
     "¿Cómo puedo exportar los datos de la plataforma?", "¿Tiene la plataforma una API pública?", "¿Cómo creo una cuenta en la plataforma?",
@@ -425,27 +429,63 @@ H3_PREGUNTAS = [
     "¿Qué municipios nuevos se agregarán a la plataforma?", "¿La plataforma funciona sin internet?", "¿Qué idiomas soporta la plataforma?",
     "¿Cómo reporto un error de la plataforma?", "¿Qué versión de la plataforma estoy usando?", "¿Dónde está alojada la plataforma?",
     # metodología no cubierta
-    "¿Qué peso tiene cada componente del déficit cualitativo?", "¿Cómo se calcula el intervalo de confianza de la regresión de densidad?",
-    "¿Qué error tiene la proyección de la cobertura de acueducto a diez años?",
-    "¿Cómo se valida el score de privación frente a otras mediciones?", "¿Qué método estadístico se usa para la fiabilidad?",
-    "¿Cómo se calcula el déficit cuantitativo por departamento?", "¿Cuál es el RMSE de la regresión lineal de densidad?",
-    "¿Qué municipios tienen mayor prioridad de intervención?", "¿Cómo se ponderan los municipios para el promedio nacional?",
+    "¿Qué peso tiene cada componente del déficit cualitativo?", "¿Qué error tiene la proyección de la cobertura de acueducto a diez años?",
+    "¿Cómo se valida el score de privación frente a otras mediciones?", "¿Qué municipios tienen mayor prioridad de intervención?", "¿Cómo se ponderan los municipios para el promedio nacional?",
     "¿Cómo se calcula el hacinamiento crítico?",
     "¿Cuál es el umbral de fiabilidad aceptable para un dato proyectado?",
     # fuera del alcance con vocabulario de la plataforma
     "¿Qué es el IPM en México?", "¿Cómo mide la pobreza el Banco Mundial?", "¿Qué dice el DANE sobre el empleo en Colombia?",
-    "¿Qué es el score crediticio?", "¿Cómo se calcula el índice de precios de vivienda?", "¿Qué es la densidad de población de Marte?",
-    "¿Cuál es el dato de pobreza monetaria de Colombia en 2023?", "¿Qué es el censo agropecuario?", "¿Qué indica el índice de desarrollo humano de Colombia?",
-    "¿Cómo se calcula el índice de Gini de los municipios?", "¿Qué es la cobertura de salud de un municipio?", "¿Qué es el déficit fiscal de un municipio?",
-    "¿Cuántas personas viven en la zona rural según la plataforma?", "¿Qué porcentaje de hogares tiene internet según los datos de la plataforma?",
-    "¿Cómo se calcula la cobertura de energía eléctrica?", "¿Qué son los polígonos de la plataforma en términos legales?",
-    "¿Qué es el DIVIPOLA de los resguardos indígenas?", "¿Cuál es la fuente de la cobertura de gas natural?", "¿Cómo se mide el acceso a internet en el IPM?",
+    "¿Cuál es el dato de pobreza monetaria de Colombia en 2023?", "¿Qué indica el índice de desarrollo humano de Colombia?",
+    "¿Cómo se calcula el índice de Gini de los municipios?", "¿Cuántas personas viven en la zona rural según la plataforma?", "¿Qué porcentaje de hogares tiene internet según los datos de la plataforma?",
+    "¿Cómo se calcula la cobertura de energía eléctrica?", "¿Cuál es la fuente de la cobertura de gas natural?", "¿Cómo se mide el acceso a internet en el IPM?",
     "¿Cómo se estima la población de un municipio por barrio?", "¿Qué proyecciones hace la plataforma sobre desplazamiento?",
     "¿Qué es la pobreza extrema según la plataforma?", "¿Cómo calcula la plataforma el crecimiento de la población?",
     "¿Cómo se define un municipio rural en la plataforma?", "¿Qué estima la plataforma sobre el déficit de 2035 por departamento?",
-    "¿Qué es la tasa de analfabetismo de un municipio en la plataforma?", "¿Cómo se calculan las líneas de pobreza?",
+    "¿Cómo se calculan las líneas de pobreza?",
     "¿Qué indicadores de salud tiene la plataforma por municipio?", "¿Qué porcentaje del déficit cualitativo se debe a la cocina?",
     "¿Qué es el estrato socioeconómico en la plataforma?", "¿Cómo se calcula el valor catastral en la plataforma?",
+    # ---- revision 7.3b: solo preguntas cuyo tema NO esta en los 42 fragmentos
+    "¿Cómo define la CEPAL la pobreza multidimensional?",
+    "¿Cómo define la OCDE la cobertura de acueducto?",
+    "¿Cómo calcula el DANE la pobreza monetaria?",
+    "¿Qué dice el Ministerio de Vivienda sobre el déficit cualitativo en su último informe?",
+    "¿Cómo define el DNP la prioridad de inversión de un municipio?",
+    "¿Qué es la cobertura de alcantarillado según la Superintendencia de Servicios Públicos?",
+    "¿Cuál es la fórmula del IPM departamental del DANE?",
+    "¿Qué entiende ONU-Hábitat por vivienda adecuada en sus informes?",
+    "¿Cuál es el IPM de Perú?",
+    "¿Cómo calcula México el IPM?",
+    "¿Cuál es el déficit habitacional de Chile?",
+    "¿Qué cobertura de acueducto tiene Argentina?",
+    "¿Cómo mide Brasil la pobreza multidimensional?",
+    "¿Qué es el IPM de Ecuador?",
+    "¿Cómo calcula España la tasa de pobreza?",
+    "¿Cómo se calcula el IPM de la zona rural dispersa?",
+    "¿Qué diferencia hay entre el IPM urbano y el IPM rural?",
+    "¿Cuál es el IPM de las cabeceras municipales?",
+    "¿Qué pesos tiene el IPM rural?",
+    "¿Cómo se calcula el IPM de los centros poblados?",
+    "¿Cómo se calcula la cobertura de internet de un municipio?",
+    "¿Qué es la cobertura de energía eléctrica en la plataforma?",
+    "¿Cuál es la tasa de desempleo por municipio que usa la plataforma?",
+    "¿Qué variable de ingresos de los hogares tiene la plataforma?",
+    "¿Cómo se calcula la mortalidad infantil que muestra la plataforma?",
+    "¿Cuál es la variable de matrícula escolar que usa la plataforma?",
+    "¿Qué es la variable de pobreza monetaria de la plataforma?",
+    "¿Qué es el indicador de acceso a la salud en la plataforma?",
+    "¿Cómo se calcula la cobertura de telefonía móvil en la plataforma?",
+    "¿Quiénes son los desarrolladores de la plataforma?",
+    "¿Qué tecnologías usa la plataforma?",
+    "¿Cuántos usuarios tiene la plataforma?",
+    "¿Cómo recupero mi contraseña de la plataforma?",
+    "¿Hay una versión móvil de la plataforma?",
+    "¿Puedo descargar el mapa de la plataforma como imagen?",
+    "¿Cómo contacto al equipo de la plataforma?",
+    "¿La plataforma guarda mi historial de consultas?",
+    "¿Cuál es la política de privacidad de la plataforma?",
+    "¿Qué datos personales recoge la plataforma?",
+    "¿Cómo se calcula el error de la proyección de la cobertura de alcantarillado?",
+    "¿Qué criterio decide qué municipios entran a una intervención?",
 ]
 
 # Preguntas H3 del HOLDOUT (10; nunca entran al train)
@@ -533,6 +573,11 @@ H_APERTURAS_LISTA = [
 ]
 
 # Correccion de una premisa falsa (H5): {e} = el extracto que la desmiente
+H5_APERTURAS_LISTA = [
+    "No es así.", "Esa premisa no es correcta.", "Los documentos dicen otra cosa.", "No coincide con lo que indican los documentos.",
+    "Hay que corregir ese dato.", "No exactamente.",
+]
+
 H5_APERTURAS = [
     "No exactamente. {e}",
     "Eso no es así según los documentos. {e}",
@@ -597,7 +642,7 @@ for _i in INTENCIONES:
 from . import h_datos_ajustes as _aj  # noqa: E402
 
 for _i in INTENCIONES:
-    _i["qh"] = _aj.QH[_i["id"]]
+    _i["qh"] = _aj.QH.get(_i["id"])
 PREMISAS = _aj.PREMISAS
 
 

@@ -59,18 +59,5 @@ QH2 = {
     "mapa-gris": "¿Por qué hay municipios en gris en el mapa?",
 }
 
-# Premisas falsas ADICIONALES (H5): (intencion, preguntas)
-PREMISAS_EXTRA = [
-    ("deficit-anio", ["¿Por qué el déficit habitacional municipal se midió en el censo de 2005?"]),
-    ("ipm-umbral", ["¿Por qué el IPM exige privaciones en todas las variables para considerar pobre a un hogar?"]),
-    ("ipm-dimensiones", ["¿Por qué las dimensiones del IPM son ocho?"]),
-    ("score-variables", ["¿Por qué el score de privación se calcula con tres variables que se invierten?"]),
-    ("divipola-total", ["¿Por qué el DIVIPOLA tiene solo 1.000 municipios?"]),
-    ("tenencia-formula", ["¿Por qué la tenencia informal se calcula sobre el total de hogares del municipio?"]),
-    ("proyeccion-densidad", ["¿Por qué la densidad proyectada se calcula con los 10 últimos puntos reales?"]),
-    ("estados-mensaje", ["¿Por qué un mensaje del chat puede tener ocho estados?"]),
-    ("semaforo-mapa", ["¿Por qué en el semáforo del score el verde es el valor más bajo?"]),
-    ("prioridad", ["¿Por qué el score de privación de prioridad alta es mayor a cinco?"]),
-    ("areas-no-municipalizadas", ["¿Por qué las áreas no municipalizadas son cuarenta y tienen polígono?"]),
-    ("fuente-deficit", ["¿Por qué el déficit habitacional municipal lo publica la Superintendencia de Servicios Públicos?"]),
-]
+# (las premisas de H5 se auditaron en la revision 7.3b y viven completas en h_datos_ajustes.PREMISAS)
+PREMISAS_EXTRA = []
