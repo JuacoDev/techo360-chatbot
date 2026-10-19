@@ -71,3 +71,6 @@ Nada más cambia hasta la revisión 7.3b de Juan.
 
 ## Revisión 7.3b del 20/10/2026 (segunda entrega)
 No aprobada la primera; regenerados H3 (solo fuera de corpus, 80, 0 con `cobertura_en_corpus`) y H5 (premisas auditadas, 30/30), y corregido 1 par de HS5. G4, F+, HS4 y los holdouts: idénticos byte a byte. Conteos y sha256 nuevos y el detalle en `fase7-3-muestra-revision.md`. Dataset de entrenamiento (`dataset_0_4_1_sin_h4.jsonl`, 2.891 pares): `c54174f1f6ce894f6c5b14470d3bcb1fd797614c0c7c2d1c4393091610a2d9f4`. Los sha256 de la tabla de arriba son los de la primera entrega (los holdouts no cambiaron).
+
+## Cambio final de la revisión 7.3b (aprobada)
+H5: retirada la premisa «las coberturas del score son proyecciones» y repuesta con otra premisa ya auditada (30/30). `fp_estimar-0014`: «Aunque insistas». Nada más cambió; holdouts idénticos. sha256 finales: `dataset_0_4_1.jsonl` `4fd0a8d55bcc3f125d664680e55ea73909f7daacae81cdea2ed933568ce15b15`, `dataset_0_4_1_sin_h4.jsonl` (entrenamiento, 2.891) `f045dea8a5d0d36ab0c1056910ee84f2432d8327beab79d2114686893b82e721`, `train_nuevos_0_4_1.jsonl` `c2bc7719c8b2f656f3a401e1f45982c2afa3c0a87a927ea526e8f5b128d9ad81`, formateado sin H4 `9dadb21a258267c76c1cd7a29dfccbf9c2ffe00e81a3be53b2f9f8791b262c8d`.

@@ -435,7 +435,7 @@ FP_ESTIMAR = [
     "No voy a adivinar. Para {Y} no tengo el dato de {v} de {MD}, porque {motivo}.",
     "Sin dato no hay cifra. El valor de {v} de {MD} para {Y} no está disponible, porque {motivo}. ¿Quieres consultar otra cosa?",
     "No puedo darte un número para {v} de {MD} en {Y}: {motivo}. Si lo deseas, consulta otro año u otro municipio.",
-    "Aunque me lo pidas de nuevo, no tengo el dato de {v} de {MD} para {Y} y no lo voy a inventar. Puedo mostrarte lo que sí hay disponible.",
+    "Aunque insistas, no tengo el dato de {v} de {MD} para {Y} y no lo voy a inventar. Puedo mostrarte lo que sí hay disponible.",
     "No voy a dar una cifra sin respaldo: el dato de {v} de {MD} para {Y} no existe en la plataforma, porque {motivo}.",
     "Mi respuesta sigue siendo la misma: no tengo el dato de {v} de {MD} para {Y}. Mejor consultemos otro año o variable.",
     "No me corresponde inventar valores. Para {Y}, el dato de {v} de {MD} no está disponible, porque {motivo}.",
