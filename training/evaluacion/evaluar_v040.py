@@ -61,7 +61,7 @@ EOT_ID = 128009
 TEMPERATURA, TOP_P, TOP_K, PENAL_REP, VENTANA_REP = 0.3, 0.9, 40, 1.15, 64
 NUM_PREDICT, NUM_CTX = 400, 2048
 FALLOS_F = ["f_cifra_validador", "f_cifra_estricta", "f_cobertura", "f_municipio", "f_abstencion", "f_sobreabstencion", "f_geografia",
-            "f_sin_contexto", "f_fuera_referencia", "f_eot", "f_repite", "f_idioma"]
+            "f_sin_contexto", "f_fuera_referencia", "f_eot", "f_repite", "f_bucle", "f_idioma"]
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -198,10 +198,10 @@ def crear_generador(torch, tok, modelo):
     return generar
 
 
-def se_repite(ids: list[int]) -> bool:
-    """Un bloque de 8 tokens aparece 3 o mas veces (el mismo criterio que la cordura de 5.5)."""
-    bloques = Counter(tuple(ids[i:i + 8]) for i in range(len(ids) - 7))
-    return any(v >= 3 for v in bloques.values())
+def se_repite(ids: list[int], largo: int = 8, veces: int = 3) -> bool:
+    """Un bloque de `largo` tokens aparece `veces` o mas veces (por defecto 8 y 3: el mismo criterio que la cordura de 5.5)."""
+    bloques = Counter(tuple(ids[i:i + largo]) for i in range(len(ids) - largo + 1))
+    return any(v >= veces for v in bloques.values())
 
 
 def cmd_generar(args) -> int:
@@ -422,7 +422,7 @@ def evaluar_municipio(vd, resp: str, ctx: dict, pregunta: str, citados) -> dict:
                 ent = (fold(linea["muni"]), fold(linea["dep"]))
                 if pos < 0 or any(e != ent and round(linea["valor"], 6) in v for e, v in valores_por_ent.items()):
                     continue  # valor repetido en otra entidad: ambiguo, no se juzga
-                cortes = [mm.end() for mm in re.finditer(r"(?<=[.!?])\s|\n", rf[:pos])]
+                cortes = [mm.end() for mm in re.finditer(r"(?<=[.!?])\s", rf[:pos])]  # el salto de linea no corta la oracion: las listas con encabezado «Chima:» son un bloque
                 inicio_oracion = cortes[-1] if cortes else 0
                 antes = [mn for mn in menciones if inicio_oracion <= mn[0] and mn[1] <= pos]
                 despues = [mn for mn in menciones if mn[0] >= pos]
@@ -453,7 +453,7 @@ def espanol(texto: str) -> bool:
     return es > 2 * en and es >= 1
 
 
-def evaluar_respuesta(vd, rouge, conjunto: str, par: dict, g: dict) -> dict:
+def evaluar_respuesta(vd, rouge, conjunto: str, par: dict, g: dict, tok=None) -> dict:
     resp, instruction = g["respuesta"], par["instruction"]
     lineas, pregunta = partir_instruccion(instruction)
     ctx = parsear_contexto(lineas, vd)
@@ -481,6 +481,11 @@ def evaluar_respuesta(vd, rouge, conjunto: str, par: dict, g: dict) -> dict:
     m["f_repite"] = bool(g["se_repite"])
     m["f_idioma"] = not espanol(resp)
     det["llego_al_tope"] = bool(g["llego_al_tope"])
+    if tok is not None:  # bucle: bloque de 16 tokens repetido 2 veces (re-tokenizando el texto) o tope de 400 tokens sin <|eot_id|>
+        ids = tok(resp, add_special_tokens=False)["input_ids"]
+        m["f_bucle"] = se_repite(ids, 16, 2) or bool(g["llego_al_tope"])
+        ids_ref = tok(par["response"], add_special_tokens=False)["input_ids"]
+        det["ref_activa_repite"], det["ref_activa_bucle"] = se_repite(ids_ref, 8, 3), se_repite(ids_ref, 16, 2)
     if conjunto == "ctx":
         rf = fold(resp)
         hay_datos, hay_sin = bool(ctx["datos"]), bool(ctx["sin_dato"])
@@ -524,6 +529,8 @@ def evaluar_respuesta(vd, rouge, conjunto: str, par: dict, g: dict) -> dict:
 
 def cmd_medir(args) -> int:
     vd, rouge = _cargar_validador(), _cargar_rouge()
+    from transformers import AutoTokenizer
+    tok = AutoTokenizer.from_pretrained(str(ADAPTADORES["0.4.0"]))
     conjuntos = cargar_conjuntos()
     por_id = {c: {p["id"]: p for p in conjuntos[c]} for c in conjuntos}
     todo = []  # filas con metricas
@@ -539,7 +546,7 @@ def cmd_medir(args) -> int:
         with open(DIR_SALIDA / f"generaciones_{brazo}.jsonl", "w", encoding="utf-8", newline="\n") as f:
             for g in filas:
                 par = por_id[g["conjunto"]][g["id"]]
-                r = evaluar_respuesta(vd, rouge, g["conjunto"], par, g)
+                r = evaluar_respuesta(vd, rouge, g["conjunto"], par, g, tok)
                 fila = {"id": g["id"], "brazo": brazo, "conjunto": g["conjunto"], "familia": par["familia"], "subfamilia": par["subfamilia"], "corrida": g["corrida"],
                         "respuesta": g["respuesta"], "tokens": g["tokens"], "termina_eot": g["termina_eot"], "se_repite": g["se_repite"],
                         "llego_al_tope": g["llego_al_tope"], "metricas": r["f"], "detalle": r["d"]}
@@ -628,9 +635,9 @@ def escribir_resultados(todo: list[dict], por_id: dict) -> None:
                     ("f_cobertura", "Cobertura incompleta (algún valor del contexto sin citar)"), ("f_municipio", "Error de municipio/departamento"),
                     ("f_abstencion", "Fallo de abstención (cifra o sin explicar la falta)"), ("f_sobreabstencion", "Sobreabstención (hay dato y no lo cita)"),
                     ("f_geografia", "Fallo de geografía (pares D)"), ("f_sin_contexto", "Cifra inventada ante bloque vacío (pares C)"),
-                    ("f_eot", "No termina con `<|eot_id|>`"), ("f_repite", "Repetición (bloque de 8 tokens ≥3 veces)"), ("f_idioma", "No es español")]
+                    ("f_eot", "No termina con `<|eot_id|>`"), ("f_repite", "Repetición (bloque de 8 tokens ≥3 veces; criterio de la cordura 5.5)"), ("f_bucle", "Bucle (bloque de 16 tokens ≥2 veces, o tope de 400 tokens sin `<|eot_id|>`)"), ("f_idioma", "No es español (heurística de palabras funcionales)")]
     metricas_previo = [("f_cifra_validador", "Cifras no validadas contra contexto vacío (incluye conocimiento legítimo)"), ("f_fuera_referencia", "Cifras fuera de la referencia y la pregunta"),
-                       ("f_eot", "No termina con `<|eot_id|>`"), ("f_repite", "Repetición"), ("f_idioma", "No es español")]
+                       ("f_eot", "No termina con `<|eot_id|>`"), ("f_repite", "Repetición (8 tokens ×3)"), ("f_bucle", "Bucle (16 tokens ×2, o tope sin `<|eot_id|>`)"), ("f_idioma", "No es español (heurística de palabras funcionales)")]
     for (brazo, conjunto), filas in sorted(grupos.items()):
         metricas = metricas_ctx if conjunto == "ctx" else metricas_previo
         fams = sorted({r["familia"] for r in filas})
@@ -638,7 +645,8 @@ def escribir_resultados(todo: list[dict], por_id: dict) -> None:
         info = {"n_respuestas": len(filas), "n_pares": len({r['id'] for r in filas}), "por_grupo": {}}
         md.append(f"\n### Brazo {brazo} · holdout {'contextual (60 pares)' if conjunto == 'ctx' else 'previo de 0.3.3 (28 pares)'} · {len(filas)} respuestas\n")
         md.append("Fallos / respuestas aplicables = tasa [IC Wilson 95 %]. La unidad es la respuesta (5 por par); las 5 corridas de un par no son independientes, así que el IC es optimista (ver también «pares con ≥1 fallo»).\n")
-        cab = "| Métrica | Total | " + " | ".join(fams) + " |"
+        etiquetas = [f"Fam. {x}" if conjunto == "ctx" else x for x in fams]
+        cab = "| Métrica | Total | " + " | ".join(etiquetas) + " |"
         md.append(cab)
         md.append("|" + "---|" * (2 + len(fams)))
         for clave, nombre in metricas:
@@ -652,7 +660,7 @@ def escribir_resultados(todo: list[dict], por_id: dict) -> None:
             md.append(f"| {nombre} | " + " | ".join(celdas) + " |")
         # pares con fallo
         md.append("\n**Pares con ≥1 fallo en las 5 corridas / pares aplicables** (unidad = par):\n")
-        md.append("| Métrica | Total | " + " | ".join(fams) + " |")
+        md.append("| Métrica | Total | " + " | ".join(etiquetas) + " |")
         md.append("|" + "---|" * (2 + len(fams)))
         for clave, nombre in metricas:
             celdas = []
@@ -674,6 +682,12 @@ def escribir_resultados(todo: list[dict], por_id: dict) -> None:
             info["rouge_l_medio_por_corrida"] = {s: sum(r['detalle']['rouge_l'] for r in filas if r['corrida'] == s) / sum(1 for r in filas if r['corrida'] == s) for s in SEMILLAS}
             md.append(f"\nROUGE-L (F1) medio contra la referencia: {info['rouge_l_medio']:.4f} (promedio de las 5 corridas; por corrida: "
                       + ", ".join(f"s{s}={v:.4f}" for s, v in info['rouge_l_medio_por_corrida'].items()) + ")")
+        refs = {r["id"]: (r["detalle"].get("ref_activa_repite"), r["detalle"].get("ref_activa_bucle")) for r in filas}
+        info["calibracion_repeticion_en_referencias"] = {"pares": len(refs), "activa_repite_8x3": sum(1 for a, _ in refs.values() if a), "activa_bucle_16x2": sum(1 for _, b in refs.values() if b)}
+        md.append(f"\nCalibración: la propia respuesta de referencia activaría el criterio de repetición (8 tokens ×3) en {info['calibracion_repeticion_en_referencias']['activa_repite_8x3']}/{len(refs)} pares y el de bucle (16 tokens ×2) en {info['calibracion_repeticion_en_referencias']['activa_bucle_16x2']}/{len(refs)}; "
+                  "las enumeraciones por año o por municipio repiten estructura sin ser un bucle. "
+                  f"Respuestas con repetición 8×3 en pares cuya referencia NO la activa: {sum(1 for r in filas if r['metricas']['f_repite'] and not r['detalle'].get('ref_activa_repite'))}; "
+                  f"con bucle 16×2 (o tope) en pares cuya referencia no lo activa: {sum(1 for r in filas if r['metricas']['f_bucle'] and not r['detalle'].get('ref_activa_bucle'))}.")
         pal = [r["detalle"]["palabras"] for r in filas]
         info["palabras"] = {"mediana": statistics.median(pal), "p95": percentil(pal, 0.95), "max": max(pal)}
         info["tope_400"] = sum(1 for r in filas if r["llego_al_tope"])
