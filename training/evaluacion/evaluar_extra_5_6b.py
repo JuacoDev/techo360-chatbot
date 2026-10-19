@@ -82,6 +82,8 @@ def cmd_generar_ollama(args) -> int:
     system = ev.cargar_system_sp()
     for nombre in args.conjuntos:
         pares = conjunto_de(nombre)
+        if args.ids:
+            pares = [p for p in pares if p["id"] in args.ids]
         ruta = ev.DIR_SALIDA / f"crudo_{args.etiqueta}_{nombre}.jsonl"
         hechas = {(g["id"], g["corrida"]) for g in ev.leer_jsonl(ruta)} if ruta.exists() else set()
         t0, n = time.time(), 0
@@ -90,9 +92,14 @@ def cmd_generar_ollama(args) -> int:
                 for par in pares:
                     if (par["id"], s) in hechas:
                         continue
+                    if args.solo_modelfile:  # como el orquestador: el resto de parametros (incl. num_ctx, repeat_*) sale del Modelfile
+                        opciones = {"num_predict": 400, "seed": s}
+                    else:
+                        opciones = {"temperature": 0.3, "top_p": 0.9, "repeat_penalty": 1.15, "num_ctx": 2048, "num_predict": 400, "seed": s}
+                    opciones.update(json.loads(args.opciones))
                     r = _post("/api/chat", {"model": args.modelo, "stream": False, "keep_alive": "30m",
                                             "messages": [{"role": "system", "content": system}, {"role": "user", "content": par["instruction"]}],
-                                            "options": {"temperature": 0.3, "top_p": 0.9, "repeat_penalty": 1.15, "num_ctx": 2048, "num_predict": 400, "seed": s}})
+                                            "options": opciones})
                     texto = r["message"]["content"]
                     ids = tok(texto, add_special_tokens=False)["input_ids"]
                     termina = r.get("done_reason") == "stop"
@@ -279,6 +286,9 @@ def main() -> int:
     o.add_argument("--etiqueta", default="ollama")
     o.add_argument("--conjuntos", nargs="+", choices=["extra", "ctx"], default=["ctx", "extra"])
     o.add_argument("--corridas", type=int, default=3)
+    o.add_argument("--ids", nargs="+", default=[], help="solo estos pares (5.9b: diagnostico sobre los pares que fallaron)")
+    o.add_argument("--opciones", default="{}", help="JSON que se anade a las opciones de /api/chat (p. ej. {\"repeat_last_n\": -1})")
+    o.add_argument("--solo-modelfile", action="store_true", help="envia solo num_predict y seed (lo demas, del Modelfile), como el orquestador")
     for n in ("medir-extra", "medir-ctx"):
         m = sub.add_parser(n)
         m.add_argument("--crudo", required=True, type=Path)

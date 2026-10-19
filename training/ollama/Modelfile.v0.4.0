@@ -1,7 +1,9 @@
 # Modelfile de Ollama para el adaptador 0.4.0 (paso 5.9) -- fusion bf16 sobre meta-llama/Llama-3.2-3B-Instruct, GGUF Q4_K_M.
 # Tag propio: techo360-chatbot:v0.4.0. No toca latest ni los tags v1..v3.3.
 #
-# FROM: ruta LOCAL del PC de trabajo (fuera del repo). Al copiar el GGUF al VPS hay que cambiarla por la ruta del contenedor.
+# FROM: ruta LOCAL del PC de trabajo (fuera del repo). Al copiar el GGUF al VPS hay que cambiarla por la ruta del contenedor, p. ej. (EJEMPLO, no verificado en el VPS):
+#   FROM /models/techo360-v0.4.0-Q4_K_M.gguf
+# sha256 del GGUF: 685ecd169ff531fcc06f42fd7125fd7cf278863f4afaaaac8a5d3b621482dcae (2.019.377.248 bytes)
 FROM C:/Users/Eridanus_2/modelos/techo360-v0.4.0/techo360-v0.4.0-Q4_K_M.gguf
 
 # SIN `SYSTEM` (a diferencia de Modelfile.v3.3): el orquestador del backend envia `sp-0.4.0-1` como mensaje `system` en cada peticion
@@ -13,4 +15,8 @@ FROM C:/Users/Eridanus_2/modelos/techo360-v0.4.0/techo360-v0.4.0-Q4_K_M.gguf
 PARAMETER temperature 0.3
 PARAMETER top_p 0.9
 PARAMETER repeat_penalty 1.15
-PARAMETER num_ctx 2048
+# num_ctx 3072 (5.9b; antes 2048). INVARIANTE: tokens del prompt + num_predict (400) <= num_ctx, es decir, prompt <= 2.672 tokens. Si se excede, Ollama NO trunca por arriba:
+#   - prompt > num_ctx            -> HTTP 400 exceed_context_size_error;
+#   - prompt + generacion > num_ctx -> desplazamiento de contexto (n_keep = 5) que DESCARTA el system y el inicio del contexto en plena generacion.
+# repeat_last_n y la fecha del TEMPLATE se dejan como estan (por defecto 64; fecha del dia): ninguno cambio las fallas (fase5-9-gguf.md, 5.9b).
+PARAMETER num_ctx 3072
