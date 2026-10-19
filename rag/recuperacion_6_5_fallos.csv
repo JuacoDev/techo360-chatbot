@@ -1,0 +1,7 @@
+recuperador,id,pregunta,recuperado_top5,esperado
+b_texto,rag-08,¿Cómo se normalizan las variables del Score?,01-variables | 01-limites-base | 01-decision-cuantitativo | 01-limites-por-anio | 01-formula,01-normalizacion
+b_texto,rag-11,¿Puede el Score dar un valor negativo?,06-reglas-asistente | 01-limites-base | 01-variables | 01-decision-cuantitativo | 04-metodo-ultimo-valor-1,01-normalizacion
+b_texto,rag-28,¿De dónde sale el déficit habitacional de cada municipio?,03-deficit-columnas | 06-reglas-asistente | 01-doble-conteo | 03-deficit-componentes | 01-universo,04-fuente-cnpv
+a_vectores,rag-34,¿Cuántos municipios hay en Colombia según el DANE?,06-reglas-asistente | 02-ipm-unidad | 02-ipm-tabla | 03-densidad | 05-caso-00000,05-codigos-oficiales
+b_texto,rag-34,¿Cuántos municipios hay en Colombia según el DANE?,02-ipm-origen | 01-universo | 03-deficit-componentes | 06-reglas-asistente | 03-densidad,05-codigos-oficiales
+c_rrf,rag-34,¿Cuántos municipios hay en Colombia según el DANE?,06-reglas-asistente | 03-densidad | 02-ipm-origen | 01-universo | 02-ipm-unidad,05-codigos-oficiales
