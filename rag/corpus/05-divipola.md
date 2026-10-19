@@ -5,7 +5,7 @@ ruta: claude/fase1-2-divipola-cruce.md
 fecha: 2026-10-16
 vigencia: DIVIPOLA DANE actualizado al 30-jun-2026
 version: sin-control-de-versiones (mtime)
-tema: Codigos DIVIPOLA oficiales: 1.122 codigos y sus tipos
+tema: Cuantos municipios y codigos DIVIPOLA hay en Colombia: 1.122 codigos oficiales y sus tipos
 ---
 Hoja `Municipios`: **1 122 códigos de 5 dígitos, todos distintos**, con prefijo de departamento válido (33 códigos de departamento = 32 + Bogotá D.C.).
 
@@ -60,20 +60,3 @@ version: sin-control-de-versiones (mtime)
 tema: Nombre oficial frente a nombre corto en los mismos codigos
 ---
 **Nombres.** En los 1 104 códigos comunes hay **22** pares con nombre distinto tras normalizar mayúsculas y tildes, por ejemplo 05148 «EL CARMEN DE VIBORAL» (DANE) vs «Carmen De Viboral» (IGAC), 88564 «PROVIDENCIA» vs «Providencia y Santa Catalina», 52835 «SAN ANDRÉS DE TUMACO» vs «Tumaco». Son diferencias de nombre oficial vs nombre corto, no de código. Lista completa reproducible con el script. COMPROBADO el conteo; que todas sean solo de formato es lectura mía de la muestra de 22.
-
----
-fragmento: 05-join-por-codigo
-fuente: Proyecto Techo 360 - CLAUDE.md
-ruta: CLAUDE.md
-fecha: 2026-10-16
-vigencia: vigente en el codigo de la rama revisada
-version: sin-control-de-versiones (mtime)
-tema: Regla: unir siempre por codigo DIVIPOLA, nunca por nombre
----
-- **Join por `codigoDivipola`, nunca por nombre de municipio** — nombres duplicados
-  entre municipios reales distintos (ej. "Sabanalarga") ya causaron un bug real de
-  UPDATE cruzado. La tabla `zonas_municipio` (1,105 filas, capa canónica IGAC) es la
-  referencia contra la que se audita "qué municipio existe de verdad" para el mapa —
-  hay ~20 códigos DANE reales (corregimientos departamentales de Amazonas/Guainía/
-  Vaupés) que NO están en esa capa; es un desalineamiento real documentado, no basura
-  a limpiar sin más.

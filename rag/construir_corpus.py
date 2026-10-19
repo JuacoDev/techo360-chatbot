@@ -42,6 +42,16 @@ VIG = "vigente en el codigo de la rama revisada"
 
 E = []
 
+# Limpieza de la revision del 18-oct-2026 (decision de Claude tras revisar el contenido; paso 6.5):
+# fragmentos que NO se ingieren y frases que se quitan del texto copiado.
+EXCLUIR = {
+    "05-join-por-codigo", "04-metodos-por-variable-1", "04-metodos-por-variable-2",
+    "01-doble-conteo-magnitud", "03-tenencia-limitacion-2", "02-ipm-vs-score",
+    "01-nota-discrepancias",  # nota de mantenimiento, no contenido para usuarios
+    "06-reglas-asistente",  # ya esta en el system prompt (decision de Claude, 18-oct)
+}
+REEMPLAZOS = {"03-tenencia": [("con el equipo ", "")]}
+
 
 def x(doc, id_, tema, ruta, ini, fin, modo, incl=False, vigencia=VIG, nota=None, corte=None):
     """corte: si se da, la ULTIMA linea extraida se corta justo despues de esa cadena (fin de oracion)."""
@@ -137,7 +147,7 @@ x(D4, "metodos-por-variable", "Metodo por variable y caso (huecos municipio-anio
   nota="Contiene la regla del deficit 2019-2023 por interpolacion lineal entre 2018 real y 2024 proyectado.")
 
 D5 = "05-divipola"
-x(D5, "codigos-oficiales", "Codigos DIVIPOLA oficiales: 1.122 codigos y sus tipos", "claude/fase1-2-divipola-cruce.md",
+x(D5, "codigos-oficiales", "Cuantos municipios y codigos DIVIPOLA hay en Colombia: 1.122 codigos oficiales y sus tipos", "claude/fase1-2-divipola-cruce.md",
   "Hoja `Municipios`: **1 122 códigos", "**Corrección a un dato del encargo:**", "md",
   vigencia="DIVIPOLA DANE actualizado al 30-jun-2026")
 x(D5, "areas-no-municipalizadas", "Las 18 areas no municipalizadas sin poligono en el mapa", "claude/fase1-2-divipola-cruce.md",
@@ -299,6 +309,12 @@ def main() -> None:
         trozos = partir(extraer(lineas, e))
         for n, t in enumerate(trozos, 1):
             fid = f"{e['doc'][:2]}-{e['id']}" + (f"-{n}" if len(trozos) > 1 else "")
+            if fid in EXCLUIR:
+                continue
+            for antes, despues in REEMPLAZOS.get(fid, []):
+                if antes not in t:
+                    raise SystemExit(f"reemplazo no aplicable en {fid}: {antes!r}")
+                t = t.replace(antes, despues)
             cab = [f"fragmento: {fid}", f"fuente: {fuente}", f"ruta: {ruta_txt}", f"fecha: {fecha}",
                    f"vigencia: {e['vigencia']}", f"version: {version}", f"tema: {e['tema']}"]
             if e["nota"]:
@@ -308,12 +324,13 @@ def main() -> None:
             filas.append((e["doc"], fid, len(t)))
 
     # Nota de discrepancias (texto del corpus, no copiado de una fuente)
-    docs.setdefault("01-nota-discrepancias", []).append(
+    if "01-nota-discrepancias" not in EXCLUIR:
+      docs.setdefault("01-nota-discrepancias", []).append(
         "---\nfragmento: 01-nota-discrepancias\nfuente: Nota del corpus (revision de discrepancias)\n"
         "ruta: rag/construir_corpus.py\nfecha: 2026-10-18\nvigencia: hasta aplicar la carga M4\n"
         "version: corpus-0.1\ntema: Diferencias detectadas entre codigo y README sobre el Score y el deficit\n---\n"
         + NOTA_DISCREPANCIAS)
-    filas.append(("01-nota-discrepancias", "01-nota-discrepancias", len(NOTA_DISCREPANCIAS)))
+      filas.append(("01-nota-discrepancias", "01-nota-discrepancias", len(NOTA_DISCREPANCIAS)))
 
     if a.dry_run:
         for d, f, n in filas:
