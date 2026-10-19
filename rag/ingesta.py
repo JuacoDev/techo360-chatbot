@@ -128,7 +128,8 @@ def cargar_corpus(directorio: Path) -> tuple[list[Fragmento], dict[str, str]]:
     """Devuelve (fragmentos, {documento: sha256 del archivo}); falla si hay ids repetidos."""
     frags, shas, vistos = [], {}, set()
     for ruta in sorted(directorio.glob("0*.md")):
-        shas[ruta.stem] = hashlib.sha256(ruta.read_bytes()).hexdigest()
+        crudo = ruta.read_bytes().replace(b"\r\n", b"\n")  # igual en Windows (CRLF) y Linux
+        shas[ruta.stem] = hashlib.sha256(crudo).hexdigest()
         for f in parsear_archivo(ruta):
             if (f.documento, f.fragmento_id) in vistos:
                 raise ValueError(f"fragmento repetido: {f.documento}/{f.fragmento_id}")
