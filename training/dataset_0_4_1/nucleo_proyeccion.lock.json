@@ -1,0 +1,8 @@
+{
+ "repo": "techo360-proyeccion",
+ "commit": "ee252c91a38f0498584348fade79654962f176d5",
+ "archivos": {
+  "app/services/puntos.py": "afa09264a643ce49fd9d6337e40a4ee89e73677d152579c61df245e0e16a0741",
+  "app/origen.py": "4a04bc5f7310e1b59debaa848eeab20c769e16193045f838fd0d0ea54ba0e1e2"
+ }
+}

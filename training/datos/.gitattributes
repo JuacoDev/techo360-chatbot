@@ -1,0 +1,2 @@
+# Los snapshots llevan sha256: los bytes no deben cambiar con la conversion de saltos de linea.
+* -text

@@ -1,0 +1,20 @@
+# Log de la extraccion unica de mapcalordb (7.3 Fase A). SSH solo lectura, techo360-admin@207.248.81.115.
+# Autorizacion: Juan, delegada en Claude el 19-oct-2026. Sin escrituras, DDL, reinicios ni lectura de credenciales.
+# 2026-10-19T11:54:17Z UTC  comando local: ssh -o BatchMode=yes -o ConnectTimeout=20 techo360-admin@207.248.81.115 'bash -s' < remoto.sh
+# --- remoto.sh (contenido exacto) ---
+set -u
+C=techo360-postgres-principal
+run() {  # $1 = SQL (solo SELECT); psql por defecto del contenedor, sesion de solo lectura
+  docker exec -i -e PGOPTIONS='-c default_transaction_read_only=on' "$C" psql -X -q -v ON_ERROR_STOP=1 -d techo360_principal -c "$1" 2>/dev/null && return 0
+  docker exec -i -e PGOPTIONS='-c default_transaction_read_only=on' "$C" sh -c 'exec psql -X -q -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "${POSTGRES_DB:-techo360_principal}" -c "$0"' "$1"
+}
+echo "@@@ro"; run "SHOW default_transaction_read_only"
+echo "@@@mapcalordb"; run "COPY (SELECT codigodivipola, namevar, yearm, valuevar, originvar, intervaloconfianza FROM public.mapcalordb WHERE namevar IN ('score_privacion','cobertura_acueducto','cobertura_alcantarillado','deficit_habitacional_cuantitativo','deficit_habitacional_cualitativo','densidad_poblacional') ORDER BY codigodivipola, namevar, yearm) TO STDOUT WITH CSV HEADER"
+echo "@@@zonas_municipio"; run "COPY (SELECT m.codigo_municipio, m.codigo_departamento, m.nombre AS municipio, d.nombre AS departamento FROM public.zonas_municipio m LEFT JOIN public.zonas_departamento d ON d.codigo_departamento = m.codigo_departamento ORDER BY m.codigo_municipio) TO STDOUT WITH CSV HEADER"
+echo "@@@fin"
+# 2026-10-19T11:54:18Z UTC  sesion SSH cerrada, exit=0
+# 2026-10-19T12:11:29Z UTC  2a sesion SSH (script corregido, sin 'docker exec -i') DENEGADA por el clasificador de permisos del arnes ([Production Reads]). NO se ejecuto ningun comando remoto en esa sesion. No se intento otra via.
+# Estado: SIN extraccion. La 1a sesion solo ejecuto el SHOW (default_transaction_read_only = on) y no extrajo datos.
+# Script corregido listo, sin ejecutar: extraer_snapshot_remoto.sh (mismo alcance: 3 SELECT de solo lectura, sin credenciales visibles).
+# 2026-10-19T12:16:28Z UTC  Autorizacion personal de Juan (chat): una sesion SSH de solo lectura para ejecutar extraer_snapshot_remoto.sh una vez. ssh -o BatchMode=yes -o ConnectTimeout=20 techo360-admin@207.248.81.115 'bash -s' < extraer_snapshot_remoto.sh
+# 2026-10-19T12:16:31Z UTC  sesion SSH cerrada, exit=0
