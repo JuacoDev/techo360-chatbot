@@ -12,7 +12,7 @@ MIN_ELEMENTOS = 3
 INTROS_SERIE = [
     "Esta es la serie de {v} en {MD}, año por año:",
     "{Vc} en {MD} registró estos valores entre {Y1} y {Y2}:",
-    "Aquí tienes {v} de {MD} de {Y1} a {Y2}:",
+    "Aquí tienes {V} de {MD} de {Y1} a {Y2}:",
     "Estos son los datos de {v} en {MD}:",
     "Año por año, esto es lo que registra {V} en {MD}:",
     "Entre {Y1} y {Y2}, {V} en {MD} tuvo estos valores:",
@@ -21,7 +21,7 @@ INTROS_SERIE = [
     "Con los datos de la plataforma, {V} en {MD} fue así:",
     "Claro. Esta es la serie de {v} de {MD}:",
     "Desde {Y1} hasta {Y2}, {V} en {MD} marcó lo siguiente:",
-    "Revisé {v} en {MD} y esto es lo que hay:",
+    "Revisé {V} en {MD} y esto es lo que hay:",
     "Así se comportó {V} en {MD} entre {Y1} y {Y2}:",
     "{Vc} en {MD}, año por año:",
 ]
@@ -36,8 +36,8 @@ INTROS_MUNICIPIOS = [
     "Claro. Estos son los valores de {Y}:",
     "Comparando los municipios, {V} en {Y} queda así:",
     "En {Y}, {V} se ubica de esta manera:",
-    "Con los datos de {Y}, {v} resulta así:",
-    "Revisé {v} para {Y} y esto es lo que hay:",
+    "Con los datos de {Y}, {V} resulta así:",
+    "Revisé {V} para {Y} y esto es lo que hay:",
     "Municipio por municipio, {V} en {Y} es:",
     "{Vc} para los municipios que preguntas, en {Y}:",
 ]

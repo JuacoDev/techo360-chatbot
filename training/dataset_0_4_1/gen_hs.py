@@ -207,7 +207,15 @@ class GenHS(Fabrica):
         slots = {"MD": it.md, "v": ar.var_sin_articulo(it.variable), "Y": it.anio, "val": it.texto, "fuente": it.fuente}
         if not real:
             slots["F"] = ar.fiab_de([it])
-        out = self.render(sub, rp.PLANTILLAS[sub], slots)
+        # la respuesta debe contestar lo que se pregunta: por la fuente -> plantillas con {fuente}; por la fiabilidad -> con {F}
+        n = ar.lg.sin_tildes(texto.lower())
+        exige = []
+        if any(p in n for p in ("fuente", "de donde", "quien", "publica", "genera", "calculo", "base")):
+            exige.append("{fuente}")
+        if not real and any(p in n for p in ("fiabilidad", "confiable", "seguro")):
+            exige.append("{F}")
+        excluir = tuple(i for i, t in enumerate(rp.PLANTILLAS[sub]) if any(x not in t for x in exige))
+        out = self.render(sub, rp.PLANTILLAS[sub], slots, excluir)
         if out is None:
             return None
         resp, pr = out
