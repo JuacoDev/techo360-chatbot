@@ -123,17 +123,37 @@ class ConsumerV2(Base):
         self._v2(v2(mensaje="hola"))
         self.assertEqual(self.canal.publicados[0]["tipo"], "payload_invalido")
 
-    def test_contexto_excedido_si_no_quedan_400_tokens_de_respuesta(self):
-        grande = copy.deepcopy(V2)
-        grande["mensajes"][1]["contenido"] = "x" * 5400  # ~1.800 tokens estimados + 400 > 2048
-        fake = self._v2(grande)
+    def _con_caracteres_totales(self, total):
+        """V2 con exactamente `total` caracteres entre todos los mensajes (el system del ejemplo se deja igual)."""
+        p = copy.deepcopy(V2)
+        resto = total - sum(len(m["contenido"]) for m in p["mensajes"][:-1])
+        p["mensajes"][-1]["contenido"] = "x" * resto
+        return p
+
+    def test_presupuesto_por_defecto_es_2608(self):
+        self.assertEqual((consumer.NUM_CTX, cliente.NUM_PREDICT, consumer.PRESUPUESTO_PROMPT), (3072, 400, 2608))
+
+    def test_limite_justo_pasa(self):
+        # 5.998 caracteres / 2,3 -> 2.607 + 1 = 2.608 tokens estimados = el presupuesto exacto
+        p = self._con_caracteres_totales(5998)
+        self.assertEqual(consumer.tokens_estimados([{"content": m["contenido"]} for m in p["mensajes"]]), 2608)
+        self._v2(p)
+        self.assertEqual(self.canal.publicados[0]["status"], "ok")
+
+    def test_un_token_mas_se_rechaza(self):
+        p = self._con_caracteres_totales(5999)  # 2.609 tokens estimados
+        self.assertEqual(consumer.tokens_estimados([{"content": m["contenido"]} for m in p["mensajes"]]), 2609)
+        fake = self._v2(p)
         self.assertEqual(self.canal.publicados[0]["tipo"], "contexto_excedido")
         fake.assert_not_awaited()
 
-    def test_justo_dentro_del_presupuesto_pasa(self):
-        ajustado = copy.deepcopy(V2)
-        ajustado["mensajes"][1]["contenido"] = "x" * 3800
-        self._v2(ajustado)
+    def test_prompt_que_antes_se_rechazaba_ahora_pasa(self):
+        # ~1.800 tokens estimados con 3,0 car/token (5.400 car.) superaban el viejo limite de 1.648 y se rechazaban; con 3072 caben
+        self._v2(self._con_caracteres_totales(5400))
+        self.assertEqual(self.canal.publicados[0]["status"], "ok")
+
+    def test_prompt_normal_pasa(self):
+        self._v2(v2())
         self.assertEqual(self.canal.publicados[0]["status"], "ok")
 
     def test_ollama_no_disponible_en_v2(self):
@@ -227,7 +247,7 @@ class ClienteOllamaV2(unittest.TestCase):
             self.assertIsNone(asyncio.run(cliente.obtener_digest()))
 
     def test_tokens_estimados(self):
-        self.assertEqual(cliente.tokens_estimados([{"role": "u", "content": "x" * 300}]), 101)
+        self.assertEqual(cliente.tokens_estimados([{"role": "u", "content": "x" * 300}]), 131)
 
 
 if __name__ == "__main__":
