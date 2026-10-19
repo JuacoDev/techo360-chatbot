@@ -13,8 +13,8 @@ from aio_pika.abc import AbstractChannel, AbstractIncomingMessage, AbstractRobus
 from app.contrato_v2 import ErrorContrato, validar_peticion
 from app.ollama_client import (
     NUM_CTX,
-    NUM_PREDICT,
     OllamaNoDisponibleError,
+    PRESUPUESTO_PROMPT,
     generar_respuesta,
     generar_respuesta_v2,
     obtener_digest,
@@ -171,8 +171,8 @@ async def _procesar_v2(payload: dict) -> dict:
     except ErrorContrato as error:
         return _error_v2(error.tipo, error.detail)
     mensajes = [{"role": m.rol, "content": m.contenido} for m in peticion.mensajes]
-    if tokens_estimados(mensajes) + NUM_PREDICT > NUM_CTX:
-        return _error_v2("contexto_excedido", "El prompt estimado no deja espacio para la respuesta (num_ctx 2048).")
+    if tokens_estimados(mensajes) > PRESUPUESTO_PROMPT:
+        return _error_v2("contexto_excedido", f"El prompt estimado no deja espacio para la respuesta (presupuesto {PRESUPUESTO_PROMPT} tokens; num_ctx {NUM_CTX}).")
     meta = peticion.metadatos
     clave = _Cancelaciones.clave({"mensaje_id": meta.mensaje_id, "intento": meta.intento})
     try:

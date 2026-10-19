@@ -138,11 +138,34 @@ async def generar_respuesta(mensaje: str) -> str:
 # ---------------------------------------------------------------------------------------------
 # Camino v2 del contrato RPC (fase2-2 / fase4-especificacion-2, 4.4): los mensajes (system incluido)
 # llegan ya ensamblados por el backend y se envian tal cual. generar_respuesta() de arriba (v1) NO cambia.
-# Mismas opciones del runner que v1 (num_predict, num_thread; num_ctx lo fija el Modelfile: 2048): cambiarlas
+# Mismas opciones del runner que v1 (num_predict, num_thread; num_ctx lo fija el Modelfile): cambiarlas
 # entre peticiones puede recargar el modelo.
 # ---------------------------------------------------------------------------------------------
-NUM_CTX = 2048
-CARACTERES_POR_TOKEN = 3.0  # estimacion conservadora para español (medido 3,5-3,6)
+# NUM_CTX NO se envia a Ollama: es solo la guarda del consumer y debe igualar el `num_ctx` de Modelfile.v0.4.0 (3072, 5.9b).
+# Configurable con OLLAMA_NUM_CTX; sin la variable (o con un valor invalido) queda en 3072. Si Ollama recibe un prompt que, con la
+# generacion, pasa de su num_ctx, DESCARTA el system a mitad de la respuesta (5.9b), asi que este valor no debe superar al del Modelfile.
+NUM_CTX_POR_DEFECTO = 3072
+
+
+def _num_ctx_desde_entorno(valor: str | None) -> int:
+    """Entero positivo de OLLAMA_NUM_CTX, o el valor por defecto si falta o es invalido."""
+    if valor is None or not valor.strip():
+        return NUM_CTX_POR_DEFECTO
+    try:
+        ctx = int(valor)
+    except ValueError:
+        ctx = 0
+    if ctx < NUM_PREDICT + MARGEN_TOKENS + 1:
+        logger.warning("OLLAMA_NUM_CTX invalido (%r): se usa %d.", valor, NUM_CTX_POR_DEFECTO)
+        return NUM_CTX_POR_DEFECTO
+    return ctx
+
+
+MARGEN_TOKENS = 64  # holgura de la estimacion; el mismo margen del presupuesto del backend (PR #36)
+NUM_CTX = _num_ctx_desde_entorno(os.environ.get("OLLAMA_NUM_CTX"))
+# Se rechaza (contexto_excedido) solo si tokens_estimados > PRESUPUESTO_PROMPT = NUM_CTX - NUM_PREDICT - MARGEN_TOKENS (2.608 con los valores por defecto).
+PRESUPUESTO_PROMPT = NUM_CTX - NUM_PREDICT - MARGEN_TOKENS
+CARACTERES_POR_TOKEN = 2.3  # medido 5.9b: minimo real 2,27, mediana 2,79 (3,0 subestimaba los tokens y dejaba pasar prompts que Ollama desplazaba)
 _digest_cache: dict[str, str] = {}
 
 
