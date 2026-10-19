@@ -1,5 +1,98 @@
 # techo360-chatbot
 
+## Resumen
+
+Servicio de chatbot conversacional de Techo 360.
+Ejecuta un modelo local mediante Ollama.
+Consume solicitudes RPC por RabbitMQ.
+Persiste conversaciones y mensajes en PostgreSQL con pgvector.
+Incluye RAG, evaluacion y scripts de entrenamiento fuera del contenedor.
+
+## Uso local
+
+```bash
+pip install -r requirements.txt
+CHATBOT_HABILITAR_SEND_LOCAL=0 CHATBOT_HABILITAR_DOCS=0 uvicorn app.main:app --reload
+```
+
+El consumer necesita RabbitMQ, Ollama y las bases configuradas para probar el
+flujo completo. Las rutas auxiliares y la documentacion HTTP estan apagadas
+por defecto.
+
+## Variables de entorno
+
+| Nombre | Para que sirve | Valor por defecto |
+|---|---|---|
+| `OLLAMA_URL` | Endpoint de Ollama | local; TODO: verificar literal |
+| `OLLAMA_MODEL` | Modelo servido | `techo360-chatbot:v3.2` |
+| `OLLAMA_NUM_THREAD` | Hilos de Ollama | `3` |
+| `RABBITMQ_URL` | Broker RPC | TODO: verificar en compose |
+| `CHATBOT_HABILITAR_SEND_LOCAL` | Habilita `/chatbot/send` local | apagado |
+| `CHATBOT_HABILITAR_DOCS` | Habilita docs OpenAPI | apagado |
+| `CHATBOT_CONSUMER_PRIORITY` | Prioridad del consumer | TODO: verificar |
+| `RPC_TIMEOUT_SECONDS` | Tope del RPC | TODO: verificar |
+
+No se incluyen contrasenas, tokens, claves ni valores de `.env`.
+
+## Pruebas
+
+Este repositorio no contiene una suite automatizada comprobada. El E2E local
+disponible es:
+
+```bash
+python scripts/probar_rabbitmq_local.py
+```
+
+Tambien existe el workflow manual `test-rabbitmq-rpc.yml`. `TODO`: agregar y
+ejecutar una suite automatizada reproducible para el servicio.
+
+## Estructura
+
+`app/` servicio; `migrations/` SQL; `dataset/` datos; `training/` scripts y
+artefactos de entrenamiento; `prompts/` prompts referenciados; `scripts/`
+pruebas y utilidades; `training/ollama/` Modelfiles.
+
+## Banderas del chatbot
+
+`CHATBOT_HABILITAR_SEND_LOCAL=0` y `CHATBOT_HABILITAR_DOCS=0` estan apagadas
+por defecto. No se debe publicar `/chatbot/send` ni `/docs` en produccion.
+
+## Versiones de modelo y system prompt
+
+| Version | Modelo | System | Estado |
+|---|---|---|---|
+| `0.4.0` | `techo360-chatbot:0.4.0` | `sp-0.4.0-1` | produccion |
+| `0.4.1` | `techo360-chatbot:0.4.1` | `sp-0.4.1-1` | entrenamiento |
+
+`TODO`: verificar en los artefactos desplegados el nombre exacto de la imagen
+0.4.0; el system y el estado anterior estan documentados por los commits/PRs.
+
+## Reproducir entrenamiento
+
+Para 0.4.0, el script es `training/entrenar_lora_v040.py` y la semilla por
+defecto es `42`. Los parametros comprobables son longitud maxima `2048`,
+micro-batch `1`, acumulacion `8`, `3` epocas, learning rate `2e-4`, scheduler
+lineal sin warmup, `PagedAdamW8bit`, LoRA `r=16`, `alpha=32`, dropout `0.05`,
+checkpoint cada `200` pasos y limite declarado de VRAM `5900 MB`. El modelo
+base declarado es `meta-llama/Llama-3.2-3B-Instruct`.
+
+```bash
+python -u training/entrenar_lora_v040.py \
+	--dataset <train_tokenizado.jsonl> \
+	--salida training/adapters/techo360-v0.4.0
+```
+
+El script comprueba el SHA-256 esperado del dataset antes de entrenar. Las
+opciones `--humo`, `--reanudar`, `--equivalencia`, `--guardar-cada`,
+`--limite-vram-mb` y `--segundos-max-step` estan definidas en el script.
+`TODO`: registrar la ruta concreta del dataset usado y el comando completo de
+0.4.1. El directorio
+`training/adapters/techo360-v0.4.0/` no esta rastreado en la base de esta rama.
+
+## Documentacion de fases
+
+La documentacion de fases se mantiene fuera de este repositorio.
+
 Servicio IA - Chatbot conversacional (LLM propio via Ollama + RAG sobre pgvector).
 
 Parte de la arquitectura multi-repo de Techo 360. Se despliega desde
