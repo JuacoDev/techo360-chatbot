@@ -40,10 +40,10 @@ HS3_VARIABLE = [
 HS4_REFERENCIA = [
     "¿Ese año fue real o estimado?", "¿Ese dato es real o una estimación?", "¿Eso es un dato observado?",
     "¿De dónde sale ese dato?", "¿Qué fuente tiene ese valor?", "¿Ese número es confiable?",
-    "¿Es dato real o proyectado?", "¿Quién publica ese dato?", "¿Ese valor se midió o se calculó?",
+    "Ese resultado, ¿es dato real o proyectado?", "¿Quién publica ese dato?", "¿Ese valor se midió o se calculó?",
     "¿Cuál es la fuente de eso?", "¿Eso es real?", "¿Ese dato es una proyección?",
     "¿Qué tan seguro es ese valor?", "¿Esa cifra viene de una medición?", "¿Qué fiabilidad tiene eso?",
-    "y ese dato, ¿es real?", "¿Me confirmas si es observado o estimado?", "¿Eso lo midieron o es una estimación?",
+    "y ese dato, ¿es real?", "¿Me confirmas si ese valor es observado o estimado?", "¿Eso lo midieron o es una estimación?",
     "¿En qué se basa ese valor?", "¿Es oficial ese dato?", "¿Ese año tiene dato real?",
     "¿Esa cifra es estimada?", "Dime si ese dato es real.", "¿Quién genera esa cifra?", "¿Eso es proyección o dato real?",
 ]

@@ -60,6 +60,9 @@ INTROS_PERFIL = [
 ITEM_SERIE = {"real": "- {Y}: {val} (dato real)", "estimado": "- {Y}: {val} (estimación con fiabilidad de {Fn})"}
 ITEM_MUNICIPIO = {"real": "- {MD}: {val} (dato real)", "estimado": "- {MD}: {val} (estimación con fiabilidad de {Fn})"}
 ITEM_PERFIL = {"real": "- {Vn}: {val} (dato real)", "estimado": "- {Vn}: {val} (estimación con fiabilidad de {Fn})"}
+# Variantes con el año en el elemento, cuando los elementos no comparten año (año implícito: último año con dato real de cada uno)
+ITEM_MUNICIPIO_ANIO = {"real": "- {MD} ({Y}): {val} (dato real)", "estimado": "- {MD} ({Y}): {val} (estimación con fiabilidad de {Fn})"}
+ITEM_PERFIL_ANIO = {"real": "- {Vn} ({Y}): {val} (dato real)", "estimado": "- {Vn} ({Y}): {val} (estimación con fiabilidad de {Fn})"}
 # Cierre opcional (solo si la lista mezcla estimaciones); no lleva cifras.
 CIERRES_ESTIMACION = [
     "Los elementos marcados como estimación son proyecciones, no datos observados.",
@@ -75,7 +78,7 @@ TIPOS = {
     "lst_municipios": (INTROS_MUNICIPIOS, ITEM_MUNICIPIO, {"V", "Vc", "v", "Y"}),
     "lst_perfil": (INTROS_PERFIL, ITEM_PERFIL, {"MD", "Y"}),
 }
-HUECOS_ITEM = {"lst_serie": {"Y", "val", "Fn"}, "lst_municipios": {"MD", "val", "Fn"}, "lst_perfil": {"Vn", "val", "Fn"}}
+HUECOS_ITEM = {"lst_serie": {"Y", "val", "Fn"}, "lst_municipios": {"MD", "val", "Fn", "Y"}, "lst_perfil": {"Vn", "val", "Fn", "Y"}}
 
 
 def armar_lista(intro: str, items: list[str], cierre: str | None = None) -> str:

@@ -219,7 +219,7 @@ def lint_plantilla_respuesta(texto: str) -> list[str]:
     for m in re.finditer(r": \{(\w+)\}", texto):
         if m.group(1) in HUECO_MAYUSCULA:
             problemas.append(f"hueco con mayúscula tras «: »: {{{m.group(1)}}}")
-    if re.search(r"(?:de|a|del|al) \{V\}", texto):
+    if re.search(r"\b(?:de|a|del|al) \{V\}", texto):
         problemas.append("«de/a {V}» produce «de el»: usar {Vde}")
     sin = re.sub(r"\{\w+\}", "§", texto)
     if re.search(r": [A-ZÁÉÍÓÚÑ]", sin):
@@ -388,7 +388,7 @@ def controlar_turno_previo() -> list[str]:
 
 def controlar_notas() -> list[str]:
     pr = []
-    for t in rp.NOTAS_SERIE + rp.NOTAS_PUNTUAL:
+    for t in rp.NOTAS_SERIE + rp.NOTAS_PUNTUAL + rp.NOTAS_MIXTA + rp.NOTAS_VARIOS:
         if not t.startswith(" ") or not t[1].isupper() or not t.rstrip().endswith("."):
             pr.append(f"nota mal formada: {t!r}")
         if DIGITO.search(re.sub(r"\{\w+\}", "§", t)):

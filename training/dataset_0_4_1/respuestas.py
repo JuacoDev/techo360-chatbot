@@ -39,6 +39,24 @@ NOTAS_PUNTUAL = [
     " Es una proyección y su fiabilidad es {F}, no un dato real.",
     " Aclaro que se trata de una estimación con fiabilidad {F}.",
 ]
+# Varios elementos y TODOS estimaciones (concordancia en plural)
+NOTAS_VARIOS = [
+    " Todos son valores proyectados, con fiabilidad {F}.",
+    " Se trata de estimaciones, con fiabilidad {F}.",
+    " Ninguno es un dato observado: son estimaciones con fiabilidad {F}.",
+    " Aclaro que son proyecciones, con fiabilidad {F}.",
+    " Estos valores son estimaciones, con fiabilidad {F}.",
+    " Ojo: son valores proyectados, con fiabilidad {F}, y no datos reales.",
+]
+# Cuando solo ALGUNOS elementos son estimaciones ({E} = «la cobertura de acueducto y el déficit habitacional cuantitativo»; {F} como arriba)
+NOTAS_MIXTA = [
+    " Lo estimado ({E}) tiene fiabilidad {F}; el resto es dato real.",
+    " Entre los datos, {E} corresponde a estimaciones con fiabilidad {F}.",
+    " Las estimaciones corresponden a {E}, con fiabilidad {F}.",
+    " Ten en cuenta que {E} corresponde a estimaciones con fiabilidad {F}; lo demás es dato real.",
+    " Solo lo de {E} es estimado, con fiabilidad {F}.",
+    " Lo que corresponde a {E} es una estimación con fiabilidad {F}; lo demás es dato real.",
+]
 # Alternativas que G3 puede ofrecer cuando el contexto trae algun dato disponible (hueco {alterno}); {Ya}, {val}.
 ALTERNOS = [
     " Lo que sí tengo es el dato de {v} de {MD} para {Ya}, que es {val}.",

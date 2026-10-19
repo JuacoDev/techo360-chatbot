@@ -1,4 +1,4 @@
-# Fase A de 7.3: bancos de preguntas y plantillas de respuesta (G1–G6 y F+)
+# Fase A de 7.3: bancos de preguntas y plantillas de respuesta (G1–G6, F+, HS y listas)
 
 Resultado: **sin fallos**. Generado por `python -m training.dataset_0_4_1.verificar_bancos`.
 
