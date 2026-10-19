@@ -23,18 +23,6 @@ tema: TechoBot: estados de un mensaje
 - Cada mensaje de usuario tiene estado: `pendiente`, `procesando`, `respondido`, `error` o `cancelado`. Si el backend no manda estado, se trata como `respondido`.
 
 ---
-fragmento: 06-leyenda-escala
-fuente: Proyecto Techo 360 - MapView.jsx
-ruta: techo360-frontend/src/components/MapView.jsx
-fecha: 2026-10-11
-vigencia: vigente en el codigo de la rama revisada
-version: techo360-frontend@c4b2896
-tema: Que significa prioridad o necesidad de intervencion: escala de privacion de 0.0 a 1.0 de la leyenda del mapa
-nota: Texto de la leyenda del mapa (tooltip «i» de «Escala de Privación»). No define un umbral de «prioridad alta».
----
-Índice de 0.0 a 1.0 que promedia las carencias en acueducto, alcantarillado y déficit habitacional. Un valor de 1.0 indica la máxima prioridad o necesidad de intervención.
-
----
 fragmento: 06-mapa-color-por-variable
 fuente: Proyecto Techo 360 - variablesProyeccion.js
 ruta: techo360-frontend/src/pages/Proyeccion/variablesProyeccion.js
@@ -61,3 +49,25 @@ tema: Como interpretar el color de un municipio en el mapa: semaforo blanco, ama
 Semaforo del score de privacion (0=mejor, 1=peor): interpolacion
 lineal por tramos entre tres puntos, blanco en 0, amarillo en 0.5,
 rojo en 1 (decision de producto, no buckets absolutos como antes).
+
+---
+fragmento: 06-prioridad
+fuente: Aprobado por Juan (2026-10-19). Fuentes: leyenda del mapa (MapView.jsx) y 01-formula (score_privacion.py)
+ruta: rag/construir_corpus.py
+fecha: 2026-10-19
+vigencia: decision de Juan del 2026-10-19
+version: corpus-0.2
+tema: Que significa prioridad alta de un municipio: no hay categorias de prioridad ni punto de corte
+---
+No existen categorias de prioridad (alta, media o baja) ni un punto de corte oficial. Que un municipio tenga prioridad alta, o la maxima prioridad, significa un valor cercano a 1: segun la leyenda del mapa, 1.0 indica la maxima prioridad o necesidad de intervencion. El valor es continuo, entre 0 (mejor) y 1 (peor); la prioridad de intervencion se calcula como el promedio simple de acueducto invertido, alcantarillado invertido y deficit habitacional cuantitativo.
+
+---
+fragmento: 06-mapa-gris
+fuente: Aprobado por Juan (2026-10-19)
+ruta: rag/construir_corpus.py
+fecha: 2026-10-19
+vigencia: decision de Juan del 2026-10-19
+version: corpus-0.2
+tema: Que significa el color gris en el mapa
+---
+Los municipios en gris no tienen dato para la variable y el año seleccionados.

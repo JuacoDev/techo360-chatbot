@@ -179,13 +179,28 @@ x(D6, "estado-mensajes", "TechoBot: estados de un mensaje", "techo360-frontend/R
 # Ampliacion C3 (19-oct-2026): texto literal de MapView.jsx (rama Testing del frontend). Sin definicion de umbrales
 # de «prioridad alta»: no existe en ningun documento revisado (ver rag/PENDIENTES_JUAN.md).
 MAP = "techo360-frontend/src/components/MapView.jsx"
-x(D6, "leyenda-escala", "Que significa prioridad o necesidad de intervencion: escala de privacion de 0.0 a 1.0 de la leyenda del mapa",
-  MAP, "Índice de 0.0 a 1.0 que promedia las carencias", "\n", "str",
-  incl=True, nota="Texto de la leyenda del mapa (tooltip «i» de «Escala de Privación»). No define un umbral de «prioridad alta».")
+# (el fragmento 06-leyenda-escala, literal de la leyenda, se reemplazo el 19-oct por 06-prioridad: ver APROBADOS)
 x(D6, "mapa-color-por-variable", "Mapa de proyeccion: que significa mas rojo segun la variable (Score, deficit, tenencia informal, cobertura, densidad)",
   "techo360-frontend/src/pages/Proyeccion/variablesProyeccion.js", "// color:", "// serie:", "js")
 x(D6, "mapa-semaforo", "Como interpretar el color de un municipio en el mapa: semaforo blanco, amarillo y rojo del Score",
   MAP, "// Semaforo del score de privacion", "// Antes estos umbrales", "js")
+
+# Textos redactados por C3 y APROBADOS por Juan el 19-oct-2026 (no son copia literal de un archivo): (doc, id, tema, fuente, texto).
+# Juan confirmo: el Score es continuo en [0, 1], sin categorias ni punto de corte oficial (metodologia de Techo 360, pares
+# train_v3_3 revisados), y dio la frase del gris.
+APROBADO_FECHA = "2026-10-19"
+APROBADOS = [
+    ("06-guia-uso", "06-prioridad",
+     "Que significa prioridad alta de un municipio: no hay categorias de prioridad ni punto de corte",
+     "Aprobado por Juan (2026-10-19). Fuentes: leyenda del mapa (MapView.jsx) y 01-formula (score_privacion.py)",
+     "No existen categorias de prioridad (alta, media o baja) ni un punto de corte oficial. Que un municipio tenga prioridad alta, "
+     "o la maxima prioridad, significa un valor cercano a 1: segun la leyenda del mapa, 1.0 indica la maxima prioridad o necesidad "
+     "de intervencion. El valor es continuo, entre 0 (mejor) y 1 (peor); la prioridad de intervencion se calcula como el promedio "
+     "simple de acueducto invertido, alcantarillado invertido y deficit habitacional cuantitativo."),
+    ("06-guia-uso", "06-mapa-gris", "Que significa el color gris en el mapa",
+     "Aprobado por Juan (2026-10-19)",
+     "Los municipios en gris no tienen dato para la variable y el año seleccionados."),
+]
 
 NOTA_DISCREPANCIAS = """\
 Revision de discrepancias entre fuentes (hecha al construir el corpus, 2026-10-18):
@@ -351,6 +366,12 @@ def main() -> None:
         + NOTA_DISCREPANCIAS)
       filas.append(("01-nota-discrepancias", "01-nota-discrepancias", len(NOTA_DISCREPANCIAS)))
 
+    for doc, fid, tema, fuente, texto in APROBADOS:
+        docs.setdefault(doc, []).append(
+            f"---\nfragmento: {fid}\nfuente: {fuente}\nruta: rag/construir_corpus.py\nfecha: {APROBADO_FECHA}\n"
+            f"vigencia: decision de Juan del {APROBADO_FECHA}\nversion: corpus-0.2\ntema: {tema}\n---\n{texto}\n")
+        filas.append((doc, fid, len(texto)))
+
     if a.dry_run:
         for d, f, n in filas:
             print(d, f, n)
@@ -382,8 +403,8 @@ HUECOS_FIJOS = [
     "- Glosario: no hay texto fuente en los repos con la definicion oficial de cobertura de acueducto ni de alcantarillado (DANE/SSPD/DNP); no se inventa. Pendiente de aprobacion de una fuente publica.",
     "- Glosario: la densidad poblacional solo tiene la formula del proyecto (poblacion DANE / area), no una definicion oficial.",
     "- Guia de uso (#6): no existe README de usuario; solo reglas del prompt, comentarios del frontend y estados de mensaje. Solo hay texto fuente para la escala y el semaforo del mapa (06-leyenda-escala, 06-mapa-semaforo); no lo hay para el panel en lenguaje de usuario.",
-    "- Prioridad alta: ningun documento revisado define umbrales ni categorias (alta/media/baja) de prioridad. Solo existe la frase de la leyenda («1.0 indica la maxima prioridad o necesidad de intervencion»). Pendiente de Juan (ver rag/PENDIENTES_JUAN.md).",
-    "- Mapa: el gris de «Sin dato / Area en litigio» y las notas de la leyenda (deficit constante, fiabilidad al pasar el cursor) solo existen como constantes/JSX, sin prosa fuente; no se incluyeron.",
+    "- Prioridad alta: no hay categorias ni punto de corte (confirmado por Juan, 19-oct-2026); ver 06-prioridad y rag/PENDIENTES_JUAN.md.",
+    "- Mapa: las notas de la leyenda (deficit constante, fiabilidad al pasar el cursor) solo existen en JSX, sin prosa fuente; no se incluyeron. El gris lo cubre 06-mapa-gris (frase aprobada por Juan).",
     "- IPM: solo CONPES Social 150 (2012). Las actualizaciones posteriores del IPM (p. ej. DANE 2018) no estan en el corpus.",
 ]
 

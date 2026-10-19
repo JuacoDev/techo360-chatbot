@@ -29,6 +29,6 @@ python rag/evaluar_recuperacion.py --preguntas ../claude/fase6-4-preguntas.jsonl
 
 Limpieza del 18-oct-2026 (`EXCLUIR` y `REEMPLAZOS` en `construir_corpus.py`): 38 fragmentos; se quitaron 7 (entre ellos la nota de discrepancias) y la frase «con el equipo» de `03-tenencia`.
 
-Ampliación del 19-oct-2026: 41 fragmentos (37 + `05-resumen-municipios`, `06-leyenda-escala`, `06-mapa-semaforo`, `06-mapa-color-por-variable`; ver `PENDIENTES_JUAN.md`). El modo `str` de `construir_corpus.py` extrae literales de cadena de una línea.
+Ampliación del 19-oct-2026: 42 fragmentos (37 + `05-resumen-municipios`, `06-mapa-semaforo`, `06-mapa-color-por-variable` y, aprobados por Juan, `06-prioridad` y `06-mapa-gris` en `APROBADOS`; ver `PENDIENTES_JUAN.md`). El modo `str` de `construir_corpus.py` extrae literales de cadena de una línea.
 
 La carga en producción es el paso 6.8 y requiere autorización explícita; no hay camino en estos scripts para hacerlo.
