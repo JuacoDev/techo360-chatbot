@@ -1,2 +1,3 @@
 # El system prompt se verifica por sha256: los bytes no deben cambiar con la conversion de saltos de linea.
 prompts/*.txt -text
+training/ollama/Modelfile.v0.4.1 -text
